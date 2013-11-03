@@ -4,7 +4,15 @@
     xmlns:s="http://schemas.microsoft.com/surface/2008"
     Title="StudienarbeitsProjekt"
     >
-  <Grid>
-
-  </Grid>
+  <Grid PreviewTouchDown="Grid_PreviewTouchDown" Background="#111111">
+        <Label Name="helloWorldLabel"
+               Visibility="Hidden"
+               Foreground="Black"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top">
+            
+            Hello, World again.
+            
+        </Label>
+    </Grid>
 </s:SurfaceWindow>
