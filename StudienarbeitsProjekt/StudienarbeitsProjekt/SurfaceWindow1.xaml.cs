@@ -110,5 +110,10 @@ namespace StudienarbeitsProjekt
             helloWorldLabel.Visibility = Visibility.Visible;
         }
 
+        private void PhotoRemoveClicked(object sender, RoutedEventArgs e)
+        {
+            helloWorldLabel.FontSize = 17;
+        }
+
     }
 }

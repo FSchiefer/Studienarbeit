@@ -4,8 +4,12 @@
     xmlns:s="http://schemas.microsoft.com/surface/2008"
     Title="StudienarbeitsProjekt"
     >
-  <Grid PreviewTouchDown="Grid_PreviewTouchDown" Background="#111111">
-        <Label Name="helloWorldLabel"
+  <Grid Name="Host" Background="CadetBlue" Width="200" Height="200" 
+      PreviewTouchDown="Grid_PreviewTouchDown" >
+        <s:ElementMenu VerticalAlignment="Top" HorizontalAlignment="Center" ActivationHost="{Binding ElementName=Host}" Margin="0,-50,0,0">
+            <s:ElementMenuItem Header="Remove Me" Click="PhotoRemoveClicked" />
+        </s:ElementMenu>
+            <Label Name="helloWorldLabel"
                Visibility="Hidden"
                Foreground="Black"
                HorizontalAlignment="Left"
@@ -15,4 +19,5 @@
             
         </Label>
     </Grid>
+    
 </s:SurfaceWindow>

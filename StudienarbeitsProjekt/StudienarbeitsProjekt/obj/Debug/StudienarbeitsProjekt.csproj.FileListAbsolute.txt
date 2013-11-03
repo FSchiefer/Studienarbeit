@@ -1,0 +1,16 @@
+C:\Users\ander_000\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\bin\Debug\Resources\icon.png
+C:\Users\ander_000\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\bin\Debug\StudienarbeitsProjekt.xml
+C:\Users\ander_000\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\bin\Debug\StudienarbeitsProjekt.exe
+C:\Users\ander_000\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\bin\Debug\StudienarbeitsProjekt.pdb
+C:\Users\ander_000\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\StudienarbeitsProjekt.csprojResolveAssemblyReference.cache
+C:\Users\ander_000\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\SurfaceWindow1.baml
+C:\Users\ander_000\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\App.baml
+C:\Users\ander_000\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\SurfaceWindow1.g.cs
+C:\Users\ander_000\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\App.g.cs
+C:\Users\ander_000\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\StudienarbeitsProjekt_Content.g.cs
+C:\Users\ander_000\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\StudienarbeitsProjekt_MarkupCompile.cache
+C:\Users\ander_000\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\StudienarbeitsProjekt.g.resources
+C:\Users\ander_000\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\StudienarbeitsProjekt.Properties.Resources.resources
+C:\Users\ander_000\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\StudienarbeitsProjekt.csproj.GenerateResource.Cache
+C:\Users\ander_000\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\StudienarbeitsProjekt.exe
+C:\Users\ander_000\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\StudienarbeitsProjekt.pdb
