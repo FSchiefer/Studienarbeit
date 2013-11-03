@@ -6,10 +6,9 @@
     >
   <Grid Name="Host" Background="CadetBlue" Width="200" Height="200" 
       PreviewTouchDown="Grid_PreviewTouchDown" >
-        <s:ElementMenu VerticalAlignment="Top" HorizontalAlignment="Center" ActivationHost="{Binding ElementName=Host}" Margin="0,-50,0,0">
-            <s:ElementMenuItem Header="Remove Me" Click="PhotoRemoveClicked" />
-        </s:ElementMenu>
-            <Label Name="helloWorldLabel"
+        
+        <s:SurfaceSlider VerticalAlignment="Center" HorizontalAlignment="Stretch" Width=" 400"/>
+        <Label Name="helloWorldLabel"
                Visibility="Hidden"
                Foreground="Black"
                HorizontalAlignment="Left"
@@ -18,6 +17,17 @@
             Hello, World again.
             
         </Label>
+
+        <s:ScatterView HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <s:ScatterViewItem Height="100" Width="200">
+
+                <s:ElementMenu VerticalAlignment="Top" HorizontalAlignment="Center" ActivationHost="{Binding ElementName=Host}" Margin="0,-50,0,0">
+                <s:ElementMenuItem Header="Remove Me" Click="PhotoRemoveClicked" />
+                </s:ElementMenu>
+            </s:ScatterViewItem>
+        </s:ScatterView>
+
     </Grid>
     
+ 
 </s:SurfaceWindow>
