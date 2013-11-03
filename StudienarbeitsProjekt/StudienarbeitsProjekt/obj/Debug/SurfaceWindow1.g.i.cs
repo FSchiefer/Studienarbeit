@@ -45,6 +45,14 @@ namespace StudienarbeitsProjekt {
     /// </summary>
     public partial class SurfaceWindow1 : Microsoft.Surface.Presentation.Controls.SurfaceWindow, System.Windows.Markup.IComponentConnector {
         
+        
+        #line 8 "..\..\SurfaceWindow1.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Label helloWorldLabel;
+        
+        #line default
+        #line hidden
+        
         private bool _contentLoaded;
         
         /// <summary>
@@ -73,6 +81,20 @@ namespace StudienarbeitsProjekt {
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
         void System.Windows.Markup.IComponentConnector.Connect(int connectionId, object target) {
+            switch (connectionId)
+            {
+            case 1:
+            
+            #line 7 "..\..\SurfaceWindow1.xaml"
+            ((System.Windows.Controls.Grid)(target)).PreviewTouchDown += new System.EventHandler<System.Windows.Input.TouchEventArgs>(this.Grid_PreviewTouchDown);
+            
+            #line default
+            #line hidden
+            return;
+            case 2:
+            this.helloWorldLabel = ((System.Windows.Controls.Label)(target));
+            return;
+            }
             this._contentLoaded = true;
         }
     }

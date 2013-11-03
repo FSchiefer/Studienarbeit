@@ -99,5 +99,16 @@ namespace StudienarbeitsProjekt
         {
             //TODO: disable audio, animations here
         }
+        private void Grid_PreviewTouchDown(object sender, TouchEventArgs e)
+        {
+            Point touchPosition;
+            touchPosition = e.Device.GetPosition(this);
+
+            Thickness margin = new Thickness(touchPosition.X, touchPosition.Y, 0, 0);
+            helloWorldLabel.Margin = margin;
+
+            helloWorldLabel.Visibility = Visibility.Visible;
+        }
+
     }
 }
