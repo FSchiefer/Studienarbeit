@@ -12,5 +12,6 @@ namespace StudienarbeitsProjekt
     /// </summary>
     public partial class App : Application
     {
+     
     }
 }

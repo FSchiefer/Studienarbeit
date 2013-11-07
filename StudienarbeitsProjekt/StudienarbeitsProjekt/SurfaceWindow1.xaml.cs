@@ -23,6 +23,29 @@ namespace StudienarbeitsProjekt
     /// </summary>
     public partial class SurfaceWindow1 : SurfaceWindow
     {
+      
+
+        void SurfaceWindow1_TouchDown(object sender, TouchEventArgs e)
+        {
+            int[] testArray = new int[] {1,2,3,4} ;
+            TouchDevice c = e.TouchDevice;
+
+            string type = "blob";
+
+            if (c.GetIsTagRecognized() == true)
+            {
+                type = c.GetTagData().Value.ToString();
+                foreach (int i in testArray)
+                {
+                    if (int.TryParse(type, out testArray[i]))
+                    {
+                        tagRegistration.Value = i;
+                    
+                    }
+
+                }
+            }
+        }
         /// <summary>
         /// Default constructor.
         /// </summary>
@@ -98,21 +121,6 @@ namespace StudienarbeitsProjekt
         private void OnWindowUnavailable(object sender, EventArgs e)
         {
             //TODO: disable audio, animations here
-        }
-        private void Grid_PreviewTouchDown(object sender, TouchEventArgs e)
-        {
-            Point touchPosition;
-            touchPosition = e.Device.GetPosition(this);
-
-            Thickness margin = new Thickness(touchPosition.X, touchPosition.Y, 0, 0);
-            helloWorldLabel.Margin = margin;
-
-            helloWorldLabel.Visibility = Visibility.Visible;
-        }
-
-        private void PhotoRemoveClicked(object sender, RoutedEventArgs e)
-        {
-            helloWorldLabel.FontSize = 17;
         }
 
     }

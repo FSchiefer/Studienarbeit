@@ -4,28 +4,24 @@
     xmlns:s="http://schemas.microsoft.com/surface/2008"
     Title="StudienarbeitsProjekt"
     >
-  <Grid Name="Host" Background="CadetBlue" Width="200" Height="200" 
-      PreviewTouchDown="Grid_PreviewTouchDown" >
-        
-        <s:SurfaceSlider VerticalAlignment="Center" HorizontalAlignment="Stretch" Width=" 400"/>
-        <Label Name="helloWorldLabel"
-               Visibility="Hidden"
-               Foreground="Black"
-               HorizontalAlignment="Left"
-               VerticalAlignment="Top">
-            
-            Hello, World again.
-            
-        </Label>
+  <Grid x:Name="Host" Background="CadetBlue" >
 
-        <s:ScatterView HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-            <s:ScatterViewItem Height="100" Width="200">
+        <s:TagVisualizer x:Name="startVisualizer">
+            <s:TagVisualizer.Definitions>
+                <s:TagVisualizationDefinition
+                    x:Name="tagRegistration"
+                    Source="TagContent.xaml"/>
+                
+                <s:TagVisualizationDefinition
+                    x:Name="tagBehaviour"
+                    LostTagTimeout="2000"
+                    TagRemovedBehavior="Fade"
+                    Series="0x17E235BFBCF17A07"/>
 
-                <s:ElementMenu VerticalAlignment="Top" HorizontalAlignment="Center" ActivationHost="{Binding ElementName=Host}" Margin="0,-50,0,0">
-                <s:ElementMenuItem Header="Remove Me" Click="PhotoRemoveClicked" />
-                </s:ElementMenu>
-            </s:ScatterViewItem>
-        </s:ScatterView>
+            </s:TagVisualizer.Definitions>
+
+        </s:TagVisualizer>
+
 
     </Grid>
     
