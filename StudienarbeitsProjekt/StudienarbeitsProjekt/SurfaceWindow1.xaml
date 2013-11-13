@@ -6,6 +6,8 @@
     >
   <Grid x:Name="Host" Background="CadetBlue" >
 
+      
+      
         <s:TagVisualizer x:Name="startVisualizer">
             <s:TagVisualizer.Definitions>
                 <s:TagVisualizationDefinition

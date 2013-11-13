@@ -27,7 +27,7 @@ namespace StudienarbeitsProjekt
 
         void SurfaceWindow1_TouchDown(object sender, TouchEventArgs e)
         {
-            int[] testArray = new int[] {1,2,3,4} ;
+           
             TouchDevice c = e.TouchDevice;
 
             string type = "blob";
@@ -35,15 +35,9 @@ namespace StudienarbeitsProjekt
             if (c.GetIsTagRecognized() == true)
             {
                 type = c.GetTagData().Value.ToString();
-                foreach (int i in testArray)
-                {
-                    if (int.TryParse(type, out testArray[i]))
-                    {
-                        tagRegistration.Value = i;
-                    
-                    }
+               
+                        
 
-                }
             }
         }
         /// <summary>
@@ -55,6 +49,19 @@ namespace StudienarbeitsProjekt
 
             // Add handlers for window availability events
             AddWindowAvailabilityHandlers();
+
+            startVisualizer.VisualizationInitialized += 
+                new TagVisualizerEventHandler (StartVisualizer_VisualizationInitialized);
+        }
+
+
+        void StartVisualizer_VisualizationInitialized(object sender, TagVisualizerEventArgs e)
+        {
+            TagContent content = e.TagVisualization as TagContent;
+            if (content != null)
+            {
+                content.ShowTagContent();
+            }
         }
 
         /// <summary>

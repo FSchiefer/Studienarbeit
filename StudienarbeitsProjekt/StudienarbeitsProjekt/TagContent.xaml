@@ -4,12 +4,19 @@
     xmlns:s="http://schemas.microsoft.com/surface/2008"
     xmlns:StudienarbeitsProjekt ="clr-namespace:StudienarbeitsProjekt"
     >
-    <s:ScatterView>
-        <s:ScatterViewItem>
-            Dies ist ein Testfenster
+
+    
+    <s:ScatterView  x:Name="mainView" Width="800" Height="800">
+        <s:ScatterViewItem x:Name="erstScatter" >
+          
+
+
+
         </s:ScatterViewItem>
-        <s:ScatterViewItem Background="Red">
-            Und dies ein weiteres
+        <s:ScatterViewItem x:Name="ZweitScatter" Background="Red">
+            <Label x:Name="ZweitFeld">
+                Und dies ein weiteres
+            </Label>
         </s:ScatterViewItem>
     </s:ScatterView>
 </s:TagVisualization>
