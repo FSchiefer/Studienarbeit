@@ -16,6 +16,9 @@ using Microsoft.Surface.Presentation;
 using Microsoft.Surface.Presentation.Controls;
 using Microsoft.Surface.Presentation.Input;
 using System.Globalization;
+using System.Windows.Xps.Packaging;
+
+
 
 namespace StudienarbeitsProjekt
 {
@@ -31,24 +34,24 @@ namespace StudienarbeitsProjekt
         {
             InitializeComponent();
 
-     
+
         }
 
         public void ShowTagContent()
         {
 
-        
+
             string tagVal = GetTagValue();
             if (tagVal == "1")
             {
-                PDFView view = new PDFView("sample.pdf");
-                erstScatter.Content = view;
+                XpsDocument xpsDoc = new XpsDocument(@"test.xps", System.IO.FileAccess.Read);
+                Dokumentenanzeige.Document = xpsDoc.GetFixedDocumentSequence();
+
                 ZweitFeld.Content = "Ja verdammt";
 
             }
             if (tagVal == "2")
-            
-                Acrobat.AcroAppClass test = new Acrobat.AcroAppClass();
+            {
                 erstScatter.Background = Brushes.BlanchedAlmond;
                 ZweitScatter.Background = System.Windows.Media.Brushes.Yellow;
             }
@@ -70,6 +73,6 @@ namespace StudienarbeitsProjekt
             }
             return tagVal;
         }
-        
+
     }
 }

@@ -74,6 +74,7 @@ namespace StudienarbeitsProjekt {
         public static void Main() {
             StudienarbeitsProjekt.App app = new StudienarbeitsProjekt.App();
             app.InitializeComponent();
+            
             app.Run();
         }
     }
