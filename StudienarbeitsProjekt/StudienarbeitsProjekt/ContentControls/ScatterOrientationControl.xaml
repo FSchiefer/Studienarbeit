@@ -1,0 +1,24 @@
+﻿<s:ScatterViewItem x:Class="StudienarbeitsProjekt.ContentControls.ScatterOrientationControl"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:s="http://schemas.microsoft.com/surface/2008">
+
+    <Grid Background="BlueViolet"  >
+
+
+
+        <StackPanel
+            HorizontalAlignment="Center" VerticalAlignment="Center" >
+            <s:SurfaceRadioButton Foreground="White"  x:Name="TagOrientierung" Checked="TagOrientierung_Checked">
+                <TextBlock TextWrapping="Wrap" FontStretch="Expanded" >
+                Orientierung anhand Tag
+                </TextBlock>
+            </s:SurfaceRadioButton>
+            <s:SurfaceRadioButton Foreground="White" x:Name="FreieOrientierung" Checked="FreieOrientierung_Checked">
+                <TextBlock TextWrapping="Wrap" FontStretch="Expanded" >
+                Freie Orientierung
+                </TextBlock>
+            </s:SurfaceRadioButton>
+        </StackPanel>
+    </Grid>
+</s:ScatterViewItem>

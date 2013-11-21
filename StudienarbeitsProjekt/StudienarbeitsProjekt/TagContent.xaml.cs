@@ -1,22 +1,11 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using Microsoft.Surface;
-using Microsoft.Surface.Presentation;
 using Microsoft.Surface.Presentation.Controls;
-using Microsoft.Surface.Presentation.Input;
 using System.Globalization;
-using System.Windows.Xps.Packaging;
+using System.IO;
+using System.Collections.ObjectModel;
+using StudienarbeitsProjekt.ContentControls;
 
 
 
@@ -27,12 +16,17 @@ namespace StudienarbeitsProjekt
     /// </summary>
     public partial class TagContent : TagVisualization
     {
+        private ObservableCollection<object> bilder = new ObservableCollection<object>();
+        public ObservableCollection<object> Bilder { get { return bilder; } }
+
         /// <summary>
         /// Default constructor.
         /// </summary>
         public TagContent()
         {
             InitializeComponent();
+            mainView.Width = System.Windows.SystemParameters.PrimaryScreenWidth;
+            mainView.Height = System.Windows.SystemParameters.PrimaryScreenHeight;
 
 
         }
@@ -42,22 +36,107 @@ namespace StudienarbeitsProjekt
 
 
             string tagVal = GetTagValue();
-            if (tagVal == "1")
-            {
-                XpsDocument xpsDoc = new XpsDocument(@"test.xps", System.IO.FileAccess.Read);
-                Dokumentenanzeige.Document = xpsDoc.GetFixedDocumentSequence();
 
-                ZweitFeld.Content = "Ja verdammt";
+
+            try
+            {
+
+                String[] bilderPfad = Directory.GetFiles(@"C:\Studiengaenge\" + tagVal, "*.jpg");
+
+                PromotionBilder(bilderPfad);
+
+                String seitenPfad = "C:\\Studiengaenge\\" + tagVal + "\\Seiten\\";
+                if(Directory.Exists(seitenPfad)){
+                    bilderPfad = Directory.GetFiles(seitenPfad, "*.jpg");
+                    einzelSeitenBilder(bilderPfad);
+                }
+
+                String modulPfad = "C:\\Studiengaenge\\" + tagVal + "\\Modulplan\\";
+                if (Directory.Exists(modulPfad))
+                {
+                    bilderPfad = Directory.GetFiles(modulPfad, "*.jpg");
+                    ModulPlanBilder(bilderPfad);
+                }
+                Console.WriteLine("Ich kam durch");
+
+                String videoPfad = "C:\\Studiengaenge\\" + tagVal + "\\Videos\\";
+                if (Directory.Exists(videoPfad))
+                {
+                    bilderPfad = Directory.GetFiles(videoPfad, "*.wmv");
+                    Videos(bilderPfad);
+                }
+                
+
+                
+
+                
 
             }
+            catch (FileNotFoundException ex)
+            {
+                Console.WriteLine("No Folder" + ex);
+            }
+            catch (DirectoryNotFoundException ex)
+            {
+                Console.WriteLine("No Folder" + ex);
+            }
+
+            ScatterOrientationControl control = new ScatterOrientationControl(this);
+            Bilder.Add(control);
+
             if (tagVal == "2")
             {
-                erstScatter.Background = Brushes.BlanchedAlmond;
-                ZweitScatter.Background = System.Windows.Media.Brushes.Yellow;
+                //  erstScatter.Background = Brushes.BlanchedAlmond;
+                // ZweitScatter.Background = System.Windows.Media.Brushes.Yellow;
             }
 
 
         }
+
+        private void Videos(string[] bilderPfad)
+        {
+            Console.WriteLine(bilderPfad[0]);
+            for (int i = 0; i < bilderPfad.Length; i++)
+            {
+                String test = bilderPfad[i];
+                MediaElement videoDarstellung = new MediaElement();
+                videoDarstellung.Source = new Uri(test, UriKind.Absolute);
+                ScatterViewItem videoScatter = new ScatterViewItem();
+                videoScatter.Content = videoDarstellung;
+                Bilder.Add(videoScatter);
+            }
+        }
+
+        private void ModulPlanBilder(string[] bilderPfad)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void einzelSeitenBilder(string[] bilderPfad)
+        {
+            for (int i = 0; i < bilderPfad.Length; i++)
+            {
+                String test = bilderPfad[i];
+                Image promotionBild = new Image() { Source = new BitmapImage(new Uri(test, UriKind.Absolute)) };
+                ScatterViewItem promoScatter = new ScatterViewItem();
+                promoScatter.Content = promotionBild;
+                Bilder.Add(promoScatter);
+            }
+        }
+
+        private void PromotionBilder(string[] bilderPfad)
+        {
+            for (int i = 0; i < bilderPfad.Length; i++)
+            {
+                String test = bilderPfad[i];
+                Image promotionBild = new Image() { Source = new BitmapImage(new Uri(test, UriKind.Absolute)) };
+                ScatterViewItem promoScatter = new ScatterViewItem();
+                promoScatter.Content = promotionBild;
+                Bilder.Add(promoScatter);
+            }
+        }
+
+
 
         /// <returns></returns>
         private string GetTagValue()

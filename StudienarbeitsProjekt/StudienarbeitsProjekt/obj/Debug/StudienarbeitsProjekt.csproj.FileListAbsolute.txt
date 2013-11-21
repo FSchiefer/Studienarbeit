@@ -19,6 +19,7 @@ C:\Users\ander_000\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsPro
 C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\bin\Debug\Resources\icon.png
 C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\bin\Debug\StudienarbeitsProjekt.xml
 C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\bin\Debug\sample.pdf
+C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\bin\Debug\StudienarbeitsProjekt.exe.config
 C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\bin\Debug\StudienarbeitsProjekt.exe
 C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\bin\Debug\StudienarbeitsProjekt.pdb
 C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\ResolveAssemblyReference.cache
@@ -37,3 +38,9 @@ C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\ob
 C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\GenerateResource.write.1.tlog
 C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\StudienarbeitsProjekt.exe
 C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\StudienarbeitsProjekt.pdb
+C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\ContentControls\CollectionControl.baml
+C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\ContentControls\ScatterControl.baml
+C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\ContentControls\CollectionControl.g.cs
+C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\ContentControls\ScatterControl.g.cs
+C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\ContentControls\SeitenControl.g.cs
+C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\ContentControls\SeitenControl.baml
