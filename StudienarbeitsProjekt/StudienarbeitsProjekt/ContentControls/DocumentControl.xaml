@@ -1,0 +1,26 @@
+﻿<s:ScatterViewItem x:Class="StudienarbeitsProjekt.ContentControls.DocumentControl"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:s="http://schemas.microsoft.com/surface/2008"
+                  x:Name="test">
+    <Grid >
+        <DocumentViewer Name="myDocViewer" 
+                        >
+          <DocumentViewer.Resources>
+            
+            <Style TargetType="ContentControl">
+                <Setter Property="Visibility" Value="Collapsed" />
+            </Style>
+
+         
+            <Style TargetType="ToolBar">
+                <Setter Property="Visibility" Value="Collapsed" />
+            </Style>
+                <Style TargetType="ScrollBar">
+                    <Setter Property="Visibility" Value="Collapsed" />
+                </Style>
+            </DocumentViewer.Resources>
+      
+        </DocumentViewer>
+    </Grid>
+</s:ScatterViewItem>
