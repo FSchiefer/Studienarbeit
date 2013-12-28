@@ -36,7 +36,8 @@ namespace StudienarbeitsProjekt
 
 
             string tagVal = GetTagValue();
-
+            DocumentControl dokument = new DocumentControl();
+            Bilder.Add(dokument);
 
             try
             {
@@ -84,12 +85,6 @@ namespace StudienarbeitsProjekt
             ScatterOrientationControl control = new ScatterOrientationControl(this);
             Bilder.Add(control);
 
-            if (tagVal == "2")
-            {
-                //  erstScatter.Background = Brushes.BlanchedAlmond;
-                // ZweitScatter.Background = System.Windows.Media.Brushes.Yellow;
-            }
-
 
         }
 
@@ -101,8 +96,7 @@ namespace StudienarbeitsProjekt
                 String test = bilderPfad[i];
                 MediaElement videoDarstellung = new MediaElement();
                 videoDarstellung.Source = new Uri(test, UriKind.Absolute);
-                ScatterViewItem videoScatter = new ScatterViewItem();
-                videoScatter.Content = videoDarstellung;
+                VideoControl videoScatter = new VideoControl(videoDarstellung);
                 Bilder.Add(videoScatter);
             }
         }

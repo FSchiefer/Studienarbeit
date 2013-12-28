@@ -47,6 +47,7 @@ namespace StudienarbeitsProjekt
         {
             InitializeComponent();
 
+
             // Add handlers for window availability events
             AddWindowAvailabilityHandlers();
 

@@ -79,6 +79,9 @@
     <Compile Include="ContentControls\CollectionControl.xaml.cs">
       <DependentUpon>CollectionControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ContentControls\DocumentControl.xaml.cs">
+      <DependentUpon>DocumentControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ContentControls\ScatterOrientationControl.xaml.cs">
       <DependentUpon>ScatterOrientationControl.xaml</DependentUpon>
     </Compile>
@@ -92,6 +95,10 @@
       <DependentUpon>TagContent.xaml</DependentUpon>
     </Compile>
     <Page Include="ContentControls\CollectionControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ContentControls\DocumentControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -143,16 +150,11 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="app.config" />
-    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-    <None Include="sample.pdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="test.xps" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\icon.png">
