@@ -39,6 +39,8 @@ namespace StudienarbeitsProjekt
             DocumentControl dokument = new DocumentControl();
             Bilder.Add(dokument);
 
+
+            /// Auslesen der Dateien und festlegen eines Controls je nach Datentyp
             try
             {
 

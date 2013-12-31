@@ -5,7 +5,7 @@
                    MinHeight="350" MinWidth="450" Background="Black">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
+            <RowDefinition/>
             <RowDefinition Height="100" />
         </Grid.RowDefinitions>
 
@@ -32,11 +32,12 @@
                 <!-- Stop button. -->
                 <s:SurfaceButton x:Name="Stop" Click="Stop_Click" Margin="5" MinWidth="90" MinHeight="90" Grid.Column="1"/>
 
-                <StackPanel Grid.Column="2">
+                <StackPanel Grid.Column="2" Margin="0,0,-210,0" ClipToBounds="True">
                 <!-- Volume slider. This slider allows a Volume range between 0 and 1. -->
-                <TextBlock Foreground="White" VerticalAlignment="Center" Margin="5"  >Volume</TextBlock>
-                <s:SurfaceSlider Name="volumeSlider" VerticalAlignment="Center" HorizontalAlignment="Right" ValueChanged="ChangeMediaVolume" 
-                 Minimum="0" Maximum="1" Value="0.5" MinHeight="75" Width="10" Orientation="Vertical" />
+                <!-- Volume slider. This slider allows a Volume range between 0 and 1. -->
+                <TextBlock Foreground="White" VerticalAlignment="Center" Margin="5"  ><Run Text="Volume"/></TextBlock>
+                <s:SurfaceSlider x:Name="volumeSlider" VerticalAlignment="Center" HorizontalAlignment="Right" ValueChanged="ChangeMediaVolume" 
+                 Minimum="0" Maximum="1" Value="0.5" MinHeight="75" Width="10" RenderTransformOrigin="0.5,0.5" Height="68.616" Margin="0,0,-3.192,0" />
 
              
 

@@ -29,3 +29,6 @@ C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\ob
 C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Release\ContentControls\VideoControl.g.cs
 C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Release\ContentControls\DocumentControl.baml
 C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Release\ContentControls\DocumentControl.g.cs
+C:\Users\ander_000\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\bin\Release\StudienarbeitsProjekt.exe.config
+C:\Users\ander_000\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Release\StudienarbeitsProjekt.exe
+C:\Users\ander_000\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Release\StudienarbeitsProjekt.pdb
