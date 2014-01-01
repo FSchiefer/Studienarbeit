@@ -36,25 +36,95 @@ namespace StudienarbeitsProjekt
 
 
             string tagVal = GetTagValue();
-            DocumentControl dokument = new DocumentControl();
-            Bilder.Add(dokument);
+
+
 
 
             /// Auslesen der Dateien und festlegen eines Controls je nach Datentyp
             try
             {
+                String[] ordnerPfad = Directory.GetDirectories(@"C:\Studiengaenge\", "*", System.IO.SearchOption.TopDirectoryOnly);
+                Console.WriteLine(ordnerPfad);
 
-                String[] bilderPfad = Directory.GetFiles(@"C:\Studiengaenge\" + tagVal, "*.jpg");
+                String tagChooser;
+                for (int i = 0; i < ordnerPfad.Length; i++)
+                {
+                    Console.WriteLine(i + ordnerPfad[i]);
+                    string start1 = ordnerPfad[i].Substring(17, ordnerPfad[i].IndexOf('-') - 17);
+                    Console.WriteLine("start1 " + start1 + " tagVal " + tagVal);
+                    if (start1 == tagVal)
+                    {
+
+                        tagChooser = ordnerPfad[i].Substring(17);
+                        Console.WriteLine(tagChooser);
+                        getTagContent(tagChooser);
+                    }
+                }
+
+
+                //String[] bilderPfad = Directory.GetFiles(@"C:\Studiengaenge\" + tagVal, "*.jpg");
+
+                //PromotionBilder(bilderPfad);
+
+                //String seitenPfad = "C:\\Studiengaenge\\" + tagVal + "\\Seiten\\";
+                //if(Directory.Exists(seitenPfad)){
+                //    bilderPfad = Directory.GetFiles(seitenPfad, "*.jpg");
+                //    einzelSeitenBilder(bilderPfad);
+                //}
+
+                //String modulPfad = "C:\\Studiengaenge\\" + tagVal + "\\Modulplan\\";
+                //if (Directory.Exists(modulPfad))
+                //{
+                //    bilderPfad = Directory.GetFiles(modulPfad, "*.jpg");
+                //    ModulPlanBilder(bilderPfad);
+                //}
+                //Console.WriteLine("Ich kam durch");
+
+                //String videoPfad = "C:\\Studiengaenge\\" + tagVal + "\\Videos\\";
+                //if (Directory.Exists(videoPfad))
+                //{
+                //    bilderPfad = Directory.GetFiles(videoPfad, "*.wmv");
+                //    Videos(bilderPfad);
+                //}
+
+
+
+
+
+
+            }
+            catch (FileNotFoundException ex)
+            {
+                Console.WriteLine("No Folder" + ex);
+            }
+            catch (DirectoryNotFoundException ex)
+            {
+                Console.WriteLine("No Folder" + ex);
+            }
+
+
+
+
+        }
+
+        private void getTagContent(string fileChooser)
+        {
+            //DocumentControl dokument = new DocumentControl();
+            //Bilder.Add(dokument);
+            try
+            {
+                String[] bilderPfad = Directory.GetFiles(@"C:\Studiengaenge\" + fileChooser, "*.jpg");
 
                 PromotionBilder(bilderPfad);
 
-                String seitenPfad = "C:\\Studiengaenge\\" + tagVal + "\\Seiten\\";
-                if(Directory.Exists(seitenPfad)){
+                String seitenPfad = "C:\\Studiengaenge\\" + fileChooser + "\\Seiten\\";
+                if (Directory.Exists(seitenPfad))
+                {
                     bilderPfad = Directory.GetFiles(seitenPfad, "*.jpg");
                     einzelSeitenBilder(bilderPfad);
                 }
 
-                String modulPfad = "C:\\Studiengaenge\\" + tagVal + "\\Modulplan\\";
+                String modulPfad = "C:\\Studiengaenge\\" + fileChooser + "\\Modulplan\\";
                 if (Directory.Exists(modulPfad))
                 {
                     bilderPfad = Directory.GetFiles(modulPfad, "*.jpg");
@@ -62,18 +132,12 @@ namespace StudienarbeitsProjekt
                 }
                 Console.WriteLine("Ich kam durch");
 
-                String videoPfad = "C:\\Studiengaenge\\" + tagVal + "\\Videos\\";
+                String videoPfad = "C:\\Studiengaenge\\" + fileChooser + "\\Videos\\";
                 if (Directory.Exists(videoPfad))
                 {
                     bilderPfad = Directory.GetFiles(videoPfad, "*.wmv");
                     Videos(bilderPfad);
                 }
-                
-
-                
-
-                
-
             }
             catch (FileNotFoundException ex)
             {
@@ -86,7 +150,6 @@ namespace StudienarbeitsProjekt
 
             ScatterOrientationControl control = new ScatterOrientationControl(this);
             Bilder.Add(control);
-
 
         }
 

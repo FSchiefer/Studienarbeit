@@ -2,13 +2,12 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:s="http://schemas.microsoft.com/surface/2008"
-    xmlns:StudienarbeitsProjekt_contentControls="clr-namespace:StudienarbeitsProjekt.contentControls" xmlns:StudienarbeitsProjekt_ContentControls="clr-namespace:StudienarbeitsProjekt.ContentControls" x:Class="StudienarbeitsProjekt.SurfaceWindow1"
+ xmlns:StudienarbeitsProjekt_ContentControls="clr-namespace:StudienarbeitsProjekt.ContentControls" x:Class="StudienarbeitsProjekt.SurfaceWindow1"
     Title="StudienarbeitsProjekt"
     >
   <Grid x:Name="Host" Background="CadetBlue" >
 
-      
-      
+   
         <s:TagVisualizer x:Name="startVisualizer">
             <s:TagVisualizer.Definitions>
             	<s:TagVisualizationDefinition
@@ -23,9 +22,7 @@
 
             </s:TagVisualizer.Definitions>
 
-        	<StudienarbeitsProjekt_contentControls:SeitenControl>
-        		<StudienarbeitsProjekt_ContentControls:CollectionControl/>
-        	</StudienarbeitsProjekt_contentControls:SeitenControl>
+
 
         </s:TagVisualizer>
 
