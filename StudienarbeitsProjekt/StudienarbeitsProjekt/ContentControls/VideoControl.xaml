@@ -25,19 +25,19 @@
             </Grid.ColumnDefinitions>
 
                 <!-- Play button. -->
-                <s:SurfaceButton x:Name="Play" Click="Play_Click" Margin="5" Width="90" MinHeight="90" Grid.Column="0"/>
+                <s:SurfaceButton x:Name="Play" Click="Play_Click"  Width="90" Height="90" Grid.Column="0"/>
 
       
 
                 <!-- Stop button. -->
-                <s:SurfaceButton x:Name="Stop" Click="Stop_Click" Margin="5" MinWidth="90" MinHeight="90" Grid.Column="1"/>
+                <s:SurfaceButton x:Name="Stop" Click="Stop_Click"  Width="90" Height="90" Grid.Column="1"/>
 
                 <StackPanel Grid.Column="2" Margin="0,0,-210,0" ClipToBounds="True">
-                <!-- Volume slider. This slider allows a Volume range between 0 and 1. -->
+    
                 <!-- Volume slider. This slider allows a Volume range between 0 and 1. -->
                 <TextBlock Foreground="White" VerticalAlignment="Center" Margin="5"  ><Run Text="Volume"/></TextBlock>
-                <s:SurfaceSlider x:Name="volumeSlider" VerticalAlignment="Center" HorizontalAlignment="Right" ValueChanged="ChangeMediaVolume" 
-                 Minimum="0" Maximum="1" Value="0.5" MinHeight="75" Width="10" RenderTransformOrigin="0.5,0.5" Height="68.616" Margin="0,0,-3.192,0" />
+                <s:SurfaceSlider x:Name="volumeSlider" VerticalAlignment="Center" HorizontalAlignment="Left" ValueChanged="ChangeMediaVolume" 
+                 Minimum="0" Maximum="1" Value="0.5" MinHeight="75" MinWidth="250" RenderTransformOrigin="0.5,0.5" Height="68.616" Margin="0,0,-3.192,0" />
 
              
 

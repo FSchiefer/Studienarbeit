@@ -1,6 +1,7 @@
 ﻿<s:ScatterViewItem xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="http://schemas.microsoft.com/surface/2008" xmlns:System_Windows_Documents="clr-namespace:System.Windows.Documents;assembly=PresentationUI" x:Class="StudienarbeitsProjekt.ContentControls.DocumentControl"
                  
- x:Name="test">
+ >
+    
 	<s:ScatterViewItem.Resources>
 		<Style x:Key="DocumentViewerStyle1" BasedOn="{x:Null}" TargetType="{x:Type DocumentViewer}">
 			<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}"/>
@@ -20,7 +21,7 @@
 									<RowDefinition Height="*"/>
 									<RowDefinition Height="Auto"/>
 								</Grid.RowDefinitions>
-								<s:SurfaceScrollViewer x:Name="PART_ContentHost" PanningMode ="both" CanContentScroll="true" Grid.Column="0" Focusable="{TemplateBinding Focusable}" HorizontalScrollBarVisibility="Auto" IsTabStop="true" Grid.Row="1" TabIndex="1"/>
+								<s:SurfaceScrollViewer x:Name="PART_ContentHost" PanningMode ="both" CanContentScroll="true" Grid.Column="0" Focusable="{TemplateBinding Focusable}" HorizontalScrollBarVisibility="Auto" IsTabStop="true" Grid.Row="1" TabIndex="1" />
 								<DockPanel Grid.Row="1">
 									<FrameworkElement DockPanel.Dock="Right" Width="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}"/>
 									<Rectangle Height="10" Visibility="Visible" VerticalAlignment="top">
@@ -43,7 +44,15 @@
 			</Setter>
 		</Style>
 	</s:ScatterViewItem.Resources>
-    
-  
-	<DocumentViewer x:Name="myDocViewer" Margin="15" Height="Auto"  Width="Auto" SizeChanged="docViewer_SizeChanged" Style="{DynamicResource DocumentViewerStyle1}" />
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25" />
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+       
+    <Label x:Name="Title"  Foreground="Black" Grid.Row="0"/>
+	<DocumentViewer x:Name="myDocViewer" MinHeight="200"  Height="Auto"  Width="Auto" SizeChanged="docViewer_SizeChanged" Style="{DynamicResource DocumentViewerStyle1}" Grid.Row="1"/>
+
+    </Grid>
 </s:ScatterViewItem>

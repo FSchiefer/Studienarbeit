@@ -88,9 +88,6 @@
     <Compile Include="ContentControls\ScatterOrientationControl.xaml.cs">
       <DependentUpon>ScatterOrientationControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ContentControls\SeitenControl.xaml.cs">
-      <DependentUpon>SeitenControl.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ContentControls\VideoControl.xaml.cs">
       <DependentUpon>VideoControl.xaml</DependentUpon>
     </Compile>
@@ -106,10 +103,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ContentControls\ScatterOrientationControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ContentControls\SeitenControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

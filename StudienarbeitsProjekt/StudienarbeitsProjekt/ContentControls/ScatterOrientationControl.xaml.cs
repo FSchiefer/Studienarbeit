@@ -29,16 +29,24 @@ namespace StudienarbeitsProjekt.ContentControls
             this.tagContent = tagContent;
         }
 
-        private void TagOrientierung_Checked(object sender, RoutedEventArgs e)
-        {
-
-            tagContent.root.UsesTagOrientation = true;
-
-        }
-
         private void FreieOrientierung_Checked(object sender, RoutedEventArgs e)
         {
             tagContent.root.UsesTagOrientation = false;
+        }
+
+        private void FreieOrientierung_Unchecked(object sender, RoutedEventArgs e)
+        {
+            
+            tagContent.root.UsesTagOrientation = true;
+        }
+
+        private void Positionierung_Unchecked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Positionierung_Checked(object sender, RoutedEventArgs e)
+        {
 
         }
     }

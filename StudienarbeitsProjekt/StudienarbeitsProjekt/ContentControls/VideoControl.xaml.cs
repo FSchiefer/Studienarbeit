@@ -21,17 +21,21 @@ namespace StudienarbeitsProjekt.ContentControls
     public partial class VideoControl : ScatterViewItem
     {
         Boolean plays = false;
-        public VideoControl(MediaElement videoDarstellung)
+        public VideoControl(string videoPosition)
         {
+
             InitializeComponent();
-            myMediaElement.Source = videoDarstellung.Source;
+            myMediaElement.Source = new Uri(videoPosition, UriKind.Absolute);
             Console.WriteLine(myMediaElement.Source);
             Image playImage = new Image();
             playImage.Source = new BitmapImage(new Uri(@"C:\Studiengaenge\Katzenstart.jpg", UriKind.Absolute));
             Play.Content = playImage;
             Image stopImage = new Image();
+            playImage.Stretch = Stretch.Fill;
             stopImage.Source = new BitmapImage(new Uri(@"C:\Studiengaenge\KatzenStop.jpg", UriKind.Absolute));
+         
             Stop.Content = stopImage;
+            stopImage.Stretch = Stretch.Fill;
 
           
         }

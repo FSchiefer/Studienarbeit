@@ -22,22 +22,40 @@ namespace StudienarbeitsProjekt.ContentControls
     /// </summary>
     public partial class DocumentControl : ScatterViewItem
     {
+   
         public DocumentControl()
         {
 
             InitializeComponent();
 
-            XpsDocument xpsDoc = new XpsDocument(@"C:\Studiengaenge\test.xps" ,
-                                       FileAccess.Read);
             
+        }
+
+        public DocumentControl(string dokumentPfad)
+        {
+
+            InitializeComponent();
+            // nur mit "Speichern unter" erzeugte XPS Dokumente können verwendet werden.
+            XpsDocument xpsDoc = new XpsDocument(dokumentPfad,
+                                       FileAccess.Read);
+            titleViewer(dokumentPfad);
             myDocViewer.Document = xpsDoc.GetFixedDocumentSequence();
-            test.Width = myDocViewer.Width;
-            test.Height = myDocViewer.Height;
             xpsDoc.Close();
         }
         private void docViewer_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             myDocViewer.FitToWidth();
         }
+
+        private void titleViewer(string dokumentPfad)
+        {
+            // Ausgabe des Dateinamens des Dokuments
+            int beginFileName = dokumentPfad.LastIndexOf('\\') + 1;
+            string name = dokumentPfad.Substring(beginFileName, dokumentPfad.LastIndexOf('.') - beginFileName );
+            Title.Content = name;
+ 
+         
+        }
+
     }
 }

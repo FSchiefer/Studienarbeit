@@ -9,16 +9,16 @@
 
         <StackPanel
             HorizontalAlignment="Center" VerticalAlignment="Center" >
-            <s:SurfaceRadioButton Foreground="White"  x:Name="TagOrientierung" Checked="TagOrientierung_Checked">
-                <TextBlock TextWrapping="Wrap" FontStretch="Expanded" >
-                Orientierung anhand Tag
-                </TextBlock>
-            </s:SurfaceRadioButton>
-            <s:SurfaceRadioButton Foreground="White" x:Name="FreieOrientierung" Checked="FreieOrientierung_Checked">
+            <s:SurfaceCheckBox Foreground="White"  x:Name="FreieOrientierung" Checked="FreieOrientierung_Checked" Unchecked="FreieOrientierung_Unchecked">
                 <TextBlock TextWrapping="Wrap" FontStretch="Expanded" >
                 Freie Orientierung
                 </TextBlock>
-            </s:SurfaceRadioButton>
+            </s:SurfaceCheckBox>
+            <s:SurfaceCheckBox Foreground="White" x:Name="Positionierung" Checked="Positionierung_Checked" Unchecked="Positionierung_Unchecked">
+                <TextBlock TextWrapping="Wrap" FontStretch="Expanded" >
+                Positionierung an Rand
+                </TextBlock>
+            </s:SurfaceCheckBox>
         </StackPanel>
     </Grid>
 </s:ScatterViewItem>

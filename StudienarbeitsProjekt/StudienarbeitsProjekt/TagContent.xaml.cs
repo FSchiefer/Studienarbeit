@@ -62,29 +62,29 @@ namespace StudienarbeitsProjekt
                 }
 
 
-                //String[] bilderPfad = Directory.GetFiles(@"C:\Studiengaenge\" + tagVal, "*.jpg");
+                //String[] dataPath = Directory.GetFiles(@"C:\Studiengaenge\" + tagVal, "*.jpg");
 
-                //PromotionBilder(bilderPfad);
+                //PromotionBilder(dataPath);
 
-                //String seitenPfad = "C:\\Studiengaenge\\" + tagVal + "\\Seiten\\";
-                //if(Directory.Exists(seitenPfad)){
-                //    bilderPfad = Directory.GetFiles(seitenPfad, "*.jpg");
-                //    einzelSeitenBilder(bilderPfad);
+                //String dokumentPfad = "C:\\Studiengaenge\\" + tagVal + "\\Seiten\\";
+                //if(Directory.Exists(dokumentPfad)){
+                //    dataPath = Directory.GetFiles(dokumentPfad, "*.jpg");
+                //    dokumente(dataPath);
                 //}
 
                 //String modulPfad = "C:\\Studiengaenge\\" + tagVal + "\\Modulplan\\";
                 //if (Directory.Exists(modulPfad))
                 //{
-                //    bilderPfad = Directory.GetFiles(modulPfad, "*.jpg");
-                //    ModulPlanBilder(bilderPfad);
+                //    dataPath = Directory.GetFiles(modulPfad, "*.jpg");
+                //    ModulPlanBilder(dataPath);
                 //}
                 //Console.WriteLine("Ich kam durch");
 
                 //String videoPfad = "C:\\Studiengaenge\\" + tagVal + "\\Videos\\";
                 //if (Directory.Exists(videoPfad))
                 //{
-                //    bilderPfad = Directory.GetFiles(videoPfad, "*.wmv");
-                //    Videos(bilderPfad);
+                //    dataPath = Directory.GetFiles(videoPfad, "*.wmv");
+                //    Videos(dataPath);
                 //}
 
 
@@ -109,34 +109,33 @@ namespace StudienarbeitsProjekt
 
         private void getTagContent(string fileChooser)
         {
-            //DocumentControl dokument = new DocumentControl();
-            //Bilder.Add(dokument);
+            
             try
             {
-                String[] bilderPfad = Directory.GetFiles(@"C:\Studiengaenge\" + fileChooser, "*.jpg");
+                String[] dataPath = Directory.GetFiles(@"C:\Studiengaenge\" + fileChooser, "*.jpg");
 
-                PromotionBilder(bilderPfad);
+                PromotionBilder(dataPath);
 
-                String seitenPfad = "C:\\Studiengaenge\\" + fileChooser + "\\Seiten\\";
-                if (Directory.Exists(seitenPfad))
+                String dokumentPfad = "C:\\Studiengaenge\\" + fileChooser + "\\Dokumente\\";
+                if (Directory.Exists(dokumentPfad))
                 {
-                    bilderPfad = Directory.GetFiles(seitenPfad, "*.jpg");
-                    einzelSeitenBilder(bilderPfad);
+                    dataPath = Directory.GetFiles(dokumentPfad, "*.xps");
+                    dokumente(dataPath);
                 }
 
                 String modulPfad = "C:\\Studiengaenge\\" + fileChooser + "\\Modulplan\\";
                 if (Directory.Exists(modulPfad))
                 {
-                    bilderPfad = Directory.GetFiles(modulPfad, "*.jpg");
-                    ModulPlanBilder(bilderPfad);
+                    dataPath = Directory.GetFiles(modulPfad, "*.jpg");
+                    ModulPlanBilder(dataPath);
                 }
                 Console.WriteLine("Ich kam durch");
 
                 String videoPfad = "C:\\Studiengaenge\\" + fileChooser + "\\Videos\\";
                 if (Directory.Exists(videoPfad))
                 {
-                    bilderPfad = Directory.GetFiles(videoPfad, "*.wmv");
-                    Videos(bilderPfad);
+                    dataPath = Directory.GetFiles(videoPfad, "*.wmv");
+                    Videos(dataPath);
                 }
             }
             catch (FileNotFoundException ex)
@@ -153,15 +152,13 @@ namespace StudienarbeitsProjekt
 
         }
 
-        private void Videos(string[] bilderPfad)
+        private void Videos(string[] datenPfad)
         {
-            Console.WriteLine(bilderPfad[0]);
-            for (int i = 0; i < bilderPfad.Length; i++)
+            Console.WriteLine(datenPfad[0]);
+            for (int i = 0; i < datenPfad.Length; i++)
             {
-                String test = bilderPfad[i];
-                MediaElement videoDarstellung = new MediaElement();
-                videoDarstellung.Source = new Uri(test, UriKind.Absolute);
-                VideoControl videoScatter = new VideoControl(videoDarstellung);
+                String test = datenPfad[i];
+                VideoControl videoScatter = new VideoControl(test);
                 Bilder.Add(videoScatter);
             }
         }
@@ -171,23 +168,23 @@ namespace StudienarbeitsProjekt
             throw new NotImplementedException();
         }
 
-        private void einzelSeitenBilder(string[] bilderPfad)
+        private void dokumente(string[] datenPfad)
         {
-            for (int i = 0; i < bilderPfad.Length; i++)
+            for (int i = 0; i < datenPfad.Length; i++)
             {
-                String test = bilderPfad[i];
-                Image promotionBild = new Image() { Source = new BitmapImage(new Uri(test, UriKind.Absolute)) };
-                ScatterViewItem promoScatter = new ScatterViewItem();
-                promoScatter.Content = promotionBild;
-                Bilder.Add(promoScatter);
+                //DocumentControl dokument = new DocumentControl();
+                //Bilder.Add(dokument);
+                String test = datenPfad[i];
+                DocumentControl dokument = new DocumentControl(test);
+                Bilder.Add(dokument);
             }
         }
 
-        private void PromotionBilder(string[] bilderPfad)
+        private void PromotionBilder(string[] datenPfad)
         {
-            for (int i = 0; i < bilderPfad.Length; i++)
+            for (int i = 0; i < datenPfad.Length; i++)
             {
-                String test = bilderPfad[i];
+                String test = datenPfad[i];
                 Image promotionBild = new Image() { Source = new BitmapImage(new Uri(test, UriKind.Absolute)) };
                 ScatterViewItem promoScatter = new ScatterViewItem();
                 promoScatter.Content = promotionBild;
