@@ -37,7 +37,7 @@ namespace StudienarbeitsProjekt.ContentControls
         public CollectionControl(string dataPath)
         {
             InitializeComponent();
-            categoryChooser(dataPath);
+            //categoryChooser(dataPath);
         }
 
         private void categoryChooser(string dataPath)
