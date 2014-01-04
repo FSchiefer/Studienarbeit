@@ -1,12 +1,6 @@
 ﻿<s:ScatterViewItem xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="http://schemas.microsoft.com/surface/2008" xmlns:System_Windows_Documents="clr-namespace:System.Windows.Documents;assembly=PresentationUI" x:Class="StudienarbeitsProjekt.ContentControls.CollectionControl"                
  >
     <TreeView x:Name="Contentbaum" >
-        <TreeViewItem x:Name="child">
-            <TreeViewItem x:Name="contentChild">
-                
-            </TreeViewItem>
-            
-        </TreeViewItem>
-        
+       
     </TreeView>
 </s:ScatterViewItem>

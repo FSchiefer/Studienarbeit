@@ -17,12 +17,17 @@ using System.IO;
 
 namespace StudienarbeitsProjekt.ContentControls
 {
+    
     /// <summary>
     /// Interaktionslogik für CollectionControl.xaml
     /// </summary>
+    ///
     public partial class CollectionControl : ScatterViewItem
     {
-       
+        private TreeViewItem child;
+        private TreeViewItem contentChild;
+
+
 
         public CollectionControl()
         {
@@ -53,6 +58,7 @@ namespace StudienarbeitsProjekt.ContentControls
 
         private void fillChild(string name,string dataPath)
         {
+            child = new TreeViewItem();
             child.Header = name;
             Contentbaum.Items.Add(child);
             try
@@ -62,6 +68,7 @@ namespace StudienarbeitsProjekt.ContentControls
                    String[] picturePath = Directory.GetFiles(dataPath, "*.jpg");
                    foreach (string path in picturePath)
                    {
+                       contentChild = new TreeViewItem();
                        contentChild.Header = titleViewer(path);
                        child.Items.Add(contentChild);
                    }
@@ -70,6 +77,7 @@ namespace StudienarbeitsProjekt.ContentControls
                    String[] documentPath = Directory.GetFiles(dataPath, "*.xps");
                    foreach (string path in documentPath)
                    {
+                       contentChild = new TreeViewItem();
                        contentChild.Header = titleViewer(path);
                        child.Items.Add(contentChild);
                    }
@@ -77,6 +85,7 @@ namespace StudienarbeitsProjekt.ContentControls
                    String[] videoPath = Directory.GetFiles(dataPath, "*.wmv");
                     foreach (string path in videoPath)
                     {
+                        contentChild = new TreeViewItem();
                         contentChild.Header = titleViewer(path);
                         child.Items.Add(contentChild);
                     }

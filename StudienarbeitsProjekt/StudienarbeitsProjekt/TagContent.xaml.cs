@@ -16,7 +16,7 @@ namespace StudienarbeitsProjekt
     /// </summary>
     public partial class TagContent : TagVisualization
     {
-        private static const String rootDir = @"C:\Studiengaenge\";
+        private static String rootDir = @"C:\Studiengaenge\";
 
         private ObservableCollection<object> bilder = new ObservableCollection<object>();
         public ObservableCollection<object> Bilder { get { return bilder; } }

@@ -94,7 +94,6 @@
     <Compile Include="TagContent.xaml.cs">
       <DependentUpon>TagContent.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Tools\FileChooser.cs" />
     <Page Include="ContentControls\CollectionControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
