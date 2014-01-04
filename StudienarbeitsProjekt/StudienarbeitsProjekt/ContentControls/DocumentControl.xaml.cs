@@ -47,6 +47,7 @@ namespace StudienarbeitsProjekt.ContentControls
             myDocViewer.FitToWidth();
         }
 
+        // Funktion um den Namen des Dokuments auszulesen
         private void titleViewer(string dokumentPfad)
         {
             // Ausgabe des Dateinamens des Dokuments
