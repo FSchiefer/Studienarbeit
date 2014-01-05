@@ -85,6 +85,7 @@
     <Compile Include="ContentControls\DocumentControl.xaml.cs">
       <DependentUpon>DocumentControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ContentControls\OnMouseDown.cs" />
     <Compile Include="ContentControls\ScatterOrientationControl.xaml.cs">
       <DependentUpon>ScatterOrientationControl.xaml</DependentUpon>
     </Compile>

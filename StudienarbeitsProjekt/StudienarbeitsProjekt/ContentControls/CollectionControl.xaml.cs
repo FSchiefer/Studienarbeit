@@ -17,15 +17,17 @@ using System.IO;
 
 namespace StudienarbeitsProjekt.ContentControls
 {
-    
+
     /// <summary>
     /// Interaktionslogik für CollectionControl.xaml
     /// </summary>
     ///
     public partial class CollectionControl : ScatterViewItem
     {
-        private TreeViewItem child;
-        private TreeViewItem contentChild;
+        private SurfaceListBoxItem child;
+        private TagContent tagContent;
+        private List<String> fileList = new List<String>();
+        private Dictionary<SurfaceButton, ScatterViewItem> scatterList = new Dictionary<SurfaceButton, ScatterViewItem>();
 
 
 
@@ -34,90 +36,119 @@ namespace StudienarbeitsProjekt.ContentControls
             InitializeComponent();
         }
 
-        public CollectionControl(string dataPath)
+        public CollectionControl(String dataPath,String name ,TagContent tagContent)
         {
             InitializeComponent();
-            //categoryChooser(dataPath);
-        }
-
-        private void categoryChooser(string dataPath)
-        {
-            String[] folderPfad = Directory.GetDirectories(dataPath, "*", System.IO.SearchOption.TopDirectoryOnly);
-            for (int i = 0; i < folderPfad.Length; i++)
-            {
-               
-                String name = getFolderName(folderPfad[i]);
-                fillChild(name, folderPfad[i]);
-               
-                
-
-                
-            }
+            this.tagContent = tagContent;
+            String title = name +": "+ getFolderName(dataPath);
+            Title.Content = title;
+            fileTable(dataPath);
         }
 
 
-        private void fillChild(string name,string dataPath)
+
+        private void fileTable(string dataPath)
         {
-            child = new TreeViewItem();
-            child.Header = name;
-            Contentbaum.Items.Add(child);
-            try
+            String[] filePath = Directory.GetFiles(dataPath);
+            foreach (String path in filePath)
             {
-                if (Directory.Exists(dataPath))
+                String type = fileType(path);
+                if (type == "jpg" || type == "xps" || type == "wmv")
                 {
-                   String[] picturePath = Directory.GetFiles(dataPath, "*.jpg");
-                   foreach (string path in picturePath)
-                   {
-                       contentChild = new TreeViewItem();
-                       contentChild.Header = titleViewer(path);
-                       child.Items.Add(contentChild);
-                   }
+                    String name = titleViewer(path);
+                    SurfaceButton contentViewer = new SurfaceButton();
+                    contentViewer.Content = name;
+                    contentViewer.Name = name;
 
-               
-                   String[] documentPath = Directory.GetFiles(dataPath, "*.xps");
-                   foreach (string path in documentPath)
-                   {
-                       contentChild = new TreeViewItem();
-                       contentChild.Header = titleViewer(path);
-                       child.Items.Add(contentChild);
-                   }
+                    fileList.Add(path);
+                    contentViewer.Click += new RoutedEventHandler(Child_Click);
 
-                   String[] videoPath = Directory.GetFiles(dataPath, "*.wmv");
-                    foreach (string path in videoPath)
-                    {
-                        contentChild = new TreeViewItem();
-                        contentChild.Header = titleViewer(path);
-                        child.Items.Add(contentChild);
-                    }
+                    child = new SurfaceListBoxItem();
+                    child.Content = contentViewer;
+                    contentViewer.Width = child.Width;
+                    contentViewer.Height = child.Height;
+
+
+                    contentNames.Items.Add(child);
                 }
 
+
+
             }
-            catch (FileNotFoundException ex)
+        }
+
+
+        private void Child_Click(object sender, RoutedEventArgs e)
+        {
+            var button = sender as SurfaceButton;
+            String buttonName = button.Name;
+
+            if (button.Background == Brushes.Red)
             {
-                Console.WriteLine("No Folder" + ex);
+                button.Background = Brushes.Gray;
+                ScatterViewItem item = scatterList[button];
+                scatterList.Remove(button);
+                tagContent.Elements.Remove(item);
             }
-            catch (DirectoryNotFoundException ex)
+            else
             {
-                Console.WriteLine("No Folder" + ex);
+                button.Background = Brushes.Red;
+
+                foreach (String file in fileList)
+                {
+
+                    if (file.Contains(buttonName))
+                    {
+                        Console.WriteLine(buttonName);
+                        String type = fileType(file);
+
+                        if (type == "jpg")
+                        {
+                            scatterList.Add(button, tagContent.createPromotionImage(file));
+                        }
+                        else if (type == "xps")
+                        {
+                            scatterList.Add(button, tagContent.createDocument(file));
+                        
+                           
+                        }
+                        else if (type == "wmv")
+                        {
+                         
+                            scatterList.Add(button, tagContent.createVideo(file));
+                        }
+                    }
+                }
             }
 
         }
 
-        private string getFolderName(string dokumentPfad)
+
+
+        private String getFolderName(String dokumentPfad)
         {
             // Ausgabe des Ordnernamens des Dokuments
             int beginDirectoryName = dokumentPfad.LastIndexOf('\\') + 1;
-            string name = dokumentPfad.Substring(beginDirectoryName, dokumentPfad.Length - beginDirectoryName);
+            String name = dokumentPfad.Substring(beginDirectoryName, dokumentPfad.Length - beginDirectoryName);
 
             return name;
 
 
         }
-        private string titleViewer(string dokumentPfad)
+        private String titleViewer(String dokumentPfad)
         {
             // Ausgabe des Dateinamens des Dokuments
             int beginFileName = dokumentPfad.LastIndexOf('\\') + 1;
-            string name = dokumentPfad.Substring(beginFileName, dokumentPfad.LastIndexOf('.') - beginFileName);
+            String name = dokumentPfad.Substring(beginFileName, dokumentPfad.LastIndexOf('.') - beginFileName);
+            return name;
+
+        }
+
+        private String fileType(String dokumentPfad)
+        {
+            // Ausgabe des Dateityps einer Datei
+
+            String name = dokumentPfad.Substring(dokumentPfad.LastIndexOf('.') + 1, dokumentPfad.Length - dokumentPfad.LastIndexOf('.') - 1);
             return name;
 
         }
