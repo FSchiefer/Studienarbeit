@@ -28,11 +28,11 @@ namespace StudienarbeitsProjekt.ContentControls
             myMediaElement.Source = new Uri(videoPosition, UriKind.Absolute);
             Console.WriteLine(myMediaElement.Source);
             Image playImage = new Image();
-            playImage.Source = new BitmapImage(new Uri(@"C:\Studiengaenge\Katzenstart.jpg", UriKind.Absolute));
+            playImage.Source = new BitmapImage(new Uri(@"C:\Studiengaenge\Play.jpg", UriKind.Absolute));
             Play.Content = playImage;
             Image stopImage = new Image();
             playImage.Stretch = Stretch.Fill;
-            stopImage.Source = new BitmapImage(new Uri(@"C:\Studiengaenge\KatzenStop.jpg", UriKind.Absolute));
+            stopImage.Source = new BitmapImage(new Uri(@"C:\Studiengaenge\Stop.jpg", UriKind.Absolute));
          
             Stop.Content = stopImage;
             stopImage.Stretch = Stretch.Fill;
@@ -85,7 +85,7 @@ namespace StudienarbeitsProjekt.ContentControls
 
                 plays = true;
                 Image pauseImage = new Image();
-                pauseImage.Source = new BitmapImage(new Uri(@"C:\Studiengaenge\KatzenPause.jpg", UriKind.Absolute));
+                pauseImage.Source = new BitmapImage(new Uri(@"C:\Studiengaenge\Pause.jpg", UriKind.Absolute));
                 Play.Content = pauseImage;
             }
             else
@@ -93,7 +93,7 @@ namespace StudienarbeitsProjekt.ContentControls
                 plays = false;
                 myMediaElement.Pause();
                 Image playImage = new Image();
-                playImage.Source = new BitmapImage(new Uri(@"C:\Studiengaenge\Katzenstart.jpg", UriKind.Absolute));
+                playImage.Source = new BitmapImage(new Uri(@"C:\Studiengaenge\Play.jpg", UriKind.Absolute));
                 Play.Content = playImage;
             }
 
@@ -105,7 +105,7 @@ namespace StudienarbeitsProjekt.ContentControls
         {
             plays = false;
             Image playImage = new Image();
-            playImage.Source = new BitmapImage(new Uri(@"C:\Studiengaenge\Katzenstart.jpg", UriKind.Absolute));
+            playImage.Source = new BitmapImage(new Uri(@"C:\Studiengaenge\Play.jpg", UriKind.Absolute));
             Play.Content = playImage;
             // The Stop method stops and resets the media to be played from
             // the beginning.

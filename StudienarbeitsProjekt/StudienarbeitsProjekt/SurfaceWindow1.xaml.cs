@@ -50,7 +50,9 @@ namespace StudienarbeitsProjekt
 
             // Add handlers for window availability events
             AddWindowAvailabilityHandlers();
-
+          
+           
+             
             startVisualizer.VisualizationInitialized += 
                 new TagVisualizerEventHandler (StartVisualizer_VisualizationInitialized);
         }
@@ -61,6 +63,8 @@ namespace StudienarbeitsProjekt
             TagContent content = e.TagVisualization as TagContent;
             if (content != null)
             {
+                
+                
                 content.ShowTagContent();
             }
         }

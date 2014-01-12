@@ -51,7 +51,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
        
-    <Label x:Name="Title"  Foreground="Black" Grid.Row="0"/>
+    <Label x:Name="Title" Grid.Row="0"/>
 	<DocumentViewer x:Name="myDocViewer" MinHeight="200"  Height="Auto"  Width="Auto" SizeChanged="docViewer_SizeChanged" Style="{DynamicResource DocumentViewerStyle1}" Grid.Row="1"/>
 
     </Grid>

@@ -25,12 +25,14 @@ namespace StudienarbeitsProjekt
         public TagContent()
         {
             InitializeComponent();
+            
             mainView.Width = System.Windows.SystemParameters.PrimaryScreenWidth;
             mainView.Height = System.Windows.SystemParameters.PrimaryScreenHeight;
         }
 
         public void ShowTagContent()
         {
+           
             string tagVal = GetTagValue();
 
             /// Auslesen der Dateien und festlegen eines Controls je nach Datentyp
@@ -106,7 +108,7 @@ namespace StudienarbeitsProjekt
 
         private void videos(String[] pathNames)
         {
-            Console.WriteLine(pathNames[0]);
+      
 
             foreach (String pfad in pathNames)
             {

@@ -5,8 +5,9 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Label x:Name="Title"  Foreground="Black" Grid.Row="0"/>
+        <Label x:Name="Title" Grid.Row="0"/>
         <s:SurfaceListBox x:Name="contentNames" Grid.Row="1">
         
     </s:SurfaceListBox>
 </Grid>
+</s:ScatterViewItem>

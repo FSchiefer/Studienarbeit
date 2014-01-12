@@ -3,9 +3,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:s="http://schemas.microsoft.com/surface/2008"
  xmlns:StudienarbeitsProjekt_ContentControls="clr-namespace:StudienarbeitsProjekt.ContentControls" x:Class="StudienarbeitsProjekt.SurfaceWindow1"
-    Title="StudienarbeitsProjekt"
+    Title="StudienarbeitsProjekt" 
     >
-  <Grid x:Name="Host" Background="CadetBlue" >
+  <Grid x:Name="Host" Background="Black" >
 
    
         <s:TagVisualizer x:Name="startVisualizer">
@@ -16,13 +16,14 @@
                 
             	<s:TagVisualizationDefinition
             		x:Name="tagBehaviour"
-            		LostTagTimeout="2000"
+            		LostTagTimeout="4000"
             		TagRemovedBehavior="Fade"
-            		Series="0x17E235BFBCF17A07"/>
+            		Series="0x17E235BFBCF17A07"
+                    />
 
             </s:TagVisualizer.Definitions>
 
-
+    
 
         </s:TagVisualizer>
 
