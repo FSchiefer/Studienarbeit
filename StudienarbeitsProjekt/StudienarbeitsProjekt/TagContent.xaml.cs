@@ -16,6 +16,7 @@ namespace StudienarbeitsProjekt
     {
         private static String rootDir = @"C:\Studiengaenge\";
 
+     
         private ObservableCollection<object> elements = new ObservableCollection<object>();
         public ObservableCollection<object> Elements { get { return elements; } }
 
@@ -25,13 +26,17 @@ namespace StudienarbeitsProjekt
         public TagContent()
         {
             InitializeComponent();
-            
+    
             mainView.Width = System.Windows.SystemParameters.PrimaryScreenWidth;
             mainView.Height = System.Windows.SystemParameters.PrimaryScreenHeight;
         }
 
-        public void ShowTagContent()
+      
+
+
+        public void ShowTagContent(ScatterView host)
         {
+       
            
             string tagVal = GetTagValue();
 
@@ -53,10 +58,11 @@ namespace StudienarbeitsProjekt
                     {
                         // TagChooser ist die Benennung des gewählten ordners.
                         tagChooser = ordnerPfad[i].Substring(counter);
-                        Console.WriteLine(tagChooser);
+                       
                         getTagContent(tagChooser);
                     }
                 }
+                  mainView = host;
             }
             catch (FileNotFoundException ex)
             {
@@ -178,6 +184,7 @@ namespace StudienarbeitsProjekt
             if (this.VisualizedTag.Value > 0)
             {
                 tagVal = this.VisualizedTag.Value.ToString("X", CultureInfo.InvariantCulture);
+                  
             }
             else if (this.VisualizedTag.Series > 0)
             {

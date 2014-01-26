@@ -15,6 +15,8 @@ using Microsoft.Surface;
 using Microsoft.Surface.Presentation;
 using Microsoft.Surface.Presentation.Controls;
 using Microsoft.Surface.Presentation.Input;
+using System.Windows.Media.Animation;
+using System.Collections.ObjectModel;
 
 namespace StudienarbeitsProjekt
 {
@@ -23,23 +25,10 @@ namespace StudienarbeitsProjekt
     /// </summary>
     public partial class SurfaceWindow1 : SurfaceWindow
     {
-      
 
-        void SurfaceWindow1_TouchDown(object sender, TouchEventArgs e)
-        {
-           
-            TouchDevice c = e.TouchDevice;
-
-            string type = "blob";
-
-            if (c.GetIsTagRecognized() == true)
-            {
-                type = c.GetTagData().Value.ToString();
-               
-                        
-
-            }
-        }
+        private int TouchesOnMainScatter = 0;
+        private ObservableCollection<object> elements = new ObservableCollection<object>();
+        public ObservableCollection<object> Elements { get { return elements; } }
         /// <summary>
         /// Default constructor.
         /// </summary>
@@ -61,11 +50,17 @@ namespace StudienarbeitsProjekt
         void StartVisualizer_VisualizationInitialized(object sender, TagVisualizerEventArgs e)
         {
             TagContent content = e.TagVisualization as TagContent;
+         
             if (content != null)
             {
-                
-                
-                content.ShowTagContent();
+
+                content.ShowTagContent(MainScatt);
+               
+                //for (int i = 0; i < content.Elements.Count; i++)
+                //{
+                //    Elements.Add(content.Elements[i]);
+                //}
+                // Console.WriteLine(Elements.Count);
             }
         }
 
@@ -135,5 +130,56 @@ namespace StudienarbeitsProjekt
             //TODO: disable audio, animations here
         }
 
+        private void MainScatter_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+
+            double s = Math.Sqrt(Math.Pow(MainScatter.ActualWidth, 2) / 2);
+            MainContentGrid.Width = s;
+            MainContentGrid.Height = s;
+        }
+
+        private void MainScatter_ContainerManipulationCompleted(object sender, ContainerManipulationCompletedEventArgs e)
+        {
+            Point moveTo = new Point(Host.ActualWidth / 2, Host.ActualHeight / 2);
+            ScatterPositionAnimation(MainScatter, moveTo, TimeSpan.FromSeconds(0.5));
+        }
+
+
+        private void MainScatter_TouchDown(object sender, TouchEventArgs e)
+        {
+            e.TouchDevice.Deactivated += new EventHandler(TouchDevice_Deactivated);
+            if (++TouchesOnMainScatter >= 2)
+            {
+                MainScatter.CanMove = true;
+            }
+        }
+
+        void TouchDevice_Deactivated(object sender, EventArgs e)
+        {
+            if (--TouchesOnMainScatter < 2)
+            {
+                MainScatter.CanMove = false;
+            }
+        }
+
+        private void ScatterPositionAnimation(ScatterViewItem svi, Point moveTo, TimeSpan timeSpan)
+        {
+            PointAnimation positionAnimation = new PointAnimation(svi.ActualCenter, moveTo, TimeSpan.FromSeconds(0.5));
+            positionAnimation.AccelerationRatio = 0.5;
+            positionAnimation.DecelerationRatio = 0.5;
+            positionAnimation.FillBehavior = FillBehavior.Stop;
+            positionAnimation.Completed += delegate(object sender, EventArgs e)
+            {
+                svi.Center = moveTo;
+            };
+            svi.BeginAnimation(ScatterViewItem.CenterProperty, positionAnimation);
+        }
+
+     
+
+      
+
+
+        public RoutedEventHandler OnLostTag { get; set; }
     }
 }

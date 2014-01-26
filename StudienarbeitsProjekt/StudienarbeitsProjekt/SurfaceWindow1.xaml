@@ -4,31 +4,100 @@
     xmlns:s="http://schemas.microsoft.com/surface/2008"
  xmlns:StudienarbeitsProjekt_ContentControls="clr-namespace:StudienarbeitsProjekt.ContentControls" x:Class="StudienarbeitsProjekt.SurfaceWindow1"
     Title="StudienarbeitsProjekt" 
+    x:Name="root"
     >
-  <Grid x:Name="Host" Background="Black" >
+    <Grid x:Name="Host" Background="Black" >
 
-   
-        <s:TagVisualizer x:Name="startVisualizer">
+
+
+
+
+        <s:TagVisualizer x:Name="startVisualizer"  >
+
             <s:TagVisualizer.Definitions>
-            	<s:TagVisualizationDefinition
+                <s:TagVisualizationDefinition
             		x:Name="tagRegistration"
-            		Source="TagContent.xaml"/>
-                
-            	<s:TagVisualizationDefinition
+            		Source="TagContent.xaml"
+                        />
+
+                <s:TagVisualizationDefinition
             		x:Name="tagBehaviour"
             		LostTagTimeout="4000"
+                   
             		TagRemovedBehavior="Fade"
             		Series="0x17E235BFBCF17A07"
                     />
 
             </s:TagVisualizer.Definitions>
 
-    
+            <s:ScatterView x:Name="MainScatt">
+                <s:ScatterViewItem Name="MainScatter"
+                               IsTopmostOnActivation="False"
+                           PreviewTouchDown="MainScatter_TouchDown"
+                           TouchDown="MainScatter_TouchDown"
+                           SizeChanged="MainScatter_SizeChanged"
+                           ContainerManipulationCompleted="MainScatter_ContainerManipulationCompleted"
+                           Width="500" Height="500"
+                           MinWidth="250" MinHeight="250"
+                          
+                           CanMove="False" Background="Transparent"
+                           >
+
+                    <s:ScatterViewItem.Resources>
+                        <Style TargetType="{x:Type s:ScatterViewItem}">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type s:ScatterViewItem}">
+                                        <ContentPresenter />
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </s:ScatterViewItem.Resources>
+
+
+                    <Grid>
+
+
+
+                        <Ellipse Opacity="0.9">
+
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="C:\Studiengaenge\DHBW.jpg" Stretch="fill" Opacity="1"/>
+                                <!--<LinearGradientBrush>
+                            <LinearGradientBrush.GradientStops>
+                                <GradientStop Color="DarkBlue" Offset="0"></GradientStop>
+                                <GradientStop Color="Black" Offset="1"></GradientStop>
+                            </LinearGradientBrush.GradientStops>
+                        </LinearGradientBrush>-->
+
+
+                            </Ellipse.Fill>
+                        </Ellipse>
+                        <!--<Viewbox Stretch="Uniform" Name="MainContentViewBox">-->
+                        <Grid Name="MainContentGrid" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <!--</Viewbox>-->
+                    </Grid>
+
+                </s:ScatterViewItem>
+
+
+
+            </s:ScatterView>
 
         </s:TagVisualizer>
 
 
+
+
+
+
+
+
+
+
+
     </Grid>
-    
- 
+
+
 </s:SurfaceWindow>
