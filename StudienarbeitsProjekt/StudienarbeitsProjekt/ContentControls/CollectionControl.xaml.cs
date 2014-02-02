@@ -88,7 +88,7 @@ namespace StudienarbeitsProjekt.ContentControls
                 button.Background = Brushes.Gray;
                 ScatterViewItem item = scatterList[button];
                 scatterList.Remove(button);
-                tagContent.Elements.Remove(item);
+                tagContent.Remove(item);
             }
             else
             {

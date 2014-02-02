@@ -23,14 +23,14 @@
                 <s:TagVisualizationDefinition
             		x:Name="tagBehaviour"
             		LostTagTimeout="4000"
-                   
+                     
             		TagRemovedBehavior="Fade"
             		Series="0x17E235BFBCF17A07"
                     />
 
             </s:TagVisualizer.Definitions>
 
-            <s:ScatterView x:Name="MainScatt">
+            <s:ScatterView x:Name="MainScatt" ItemsSource="{Binding Elements, ElementName=startVisualizer}">
                 <s:ScatterViewItem Name="MainScatter"
                                IsTopmostOnActivation="False"
                            PreviewTouchDown="MainScatter_TouchDown"
@@ -39,7 +39,7 @@
                            ContainerManipulationCompleted="MainScatter_ContainerManipulationCompleted"
                            Width="500" Height="500"
                            MinWidth="250" MinHeight="250"
-                          
+                            BorderBrush="Black"
                            CanMove="False" Background="Transparent"
                            >
 
@@ -64,13 +64,7 @@
 
                             <Ellipse.Fill>
                                 <ImageBrush ImageSource="C:\Studiengaenge\DHBW.jpg" Stretch="fill" Opacity="1"/>
-                                <!--<LinearGradientBrush>
-                            <LinearGradientBrush.GradientStops>
-                                <GradientStop Color="DarkBlue" Offset="0"></GradientStop>
-                                <GradientStop Color="Black" Offset="1"></GradientStop>
-                            </LinearGradientBrush.GradientStops>
-                        </LinearGradientBrush>-->
-
+                       
 
                             </Ellipse.Fill>
                         </Ellipse>
@@ -80,6 +74,17 @@
                     </Grid>
 
                 </s:ScatterViewItem>
+
+                <s:ScatterView.ItemContainerStyle >
+                    <Style TargetType="{x:Type s:ScatterViewItem}">
+                        <Setter Property="BorderBrush" Value="Red" />
+                        <Setter Property="BorderThickness" Value="3"/>
+                        <Setter Property="Background" Value="Black"/>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="Padding" Value="10"/>
+                       
+                    </Style>
+                </s:ScatterView.ItemContainerStyle>
 
 
 

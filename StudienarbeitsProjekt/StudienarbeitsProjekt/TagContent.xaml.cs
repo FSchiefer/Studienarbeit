@@ -16,9 +16,11 @@ namespace StudienarbeitsProjekt
     {
         private static String rootDir = @"C:\Studiengaenge\";
 
-     
+
         private ObservableCollection<object> elements = new ObservableCollection<object>();
         public ObservableCollection<object> Elements { get { return elements; } }
+        private ScatterView mainScatt;
+
 
         /// <summary>
         /// Default constructor.
@@ -27,17 +29,18 @@ namespace StudienarbeitsProjekt
         {
             InitializeComponent();
     
-            mainView.Width = System.Windows.SystemParameters.PrimaryScreenWidth;
-            mainView.Height = System.Windows.SystemParameters.PrimaryScreenHeight;
+           
         }
 
-      
 
 
-        public void ShowTagContent(ScatterView host)
+
+        public ObservableCollection<object> ShowTagContent(ScatterView mainScatt)
         {
-       
-           
+
+            this.mainScatt = mainScatt;
+
+        
             string tagVal = GetTagValue();
 
             /// Auslesen der Dateien und festlegen eines Controls je nach Datentyp
@@ -62,7 +65,8 @@ namespace StudienarbeitsProjekt
                         getTagContent(tagChooser);
                     }
                 }
-                  mainView = host;
+
+                  
             }
             catch (FileNotFoundException ex)
             {
@@ -72,6 +76,7 @@ namespace StudienarbeitsProjekt
             {
                 Console.WriteLine("No Folder" + ex);
             }
+            return Elements;
         }
 
         private void getTagContent(String fileChooser)
@@ -108,8 +113,8 @@ namespace StudienarbeitsProjekt
                 Console.WriteLine("No Folder" + ex);
             }
 
-            ScatterOrientationControl control = new ScatterOrientationControl(this);
-            Elements.Add(control);
+            
+        
         }
 
         private void videos(String[] pathNames)
@@ -124,10 +129,10 @@ namespace StudienarbeitsProjekt
 
         public ScatterViewItem createVideo(String pfad)
         {
-            ScatterViewItem item = new VideoControl(pfad);
-            Elements.Add(item);
-            return item;
+            return addElement(new VideoControl(pfad));
         }
+
+        
 
         private void collections(string[] collectionPfad)
         {
@@ -138,7 +143,8 @@ namespace StudienarbeitsProjekt
                 {
                     string[] dataPath = Directory.GetDirectories(pfad, "*", System.IO.SearchOption.TopDirectoryOnly);
                     foreach (String path in dataPath)
-                        Elements.Add(new CollectionControl(path, name, this));
+                        addElement(new CollectionControl(path, name, this));
+                 
                 }
 
             }
@@ -154,9 +160,7 @@ namespace StudienarbeitsProjekt
 
         public ScatterViewItem createDocument(String pfad)
         {
-            ScatterViewItem item = new DocumentControl(pfad);
-            Elements.Add(item);
-            return item;
+            return addElement(new DocumentControl(pfad));
         }
 
         private void PromotionBilder(string[] datenPfad)
@@ -172,8 +176,15 @@ namespace StudienarbeitsProjekt
             Image promotionBild = new Image() { Source = new BitmapImage(new Uri(pfad, UriKind.Absolute)) };
             ScatterViewItem promoScatter = new ScatterViewItem();
             promoScatter.Content = promotionBild;
-            Elements.Add(promoScatter);
-            return promoScatter;
+           
+            return addElement(promoScatter);
+        }
+
+        private ScatterViewItem addElement(ScatterViewItem item)
+        {
+            Elements.Add(item);
+            mainScatt.Items.Add(item);
+            return item;
         }
 
 
@@ -200,8 +211,13 @@ namespace StudienarbeitsProjekt
             String name = dokumentPfad.Substring(beginDirectoryName, dokumentPfad.Length - beginDirectoryName);
 
             return name;
-
-
         }
+
+        public void Remove(ScatterViewItem item)
+        {
+            mainScatt.Items.Remove(item);
+        }
+
+        
     }
 }

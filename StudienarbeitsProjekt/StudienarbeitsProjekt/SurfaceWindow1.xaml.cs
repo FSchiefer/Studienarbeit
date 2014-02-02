@@ -28,7 +28,9 @@ namespace StudienarbeitsProjekt
 
         private int TouchesOnMainScatter = 0;
         private ObservableCollection<object> elements = new ObservableCollection<object>();
+       
         public ObservableCollection<object> Elements { get { return elements; } }
+
         /// <summary>
         /// Default constructor.
         /// </summary>
@@ -36,31 +38,47 @@ namespace StudienarbeitsProjekt
         {
             InitializeComponent();
 
+    
 
             // Add handlers for window availability events
             AddWindowAvailabilityHandlers();
           
            
-             
+            startVisualizer.VisualizationRemoved += new TagVisualizerEventHandler(startVisualizer_VisualizationRemoved);
             startVisualizer.VisualizationInitialized += 
                 new TagVisualizerEventHandler (StartVisualizer_VisualizationInitialized);
         }
 
+        void startVisualizer_VisualizationRemoved (object sender, TagVisualizerEventArgs e)
+        { TagContent content = e.TagVisualization as TagContent;
+        for (int i = 0; i < content.Elements.Count; i++)
+        {
+            MainScatt.Items.Remove(content.Elements[i]);
+        }
+        }
 
         void StartVisualizer_VisualizationInitialized(object sender, TagVisualizerEventArgs e)
         {
             TagContent content = e.TagVisualization as TagContent;
-         
+
+
+
             if (content != null)
             {
 
-                content.ShowTagContent(MainScatt);
-               
-                //for (int i = 0; i < content.Elements.Count; i++)
-                //{
-                //    Elements.Add(content.Elements[i]);
-                //}
-                // Console.WriteLine(Elements.Count);
+                ObservableCollection<object> tagElements = content.ShowTagContent(MainScatt);
+
+                Console.WriteLine("Hier wird die Elementsanzahl ausgelesen:" +Elements.Count);
+
+                for (int i = 0; i < tagElements.Count; i++)
+                {
+                                
+                    //Elements.Add(content.Elements[i]);
+              
+                    
+                }
+             
+                Console.WriteLine(Elements.Count);
             }
         }
 
@@ -175,11 +193,12 @@ namespace StudienarbeitsProjekt
             svi.BeginAnimation(ScatterViewItem.CenterProperty, positionAnimation);
         }
 
-     
-
-      
 
 
-        public RoutedEventHandler OnLostTag { get; set; }
+
+
+
+
+       
     }
 }
