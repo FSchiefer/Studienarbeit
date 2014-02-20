@@ -47,7 +47,7 @@ namespace StudienarbeitsProjekt.ContentControls {
     public partial class ScatterOrientationControl : Microsoft.Surface.Presentation.Controls.ScatterViewItem, System.Windows.Markup.IComponentConnector {
         
         
-        #line 12 "..\..\..\ContentControls\ScatterOrientationControl.xaml"
+        #line 13 "..\..\..\ContentControls\ScatterOrientationControl.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal Microsoft.Surface.Presentation.Controls.SurfaceCheckBox FreieOrientierung;
         
@@ -55,7 +55,7 @@ namespace StudienarbeitsProjekt.ContentControls {
         #line hidden
         
         
-        #line 17 "..\..\..\ContentControls\ScatterOrientationControl.xaml"
+        #line 18 "..\..\..\ContentControls\ScatterOrientationControl.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal Microsoft.Surface.Presentation.Controls.SurfaceCheckBox Positionierung;
         
@@ -93,13 +93,13 @@ namespace StudienarbeitsProjekt.ContentControls {
             case 1:
             this.FreieOrientierung = ((Microsoft.Surface.Presentation.Controls.SurfaceCheckBox)(target));
             
-            #line 12 "..\..\..\ContentControls\ScatterOrientationControl.xaml"
+            #line 13 "..\..\..\ContentControls\ScatterOrientationControl.xaml"
             this.FreieOrientierung.Checked += new System.Windows.RoutedEventHandler(this.FreieOrientierung_Checked);
             
             #line default
             #line hidden
             
-            #line 12 "..\..\..\ContentControls\ScatterOrientationControl.xaml"
+            #line 13 "..\..\..\ContentControls\ScatterOrientationControl.xaml"
             this.FreieOrientierung.Unchecked += new System.Windows.RoutedEventHandler(this.FreieOrientierung_Unchecked);
             
             #line default
@@ -108,13 +108,13 @@ namespace StudienarbeitsProjekt.ContentControls {
             case 2:
             this.Positionierung = ((Microsoft.Surface.Presentation.Controls.SurfaceCheckBox)(target));
             
-            #line 17 "..\..\..\ContentControls\ScatterOrientationControl.xaml"
+            #line 18 "..\..\..\ContentControls\ScatterOrientationControl.xaml"
             this.Positionierung.Checked += new System.Windows.RoutedEventHandler(this.Positionierung_Checked);
             
             #line default
             #line hidden
             
-            #line 17 "..\..\..\ContentControls\ScatterOrientationControl.xaml"
+            #line 18 "..\..\..\ContentControls\ScatterOrientationControl.xaml"
             this.Positionierung.Unchecked += new System.Windows.RoutedEventHandler(this.Positionierung_Unchecked);
             
             #line default

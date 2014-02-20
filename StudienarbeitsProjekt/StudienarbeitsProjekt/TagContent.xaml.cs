@@ -19,7 +19,7 @@ namespace StudienarbeitsProjekt
 
         private ObservableCollection<object> elements = new ObservableCollection<object>();
         public ObservableCollection<object> Elements { get { return elements; } }
-        private ScatterView mainScatt;
+        public ScatterView mainScatt;
 
 
         /// <summary>
@@ -28,10 +28,10 @@ namespace StudienarbeitsProjekt
         public TagContent()
         {
             InitializeComponent();
-    
+            
+          
            
         }
-
 
 
 
@@ -133,21 +133,28 @@ namespace StudienarbeitsProjekt
         }
 
         
-
+        // Funktion zum auslesen von Ordnern für die Ordnerdarstellung
         private void collections(string[] collectionPfad)
         {
             foreach (String pfad in collectionPfad)
             {
+                // Titel des Hauptordners auslesen
                 String name = getFolderName(pfad);
                 if (Directory.Exists(pfad))
                 {
                     string[] dataPath = Directory.GetDirectories(pfad, "*", System.IO.SearchOption.TopDirectoryOnly);
                     foreach (String path in dataPath)
-                        addElement(new CollectionControl(path, name, this));
+                        createCollection(path, name);
                  
                 }
 
             }
+        }
+
+        // Funktion für den Aufruf von neuen Collections
+        public ScatterViewItem createCollection(String path, String name) {
+            Console.WriteLine("Hier wird die Collection: " + name + " geboren");
+            return addElement(new CollectionControl(path, name, this));
         }
 
         private void dokumente(string[] datenPfad)
@@ -175,6 +182,7 @@ namespace StudienarbeitsProjekt
         {
             Image promotionBild = new Image() { Source = new BitmapImage(new Uri(pfad, UriKind.Absolute)) };
             ScatterViewItem promoScatter = new ScatterViewItem();
+            promoScatter.Padding = new System.Windows.Thickness(0);
             promoScatter.Content = promotionBild;
            
             return addElement(promoScatter);
@@ -192,6 +200,7 @@ namespace StudienarbeitsProjekt
         private string GetTagValue()
         {
             string tagVal = string.Empty;
+            
             if (this.VisualizedTag.Value > 0)
             {
                 tagVal = this.VisualizedTag.Value.ToString("X", CultureInfo.InvariantCulture);

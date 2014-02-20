@@ -21,6 +21,7 @@
                         />
 
                 <s:TagVisualizationDefinition
+                    
             		x:Name="tagBehaviour"
             		LostTagTimeout="4000"
                      
@@ -39,7 +40,8 @@
                            ContainerManipulationCompleted="MainScatter_ContainerManipulationCompleted"
                            Width="500" Height="500"
                            MinWidth="250" MinHeight="250"
-                            BorderBrush="Black"
+                           BorderBrush="Black"
+                           Padding="0"
                            CanMove="False" Background="Transparent"
                            >
 
