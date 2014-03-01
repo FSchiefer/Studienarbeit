@@ -82,6 +82,9 @@
     <Compile Include="ContentControls\CollectionControl.xaml.cs">
       <DependentUpon>CollectionControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ContentControls\DescriptionControl.xaml.cs">
+      <DependentUpon>DescriptionControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ContentControls\DocumentControl.xaml.cs">
       <DependentUpon>DocumentControl.xaml</DependentUpon>
     </Compile>
@@ -97,6 +100,10 @@
     <Page Include="ContentControls\CollectionControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ContentControls\DescriptionControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ContentControls\DocumentControl.xaml">
       <SubType>Designer</SubType>

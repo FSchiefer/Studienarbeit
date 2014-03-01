@@ -18,66 +18,129 @@ using Microsoft.Surface.Presentation.Input;
 using System.Windows.Media.Animation;
 using System.Collections.ObjectModel;
 
-namespace StudienarbeitsProjekt
-{
+namespace StudienarbeitsProjekt {
     /// <summary>
     /// Interaction logic for SurfaceWindow1.xaml
     /// </summary>
-    public partial class SurfaceWindow1 : SurfaceWindow
-    {
+    public partial class SurfaceWindow1 : SurfaceWindow {
 
         private int TouchesOnMainScatter = 0;
         private ObservableCollection<object> elements = new ObservableCollection<object>();
-       
+
         public ObservableCollection<object> Elements { get { return elements; } }
 
         /// <summary>
         /// Default constructor.
         /// </summary>
-        public SurfaceWindow1()
-        {
+        public SurfaceWindow1() {
             InitializeComponent();
 
-    
+
 
             // Add handlers for window availability events
             AddWindowAvailabilityHandlers();
-          
-           
+
+
             startVisualizer.VisualizationRemoved += new TagVisualizerEventHandler(startVisualizer_VisualizationRemoved);
-            startVisualizer.VisualizationInitialized += 
-                new TagVisualizerEventHandler (StartVisualizer_VisualizationInitialized);
+            startVisualizer.VisualizationInitialized +=
+                new TagVisualizerEventHandler(StartVisualizer_VisualizationInitialized);
         }
 
-        void startVisualizer_VisualizationRemoved (object sender, TagVisualizerEventArgs e)
-        { TagContent content = e.TagVisualization as TagContent;
-        for (int i = 0; i < content.Elements.Count; i++)
-        {
-            MainScatt.Items.Remove(content.Elements[i]);
-        }
+
+        void startVisualizer_VisualizationRemoved(object sender, TagVisualizerEventArgs e) {
+            TagContent content = e.TagVisualization as TagContent;
+
+            foreach (ScatterViewItem svi in content.Elements) {
+                if (svi.Name == "MainScatter") {
+                    continue;
+                }
+                Console.WriteLine(svi.Name);
+
+                MoveAndOrientateScatter(svi, MainScatter.ActualCenter, 0);
+            }
+
+           
+          
+
         }
 
-        void StartVisualizer_VisualizationInitialized(object sender, TagVisualizerEventArgs e)
-        {
+        private void MoveAndOrientateScatter(ScatterViewItem svi, Point moveTo, double orientation) {
+            ScatterPositionAnimation(svi, moveTo, TimeSpan.FromSeconds(0.5));
+            ScatterOrientationAnimation(svi, orientation, TimeSpan.FromSeconds(0.5));
+        }
+
+        private void ScatterPositionAnimation(ScatterViewItem svi, Point moveTo, TimeSpan timeSpan) {
+            PointAnimation positionAnimation = new PointAnimation(svi.ActualCenter, moveTo, TimeSpan.FromSeconds(0.5));
+            positionAnimation.AccelerationRatio = 0.5;
+            positionAnimation.DecelerationRatio = 0.5;
+            positionAnimation.FillBehavior = FillBehavior.Stop;
+            positionAnimation.Completed += delegate(object sender, EventArgs e) {
+                svi.Center = moveTo;
+            };
+            positionAnimation.Completed += new EventHandler((sender, e) => scatterAnimationCompleted(sender, e, svi));
+            svi.BeginAnimation(ScatterViewItem.CenterProperty, positionAnimation);
+        }
+
+        private void scatterAnimationCompleted(object sender, EventArgs e, ScatterViewItem svi) {
+
+            if (svi.Name != "MainScatter") {
+                removeScatterViewItem(svi);
+            }
+
+            
+        }
+
+        public void removeScatterViewItem(ScatterViewItem svi) {
+
+            DoubleAnimation fadeOut = new DoubleAnimation(1, 0, TimeSpan.FromSeconds(1));
+            fadeOut.FillBehavior = FillBehavior.Stop;
+            fadeOut.AccelerationRatio = 0.5;
+            fadeOut.DecelerationRatio = 0.5;
+            fadeOut.Completed += delegate(object sender, EventArgs e) {
+                svi.Opacity = 1;
+                MainScatt.Items.Remove(svi);
+            };
+            svi.BeginAnimation(ScatterViewItem.OpacityProperty, fadeOut);
+        }
+
+        private void ScatterOrientationAnimation(ScatterViewItem svi, double orientation, TimeSpan timeSpan) {
+
+            orientation = ((360 + orientation) % 360);
+            if ((orientation - ((360 + svi.ActualOrientation) % 360)) < -180) {
+                orientation += 360;
+            } else if ((orientation - ((360 + svi.ActualOrientation) % 360)) > 180) {
+                orientation -= 360;
+            }
+
+
+            DoubleAnimation orientationAnimation = new DoubleAnimation(svi.ActualOrientation, orientation, TimeSpan.FromSeconds(0.5));
+            orientationAnimation.AccelerationRatio = 0.5;
+            orientationAnimation.DecelerationRatio = 0.5;
+            orientationAnimation.FillBehavior = FillBehavior.Stop;
+            orientationAnimation.Completed += delegate(object sender, EventArgs e) {
+                svi.Orientation = orientation;
+            };
+            svi.BeginAnimation(ScatterViewItem.OrientationProperty, orientationAnimation);
+        }
+
+        void StartVisualizer_VisualizationInitialized(object sender, TagVisualizerEventArgs e) {
             TagContent content = e.TagVisualization as TagContent;
 
 
 
-            if (content != null)
-            {
+            if (content != null) {
 
-                ObservableCollection<object> tagElements = content.ShowTagContent(MainScatt);
+                ObservableCollection<object> tagElements = content.ShowTagContent(this);
 
-                Console.WriteLine("Hier wird die Elementsanzahl ausgelesen:" +Elements.Count);
+                Console.WriteLine("Hier wird die Elementsanzahl ausgelesen:" + Elements.Count);
 
-                for (int i = 0; i < tagElements.Count; i++)
-                {
-                                
+                for (int i = 0; i < tagElements.Count; i++) {
+
                     //Elements.Add(content.Elements[i]);
-              
-                    
+
+
                 }
-             
+
                 Console.WriteLine(Elements.Count);
             }
         }
@@ -86,8 +149,7 @@ namespace StudienarbeitsProjekt
         /// Occurs when the window is about to close. 
         /// </summary>
         /// <param name="e"></param>
-        protected override void OnClosed(EventArgs e)
-        {
+        protected override void OnClosed(EventArgs e) {
             base.OnClosed(e);
 
             // Remove handlers for window availability events
@@ -97,8 +159,7 @@ namespace StudienarbeitsProjekt
         /// <summary>
         /// Adds handlers for window availability events.
         /// </summary>
-        private void AddWindowAvailabilityHandlers()
-        {
+        private void AddWindowAvailabilityHandlers() {
             // Subscribe to surface window availability events
             ApplicationServices.WindowInteractive += OnWindowInteractive;
             ApplicationServices.WindowNoninteractive += OnWindowNoninteractive;
@@ -108,8 +169,7 @@ namespace StudienarbeitsProjekt
         /// <summary>
         /// Removes handlers for window availability events.
         /// </summary>
-        private void RemoveWindowAvailabilityHandlers()
-        {
+        private void RemoveWindowAvailabilityHandlers() {
             // Unsubscribe from surface window availability events
             ApplicationServices.WindowInteractive -= OnWindowInteractive;
             ApplicationServices.WindowNoninteractive -= OnWindowNoninteractive;
@@ -121,8 +181,7 @@ namespace StudienarbeitsProjekt
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void OnWindowInteractive(object sender, EventArgs e)
-        {
+        private void OnWindowInteractive(object sender, EventArgs e) {
             //TODO: enable audio, animations here
         }
 
@@ -131,8 +190,7 @@ namespace StudienarbeitsProjekt
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void OnWindowNoninteractive(object sender, EventArgs e)
-        {
+        private void OnWindowNoninteractive(object sender, EventArgs e) {
             //TODO: Disable audio here if it is enabled
 
             //TODO: optionally enable animations here
@@ -143,55 +201,37 @@ namespace StudienarbeitsProjekt
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void OnWindowUnavailable(object sender, EventArgs e)
-        {
+        private void OnWindowUnavailable(object sender, EventArgs e) {
             //TODO: disable audio, animations here
         }
 
-        private void MainScatter_SizeChanged(object sender, SizeChangedEventArgs e)
-        {
+        private void MainScatter_SizeChanged(object sender, SizeChangedEventArgs e) {
 
             double s = Math.Sqrt(Math.Pow(MainScatter.ActualWidth, 2) / 2);
             MainContentGrid.Width = s;
             MainContentGrid.Height = s;
         }
 
-        private void MainScatter_ContainerManipulationCompleted(object sender, ContainerManipulationCompletedEventArgs e)
-        {
+        private void MainScatter_ContainerManipulationCompleted(object sender, ContainerManipulationCompletedEventArgs e) {
             Point moveTo = new Point(Host.ActualWidth / 2, Host.ActualHeight / 2);
             ScatterPositionAnimation(MainScatter, moveTo, TimeSpan.FromSeconds(0.5));
         }
 
 
-        private void MainScatter_TouchDown(object sender, TouchEventArgs e)
-        {
+        private void MainScatter_TouchDown(object sender, TouchEventArgs e) {
             e.TouchDevice.Deactivated += new EventHandler(TouchDevice_Deactivated);
-            if (++TouchesOnMainScatter >= 2)
-            {
+            if (++TouchesOnMainScatter >= 2) {
                 MainScatter.CanMove = true;
             }
         }
 
-        void TouchDevice_Deactivated(object sender, EventArgs e)
-        {
-            if (--TouchesOnMainScatter < 2)
-            {
+        void TouchDevice_Deactivated(object sender, EventArgs e) {
+            if (--TouchesOnMainScatter < 2) {
                 MainScatter.CanMove = false;
             }
         }
 
-        private void ScatterPositionAnimation(ScatterViewItem svi, Point moveTo, TimeSpan timeSpan)
-        {
-            PointAnimation positionAnimation = new PointAnimation(svi.ActualCenter, moveTo, TimeSpan.FromSeconds(0.5));
-            positionAnimation.AccelerationRatio = 0.5;
-            positionAnimation.DecelerationRatio = 0.5;
-            positionAnimation.FillBehavior = FillBehavior.Stop;
-            positionAnimation.Completed += delegate(object sender, EventArgs e)
-            {
-                svi.Center = moveTo;
-            };
-            svi.BeginAnimation(ScatterViewItem.CenterProperty, positionAnimation);
-        }
+  
 
 
 
@@ -199,6 +239,6 @@ namespace StudienarbeitsProjekt
 
 
 
-       
+
     }
 }

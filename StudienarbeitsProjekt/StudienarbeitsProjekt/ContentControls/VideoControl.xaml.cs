@@ -30,12 +30,15 @@ namespace StudienarbeitsProjekt.ContentControls
             Image playImage = new Image();
             playImage.Source = new BitmapImage(new Uri(@"C:\Studiengaenge\Play.jpg", UriKind.Absolute));
             Play.Content = playImage;
-            Image stopImage = new Image();
             playImage.Stretch = Stretch.Fill;
+            playImage.Width= 90;
+            playImage.Height= 90;
+            Image stopImage = new Image();
             stopImage.Source = new BitmapImage(new Uri(@"C:\Studiengaenge\Stop.jpg", UriKind.Absolute));
          
             Stop.Content = stopImage;
             stopImage.Stretch = Stretch.Fill;
+        
 
           
         }

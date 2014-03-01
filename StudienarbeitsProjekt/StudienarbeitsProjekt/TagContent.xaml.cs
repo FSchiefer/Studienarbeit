@@ -16,10 +16,12 @@ namespace StudienarbeitsProjekt
     {
         private static String rootDir = @"C:\Studiengaenge\";
 
+        private ScatterOrientationControl orientationControl = new ScatterOrientationControl();
 
         private ObservableCollection<object> elements = new ObservableCollection<object>();
         public ObservableCollection<object> Elements { get { return elements; } }
         public ScatterView mainScatt;
+        private SurfaceWindow1 surWindow;
 
 
         /// <summary>
@@ -33,13 +35,13 @@ namespace StudienarbeitsProjekt
            
         }
 
+        
 
-
-        public ObservableCollection<object> ShowTagContent(ScatterView mainScatt)
+        public ObservableCollection<object> ShowTagContent(SurfaceWindow1 surWindow)
         {
-
-            this.mainScatt = mainScatt;
-
+            this.surWindow = surWindow;
+            this.mainScatt = surWindow.MainScatt;
+ 
         
             string tagVal = GetTagValue();
 
@@ -63,10 +65,11 @@ namespace StudienarbeitsProjekt
                         tagChooser = ordnerPfad[i].Substring(counter);
                        
                         getTagContent(tagChooser);
+                        addElement(orientationControl);
+                        orientationControl.setMainscatt(mainScatt);    
                     }
                 }
 
-                  
             }
             catch (FileNotFoundException ex)
             {
@@ -224,7 +227,8 @@ namespace StudienarbeitsProjekt
 
         public void Remove(ScatterViewItem item)
         {
-            mainScatt.Items.Remove(item);
+            surWindow.removeScatterViewItem(item);
+            orientationControl.setMainscatt(mainScatt);
         }
 
         

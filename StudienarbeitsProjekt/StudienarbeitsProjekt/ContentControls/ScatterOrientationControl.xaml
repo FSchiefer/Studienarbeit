@@ -1,7 +1,7 @@
 ﻿<s:ScatterViewItem x:Class="StudienarbeitsProjekt.ContentControls.ScatterOrientationControl"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:s="http://schemas.microsoft.com/surface/2008" Padding="0">
+    xmlns:s="http://schemas.microsoft.com/surface/2008" Padding="0" >
 
     <Grid Background="BlueViolet"  >
 
@@ -19,6 +19,11 @@
                 Positionierung an Rand
                 </TextBlock>
             </s:SurfaceCheckBox>
+            <s:SurfaceButton Foreground="White" x:Name="Orientierung" Click="Orientierung_Click">
+                <TextBlock TextWrapping="Wrap" FontStretch="Expanded" >
+                Positionierung an Rand
+                </TextBlock>
+            </s:SurfaceButton>
         </StackPanel>
     </Grid>
 </s:ScatterViewItem>

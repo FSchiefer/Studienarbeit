@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using Microsoft.Surface.Presentation.Controls;
 using System.Windows.Xps.Packaging;
 using System.IO;
+using System.Windows.Media.Animation;
 
 namespace StudienarbeitsProjekt.ContentControls {
 
@@ -112,21 +113,19 @@ namespace StudienarbeitsProjekt.ContentControls {
         }
         // Funktion zum Löschen von allen Elementen welche durch eine CollectionControl aufgerufen wurden.
         private void cleanAll() {
-            Console.WriteLine("Bin ich hier drin?");
             foreach (SurfaceListBoxItem sLBI in contentNames.SelectedItems) {
                 viewSources.Remove(sLBI.Content.ToString());
-                Console.WriteLine("Bin ich hier drin?");
                 if (folderList.Contains(sLBI.Content.ToString())) {
-                    Console.WriteLine("Warum");
                     CollectionControl item = (CollectionControl)collectionList[sLBI];
                     item.cleanAll();
                     ScatterViewItem sItem = collectionList[sLBI];
                     collectionList.Remove(sLBI);
-                    tagContent.Remove(sItem);
+                    MoveAndOrientateScatter(item, this.ActualCenter, 0);
                 } else {
                     ScatterViewItem item = scatterList[sLBI];
                     scatterList.Remove(sLBI);
-                    tagContent.Remove(item);
+                    MoveAndOrientateScatter(item, this.ActualCenter, 0);
+            
                 }
             }
 
@@ -164,16 +163,66 @@ namespace StudienarbeitsProjekt.ContentControls {
                         viewSources.Remove(sLBI.Content.ToString());
                         ScatterViewItem item = scatterList[sLBI];
                         scatterList.Remove(sLBI);
-                        tagContent.Remove(item);
+                        MoveAndOrientateScatter(item, this.ActualCenter, 0);
                     } else if (collectionList.ContainsKey(sLBI)) {
                         CollectionControl item = (CollectionControl)collectionList[sLBI];
                         item.cleanAll();
                         ScatterViewItem sItem = collectionList[sLBI];
                         collectionList.Remove(sLBI);
-                        tagContent.Remove(sItem);
+                        MoveAndOrientateScatter(item, this.ActualCenter, 0);
                     }
                 }
             }
         }
+
+        private void MoveAndOrientateScatter(ScatterViewItem svi, Point moveTo, double orientation) {
+            ScatterPositionAnimation(svi, moveTo, TimeSpan.FromSeconds(0.5));
+            ScatterOrientationAnimation(svi, orientation, TimeSpan.FromSeconds(0.5));
+        }
+
+        private void ScatterPositionAnimation(ScatterViewItem svi, Point moveTo, TimeSpan timeSpan) {
+            PointAnimation positionAnimation = new PointAnimation(svi.ActualCenter, moveTo, TimeSpan.FromSeconds(0.5));
+            positionAnimation.AccelerationRatio = 0.5;
+            positionAnimation.DecelerationRatio = 0.5;
+            positionAnimation.FillBehavior = FillBehavior.Stop;
+            positionAnimation.Completed += delegate(object sender, EventArgs e) {
+                svi.Center = moveTo;
+            };
+            positionAnimation.Completed += new EventHandler((sender, e) => scatterAnimationCompleted(sender, e, svi));
+            svi.BeginAnimation(ScatterViewItem.CenterProperty, positionAnimation);
+        }
+
+        private void scatterAnimationCompleted(object sender, EventArgs e, ScatterViewItem svi) {
+
+            if (svi.Name != "MainScatter") {
+                tagContent.Remove(svi);
+            }
+
+
+        }
+
+        
+        private void ScatterOrientationAnimation(ScatterViewItem svi, double orientation, TimeSpan timeSpan) {
+
+            orientation = ((360 + orientation) % 360);
+            if ((orientation - ((360 + svi.ActualOrientation) % 360)) < -180) {
+                orientation += 360;
+            } else if ((orientation - ((360 + svi.ActualOrientation) % 360)) > 180) {
+                orientation -= 360;
+            }
+
+
+            DoubleAnimation orientationAnimation = new DoubleAnimation(svi.ActualOrientation, orientation, TimeSpan.FromSeconds(0.5));
+            orientationAnimation.AccelerationRatio = 0.5;
+            orientationAnimation.DecelerationRatio = 0.5;
+            orientationAnimation.FillBehavior = FillBehavior.Stop;
+            orientationAnimation.Completed += delegate(object sender, EventArgs e) {
+                svi.Orientation = orientation;
+            };
+            svi.BeginAnimation(ScatterViewItem.OrientationProperty, orientationAnimation);
+        }
+    
     }
+
+
 }
