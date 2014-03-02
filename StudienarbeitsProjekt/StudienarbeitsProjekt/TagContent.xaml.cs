@@ -21,6 +21,7 @@ namespace StudienarbeitsProjekt
         private ObservableCollection<object> elements = new ObservableCollection<object>();
         public ObservableCollection<object> Elements { get { return elements; } }
         public ScatterView mainScatt;
+        private ScatterMovement move;
         private SurfaceWindow1 surWindow;
 
 
@@ -41,7 +42,7 @@ namespace StudienarbeitsProjekt
         {
             this.surWindow = surWindow;
             this.mainScatt = surWindow.MainScatt;
- 
+            move = new ScatterMovement(this.mainScatt);
         
             string tagVal = GetTagValue();
 
@@ -66,7 +67,7 @@ namespace StudienarbeitsProjekt
                        
                         getTagContent(tagChooser);
                         addElement(orientationControl);
-                        orientationControl.setMainscatt(mainScatt);    
+                        orientationControl.setMainscatt(mainScatt, this);    
                     }
                 }
 
@@ -227,8 +228,8 @@ namespace StudienarbeitsProjekt
 
         public void Remove(ScatterViewItem item)
         {
-            surWindow.removeScatterViewItem(item);
-            orientationControl.setMainscatt(mainScatt);
+            move.removeScatterViewItem(item);
+         
         }
 
         

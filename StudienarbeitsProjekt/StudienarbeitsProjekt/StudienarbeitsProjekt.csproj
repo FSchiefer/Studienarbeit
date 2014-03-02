@@ -94,6 +94,7 @@
     <Compile Include="ContentControls\VideoControl.xaml.cs">
       <DependentUpon>VideoControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ScatterMovement.cs" />
     <Compile Include="TagContent.xaml.cs">
       <DependentUpon>TagContent.xaml</DependentUpon>
     </Compile>

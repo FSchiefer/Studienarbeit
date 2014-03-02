@@ -26,6 +26,7 @@ namespace StudienarbeitsProjekt {
 
         private int TouchesOnMainScatter = 0;
         private ObservableCollection<object> elements = new ObservableCollection<object>();
+        private ScatterMovement move;
 
         public ObservableCollection<object> Elements { get { return elements; } }
 
@@ -35,7 +36,7 @@ namespace StudienarbeitsProjekt {
         public SurfaceWindow1() {
             InitializeComponent();
 
-
+            move = new ScatterMovement(MainScatt);
 
             // Add handlers for window availability events
             AddWindowAvailabilityHandlers();
@@ -55,8 +56,8 @@ namespace StudienarbeitsProjekt {
                     continue;
                 }
                 Console.WriteLine(svi.Name);
-
-                MoveAndOrientateScatter(svi, MainScatter.ActualCenter, 0);
+ 
+                move.MoveAndOrientateScatterToClose(svi, MainScatter.ActualCenter, MainScatter.ActualOrientation);
             }
 
            
@@ -64,64 +65,7 @@ namespace StudienarbeitsProjekt {
 
         }
 
-        private void MoveAndOrientateScatter(ScatterViewItem svi, Point moveTo, double orientation) {
-            ScatterPositionAnimation(svi, moveTo, TimeSpan.FromSeconds(0.5));
-            ScatterOrientationAnimation(svi, orientation, TimeSpan.FromSeconds(0.5));
-        }
-
-        private void ScatterPositionAnimation(ScatterViewItem svi, Point moveTo, TimeSpan timeSpan) {
-            PointAnimation positionAnimation = new PointAnimation(svi.ActualCenter, moveTo, TimeSpan.FromSeconds(0.5));
-            positionAnimation.AccelerationRatio = 0.5;
-            positionAnimation.DecelerationRatio = 0.5;
-            positionAnimation.FillBehavior = FillBehavior.Stop;
-            positionAnimation.Completed += delegate(object sender, EventArgs e) {
-                svi.Center = moveTo;
-            };
-            positionAnimation.Completed += new EventHandler((sender, e) => scatterAnimationCompleted(sender, e, svi));
-            svi.BeginAnimation(ScatterViewItem.CenterProperty, positionAnimation);
-        }
-
-        private void scatterAnimationCompleted(object sender, EventArgs e, ScatterViewItem svi) {
-
-            if (svi.Name != "MainScatter") {
-                removeScatterViewItem(svi);
-            }
-
-            
-        }
-
-        public void removeScatterViewItem(ScatterViewItem svi) {
-
-            DoubleAnimation fadeOut = new DoubleAnimation(1, 0, TimeSpan.FromSeconds(1));
-            fadeOut.FillBehavior = FillBehavior.Stop;
-            fadeOut.AccelerationRatio = 0.5;
-            fadeOut.DecelerationRatio = 0.5;
-            fadeOut.Completed += delegate(object sender, EventArgs e) {
-                svi.Opacity = 1;
-                MainScatt.Items.Remove(svi);
-            };
-            svi.BeginAnimation(ScatterViewItem.OpacityProperty, fadeOut);
-        }
-
-        private void ScatterOrientationAnimation(ScatterViewItem svi, double orientation, TimeSpan timeSpan) {
-
-            orientation = ((360 + orientation) % 360);
-            if ((orientation - ((360 + svi.ActualOrientation) % 360)) < -180) {
-                orientation += 360;
-            } else if ((orientation - ((360 + svi.ActualOrientation) % 360)) > 180) {
-                orientation -= 360;
-            }
-
-
-            DoubleAnimation orientationAnimation = new DoubleAnimation(svi.ActualOrientation, orientation, TimeSpan.FromSeconds(0.5));
-            orientationAnimation.AccelerationRatio = 0.5;
-            orientationAnimation.DecelerationRatio = 0.5;
-            orientationAnimation.FillBehavior = FillBehavior.Stop;
-            orientationAnimation.Completed += delegate(object sender, EventArgs e) {
-                svi.Orientation = orientation;
-            };
-            svi.BeginAnimation(ScatterViewItem.OrientationProperty, orientationAnimation);
-        }
+ 
 
         void StartVisualizer_VisualizationInitialized(object sender, TagVisualizerEventArgs e) {
             TagContent content = e.TagVisualization as TagContent;
@@ -132,17 +76,7 @@ namespace StudienarbeitsProjekt {
 
                 ObservableCollection<object> tagElements = content.ShowTagContent(this);
 
-                Console.WriteLine("Hier wird die Elementsanzahl ausgelesen:" + Elements.Count);
-
-                for (int i = 0; i < tagElements.Count; i++) {
-
-                    //Elements.Add(content.Elements[i]);
-
-
-                }
-
-                Console.WriteLine(Elements.Count);
-            }
+             }
         }
 
         /// <summary>
@@ -214,7 +148,7 @@ namespace StudienarbeitsProjekt {
 
         private void MainScatter_ContainerManipulationCompleted(object sender, ContainerManipulationCompletedEventArgs e) {
             Point moveTo = new Point(Host.ActualWidth / 2, Host.ActualHeight / 2);
-            ScatterPositionAnimation(MainScatter, moveTo, TimeSpan.FromSeconds(0.5));
+            move.ScatterPositionAnimation(MainScatter, moveTo, TimeSpan.FromSeconds(0.5));
         }
 
 
