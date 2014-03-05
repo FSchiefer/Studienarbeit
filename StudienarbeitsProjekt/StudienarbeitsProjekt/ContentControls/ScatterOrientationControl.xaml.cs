@@ -14,70 +14,95 @@ using System.Windows.Shapes;
 using Microsoft.Surface.Presentation.Controls;
 using System.Windows.Media.Animation;
 
-namespace StudienarbeitsProjekt.ContentControls
-{
+namespace StudienarbeitsProjekt.ContentControls {
     /// <summary>
     /// Interaktionslogik für ScatterOrientationControl.xaml
     /// </summary>
-    public partial class ScatterOrientationControl : ScatterViewItem
-    {
-    
+    public partial class ScatterOrientationControl : ScatterViewItem {
+
+        private Boolean orientierung = false;
+        private Boolean positionierung = false;
+        private Boolean tagOrientierung = false;
+        private ScatterMovement movement;
         private ScatterView mainScatt;
         private TagContent content;
-  
+
         public ScatterOrientationControl() {
             InitializeComponent();
-            
+
         }
 
         public void setMainscatt(ScatterView mainScatt, TagContent content) {
             this.mainScatt = mainScatt;
             this.content = content;
-            
+            movement = new ScatterMovement(mainScatt);
         }
 
-        private void FreieOrientierung_Checked(object sender, RoutedEventArgs e)
-        {
-      
+        private void ScatterOrientierung_Checked(object sender, RoutedEventArgs e) {
+            tagOrientierung = false;
+            content.setTagOrientation(tagOrientierung);
+            orientierung = true;
 
-        
-          
-        }
-
-        private void FreieOrientierung_Unchecked(object sender, RoutedEventArgs e)
-        {
-            
-
-            
-            
-        }
-
-        private void Positionierung_Unchecked(object sender, RoutedEventArgs e)
-        {
 
         }
 
-        private void Positionierung_Checked(object sender, RoutedEventArgs e)
-        {
+        private void FreieOrientierung_Checked(object sender, RoutedEventArgs e) {
 
+            try {
+                tagOrientierung = false;
+                content.setTagOrientation(tagOrientierung);
+                orientierung = false;
+            } catch (NullReferenceException ex){
+                Console.WriteLine(ex);
+            }
+
+        }
+
+
+        private void TagOrientierung_Checked(object sender, RoutedEventArgs e) {
+
+            orientierung = false;
+            tagOrientierung = true;
+            content.setTagOrientation(tagOrientierung);
+            
+
+
+        }
+
+        private void Positionierung_Unchecked(object sender, RoutedEventArgs e) {
+            positionierung = false;
+        }
+
+        private void Positionierung_Checked(object sender, RoutedEventArgs e) {
+            positionierung = true;
         }
 
         private void Orientierung_Click(object sender, RoutedEventArgs e) {
-            Console.WriteLine("Orientierung geklickt");
-            ScatterMovement movement = new ScatterMovement(mainScatt);
-           
 
-                movement.ScatterItemsOrientateTo(this, content);
-            
-
-
-  
+            movement.ScatterItemsOrientateAndMoveTo(this, content, true, true);
+        }
+        private void ScatterOrientation_TouchDown(object sender, TouchEventArgs e) {
+            Console.WriteLine("Test");
+            e.TouchDevice.Deactivated += new EventHandler(TouchDevice_Deactivated);
         }
 
-        private void Positionierung_Click(object sender, RoutedEventArgs e) {
+        void TouchDevice_Deactivated(object sender, EventArgs e) {
+            Console.WriteLine(content.Orientation);
+            movement.ScatterItemsOrientateAndMoveTo(this, content, orientierung, positionierung);
+
+            if (tagOrientierung) {
+                
+                foreach (ScatterViewItem svi in content.Elements) {
+                    if (svi.Name == "MainScatter") {
+                        continue;
+                    }
+
+                    movement.ScatterOrientationAnimation(svi, content.Orientation, TimeSpan.FromSeconds(0.5));
+                }
+            }
 
         }
 
-     
+
     }
 }

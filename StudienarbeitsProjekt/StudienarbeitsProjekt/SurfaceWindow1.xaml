@@ -12,12 +12,13 @@
 
 
 
-        <s:TagVisualizer x:Name="startVisualizer"  >
+        <s:TagVisualizer x:Name="startVisualizer"  VisualizationMoved="startVisualizer_VisualizationMoved">
 
             <s:TagVisualizer.Definitions>
                 <s:TagVisualizationDefinition
             		x:Name="tagRegistration"
             		Source="TagContent.xaml"
+                    
                         />
 
                 <s:TagVisualizationDefinition

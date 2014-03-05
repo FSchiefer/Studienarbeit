@@ -58,7 +58,7 @@ namespace StudienarbeitsProjekt.ContentControls {
             String[] folderPath = Directory.GetDirectories(dataPath);
             foreach (String path in filePath) {
                 String type = fileType(path);
-                if (type == "jpg" || type == "xps" || type == "wmv") {
+                if (type == "jpg" || type == "xps" || type == "wmv" || type == "mp4" || type == "avi" || type == "mpg" || type == "MTS") {
 
                     fileList.Add(path);
                     child = new SurfaceListBoxItem();
@@ -155,7 +155,7 @@ namespace StudienarbeitsProjekt.ContentControls {
                                         scatterList.Add(sLBI, tagContent.createPromotionImage(file));
                                     } else if (type == "xps") {
                                         scatterList.Add(sLBI, tagContent.createDocument(file));
-                                    } else if (type == "wmv") {
+                                    } else if (type == "wmv" || type == "mp4" || type == "avi" || type == "mpg" || type == "MTS") {
                                         scatterList.Add(sLBI, tagContent.createVideo(file));
                                     }
                                 }

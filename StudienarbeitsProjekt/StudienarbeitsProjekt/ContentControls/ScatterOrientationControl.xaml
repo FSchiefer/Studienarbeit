@@ -1,29 +1,56 @@
 ﻿<s:ScatterViewItem x:Class="StudienarbeitsProjekt.ContentControls.ScatterOrientationControl"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:s="http://schemas.microsoft.com/surface/2008" Padding="0" >
-
-    <Grid Background="BlueViolet"  >
-
+    xmlns:s="http://schemas.microsoft.com/surface/2008"  Padding ="0" TouchDown="ScatterOrientation_TouchDown" 
+                   PreviewTouchDown="ScatterOrientation_TouchDown"  >
 
 
-        <StackPanel
+    <Grid Background="BlueViolet" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25" />
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+
+
+
+            <Label Grid.Row="0" Foreground="White" > Control Panel</Label>
+            <s:SurfaceScrollViewer
+                   ScrollViewer.PanningMode="Both" Grid.Row="1">
+
+                <StackPanel
             HorizontalAlignment="Center" VerticalAlignment="Center" >
-            <s:SurfaceCheckBox Foreground="White"  x:Name="FreieOrientierung" Checked="FreieOrientierung_Checked" Unchecked="FreieOrientierung_Unchecked">
-                <TextBlock TextWrapping="Wrap" FontStretch="Expanded" >
-                Freie Orientierung
-                </TextBlock>
-            </s:SurfaceCheckBox>
-            <s:SurfaceCheckBox Foreground="White" x:Name="Positionierung" Checked="Positionierung_Checked" Unchecked="Positionierung_Unchecked">
-                <TextBlock TextWrapping="Wrap" FontStretch="Expanded" >
+                    <s:SurfaceRadioButton Foreground="White"  x:Name="FreieOrientierung" Checked="FreieOrientierung_Checked" IsChecked="True">
+                        <TextBlock TextWrapping="Wrap" FontStretch="Expanded" >
+              Freie Orientierung
+                        </TextBlock>
+                    </s:SurfaceRadioButton>
+                    <s:SurfaceRadioButton Foreground="White"  x:Name="ScatterOrientierung" Checked="ScatterOrientierung_Checked">
+                        <TextBlock TextWrapping="Wrap" FontStretch="Expanded" >
+               Orientierung anhand  des Scatters
+                        </TextBlock>
+                    </s:SurfaceRadioButton>
+                    <s:SurfaceRadioButton Foreground="White"  x:Name="TagOrientierung" Checked="TagOrientierung_Checked" >
+                        <TextBlock TextWrapping="Wrap" FontStretch="Expanded" >
+               Orientierung anhand  des Tags
+                        </TextBlock>
+                    </s:SurfaceRadioButton>
+                </StackPanel>
+            </s:SurfaceScrollViewer>
+            <s:SurfaceCheckBox Grid.Row="2" Foreground="White" x:Name="Positionierung" Checked="Positionierung_Checked" Unchecked="Positionierung_Unchecked">
+                        <TextBlock TextWrapping="Wrap" FontStretch="Expanded" >
                 Positionierung an Rand
-                </TextBlock>
-            </s:SurfaceCheckBox>
-            <s:SurfaceButton Foreground="White" x:Name="Orientierung" Click="Orientierung_Click">
+                        </TextBlock>
+                    </s:SurfaceCheckBox>
+       
+            <s:SurfaceButton Grid.Row="3" Foreground="White" x:Name="Orientierung" Click="Orientierung_Click">
                 <TextBlock TextWrapping="Wrap" FontStretch="Expanded" >
-                Positionierung an Rand
+                Positionierung und Orientierung an Rand
                 </TextBlock>
             </s:SurfaceButton>
-        </StackPanel>
+
+      
+
     </Grid>
 </s:ScatterViewItem>

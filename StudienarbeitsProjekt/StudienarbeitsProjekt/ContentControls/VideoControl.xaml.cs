@@ -76,14 +76,10 @@ namespace StudienarbeitsProjekt.ContentControls
 
             if (plays == false)
             {
-                // The Play method will begin the media if it is not currently active or 
-                // resume media if it is paused. This has no effect if the media is
-                // already running.
-
+               
                 myMediaElement.Play();
 
 
-                // Initialize the MediaElement property values.
                 InitializePropertyValues();
 
                 plays = true;

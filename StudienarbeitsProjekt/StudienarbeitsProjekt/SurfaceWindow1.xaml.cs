@@ -24,6 +24,7 @@ namespace StudienarbeitsProjekt {
     /// </summary>
     public partial class SurfaceWindow1 : SurfaceWindow {
 
+        private bool getOrientation = false;
         private int TouchesOnMainScatter = 0;
         private ObservableCollection<object> elements = new ObservableCollection<object>();
         private ScatterMovement move;
@@ -160,11 +161,33 @@ namespace StudienarbeitsProjekt {
         }
 
         void TouchDevice_Deactivated(object sender, EventArgs e) {
+     
             if (--TouchesOnMainScatter < 2) {
                 MainScatter.CanMove = false;
             }
         }
 
+        private void startVisualizer_VisualizationMoved(object sender, TagVisualizerEventArgs e) {
+            Console.WriteLine(e.TagVisualization.Orientation);
+
+            
+            if (getOrientation) {
+                TagContent content = e.TagVisualization as TagContent;
+                foreach (ScatterViewItem svi in content.Elements) {
+                    if (svi.Name == "MainScatter") {
+                        continue;
+                    }
+               
+                    move.ScatterOrientationAnimation(svi, e.TagVisualization.Orientation, TimeSpan.FromSeconds(0.5));
+                }
+            }
+        }
+
+        public void setOrientation(bool orientation) {
+            getOrientation = orientation;
+        }
+
+ 
   
 
 

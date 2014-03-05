@@ -99,6 +99,15 @@ namespace StudienarbeitsProjekt
                 dataPath = Directory.GetFiles(baseDir, "*.wmv");
                 videos(dataPath);
 
+                dataPath = Directory.GetFiles(baseDir, "*.mp4");
+                videos(dataPath);
+
+                dataPath = Directory.GetFiles(baseDir, "*.avi");
+                videos(dataPath);
+                dataPath = Directory.GetFiles(baseDir, "*.mpg");
+                videos(dataPath);
+                dataPath = Directory.GetFiles(baseDir, "*.MTS");
+                videos(dataPath);
 
                 // Wählt die Ordner der einzelnen Sammlungen aus
                 String collectionPath = baseDir + "\\collections\\";
@@ -230,6 +239,10 @@ namespace StudienarbeitsProjekt
         {
             move.removeScatterViewItem(item);
          
+        }
+
+        public void setTagOrientation(bool orientation) {
+            surWindow.setOrientation(orientation);
         }
 
         

@@ -6,7 +6,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
-            <RowDefinition Height="100" />
+            <RowDefinition Height="90" />
         </Grid.RowDefinitions>
 
 
@@ -16,12 +16,12 @@
      LoadedBehavior="Manual" UnloadedBehavior="Stop" Stretch="Fill"
       MediaEnded="Element_MediaEnded" Grid.Row="0"/>
 
-        <Grid HorizontalAlignment="Center" Height="100" MinWidth="450" Grid.Row="1">
+        <Grid HorizontalAlignment="Center" Height="90" MinWidth="450" Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="90"/>
                 <ColumnDefinition Width="90"/>
-                <ColumnDefinition Width="60"/>
-
+                <ColumnDefinition Width="270"/>
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
                 <!-- Play button. -->
@@ -32,7 +32,7 @@
                 <!-- Stop button. -->
                 <s:SurfaceButton x:Name="Stop" Click="Stop_Click"  Width="90" Height="90" Grid.Column="1" />
 
-                <StackPanel Grid.Column="2" Margin="0,0,-210,0" ClipToBounds="True">
+                <StackPanel Grid.Column="2" ClipToBounds="True" Grid.ColumnSpan="2">
     
                 <!-- Volume slider. This slider allows a Volume range between 0 and 1. -->
                 <TextBlock VerticalAlignment="Center" Margin="5"  ><Run Text="Volume"/></TextBlock>
