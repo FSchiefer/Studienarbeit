@@ -14,7 +14,7 @@
       Width="300"
        Canvas.Left="-150"
             Canvas.Top="-150"
-            
+          Opacity="0.5"
     >
             <Ellipse.Fill>
                 <RadialGradientBrush>

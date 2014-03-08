@@ -32,7 +32,7 @@
 
             </s:TagVisualizer.Definitions>
 
-            <s:ScatterView x:Name="MainScatt" ItemsSource="{Binding Elements, ElementName=startVisualizer}">
+            <s:ScatterView x:Name="MainScatt" >
                 <s:ScatterViewItem Name="MainScatter"
                                IsTopmostOnActivation="False"
                            PreviewTouchDown="MainScatter_TouchDown"

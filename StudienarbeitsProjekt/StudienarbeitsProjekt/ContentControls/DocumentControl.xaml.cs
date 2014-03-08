@@ -43,6 +43,8 @@ namespace StudienarbeitsProjekt.ContentControls
             myDocViewer.Document = xpsDoc.GetFixedDocumentSequence();
             xpsDoc.Close();
         }
+
+
         private void docViewer_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             myDocViewer.FitToWidth();

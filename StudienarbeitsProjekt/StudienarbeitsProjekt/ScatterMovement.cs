@@ -13,6 +13,8 @@ namespace StudienarbeitsProjekt {
             this.mainScatt = mainScatt;
         }
 
+        #region Sort and decision functions
+
         // Funktion zum Anordnen der Scatter zu einem "Vater" Element
         public void ScatterItemsOrientateAndMoveTo(ScatterViewItem control, TagContent content, Boolean rotation,Boolean moving) {
 
@@ -148,6 +150,10 @@ namespace StudienarbeitsProjekt {
               }
         }
 
+        #endregion
+
+        #region Move animations
+
         public void MoveAndOrientateScatter(ScatterViewItem svi, Point moveTo, double orientation) {
             ScatterPositionAnimation(svi, moveTo, TimeSpan.FromSeconds(0.5));
             ScatterOrientationAnimation(svi, orientation, TimeSpan.FromSeconds(0.5));
@@ -183,7 +189,9 @@ namespace StudienarbeitsProjekt {
             };
             svi.BeginAnimation(ScatterViewItem.OrientationProperty, orientationAnimation);
         }
+        #endregion
 
+        #region Close functions
         public void MoveAndOrientateScatterToClose(ScatterViewItem svi, Point moveTo, double orientation) {
             ScatterPositionAnimationToClose(svi, moveTo, TimeSpan.FromSeconds(0.5));
             ScatterOrientationAnimation(svi, orientation, TimeSpan.FromSeconds(0.5));
@@ -222,7 +230,7 @@ namespace StudienarbeitsProjekt {
             };
             svi.BeginAnimation(ScatterViewItem.OpacityProperty, fadeOut);
         }
-
+#endregion
    
     }
 }

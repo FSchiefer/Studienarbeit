@@ -25,13 +25,15 @@ namespace StudienarbeitsProjekt {
     /// </summary>
     public partial class SurfaceWindow1 : SurfaceWindow {
 
- 
+
         private int TouchesOnMainScatter = 0;
         private ObservableCollection<object> elements = new ObservableCollection<object>();
         private ScatterMovement move;
         private Queue<Brush> userColors = new Queue<Brush>();
 
         public ObservableCollection<object> Elements { get { return elements; } }
+
+        #region generated Code
 
         /// <summary>
         /// Default constructor.
@@ -55,91 +57,7 @@ namespace StudienarbeitsProjekt {
         }
 
 
-        void startVisualizer_VisualizationRemoved(object sender, TagVisualizerEventArgs e) {
-            TagContent content = e.TagVisualization as TagContent;
 
-            foreach (ScatterViewItem svi in content.Elements) {
-                if (svi.Name == "MainScatter") {
-                    continue;
-                }
-                Console.WriteLine(svi.Name);
-
-
-                if (!userColors.Contains(Brushes.Red) && svi.BorderBrush == Brushes.Red) {
-
-                    userColors.Enqueue(Brushes.Red);
-
-
-                } else if (!userColors.Contains(Brushes.Green) && svi.BorderBrush == Brushes.Green) {
-
-                    userColors.Enqueue(Brushes.Green);
-
-
-                } else if (!userColors.Contains(Brushes.Yellow) && svi.BorderBrush == Brushes.Yellow) {
-                    userColors.Enqueue(Brushes.Yellow);
-
-                } else if (!userColors.Contains(Brushes.Blue) && svi.BorderBrush == Brushes.Blue) {
-                    userColors.Enqueue(Brushes.Blue);
-
-                }
-
-
-                move.MoveAndOrientateScatterToClose(svi, MainScatter.ActualCenter, MainScatter.ActualOrientation);
-            }
-
-
-
-
-        }
-
-
-
-        void StartVisualizer_VisualizationInitialized(object sender, TagVisualizerEventArgs e) {
-            TagContent content = e.TagVisualization as TagContent;
-
-
-            if (content != null && userColors.Count > 0) {
-                Brush color = userColors.Dequeue();
-                ObservableCollection<object> tagElements = content.ShowTagContent(this, color);
-
-                foreach (ScatterViewItem svi in content.Elements) {
-                    if (svi.Name == "MainScatter") {
-                        continue;
-                    }
-                    Console.WriteLine(svi.Name);
-
-                     if (svi.BorderBrush == Brushes.Red) {
-
-                
-                content.Circle.Color = Colors.Red ;
-                
-
-                } else if (svi.BorderBrush == Brushes.Green) {
-
-                    
-                content.Circle.Color = Colors.Green ;
-               
-
-                } else if ( svi.BorderBrush == Brushes.Yellow) {
-              
-                content.Circle.Color = Colors.Yellow ;
-                
-
-                } else if (svi.BorderBrush == Brushes.Blue) {
-
-                content.Circle.Color = Colors.Blue ;
-               
-                }
-                } 
-
-
-
-            }else if (userColors.Count.Equals(0)){
-                content.Message.Content = "Bitte warten bis ein anderer Tag abgehoben wird";
-                content.Message.Foreground = Brushes.Red;
-                content.Message.Background = Brushes.White;
-                }
-        }
 
         /// <summary>
         /// Occurs when the window is about to close. 
@@ -201,12 +119,104 @@ namespace StudienarbeitsProjekt {
             //TODO: disable audio, animations here
         }
 
+        #endregion
+
+
+        #region events
+
         private void MainScatter_SizeChanged(object sender, SizeChangedEventArgs e) {
 
             double s = Math.Sqrt(Math.Pow(MainScatter.ActualWidth, 2) / 2);
             MainContentGrid.Width = s;
             MainContentGrid.Height = s;
         }
+
+        void startVisualizer_VisualizationRemoved(object sender, TagVisualizerEventArgs e) {
+            TagContent content = e.TagVisualization as TagContent;
+
+            foreach (ScatterViewItem svi in content.Elements) {
+                if (svi.Name == "MainScatter") {
+                    continue;
+                }
+                Console.WriteLine(svi.Name);
+
+
+                if (!userColors.Contains(Brushes.Red) && svi.BorderBrush == Brushes.Red) {
+
+                    userColors.Enqueue(Brushes.Red);
+
+
+                } else if (!userColors.Contains(Brushes.Green) && svi.BorderBrush == Brushes.Green) {
+
+                    userColors.Enqueue(Brushes.Green);
+
+
+                } else if (!userColors.Contains(Brushes.Yellow) && svi.BorderBrush == Brushes.Yellow) {
+                    userColors.Enqueue(Brushes.Yellow);
+
+                } else if (!userColors.Contains(Brushes.Blue) && svi.BorderBrush == Brushes.Blue) {
+                    userColors.Enqueue(Brushes.Blue);
+
+                }
+
+
+                move.MoveAndOrientateScatterToClose(svi, MainScatter.ActualCenter, MainScatter.ActualOrientation);
+            }
+
+
+
+
+        }
+
+
+
+        void StartVisualizer_VisualizationInitialized(object sender, TagVisualizerEventArgs e) {
+            TagContent content = e.TagVisualization as TagContent;
+
+
+            if (content != null && userColors.Count > 0) {
+                Brush color = userColors.Dequeue();
+                ObservableCollection<object> tagElements = content.ShowTagContent(this, color);
+
+                foreach (ScatterViewItem svi in content.Elements) {
+                    if (svi.Name == "MainScatter") {
+                        continue;
+                    }
+                    Console.WriteLine(svi.Name);
+
+                    if (svi.BorderBrush == Brushes.Red) {
+
+
+                        content.Circle.Color = Colors.Red;
+
+
+                    } else if (svi.BorderBrush == Brushes.Green) {
+
+
+                        content.Circle.Color = Colors.Green;
+
+
+                    } else if (svi.BorderBrush == Brushes.Yellow) {
+
+                        content.Circle.Color = Colors.Yellow;
+
+
+                    } else if (svi.BorderBrush == Brushes.Blue) {
+
+                        content.Circle.Color = Colors.Blue;
+
+                    }
+                }
+
+
+
+            } else if (userColors.Count.Equals(0)) {
+                content.Message.Content = "Bitte warten bis ein anderer Tag abgehoben wird";
+                content.Message.Foreground = Brushes.Red;
+                content.Message.Background = Brushes.White;
+            }
+        }
+
 
         private void MainScatter_ContainerManipulationCompleted(object sender, ContainerManipulationCompletedEventArgs e) {
             Point moveTo = new Point(Host.ActualWidth / 2, Host.ActualHeight / 2);
@@ -227,6 +237,6 @@ namespace StudienarbeitsProjekt {
                 MainScatter.CanMove = false;
             }
         }
-
-         }
+        #endregion
+    }
 }

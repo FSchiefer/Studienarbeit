@@ -27,7 +27,7 @@ namespace StudienarbeitsProjekt
         private bool orientation;
         private Brush color;
 
-
+        #region generated Code
         /// <summary>
         /// Default constructor.
         /// </summary>
@@ -39,7 +39,10 @@ namespace StudienarbeitsProjekt
            
         }
 
-        
+        #endregion
+
+        #region file reader functions
+
 
         public ObservableCollection<object> ShowTagContent(SurfaceWindow1 surWindow, Brush color)
         {
@@ -94,27 +97,20 @@ namespace StudienarbeitsProjekt
             try
             {
                 String baseDir = rootDir + fileChooser;
-
                 String[] dataPath = Directory.GetFiles(baseDir, "*.jpg");
                 PromotionBilder(dataPath);
-
-
                 dataPath = Directory.GetFiles(baseDir, "*.xps");
                 dokumente(dataPath);
-
                 dataPath = Directory.GetFiles(baseDir, "*.wmv");
                 videos(dataPath);
-
                 dataPath = Directory.GetFiles(baseDir, "*.mp4");
                 videos(dataPath);
-
                 dataPath = Directory.GetFiles(baseDir, "*.avi");
                 videos(dataPath);
                 dataPath = Directory.GetFiles(baseDir, "*.mpg");
                 videos(dataPath);
                 dataPath = Directory.GetFiles(baseDir, "*.MTS");
                 videos(dataPath);
-
                 // Wählt die Ordner der einzelnen Sammlungen aus
                 String collectionPath = baseDir + "\\collections\\";
                 if (Directory.Exists(collectionPath))
@@ -130,11 +126,26 @@ namespace StudienarbeitsProjekt
             catch (DirectoryNotFoundException ex)
             {
                 Console.WriteLine("No Folder" + ex);
-            }
-
-            
-        
+            }        
         }
+
+        /// <returns></returns>
+        private string GetTagValue() {
+            string tagVal = string.Empty;
+
+            if (this.VisualizedTag.Value > 0) {
+                tagVal = this.VisualizedTag.Value.ToString("X", CultureInfo.InvariantCulture);
+
+            } else if (this.VisualizedTag.Series > 0) {
+                tagVal = this.VisualizedTag.Series.ToString("X", CultureInfo.InvariantCulture);
+            }
+            return tagVal;
+        }
+
+
+        # endregion
+
+        # region Array reader
 
         private void videos(String[] pathNames)
         {
@@ -146,12 +157,6 @@ namespace StudienarbeitsProjekt
             }
         }
 
-        public ScatterViewItem createVideo(String pfad, Brush color)
-        {
-            return addElement(new VideoControl(pfad, color));
-        }
-
-        
         // Funktion zum auslesen von Ordnern für die Ordnerdarstellung
         private void collections(string[] collectionPfad)
         {
@@ -170,11 +175,7 @@ namespace StudienarbeitsProjekt
             }
         }
 
-        // Funktion für den Aufruf von neuen Collections
-        public ScatterViewItem createCollection(String path, String name, Brush color) {
-            Console.WriteLine("Hier wird die Collection: " + name + " geboren");
-            return addElement(new CollectionControl(path, name, this, color));
-        }
+     
 
         private void dokumente(string[] datenPfad)
         {
@@ -184,19 +185,23 @@ namespace StudienarbeitsProjekt
             }
         }
 
+        private void PromotionBilder(string[] datenPfad) {
+            foreach (String pfad in datenPfad) {
+                createPromotionImage(pfad, color);
+            }
+
+        }
+
+        #endregion
+
+        #region Create functions
+
         public ScatterViewItem createDocument(String pfad, Brush color)
         {
             return addElement(new DocumentControl(pfad, color));
         }
 
-        private void PromotionBilder(string[] datenPfad)
-        {
-            foreach (String pfad in datenPfad)
-            {
-                createPromotionImage(pfad, color);
-            }
 
-        }
         public ScatterViewItem createPromotionImage(String pfad, Brush color)
         {
             Image promotionBild = new Image() { Source = new BitmapImage(new Uri(pfad, UriKind.Absolute)) };
@@ -208,30 +213,36 @@ namespace StudienarbeitsProjekt
             return addElement(promoScatter);
         }
 
-        private ScatterViewItem addElement(ScatterViewItem item)
-        {
+
+
+        // Funktion für den Aufruf von neuen Collections
+        public ScatterViewItem createCollection(String path, String name, Brush color) {
+            Console.WriteLine("Hier wird die Collection: " + name + " geboren");
+            return addElement(new CollectionControl(path, name, this, color));
+        }
+
+
+        public ScatterViewItem createVideo(String pfad, Brush color) {
+            return addElement(new VideoControl(pfad, color));
+        }
+
+        #endregion
+
+        # region Remove and add functions
+
+        public void Remove(ScatterViewItem item) {
+            move.removeScatterViewItem(item);
+
+        }
+
+        private ScatterViewItem addElement(ScatterViewItem item) {
             Elements.Add(item);
             mainScatt.Items.Add(item);
             return item;
         }
-
-
-        /// <returns></returns>
-        private string GetTagValue()
-        {
-            string tagVal = string.Empty;
-            
-            if (this.VisualizedTag.Value > 0)
-            {
-                tagVal = this.VisualizedTag.Value.ToString("X", CultureInfo.InvariantCulture);
-                  
-            }
-            else if (this.VisualizedTag.Series > 0)
-            {
-                tagVal = this.VisualizedTag.Series.ToString("X", CultureInfo.InvariantCulture);
-            }
-            return tagVal;
-        }
+        #endregion
+ 
+        # region  Naming, setter and Events
 
         private String getFolderName(String dokumentPfad)
         {
@@ -242,11 +253,7 @@ namespace StudienarbeitsProjekt
             return name;
         }
 
-        public void Remove(ScatterViewItem item)
-        {
-            move.removeScatterViewItem(item);
-         
-        }
+ 
 
         public void setTagOrientation(bool orientation) {
             this.orientation = orientation;
@@ -267,6 +274,6 @@ namespace StudienarbeitsProjekt
                 }
             }
         }
-        
+        #endregion
     }
 }
