@@ -5,18 +5,19 @@
                    MinHeight="350" MinWidth="450" Background="Black" Padding="0">
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
             <RowDefinition/>
             <RowDefinition Height="90" />
         </Grid.RowDefinitions>
-
+        <Label x:Name="Title" Foreground="White" Grid.Row="0"></Label>
 
             <!-- To interactively stop, pause, and play the media, the LoadedBehavior 
            property of the MediaElement must be set to "Manual". -->
             <MediaElement Name="myMediaElement"  MinHeight="250" MinWidth="450"
      LoadedBehavior="Manual" UnloadedBehavior="Stop" Stretch="Fill"
-      MediaEnded="Element_MediaEnded" Grid.Row="0"/>
+      MediaEnded="Element_MediaEnded" Grid.Row="1"/>
 
-        <Grid HorizontalAlignment="Center" Height="90" MinWidth="450" Grid.Row="1">
+        <Grid HorizontalAlignment="Center" Height="90" MinWidth="450" Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="90"/>
                 <ColumnDefinition Width="90"/>

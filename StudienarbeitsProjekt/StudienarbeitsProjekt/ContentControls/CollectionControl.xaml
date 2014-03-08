@@ -5,7 +5,7 @@
                    x:Class="StudienarbeitsProjekt.ContentControls.CollectionControl" 
                    mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-                   d:DesignHeight="162" d:DesignWidth="209" x:Name="collectionControl"
+                   d:DesignHeight="162" d:DesignWidth="209" x:Name="collectionControl" 
                    >
     <Grid>
         <Grid.RowDefinitions>

@@ -71,6 +71,7 @@ namespace StudienarbeitsProjekt.ContentControls {
 
         private void Positionierung_Unchecked(object sender, RoutedEventArgs e) {
             positionierung = false;
+
         }
 
         private void Positionierung_Checked(object sender, RoutedEventArgs e) {

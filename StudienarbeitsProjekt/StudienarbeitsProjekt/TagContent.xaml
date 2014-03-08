@@ -4,12 +4,35 @@
     xmlns:s="http://schemas.microsoft.com/surface/2008"
    xmlns:c="clr-namespace:StudienarbeitsProjekt.ContentControls"
     xmlns:StudienarbeitsProjekt ="clr-namespace:StudienarbeitsProjekt"
-    
-    PhysicalCenterOffsetFromTag="0,3"
+ Moved="startVisualizer_VisualizationMoved"
    >
-    <!--<s:ScatterView>
-        <c:ScatterOrientationControl x:Name="orientationControl"> </c:ScatterOrientationControl>
-    </s:ScatterView>-->
+    <Canvas >
+        
+        <Ellipse 
+     
+      Height="300"
+      Width="300"
+       Canvas.Left="-150"
+            Canvas.Top="-150"
+            
+    >
+            <Ellipse.Fill>
+                <RadialGradientBrush>
+                    <RadialGradientBrush.GradientStops>
+                      
+                        <GradientStop Color="LightGray" Offset="0.0"></GradientStop>
+                        <GradientStop  x:Name="Circle" Offset="1"></GradientStop>
+                        
+                        
+                    </RadialGradientBrush.GradientStops>
+                </RadialGradientBrush>
+            </Ellipse.Fill>
+
+        </Ellipse>
+        <Label x:Name="Message" Canvas.Left="-200" Canvas.Top="150"
+            > </Label>
+    </Canvas>
+
 
 
 

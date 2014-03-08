@@ -12,7 +12,7 @@
 
 
 
-        <s:TagVisualizer x:Name="startVisualizer"  VisualizationMoved="startVisualizer_VisualizationMoved">
+        <s:TagVisualizer x:Name="startVisualizer"  >
 
             <s:TagVisualizer.Definitions>
                 <s:TagVisualizationDefinition
@@ -80,7 +80,6 @@
 
                 <s:ScatterView.ItemContainerStyle >
                     <Style TargetType="{x:Type s:ScatterViewItem}">
-                        <Setter Property="BorderBrush" Value="Red" />
                         <Setter Property="BorderThickness" Value="3"/>
                         <Setter Property="Background" Value="Black"/>
                         <Setter Property="Foreground" Value="White"/>

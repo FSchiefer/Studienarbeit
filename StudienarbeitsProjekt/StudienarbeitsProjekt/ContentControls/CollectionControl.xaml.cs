@@ -32,6 +32,7 @@ namespace StudienarbeitsProjekt.ContentControls {
         private List<String> viewSources = new List<String>();
         private String title;
         private ScatterMovement move;
+        private Brush color;
 
         // TODO Icons für Dateiarten einbauen
 
@@ -40,10 +41,12 @@ namespace StudienarbeitsProjekt.ContentControls {
         }
 
         // Konstruktor zum erstellen der Komponente und dem Festlegen des darzustellenden Titels
-        public CollectionControl(String dataPath, String name, TagContent tagContent) {
+        public CollectionControl(String dataPath, String name, TagContent tagContent, Brush color) {
             InitializeComponent();
+            this.BorderBrush = color;
             move = new ScatterMovement(tagContent.mainScatt);
             this.tagContent = tagContent;
+            this.color = color;
             if (name.Contains(":")) {
                     name = name.Substring(0, name.LastIndexOf(':') - 0);
                     title = name + ": " + getFolderName(dataPath);
@@ -145,18 +148,18 @@ namespace StudienarbeitsProjekt.ContentControls {
                             viewSources.Add(sLBI.Content.ToString());
                             foreach (String folder in folderList) {
                                 if (folder.Contains(sLBI.Content.ToString())) {
-                                    collectionList.Add(sLBI, tagContent.createCollection(folder, title));
+                                    collectionList.Add(sLBI, tagContent.createCollection(folder, title, color));
                                 }
                             }
                             foreach (String file in fileList) {
                                 if (file.Contains(sLBI.Content.ToString())) {
                                     String type = fileType(file);
                                     if (type == "jpg") {
-                                        scatterList.Add(sLBI, tagContent.createPromotionImage(file));
+                                        scatterList.Add(sLBI, tagContent.createPromotionImage(file, color));
                                     } else if (type == "xps") {
-                                        scatterList.Add(sLBI, tagContent.createDocument(file));
+                                        scatterList.Add(sLBI, tagContent.createDocument(file, color));
                                     } else if (type == "wmv" || type == "mp4" || type == "avi" || type == "mpg" || type == "MTS") {
-                                        scatterList.Add(sLBI, tagContent.createVideo(file));
+                                        scatterList.Add(sLBI, tagContent.createVideo(file, color));
                                     }
                                 }
                             }

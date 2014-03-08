@@ -21,18 +21,18 @@ namespace StudienarbeitsProjekt.ContentControls
     public partial class VideoControl : ScatterViewItem
     {
         Boolean plays = false;
-        public VideoControl(string videoPosition)
+        Boolean firstPlay = true;
+        String videoPosition;
+        public VideoControl(string videoPosition, Brush color)
         {
 
             InitializeComponent();
-            myMediaElement.Source = new Uri(videoPosition, UriKind.Absolute);
-            Console.WriteLine(myMediaElement.Source);
+            this.BorderBrush = color;
+            this.videoPosition = videoPosition;
+            titleViewer();
             Image playImage = new Image();
             playImage.Source = new BitmapImage(new Uri(@"C:\Studiengaenge\Play.jpg", UriKind.Absolute));
             Play.Content = playImage;
-            playImage.Stretch = Stretch.Fill;
-            playImage.Width= 90;
-            playImage.Height= 90;
             Image stopImage = new Image();
             stopImage.Source = new BitmapImage(new Uri(@"C:\Studiengaenge\Stop.jpg", UriKind.Absolute));
          
@@ -76,7 +76,10 @@ namespace StudienarbeitsProjekt.ContentControls
 
             if (plays == false)
             {
-               
+                if (firstPlay) {
+                    myMediaElement.Source = new Uri(videoPosition, UriKind.Absolute);
+                    firstPlay = false;
+                }
                 myMediaElement.Play();
 
 
@@ -109,6 +112,16 @@ namespace StudienarbeitsProjekt.ContentControls
             // The Stop method stops and resets the media to be played from
             // the beginning.
             myMediaElement.Stop();
+
+        }
+
+        // Funktion um den Namen des Dokuments auszulesen
+        private void titleViewer() {
+            // Ausgabe des Dateinamens des Dokuments
+            int beginFileName = videoPosition.LastIndexOf('\\') + 1;
+            string name = videoPosition.Substring(beginFileName, videoPosition.LastIndexOf('.') - beginFileName);
+            Title.Content = name;
+
 
         }
     }

@@ -17,6 +17,7 @@ using Microsoft.Surface.Presentation.Controls;
 using Microsoft.Surface.Presentation.Input;
 using System.Windows.Media.Animation;
 using System.Collections.ObjectModel;
+using System.Collections;
 
 namespace StudienarbeitsProjekt {
     /// <summary>
@@ -24,10 +25,11 @@ namespace StudienarbeitsProjekt {
     /// </summary>
     public partial class SurfaceWindow1 : SurfaceWindow {
 
-        private bool getOrientation = false;
+ 
         private int TouchesOnMainScatter = 0;
         private ObservableCollection<object> elements = new ObservableCollection<object>();
         private ScatterMovement move;
+        private Queue<Brush> userColors = new Queue<Brush>();
 
         public ObservableCollection<object> Elements { get { return elements; } }
 
@@ -41,6 +43,10 @@ namespace StudienarbeitsProjekt {
 
             // Add handlers for window availability events
             AddWindowAvailabilityHandlers();
+            userColors.Enqueue(Brushes.Red);
+            userColors.Enqueue(Brushes.Blue);
+            userColors.Enqueue(Brushes.Green);
+            userColors.Enqueue(Brushes.Yellow);
 
 
             startVisualizer.VisualizationRemoved += new TagVisualizerEventHandler(startVisualizer_VisualizationRemoved);
@@ -57,27 +63,82 @@ namespace StudienarbeitsProjekt {
                     continue;
                 }
                 Console.WriteLine(svi.Name);
- 
+
+
+                if (!userColors.Contains(Brushes.Red) && svi.BorderBrush == Brushes.Red) {
+
+                    userColors.Enqueue(Brushes.Red);
+
+
+                } else if (!userColors.Contains(Brushes.Green) && svi.BorderBrush == Brushes.Green) {
+
+                    userColors.Enqueue(Brushes.Green);
+
+
+                } else if (!userColors.Contains(Brushes.Yellow) && svi.BorderBrush == Brushes.Yellow) {
+                    userColors.Enqueue(Brushes.Yellow);
+
+                } else if (!userColors.Contains(Brushes.Blue) && svi.BorderBrush == Brushes.Blue) {
+                    userColors.Enqueue(Brushes.Blue);
+
+                }
+
+
                 move.MoveAndOrientateScatterToClose(svi, MainScatter.ActualCenter, MainScatter.ActualOrientation);
             }
 
-           
-          
+
+
 
         }
 
- 
+
 
         void StartVisualizer_VisualizationInitialized(object sender, TagVisualizerEventArgs e) {
             TagContent content = e.TagVisualization as TagContent;
 
 
+            if (content != null && userColors.Count > 0) {
+                Brush color = userColors.Dequeue();
+                ObservableCollection<object> tagElements = content.ShowTagContent(this, color);
 
-            if (content != null) {
+                foreach (ScatterViewItem svi in content.Elements) {
+                    if (svi.Name == "MainScatter") {
+                        continue;
+                    }
+                    Console.WriteLine(svi.Name);
 
-                ObservableCollection<object> tagElements = content.ShowTagContent(this);
+                     if (svi.BorderBrush == Brushes.Red) {
 
-             }
+                
+                content.Circle.Color = Colors.Red ;
+                
+
+                } else if (svi.BorderBrush == Brushes.Green) {
+
+                    
+                content.Circle.Color = Colors.Green ;
+               
+
+                } else if ( svi.BorderBrush == Brushes.Yellow) {
+              
+                content.Circle.Color = Colors.Yellow ;
+                
+
+                } else if (svi.BorderBrush == Brushes.Blue) {
+
+                content.Circle.Color = Colors.Blue ;
+               
+                }
+                } 
+
+
+
+            }else if (userColors.Count.Equals(0)){
+                content.Message.Content = "Bitte warten bis ein anderer Tag abgehoben wird";
+                content.Message.Foreground = Brushes.Red;
+                content.Message.Background = Brushes.White;
+                }
         }
 
         /// <summary>
@@ -161,41 +222,11 @@ namespace StudienarbeitsProjekt {
         }
 
         void TouchDevice_Deactivated(object sender, EventArgs e) {
-     
+
             if (--TouchesOnMainScatter < 2) {
                 MainScatter.CanMove = false;
             }
         }
 
-        private void startVisualizer_VisualizationMoved(object sender, TagVisualizerEventArgs e) {
-            Console.WriteLine(e.TagVisualization.Orientation);
-
-            
-            if (getOrientation) {
-                TagContent content = e.TagVisualization as TagContent;
-                foreach (ScatterViewItem svi in content.Elements) {
-                    if (svi.Name == "MainScatter") {
-                        continue;
-                    }
-               
-                    move.ScatterOrientationAnimation(svi, e.TagVisualization.Orientation, TimeSpan.FromSeconds(0.5));
-                }
-            }
-        }
-
-        public void setOrientation(bool orientation) {
-            getOrientation = orientation;
-        }
-
- 
-  
-
-
-
-
-
-
-
-
-    }
+         }
 }

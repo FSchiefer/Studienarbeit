@@ -6,6 +6,7 @@ using System.Globalization;
 using System.IO;
 using System.Collections.ObjectModel;
 using StudienarbeitsProjekt.ContentControls;
+using System.Windows.Media;
 
 namespace StudienarbeitsProjekt
 {
@@ -23,6 +24,8 @@ namespace StudienarbeitsProjekt
         public ScatterView mainScatt;
         private ScatterMovement move;
         private SurfaceWindow1 surWindow;
+        private bool orientation;
+        private Brush color;
 
 
         /// <summary>
@@ -38,10 +41,11 @@ namespace StudienarbeitsProjekt
 
         
 
-        public ObservableCollection<object> ShowTagContent(SurfaceWindow1 surWindow)
+        public ObservableCollection<object> ShowTagContent(SurfaceWindow1 surWindow, Brush color)
         {
             this.surWindow = surWindow;
             this.mainScatt = surWindow.MainScatt;
+            this.color = color;
             move = new ScatterMovement(this.mainScatt);
         
             string tagVal = GetTagValue();
@@ -66,6 +70,7 @@ namespace StudienarbeitsProjekt
                         tagChooser = ordnerPfad[i].Substring(counter);
                        
                         getTagContent(tagChooser);
+                        orientationControl.BorderBrush = color;
                         addElement(orientationControl);
                         orientationControl.setMainscatt(mainScatt, this);    
                     }
@@ -74,6 +79,7 @@ namespace StudienarbeitsProjekt
             }
             catch (FileNotFoundException ex)
             {
+                
                 Console.WriteLine("No Folder" + ex);
             }
             catch (DirectoryNotFoundException ex)
@@ -136,13 +142,13 @@ namespace StudienarbeitsProjekt
 
             foreach (String pfad in pathNames)
             {
-                createVideo(pfad);
+                createVideo(pfad, color);
             }
         }
 
-        public ScatterViewItem createVideo(String pfad)
+        public ScatterViewItem createVideo(String pfad, Brush color)
         {
-            return addElement(new VideoControl(pfad));
+            return addElement(new VideoControl(pfad, color));
         }
 
         
@@ -157,7 +163,7 @@ namespace StudienarbeitsProjekt
                 {
                     string[] dataPath = Directory.GetDirectories(pfad, "*", System.IO.SearchOption.TopDirectoryOnly);
                     foreach (String path in dataPath)
-                        createCollection(path, name);
+                        createCollection(path, name, color);
                  
                 }
 
@@ -165,38 +171,39 @@ namespace StudienarbeitsProjekt
         }
 
         // Funktion für den Aufruf von neuen Collections
-        public ScatterViewItem createCollection(String path, String name) {
+        public ScatterViewItem createCollection(String path, String name, Brush color) {
             Console.WriteLine("Hier wird die Collection: " + name + " geboren");
-            return addElement(new CollectionControl(path, name, this));
+            return addElement(new CollectionControl(path, name, this, color));
         }
 
         private void dokumente(string[] datenPfad)
         {
             foreach (String pfad in datenPfad)
             {
-                createDocument(pfad);
+                createDocument(pfad, color);
             }
         }
 
-        public ScatterViewItem createDocument(String pfad)
+        public ScatterViewItem createDocument(String pfad, Brush color)
         {
-            return addElement(new DocumentControl(pfad));
+            return addElement(new DocumentControl(pfad, color));
         }
 
         private void PromotionBilder(string[] datenPfad)
         {
             foreach (String pfad in datenPfad)
             {
-                createPromotionImage(pfad);
+                createPromotionImage(pfad, color);
             }
 
         }
-        public ScatterViewItem createPromotionImage(String pfad)
+        public ScatterViewItem createPromotionImage(String pfad, Brush color)
         {
             Image promotionBild = new Image() { Source = new BitmapImage(new Uri(pfad, UriKind.Absolute)) };
             ScatterViewItem promoScatter = new ScatterViewItem();
             promoScatter.Padding = new System.Windows.Thickness(0);
             promoScatter.Content = promotionBild;
+            promoScatter.BorderBrush = color;
            
             return addElement(promoScatter);
         }
@@ -242,9 +249,24 @@ namespace StudienarbeitsProjekt
         }
 
         public void setTagOrientation(bool orientation) {
-            surWindow.setOrientation(orientation);
+            this.orientation = orientation;
         }
 
+        private void startVisualizer_VisualizationMoved(object sender, TagVisualizerEventArgs e) {
+            Console.WriteLine(e.TagVisualization.Orientation);
+            Console.WriteLine(orientation);
+
+            if (orientation) {
+                TagContent content = e.TagVisualization as TagContent;
+                foreach (ScatterViewItem svi in content.Elements) {
+                    if (svi.Name == "MainScatter") {
+                        continue;
+                    }
+
+                    move.ScatterOrientationAnimation(svi, e.TagVisualization.Orientation, TimeSpan.FromSeconds(0.5));
+                }
+            }
+        }
         
     }
 }
