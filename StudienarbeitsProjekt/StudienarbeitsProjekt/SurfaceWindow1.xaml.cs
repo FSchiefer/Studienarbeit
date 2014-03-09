@@ -41,9 +41,9 @@ namespace StudienarbeitsProjekt {
         /// </summary>
         public SurfaceWindow1() {
             InitializeComponent();
-            handler = new FileHander();
+            handler = new FileHandler();
             move = new ScatterMovement( MainScatt );
-            MainScatterImage.ImageSource = new BitmapImage(new Uri(handler.getMainscatterImage(),UriKind.Relative);
+            MainScatterImage.ImageSource = new BitmapImage(new Uri(handler.getMainscatterImage(),UriKind.Relative));
             // Add handlers for window availability events
             AddWindowAvailabilityHandlers();
             userColors.Enqueue( Colors.Red );

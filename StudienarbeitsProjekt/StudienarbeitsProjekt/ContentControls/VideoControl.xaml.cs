@@ -13,71 +13,64 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.Surface.Presentation.Controls;
 
-namespace StudienarbeitsProjekt.ContentControls
-{
+namespace StudienarbeitsProjekt.ContentControls {
     /// <summary>
     /// Interaktionslogik für VideoControl.xaml
     /// </summary>
-    public partial class VideoControl : ScatterViewItem
-    {
+    public partial class VideoControl : ScatterViewItem {
 
         private Boolean plays = false;
         private Boolean firstPlay = true;
         private FileHandler handler;
+        private Image playImage;
+        private Image stopImage;
+        private Image pauseImage;
 
-        public VideoControl(string videoPosition, Brush color)
-        {
+        public VideoControl(string videoPosition, Brush color) {
 
             InitializeComponent();
-            this.BorderBrush = color;
-            handler = new FileHandler( videoPosition );
-            Title.Content = handler.titleViewer();
-                Image playImage = new Image();
+                       handler = new FileHandler(videoPosition);
+            playImage = new Image();
+            stopImage = new Image();
             playImage.Source = new BitmapImage(new Uri(@handler.getPlayImage(), UriKind.Absolute));
-            Play.Content = playImage;
-            Image stopImage = new Image();
             stopImage.Source = new BitmapImage(new Uri(@handler.getStopImage(), UriKind.Absolute));
-         
+            this.BorderBrush = color;
+            Title.Content = handler.titleViewer();
+
+
+            Play.Content = playImage;
             Stop.Content = stopImage;
             stopImage.Stretch = Stretch.Fill;
-        
+            }
 
-          
-        }
 
- 
 
         // Change the volume of the media.
-        private void ChangeMediaVolume(object sender, RoutedPropertyChangedEventArgs<double> args)
-        {
+        private void ChangeMediaVolume(object sender, RoutedPropertyChangedEventArgs<double> args) {
             myMediaElement.Volume = (double)volumeSlider.Value;
         }
 
 
-      
+
         // When the media playback is finished. Stop() the media to seek to media start.
-        private void Element_MediaEnded(object sender, EventArgs e)
-        {
+        private void Element_MediaEnded(object sender, EventArgs e) {
             myMediaElement.Stop();
         }
 
-       
-
- 
-
-        void InitializePropertyValues()
-        {
+        void InitializePropertyValues() {
             // Set the media's starting Volume and SpeedRatio to the current value of the
             // their respective slider controls.
             myMediaElement.Volume = (double)volumeSlider.Value;
-  
         }
 
-        private void Play_Click(object sender, RoutedEventArgs e)
-        {
+        private void Play_Click(object sender, RoutedEventArgs e) {
 
-            if (plays == false)
-            {
+            playImage = new Image();
+            pauseImage = new Image();
+            playImage.Source = new BitmapImage(new Uri(@handler.getPlayImage(), UriKind.Absolute));
+            pauseImage.Source = new BitmapImage(new Uri(@handler.getPauseImage(), UriKind.Absolute)); ;
+
+            if (plays == false) {
                 if (firstPlay) {
                     myMediaElement.Source = new Uri(handler.getDokumentPfad(), UriKind.Absolute);
                     firstPlay = false;
@@ -86,26 +79,26 @@ namespace StudienarbeitsProjekt.ContentControls
                 InitializePropertyValues();
 
                 plays = true;
-                Play.Content = new BitmapImage( new Uri( @handler.getPauseImage(), UriKind.Absolute ) );
-            }
-            else
-            {
+                Play.Content = pauseImage;
+            } else {
                 plays = false;
                 myMediaElement.Pause();
-                Play.Content = new BitmapImage( new Uri( @handler.getPlayImage(), UriKind.Absolute ) );
+                Play.Content = playImage;
             }
 
         }
 
-  
 
-        private void Stop_Click(object sender, RoutedEventArgs e)
-        {
+
+        private void Stop_Click(object sender, RoutedEventArgs e) {
+            playImage = new Image();
+            playImage.Source = new BitmapImage(new Uri(@handler.getPlayImage(), UriKind.Absolute));
+          
             plays = false;
-            Play.Content = new BitmapImage( new Uri( @handler.getPlayImage(), UriKind.Absolute ) );
+            Play.Content = playImage;
             myMediaElement.Stop();
 
         }
 
-            }
+    }
 }

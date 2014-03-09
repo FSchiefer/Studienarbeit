@@ -32,7 +32,7 @@ namespace StudienarbeitsProjekt {
                               ? Direction.Top
                               : Direction.Right;     // (control.ActualOrientation >= 225 && control.ActualOrientation < 315)
 
-            int winkel;
+            int winkel = 0;
             switch (d) { // Initialisierung
                 case Direction.Bottom:
                     y = mainScatt.ActualHeight;

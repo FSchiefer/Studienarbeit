@@ -23,20 +23,20 @@ namespace StudienarbeitsProjekt.ContentControls {
 
         private FileHandler handler;
 
-        public DocumentControl( string dokumentPfad, Brush color ) {
+        public DocumentControl(string dokumentPfad, Brush color) {
             InitializeComponent();
-            handler = new FileHandler( dokumentPfad );
+            handler = new FileHandler(dokumentPfad);
             this.BorderBrush = color;
             // nur mit "Speichern unter" erzeugte XPS Dokumente können verwendet werden.
-            XpsDocument xpsDoc = new XpsDocument( dokumentPfad,
-                                       FileAccess.Read );
-            handler.titleViewer();
+            XpsDocument xpsDoc = new XpsDocument(dokumentPfad,
+                                       FileAccess.Read);
+            Title.Content = handler.titleViewer();
             myDocViewer.Document = xpsDoc.GetFixedDocumentSequence();
             xpsDoc.Close();
         }
 
 
-        private void docViewer_SizeChanged( object sender, SizeChangedEventArgs e ) {
+        private void docViewer_SizeChanged(object sender, SizeChangedEventArgs e) {
             myDocViewer.FitToWidth();
         }
     }

@@ -78,7 +78,7 @@ namespace StudienarbeitsProjekt {
                 documents( FileHandler.getDocFiles( fileChooser ) );
                 images( FileHandler.getImageFiles( fileChooser ) );
                 videos( FileHandler.getVideoFiles( fileChooser ) );
-
+                collections(FileHandler.getCollections(fileChooser));
                 String[] collectionPaths = FileHandler.getVideoFiles( fileChooser );
                 if (collectionPaths != null)
                     collections( collectionPaths );
