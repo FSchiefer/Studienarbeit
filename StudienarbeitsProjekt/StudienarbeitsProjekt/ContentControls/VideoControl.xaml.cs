@@ -26,24 +26,24 @@ namespace StudienarbeitsProjekt.ContentControls {
         private Image stopImage;
         private Image pauseImage;
 
-        public VideoControl(string videoPosition, Brush color) {
+        public VideoControl( string videoPosition, Brush color ) {
 
             InitializeComponent();
-                       handler = new FileHandler(videoPosition);
+            handler = new FileHandler( videoPosition );
             playImage = new Image();
             stopImage = new Image();
-            playImage.Source = new BitmapImage(new Uri(@handler.getPlayImage(), UriKind.Absolute));
-            stopImage.Source = new BitmapImage(new Uri(@handler.getStopImage(), UriKind.Absolute));
+            pauseImage = new Image();
+            playImage.Source = new BitmapImage( new Uri( @FileHandler.getPlayImage(), UriKind.Absolute ) );
+            stopImage.Source = new BitmapImage( new Uri( @FileHandler.getStopImage(), UriKind.Absolute ) );
+            pauseImage.Source = new BitmapImage( new Uri( @FileHandler.getPauseImage(), UriKind.Absolute ) ); ;
+
             this.BorderBrush = color;
             Title.Content = handler.titleViewer();
-
 
             Play.Content = playImage;
             Stop.Content = stopImage;
             stopImage.Stretch = Stretch.Fill;
-            }
-
-
+        }
 
         // Change the volume of the media.
         private void ChangeMediaVolume(object sender, RoutedPropertyChangedEventArgs<double> args) {
@@ -64,11 +64,10 @@ namespace StudienarbeitsProjekt.ContentControls {
         }
 
         private void Play_Click(object sender, RoutedEventArgs e) {
-
-            playImage = new Image();
-            pauseImage = new Image();
-            playImage.Source = new BitmapImage(new Uri(@handler.getPlayImage(), UriKind.Absolute));
-            pauseImage.Source = new BitmapImage(new Uri(@handler.getPauseImage(), UriKind.Absolute)); ;
+            //playImage = new Image();
+            //pauseImage = new Image();
+            //playImage.Source = new BitmapImage(new Uri(@FileHandler.getPlayImage(), UriKind.Absolute));
+            //pauseImage.Source = new BitmapImage( new Uri(@FileHandler.getPauseImage(), UriKind.Absolute ) ); ;
 
             if (plays == false) {
                 if (firstPlay) {
@@ -91,8 +90,8 @@ namespace StudienarbeitsProjekt.ContentControls {
 
 
         private void Stop_Click(object sender, RoutedEventArgs e) {
-            playImage = new Image();
-            playImage.Source = new BitmapImage(new Uri(@handler.getPlayImage(), UriKind.Absolute));
+            //playImage = new Image();
+            //playImage.Source = new BitmapImage(new Uri(@handler.getPlayImage(), UriKind.Absolute));
           
             plays = false;
             Play.Content = playImage;
