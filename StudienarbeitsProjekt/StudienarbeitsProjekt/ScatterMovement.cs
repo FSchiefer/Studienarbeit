@@ -8,6 +8,8 @@ using System.Windows;
 
 namespace StudienarbeitsProjekt {
     class ScatterMovement {
+        enum Direction { Right, Left, Top, Bottom };
+
         private ScatterView mainScatt;
         public ScatterMovement(ScatterView mainScatt) {
             this.mainScatt = mainScatt;
@@ -16,138 +18,107 @@ namespace StudienarbeitsProjekt {
         #region Sort and decision functions
 
         // Funktion zum Anordnen der Scatter zu einem "Vater" Element
-        public void ScatterItemsOrientateAndMoveTo(ScatterViewItem control, TagContent content, Boolean rotation,Boolean moving) {
+        public void ScatterItemsOrientateAndMoveTo( ScatterViewItem control, TagContent content, Boolean rotation, Boolean moving ) {
 
-            Console.WriteLine(control.Name);
+            Console.WriteLine( control.Name );
+            Console.WriteLine( control.ActualOrientation );
             double x = 0, y = 0, sX = 0, sY = 0, maxHeight = 0;
-            Console.WriteLine(control.ActualOrientation);
-            if (control.ActualOrientation >= 315 && control.ActualOrientation < 45) {
-                y = mainScatt.ActualHeight;
-                foreach (ScatterViewItem svi in content.Elements) {
-                    Console.WriteLine(svi.Name);
 
-                    if (svi.Name == "MainScatter") {
-                        continue;
-                    }
-                    if (Math.Round(x + svi.ActualWidth) > mainScatt.ActualWidth) {
+            Direction d = (control.ActualOrientation >= 315 || control.ActualOrientation < 45)
+                          ? Direction.Bottom
+                          : (control.ActualOrientation >= 45 && control.ActualOrientation < 135)
+                            ? Direction.Left
+                            : (control.ActualOrientation >= 135 && control.ActualOrientation < 225)
+                              ? Direction.Top
+                              : Direction.Right;     // (control.ActualOrientation >= 225 && control.ActualOrientation < 315)
+
+            int winkel;
+            switch (d) { // Initialisierung
+                case Direction.Bottom:
+                    y = mainScatt.ActualHeight;
+                    winkel = 0;
+                    break;
+                case Direction.Top:
+                    x = mainScatt.ActualWidth;
+                    winkel = 180;
+                    break;
+                case Direction.Right:
+                    x = mainScatt.ActualWidth;
+                    y = mainScatt.ActualHeight;
+                    winkel = 270;
+                    break;
+                case Direction.Left:
+                    winkel = 90;
+                    break;
+            }
+
+            foreach (ScatterViewItem svi in content.Elements) {
+                if (svi.Name == "MainScatter") {
+                    continue;
+                }
+                Console.WriteLine( svi.Name );
+
+                switch (d) {
+                    case Direction.Bottom:
+                     if (Math.Round( x + svi.ActualWidth ) > mainScatt.ActualWidth) {
                         x = 0;
                         y -= maxHeight;
                         maxHeight = 0;
                     }
-                    maxHeight = Math.Max(maxHeight, svi.ActualHeight);
+                    maxHeight = Math.Max( maxHeight, svi.ActualHeight );
                     sX = x + svi.ActualWidth / 2;
                     sY = y - svi.ActualHeight / 2;
-                    if (moving) {
-                        entscheider(svi, new Point(sX, sY), 0, rotation, moving);
-                    } else {
-                        entscheider(svi, new Point(sX, sY), (int) control.ActualOrientation, rotation, moving);
-                    }
                     x += svi.ActualWidth;
-                }
-            } else if (control.ActualOrientation >= 135 && control.ActualOrientation < 225) {
 
-                x = mainScatt.ActualWidth;
-                foreach (ScatterViewItem svi in content.Elements) {
-                    if (svi.Name == "MainScatter") {
-                        continue;
-                    }
-                    Console.WriteLine(svi.Name);
-                    if (Math.Round(x - svi.ActualWidth) < 0) {
+                    break;
+                case Direction.Top:
+                    if (Math.Round( x - svi.ActualWidth ) < 0) {
                         x = mainScatt.ActualWidth;
                         y += maxHeight;
                         maxHeight = 0;
                     }
-                    maxHeight = Math.Max(maxHeight, svi.ActualHeight);
+                    maxHeight = Math.Max( maxHeight, svi.ActualHeight );
                     sX = x - svi.ActualWidth / 2;
                     sY = y + svi.ActualHeight / 2;
-                    if (moving) {
-                        entscheider(svi, new Point(sX, sY), 180, rotation, moving);
-                    } else {
-                        entscheider(svi, new Point(sX, sY), (int)control.ActualOrientation, rotation, moving);
-                    }
                     x -= svi.ActualWidth;
-                }
-            } else if (control.ActualOrientation >= 45 && control.ActualOrientation < 135) {
-
-                foreach (ScatterViewItem svi in content.Elements) {
-                    if (svi.Name == "MainScatter") {
-                        continue;
-                    }
-                    Console.WriteLine(svi.Name);
-                    if (Math.Round(y + svi.ActualWidth) > mainScatt.ActualHeight) {
-                        y = 0;
-                        x += maxHeight;
-                        maxHeight = 0;
-                    }
-                    maxHeight = Math.Max(maxHeight, svi.ActualHeight);
-                    sY = y + svi.ActualWidth / 2;
-                    sX = x + svi.ActualHeight / 2;
-                    if (moving) {
-                        entscheider(svi, new Point(sX, sY), 90, rotation, moving);
-                    } else {
-                        entscheider(svi, new Point(sX, sY), (int)control.ActualOrientation, rotation, moving);
-                    }
-                    y += svi.ActualWidth;
-                }
-
-            } else if (control.ActualOrientation >= 225 && control.ActualOrientation < 315) {
-                x = mainScatt.ActualWidth;
-                y = mainScatt.ActualHeight;
-                foreach (ScatterViewItem svi in content.Elements) {
-                    if (svi.Name == "MainScatter") {
-                        continue;
-                    }
-                    Console.WriteLine(svi.Name);
-                    if (Math.Round(y - svi.ActualWidth) < 0) {
+                    break;
+                case Direction.Right:
+                    if (Math.Round( y - svi.ActualWidth ) < 0) {
                         x -= maxHeight;
                         y = mainScatt.ActualHeight;
                         maxHeight = 0;
                     }
-                    maxHeight = Math.Max(maxHeight, svi.ActualHeight);
+                    maxHeight = Math.Max( maxHeight, svi.ActualHeight );
                     sY = y - svi.ActualWidth / 2;
                     sX = x - svi.ActualHeight / 2;
-                    if (moving) {
-                        entscheider(svi, new Point(sX, sY), 270, rotation, moving);
-                    } else {
-                        entscheider(svi, new Point(sX, sY), (int)control.ActualOrientation, rotation, moving);
-                    }
                     y -= svi.ActualWidth;
-                }
-            } else {
-                y = mainScatt.ActualHeight;
-                foreach (ScatterViewItem svi in content.Elements) {
-                    if (svi.Name == "MainScatter") {
-                        continue;
-                    }
-                    Console.WriteLine(svi.Name);
-                    if (Math.Round(x + svi.ActualWidth) > mainScatt.ActualWidth) {
-                        x = 0;
-                        y -= maxHeight;
+                    break;
+                case Direction.Left:
+                    if (Math.Round( y + svi.ActualWidth ) > mainScatt.ActualHeight) {
+                        y = 0;
+                        x += maxHeight;
                         maxHeight = 0;
                     }
-                    maxHeight = Math.Max(maxHeight, svi.ActualHeight);
-                    sX = x + svi.ActualWidth / 2;
-                    sY = y - svi.ActualHeight / 2;
-                    if (moving) {
-                        entscheider(svi, new Point(sX, sY), 0, rotation, moving);
-                    } else {
-                        entscheider(svi, new Point(sX, sY), (int)control.ActualOrientation, rotation, moving);
-                    }
-                    x += svi.ActualWidth;
-                }
+                    maxHeight = Math.Max( maxHeight, svi.ActualHeight );
+                    sY = y + svi.ActualWidth / 2;
+                    sX = x + svi.ActualHeight / 2;
+                    y += svi.ActualWidth;
+                      break;
+                  }
+
+                entscheider( svi, new Point( sX, sY ), (moving ? winkel : (int)control.ActualOrientation), rotation, moving );
             }
-
-
         }
 
-        private void entscheider(ScatterViewItem svi, Point point, int orientation, bool rotation, bool moving) {
-              if (rotation && moving) {
-                        MoveAndOrientateScatter(svi, point, orientation);
-                    } else if (!rotation && moving) {
-                        ScatterPositionAnimation(svi, point, TimeSpan.FromSeconds(0.5));
-              } else if (!moving && rotation) {
-                  ScatterOrientationAnimation(svi,orientation,TimeSpan.FromSeconds(0.5));
-              }
+
+        private void entscheider( ScatterViewItem svi, Point point, int orientation, bool rotation, bool moving ) {
+            if (rotation && moving) {
+                MoveAndOrientateScatter( svi, point, orientation );
+            } else if (!rotation && moving) {
+                ScatterPositionAnimation( svi, point, TimeSpan.FromSeconds( 0.5 ) );
+            } else if (!moving && rotation) {
+                ScatterOrientationAnimation( svi, orientation, TimeSpan.FromSeconds( 0.5 ) );
+            }
         }
 
         #endregion
@@ -214,8 +185,6 @@ namespace StudienarbeitsProjekt {
             if (svi.Name != "MainScatter") {
                 removeScatterViewItem(svi);
             }
-
-
         }
 
         public void removeScatterViewItem(ScatterViewItem svi) {

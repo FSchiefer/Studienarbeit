@@ -28,7 +28,7 @@
                     </s:SurfaceRadioButton>
                     <s:SurfaceRadioButton Foreground="White"  x:Name="ScatterOrientierung" Checked="ScatterOrientierung_Checked">
                         <TextBlock TextWrapping="Wrap" FontStretch="Expanded" >
-               Orientierung anhand  des Scatters
+               Orientierung anhand  dieses Fensters
                         </TextBlock>
                     </s:SurfaceRadioButton>
                     <s:SurfaceRadioButton Foreground="White"  x:Name="TagOrientierung" Checked="TagOrientierung_Checked" >

@@ -65,8 +65,8 @@
 
                         <Ellipse Opacity="0.9">
 
-                            <Ellipse.Fill>
-                                <ImageBrush ImageSource="C:\Studiengaenge\DHBW.jpg" Stretch="fill" Opacity="1"/>
+                            <Ellipse.Fill >
+                                <ImageBrush x:Name="MainScatterImage"  Stretch="fill" Opacity="1"/>
                        
 
                             </Ellipse.Fill>

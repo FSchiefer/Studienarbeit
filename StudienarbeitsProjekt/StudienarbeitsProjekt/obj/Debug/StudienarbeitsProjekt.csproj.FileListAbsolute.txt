@@ -59,3 +59,14 @@ C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\ob
 C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\StudienarbeitsProjekt.pdb
 C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\ContentControls\DescriptionControl.baml
 C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\ContentControls\DescriptionControl.g.cs
+C:\Users\bs\Desktop\Felix Studienarbeit\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\bin\Debug\StudienarbeitsProjekt.exe.config
+C:\Users\bs\Desktop\Felix Studienarbeit\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\StudienarbeitsProjekt.exe
+C:\Users\bs\Desktop\Felix Studienarbeit\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\StudienarbeitsProjekt.pdb
+C:\Users\bs\Desktop\Felix Studienarbeit\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\StudienarbeitsProjekt.csprojResolveAssemblyReference.cache
+C:\Users\bs\Desktop\Felix Studienarbeit\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\ContentControls\DescriptionControl.baml
+C:\Users\bs\Desktop\Felix Studienarbeit\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\Simple Styles.baml
+C:\Users\bs\Desktop\Felix Studienarbeit\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\App.baml
+C:\Users\bs\Desktop\Felix Studienarbeit\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\ContentControls\DescriptionControl.g.cs
+C:\Users\bs\Desktop\Felix Studienarbeit\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\App.g.cs
+C:\Users\bs\Desktop\Felix Studienarbeit\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\StudienarbeitsProjekt_Content.g.cs
+C:\Users\bs\Desktop\Felix Studienarbeit\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\StudienarbeitsProjekt_MarkupCompile.cache

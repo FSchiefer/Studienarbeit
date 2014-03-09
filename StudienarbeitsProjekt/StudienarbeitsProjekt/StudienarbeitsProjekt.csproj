@@ -79,6 +79,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="FileHandler.cs" />
     <Compile Include="ContentControls\CollectionControl.xaml.cs">
       <DependentUpon>CollectionControl.xaml</DependentUpon>
     </Compile>

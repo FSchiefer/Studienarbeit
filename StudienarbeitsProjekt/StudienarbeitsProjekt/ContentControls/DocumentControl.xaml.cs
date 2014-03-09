@@ -15,51 +15,29 @@ using Microsoft.Surface.Presentation.Controls;
 using System.Windows.Xps.Packaging;
 using System.IO;
 
-namespace StudienarbeitsProjekt.ContentControls
-{
+namespace StudienarbeitsProjekt.ContentControls {
     /// <summary>
     /// Interaktionslogik für DocumentControl.xaml
     /// </summary>
-    public partial class DocumentControl : ScatterViewItem
-    {
-   
-        public DocumentControl()
-        {
+    public partial class DocumentControl : ScatterViewItem {
 
+        private FileHandler handler;
+
+        public DocumentControl( string dokumentPfad, Brush color ) {
             InitializeComponent();
-
-            
-        }
-
-        public DocumentControl(string dokumentPfad, Brush color)
-        {
-
-            InitializeComponent();
+            handler = new FileHandler( dokumentPfad );
             this.BorderBrush = color;
             // nur mit "Speichern unter" erzeugte XPS Dokumente können verwendet werden.
-            XpsDocument xpsDoc = new XpsDocument(dokumentPfad,
-                                       FileAccess.Read);
-            titleViewer(dokumentPfad);
+            XpsDocument xpsDoc = new XpsDocument( dokumentPfad,
+                                       FileAccess.Read );
+            handler.titleViewer();
             myDocViewer.Document = xpsDoc.GetFixedDocumentSequence();
             xpsDoc.Close();
         }
 
 
-        private void docViewer_SizeChanged(object sender, SizeChangedEventArgs e)
-        {
+        private void docViewer_SizeChanged( object sender, SizeChangedEventArgs e ) {
             myDocViewer.FitToWidth();
         }
-
-        // Funktion um den Namen des Dokuments auszulesen
-        private void titleViewer(string dokumentPfad)
-        {
-            // Ausgabe des Dateinamens des Dokuments
-            int beginFileName = dokumentPfad.LastIndexOf('\\') + 1;
-            string name = dokumentPfad.Substring(beginFileName, dokumentPfad.LastIndexOf('.') - beginFileName );
-            Title.Content = name;
- 
-         
-        }
-
     }
 }

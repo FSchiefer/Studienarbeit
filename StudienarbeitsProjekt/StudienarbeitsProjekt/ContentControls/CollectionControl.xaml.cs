@@ -41,148 +41,113 @@ namespace StudienarbeitsProjekt.ContentControls {
         }
 
         // Konstruktor zum erstellen der Komponente und dem Festlegen des darzustellenden Titels
-        public CollectionControl(String dataPath, String name, TagContent tagContent, Brush color) {
+        public CollectionControl( String dataPath, String name, TagContent tagContent, Brush color ) {
             InitializeComponent();
             this.BorderBrush = color;
-            move = new ScatterMovement(tagContent.mainScatt);
+            move = new ScatterMovement( tagContent.mainScatt );
             this.tagContent = tagContent;
             this.color = color;
-            if (name.Contains(":")) {
-                    name = name.Substring(0, name.LastIndexOf(':') - 0);
-                    title = name + ": " + getFolderName(dataPath);
+
+            FileHandler fh = new FileHandler( dataPath );
+            if (name.Contains( ":" )) {
+                name = name.Substring( 0, name.LastIndexOf( ':' ) - 0 );
+                title = name + ": " + fh.getFolderName();
             } else {
-                title = name + ": " + getFolderName(dataPath);
+                title = name + ": " + fh.getFolderName();
             }
             Title.Content = title;
-            fileTable(dataPath);
+            fileTable( dataPath );
         }
-        private void fileTable(string dataPath) {
-            String[] filePath = Directory.GetFiles(dataPath);
-            String[] folderPath = Directory.GetDirectories(dataPath);
+        private void fileTable( string dataPath ) {
+            String[] filePath = Directory.GetFiles( dataPath );
+            String[] folderPath = Directory.GetDirectories( dataPath );
             foreach (String path in filePath) {
-                String type = fileType(path);
-                if (type == "jpg" || type == "xps" || type == "wmv" || type == "mp4" || type == "avi" || type == "mpg" || type == "MTS") {
+                FileHandler fh = new FileHandler( path );
 
-                    fileList.Add(path);
+                if (fh != null && fh.isValidFileType()) {
+                    fileList.Add( path );
                     child = new SurfaceListBoxItem();
-                    child.Content = titleViewer(path);
+                    child.Content = titleViewer( path );
                     child.Tag = path;
 
-                    contentNames.Items.Add(child);
+                    contentNames.Items.Add( child );
                 }
             }
             foreach (String path in folderPath) {
-
-                folderList.Add(path);
-
+                FileHandler fh = new FileHandler( path );
+                folderList.Add( path );
 
                 child = new SurfaceListBoxItem();
-                child.Content = getFolderName(path);
+                child.Content = fh.getFolderName();
                 child.Tag = path;
 
-                contentNames.Items.Add(child);
-
+                contentNames.Items.Add( child );
             }
-            contentNames.MaxHeight = contentNames.Items.Count * 55; 
+            contentNames.MaxHeight = contentNames.Items.Count * 55;
             collectionControl.MaxHeight = contentNames.MaxHeight + 25;
         }
 
 
-
-
-        private String getFolderName(String dokumentPfad) {
-            // Ausgabe des Ordnernamens des Dokuments
-            int beginDirectoryName = dokumentPfad.LastIndexOf('\\') + 1;
-            String name = dokumentPfad.Substring(beginDirectoryName, dokumentPfad.Length - beginDirectoryName);
-
-            return name;
-
-
-        }
-        private String titleViewer(String dokumentPfad) {
-            // Ausgabe des Dateinamens des Dokuments
-            String name = String.Empty;
-            int beginFileName = dokumentPfad.LastIndexOf('\\') + 1;
-            if (dokumentPfad.Contains('.')) {
-                name = dokumentPfad.Substring(beginFileName, dokumentPfad.LastIndexOf('.') - beginFileName);
-            }
-            return name;
-
-        }
-
-        private String fileType(String dokumentPfad) {
-            // Ausgabe des Dateityps einer Datei
-            String name = dokumentPfad.Substring(dokumentPfad.LastIndexOf('.') + 1, dokumentPfad.Length - dokumentPfad.LastIndexOf('.') - 1);
-            return name;
-
-        }
         // Funktion zum Löschen von allen Elementen welche durch eine CollectionControl aufgerufen wurden.
         private void cleanAll() {
             foreach (SurfaceListBoxItem sLBI in contentNames.SelectedItems) {
-                viewSources.Remove(sLBI.Content.ToString());
-                if (folderList.Contains(sLBI.Content.ToString())) {
+                viewSources.Remove( sLBI.Content.ToString() );
+                if (folderList.Contains( sLBI.Content.ToString() )) {
                     CollectionControl item = (CollectionControl)collectionList[sLBI];
                     item.cleanAll();
                     ScatterViewItem sItem = collectionList[sLBI];
-                    collectionList.Remove(sLBI);
-                    move.MoveAndOrientateScatterToClose(item, this.ActualCenter, 0);
+                    collectionList.Remove( sLBI );
+                    move.MoveAndOrientateScatterToClose( item, this.ActualCenter, 0 );
                 } else {
                     ScatterViewItem item = scatterList[sLBI];
-                    scatterList.Remove(sLBI);
-                    move.MoveAndOrientateScatterToClose(item, this.ActualCenter, 0);
-            
+                    scatterList.Remove( sLBI );
+                    move.MoveAndOrientateScatterToClose( item, this.ActualCenter, 0 );
                 }
             }
-
         }
 
         // Abfrage zum abgleich von aktivierten und deaktivierten SurfaceListBox Items
-        private void contentNames_SelectionChanged(object sender, SelectionChangedEventArgs e) {
-            Console.WriteLine("vor dem Nullvergleich");
+        private void contentNames_SelectionChanged( object sender, SelectionChangedEventArgs e ) {
+            Console.WriteLine( "vor dem Nullvergleich" );
             if (contentNames.Items != null) {
                 foreach (SurfaceListBoxItem sLBI in contentNames.Items) {
-                    if (contentNames.SelectedItems != null && contentNames.SelectedItems.Contains(sLBI)) {
-                        Console.WriteLine("Item gewählt");
-                        if (!scatterList.ContainsKey(sLBI) && !collectionList.ContainsKey(sLBI)) {
-                            Console.WriteLine("Key noch nicht eingetragen");
-                            viewSources.Add(sLBI.Content.ToString());
+                    if (contentNames.SelectedItems != null && contentNames.SelectedItems.Contains( sLBI )) {
+                        Console.WriteLine( "Item gewählt" );
+                        if (!scatterList.ContainsKey( sLBI ) && !collectionList.ContainsKey( sLBI )) {
+                            Console.WriteLine( "Key noch nicht eingetragen" );
+                            viewSources.Add( sLBI.Content.ToString() );
                             foreach (String folder in folderList) {
-                                if (folder.Contains(sLBI.Content.ToString())) {
-                                    collectionList.Add(sLBI, tagContent.createCollection(folder, title, color));
+                                if (folder.Contains( sLBI.Content.ToString() )) {
+                                    collectionList.Add( sLBI, tagContent.createCollection( folder, title, color ) );
                                 }
                             }
                             foreach (String file in fileList) {
-                                if (file.Contains(sLBI.Content.ToString())) {
-                                    String type = fileType(file);
+                                if (file.Contains( sLBI.Content.ToString() )) {
+                                    String type = fileType( file );
                                     if (type == "jpg") {
-                                        scatterList.Add(sLBI, tagContent.createPromotionImage(file, color));
+                                        scatterList.Add( sLBI, tagContent.createPromotionImage( file, color ) );
                                     } else if (type == "xps") {
-                                        scatterList.Add(sLBI, tagContent.createDocument(file, color));
+                                        scatterList.Add( sLBI, tagContent.createDocument( file, color ) );
                                     } else if (type == "wmv" || type == "mp4" || type == "avi" || type == "mpg" || type == "MTS") {
-                                        scatterList.Add(sLBI, tagContent.createVideo(file, color));
+                                        scatterList.Add( sLBI, tagContent.createVideo( file, color ) );
                                     }
                                 }
                             }
                         }
-                    } else if (scatterList.ContainsKey(sLBI)) {
-                        viewSources.Remove(sLBI.Content.ToString());
+                    } else if (scatterList.ContainsKey( sLBI )) {
+                        viewSources.Remove( sLBI.Content.ToString() );
                         ScatterViewItem item = scatterList[sLBI];
-                        scatterList.Remove(sLBI);
-                        move.MoveAndOrientateScatterToClose(item, this.ActualCenter, this.ActualOrientation);
-                    } else if (collectionList.ContainsKey(sLBI)) {
+                        scatterList.Remove( sLBI );
+                        move.MoveAndOrientateScatterToClose( item, this.ActualCenter, this.ActualOrientation );
+                    } else if (collectionList.ContainsKey( sLBI )) {
                         CollectionControl item = (CollectionControl)collectionList[sLBI];
                         item.cleanAll();
                         ScatterViewItem sItem = collectionList[sLBI];
-                        collectionList.Remove(sLBI);
-                        move.MoveAndOrientateScatterToClose(item, this.ActualCenter, this.ActualOrientation);
+                        collectionList.Remove( sLBI );
+                        move.MoveAndOrientateScatterToClose( item, this.ActualCenter, this.ActualOrientation );
                     }
                 }
             }
         }
-
-    
-    
     }
-
-
 }

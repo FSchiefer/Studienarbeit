@@ -20,21 +20,23 @@ namespace StudienarbeitsProjekt.ContentControls
     /// </summary>
     public partial class VideoControl : ScatterViewItem
     {
-        Boolean plays = false;
-        Boolean firstPlay = true;
-        String videoPosition;
+
+        private Boolean plays = false;
+        private Boolean firstPlay = true;
+        private FileHandler handler;
+
         public VideoControl(string videoPosition, Brush color)
         {
 
             InitializeComponent();
             this.BorderBrush = color;
-            this.videoPosition = videoPosition;
-            titleViewer();
-            Image playImage = new Image();
-            playImage.Source = new BitmapImage(new Uri(@"C:\Studiengaenge\Play.jpg", UriKind.Absolute));
+            handler = new FileHandler( videoPosition );
+            Title.Content = handler.titleViewer();
+                Image playImage = new Image();
+            playImage.Source = new BitmapImage(new Uri(@handler.getPlayImage(), UriKind.Absolute));
             Play.Content = playImage;
             Image stopImage = new Image();
-            stopImage.Source = new BitmapImage(new Uri(@"C:\Studiengaenge\Stop.jpg", UriKind.Absolute));
+            stopImage.Source = new BitmapImage(new Uri(@handler.getStopImage(), UriKind.Absolute));
          
             Stop.Content = stopImage;
             stopImage.Stretch = Stretch.Fill;
@@ -77,26 +79,20 @@ namespace StudienarbeitsProjekt.ContentControls
             if (plays == false)
             {
                 if (firstPlay) {
-                    myMediaElement.Source = new Uri(videoPosition, UriKind.Absolute);
+                    myMediaElement.Source = new Uri(handler.getDokumentPfad(), UriKind.Absolute);
                     firstPlay = false;
                 }
                 myMediaElement.Play();
-
-
                 InitializePropertyValues();
 
                 plays = true;
-                Image pauseImage = new Image();
-                pauseImage.Source = new BitmapImage(new Uri(@"C:\Studiengaenge\Pause.jpg", UriKind.Absolute));
-                Play.Content = pauseImage;
+                Play.Content = new BitmapImage( new Uri( @handler.getPauseImage(), UriKind.Absolute ) );
             }
             else
             {
                 plays = false;
                 myMediaElement.Pause();
-                Image playImage = new Image();
-                playImage.Source = new BitmapImage(new Uri(@"C:\Studiengaenge\Play.jpg", UriKind.Absolute));
-                Play.Content = playImage;
+                Play.Content = new BitmapImage( new Uri( @handler.getPlayImage(), UriKind.Absolute ) );
             }
 
         }
@@ -106,23 +102,10 @@ namespace StudienarbeitsProjekt.ContentControls
         private void Stop_Click(object sender, RoutedEventArgs e)
         {
             plays = false;
-            Image playImage = new Image();
-            playImage.Source = new BitmapImage(new Uri(@"C:\Studiengaenge\Play.jpg", UriKind.Absolute));
-            Play.Content = playImage;
-            // The Stop method stops and resets the media to be played from
-            // the beginning.
+            Play.Content = new BitmapImage( new Uri( @handler.getPlayImage(), UriKind.Absolute ) );
             myMediaElement.Stop();
 
         }
 
-        // Funktion um den Namen des Dokuments auszulesen
-        private void titleViewer() {
-            // Ausgabe des Dateinamens des Dokuments
-            int beginFileName = videoPosition.LastIndexOf('\\') + 1;
-            string name = videoPosition.Substring(beginFileName, videoPosition.LastIndexOf('.') - beginFileName);
-            Title.Content = name;
-
-
-        }
-    }
+            }
 }
