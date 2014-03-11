@@ -113,6 +113,7 @@ namespace StudienarbeitsProjekt {
 
         // Funktion zum Auslesen von Ordnern für die Ordnerdarstellung
         private void collections( string[] collectionPfad ) {
+            if( collectionPfad != null)
             foreach (String pfad in collectionPfad) {
                 // Titel des Hauptordners auslesen
                 String name = getFolderName( pfad );

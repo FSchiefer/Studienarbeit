@@ -32,15 +32,22 @@ namespace StudienarbeitsProjekt.ContentControls {
                        handler = new FileHandler(videoPosition);
             playImage = new Image();
             stopImage = new Image();
-            playImage.Source = new BitmapImage(new Uri(@handler.getPlayImage(), UriKind.Absolute));
-            stopImage.Source = new BitmapImage(new Uri(@handler.getStopImage(), UriKind.Absolute));
+            pauseImage = new Image();
+            playImage.Source = new BitmapImage(new Uri(handler.getPlayImage(), UriKind.Absolute));
+            stopImage.Source = new BitmapImage(new Uri(handler.getStopImage(), UriKind.Absolute));
+            pauseImage.Source = new BitmapImage(new Uri(handler.getPauseImage(), UriKind.Absolute)); 
+
+   
+    
             this.BorderBrush = color;
             Title.Content = handler.titleViewer();
 
 
-            Play.Content = playImage;
-            Stop.Content = stopImage;
-            stopImage.Stretch = Stretch.Fill;
+            
+
+            Play.Content = this.Resources["PlayButton"];
+            Stop.Content = this.Resources["StopButton"];
+
             }
 
 
@@ -65,10 +72,6 @@ namespace StudienarbeitsProjekt.ContentControls {
 
         private void Play_Click(object sender, RoutedEventArgs e) {
 
-            playImage = new Image();
-            pauseImage = new Image();
-            playImage.Source = new BitmapImage(new Uri(@handler.getPlayImage(), UriKind.Absolute));
-            pauseImage.Source = new BitmapImage(new Uri(@handler.getPauseImage(), UriKind.Absolute)); ;
 
             if (plays == false) {
                 if (firstPlay) {
@@ -79,11 +82,11 @@ namespace StudienarbeitsProjekt.ContentControls {
                 InitializePropertyValues();
 
                 plays = true;
-                Play.Content = pauseImage;
+                Play.Content = this.Resources["PauseButton"];
             } else {
                 plays = false;
                 myMediaElement.Pause();
-                Play.Content = playImage;
+                Play.Content = this.Resources["PlayButton"];
             }
 
         }
@@ -91,11 +94,10 @@ namespace StudienarbeitsProjekt.ContentControls {
 
 
         private void Stop_Click(object sender, RoutedEventArgs e) {
-            playImage = new Image();
-            playImage.Source = new BitmapImage(new Uri(@handler.getPlayImage(), UriKind.Absolute));
+
           
             plays = false;
-            Play.Content = playImage;
+            Play.Content = this.Resources["PlayButton"];
             myMediaElement.Stop();
 
         }

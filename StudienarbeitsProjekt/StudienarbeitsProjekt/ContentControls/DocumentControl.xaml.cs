@@ -30,6 +30,7 @@ namespace StudienarbeitsProjekt.ContentControls {
             // nur mit "Speichern unter" erzeugte XPS Dokumente können verwendet werden.
             XpsDocument xpsDoc = new XpsDocument(dokumentPfad,
                                        FileAccess.Read);
+           
             Title.Content = handler.titleViewer();
             myDocViewer.Document = xpsDoc.GetFixedDocumentSequence();
             xpsDoc.Close();

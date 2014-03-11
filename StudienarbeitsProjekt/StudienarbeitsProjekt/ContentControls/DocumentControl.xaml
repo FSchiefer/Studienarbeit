@@ -21,7 +21,7 @@
                                     <RowDefinition Height="*"/>
                                     <RowDefinition Height="Auto"/>
                                 </Grid.RowDefinitions>
-                                <s:SurfaceScrollViewer x:Name="PART_ContentHost" PanningMode ="both" CanContentScroll="true" Grid.Column="0" Focusable="{TemplateBinding Focusable}" HorizontalScrollBarVisibility="Auto" IsTabStop="true" Grid.Row="1" TabIndex="1" />
+                                <s:SurfaceScrollViewer x:Name="PART_ContentHost" PanningMode ="both" Background="Black" BorderBrush="Black" CanContentScroll="true" Grid.Column="0" Focusable="{TemplateBinding Focusable}" HorizontalScrollBarVisibility="Auto" IsTabStop="true" Grid.Row="1" TabIndex="1" />
                                 <DockPanel Grid.Row="1">
                                     <FrameworkElement DockPanel.Dock="Right" Width="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}"/>
                                     <Rectangle Height="10" Visibility="Visible" VerticalAlignment="top">

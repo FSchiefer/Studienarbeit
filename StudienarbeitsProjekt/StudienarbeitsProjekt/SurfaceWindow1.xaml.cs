@@ -140,7 +140,7 @@ namespace StudienarbeitsProjekt {
                     continue;
                 }
                 Console.WriteLine( svi.Name );
-                move.MoveAndOrientateScatterToClose( svi, MainScatter.ActualCenter, MainScatter.ActualOrientation );
+                move.MoveAndOrientateScatterToClose( svi, e.TagVisualization.Center, e.TagVisualization.Orientation );
             }
         }
 
