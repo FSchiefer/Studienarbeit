@@ -22,9 +22,7 @@ namespace StudienarbeitsProjekt {
         }
 
         public FileHandler() {
-
         }
-
 
         // Ausgabe des Ordnernamens des Dokuments
         public String getFolderName() {
@@ -111,23 +109,26 @@ namespace StudienarbeitsProjekt {
 
         #region Systemimages 
 
-        public String getPlayImage() {
+        public static String getImage(String imgName) {
+            return rootDir + imgName+".jpg";
+        }
+
+        public static String getPlayImage() {
             return rootDir + "Play.jpg";
         }
 
 
-        public String getStopImage() {
+        public static String getStopImage() {
             return rootDir + "Stop.jpg";
         }
 
 
-        public String getPauseImage() {
+        public static String getPauseImage() {
             return rootDir + "Pause.jpg";
         }
 
 
-        public String getMainscatterImage() {
-
+        public static String getMainscatterImage() {
             return rootDir + "DHBW.jpg";
         }
 

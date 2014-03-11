@@ -58,6 +58,7 @@ namespace StudienarbeitsProjekt.ContentControls {
             Title.Content = title;
             fileTable(dataPath);
         }
+
         private void fileTable(string dataPath) {
             String[] filePath = Directory.GetFiles(dataPath);
             String[] folderPath = Directory.GetDirectories(dataPath);
@@ -86,7 +87,6 @@ namespace StudienarbeitsProjekt.ContentControls {
             contentNames.MaxHeight = contentNames.Items.Count * 55;
             collectionControl.MaxHeight = contentNames.MaxHeight + 25;
         }
-
 
         // Funktion zum Löschen von allen Elementen welche durch eine CollectionControl aufgerufen wurden.
         private void cleanAll() {

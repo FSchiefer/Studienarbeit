@@ -27,7 +27,6 @@ namespace StudienarbeitsProjekt {
 
 
         private int TouchesOnMainScatter = 0;
-        private FileHandler handler;
         private ObservableCollection<object> elements = new ObservableCollection<object>();
         private ScatterMovement move;
         private Queue<Color> userColors = new Queue<Color>();
@@ -41,9 +40,8 @@ namespace StudienarbeitsProjekt {
         /// </summary>
         public SurfaceWindow1() {
             InitializeComponent();
-            handler = new FileHandler();
             move = new ScatterMovement( MainScatt );
-            MainScatterImage.ImageSource = new BitmapImage(new Uri(handler.getMainscatterImage(),UriKind.Relative));
+            MainScatterImage.ImageSource = new BitmapImage(new Uri(FileHandler.getMainscatterImage(),UriKind.Relative));
             // Add handlers for window availability events
             AddWindowAvailabilityHandlers();
             userColors.Enqueue( Colors.Red );

@@ -22,20 +22,12 @@ namespace StudienarbeitsProjekt.ContentControls {
         private Boolean plays = false;
         private Boolean firstPlay = true;
         private FileHandler handler;
-        private Image playImage;
-        private Image stopImage;
-        private Image pauseImage;
 
-        public VideoControl(string videoPosition, Brush color) {
+
+        public VideoControl( string videoPosition, Brush color ) {
 
             InitializeComponent();
-                       handler = new FileHandler(videoPosition);
-            playImage = new Image();
-            stopImage = new Image();
-            pauseImage = new Image();
-            playImage.Source = new BitmapImage(new Uri(handler.getPlayImage(), UriKind.Absolute));
-            stopImage.Source = new BitmapImage(new Uri(handler.getStopImage(), UriKind.Absolute));
-            pauseImage.Source = new BitmapImage(new Uri(handler.getPauseImage(), UriKind.Absolute)); 
+            handler = new FileHandler( videoPosition );
 
    
     
@@ -49,7 +41,6 @@ namespace StudienarbeitsProjekt.ContentControls {
             Stop.Content = this.Resources["StopButton"];
 
             }
-
 
 
         // Change the volume of the media.
