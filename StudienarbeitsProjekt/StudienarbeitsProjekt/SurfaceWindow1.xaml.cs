@@ -30,6 +30,7 @@ namespace StudienarbeitsProjekt {
         private ObservableCollection<object> elements = new ObservableCollection<object>();
         private ScatterMovement move;
         private Queue<Color> userColors = new Queue<Color>();
+        private Queue<TagVisualization> pending = new Queue<TagVisualization>();
 
         public ObservableCollection<object> Elements { get { return elements; } }
 
@@ -46,8 +47,8 @@ namespace StudienarbeitsProjekt {
             AddWindowAvailabilityHandlers();
             userColors.Enqueue( Colors.Red );
             userColors.Enqueue( Colors.Blue );
-            userColors.Enqueue( Colors.Green );
-            userColors.Enqueue( Colors.Yellow );
+            //userColors.Enqueue(Colors.Green);
+            //userColors.Enqueue(Colors.Yellow);
             startVisualizer.VisualizationRemoved += new TagVisualizerEventHandler( startVisualizer_VisualizationRemoved );
             startVisualizer.VisualizationInitialized +=
                 new TagVisualizerEventHandler( StartVisualizer_VisualizationInitialized );
@@ -130,16 +131,34 @@ namespace StudienarbeitsProjekt {
 
 
         void startVisualizer_VisualizationRemoved( object sender, TagVisualizerEventArgs e ) {
-            TagContent content = e.TagVisualization as TagContent;
+             TagContent content = e.TagVisualization as TagContent;
+             if (content.Circle.Color == Colors.Red || content.Circle.Color == Colors.Blue || content.Circle.Color == Colors.Yellow || content.Circle.Color == Colors.Green) {
+                 if (pending.Count <= 0) {
 
-            userColors.Enqueue( content.Circle.Color );
-            foreach (ScatterViewItem svi in content.Elements) {
-                if (svi.Name == "MainScatter") {
-                    continue;
-                }
-                Console.WriteLine( svi.Name );
-                move.MoveAndOrientateScatterToClose( svi, e.TagVisualization.Center, e.TagVisualization.Orientation );
-            }
+                     userColors.Enqueue(content.Circle.Color);
+
+                 } else {
+                     TagContent waiting = pending.Dequeue() as TagContent;
+                     Color color = content.Circle.Color;
+                     Brush brush = new SolidColorBrush(color);
+
+                     ObservableCollection<object> tagElements = waiting.ShowTagContent(this, brush);
+
+                     waiting.Circle.Color = color;
+                     waiting.Message.Opacity = 0;
+                 }
+                 if (content.Elements != null)
+                 foreach (ScatterViewItem svi in content.Elements) {
+                     if (svi.Name == "MainScatter") {
+                         continue;
+                     }
+                     Console.WriteLine(svi.Name);
+                     move.MoveAndOrientateScatterToClose(svi, e.TagVisualization.Center, e.TagVisualization.Orientation);
+                 }
+             } else if (pending.Count >0) {
+
+                 pending.Dequeue();
+             }
         }
 
 
@@ -157,7 +176,12 @@ namespace StudienarbeitsProjekt {
                 content.Message.Content = "Bitte warten bis ein anderer Tag abgehoben wird";
                 content.Message.Foreground = Brushes.Red;
                 content.Message.Background = Brushes.White;
+                pending.Enqueue(content);
             }
+        }
+
+        private void ThreadVisualizer(TagContent content) {
+
         }
 
 
