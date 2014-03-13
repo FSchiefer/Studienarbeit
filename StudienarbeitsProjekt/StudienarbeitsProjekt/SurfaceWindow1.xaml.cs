@@ -18,6 +18,8 @@ using Microsoft.Surface.Presentation.Input;
 using System.Windows.Media.Animation;
 using System.Collections.ObjectModel;
 using System.Collections;
+using System.Threading;
+using System.Diagnostics;
 
 namespace StudienarbeitsProjekt {
     /// <summary>
@@ -25,12 +27,11 @@ namespace StudienarbeitsProjekt {
     /// </summary>
     public partial class SurfaceWindow1 : SurfaceWindow {
 
-
         private int TouchesOnMainScatter = 0;
         private ObservableCollection<object> elements = new ObservableCollection<object>();
         private ScatterMovement move;
         private Queue<Color> userColors = new Queue<Color>();
-        private Queue<TagVisualization> pending = new Queue<TagVisualization>();
+        private List<TagVisualization> pending = new List<TagVisualization>();
 
         public ObservableCollection<object> Elements { get { return elements; } }
 
@@ -41,17 +42,19 @@ namespace StudienarbeitsProjekt {
         /// </summary>
         public SurfaceWindow1() {
             InitializeComponent();
-            move = new ScatterMovement( MainScatt );
-            MainScatterImage.ImageSource = new BitmapImage(new Uri(FileHandler.getMainscatterImage(),UriKind.Relative));
+
+            move = new ScatterMovement(MainScatt);
+            MainScatterImage.ImageSource = new BitmapImage(new Uri(FileHandler.getMainscatterImage(), UriKind.Relative));
+
             // Add handlers for window availability events
             AddWindowAvailabilityHandlers();
-            userColors.Enqueue( Colors.Red );
-            userColors.Enqueue( Colors.Blue );
+            userColors.Enqueue(Colors.Red);
+            userColors.Enqueue(Colors.Blue);
             //userColors.Enqueue(Colors.Green);
             //userColors.Enqueue(Colors.Yellow);
-            startVisualizer.VisualizationRemoved += new TagVisualizerEventHandler( startVisualizer_VisualizationRemoved );
+            startVisualizer.VisualizationRemoved += new TagVisualizerEventHandler(startVisualizer_VisualizationRemoved);
             startVisualizer.VisualizationInitialized +=
-                new TagVisualizerEventHandler( StartVisualizer_VisualizationInitialized );
+                new TagVisualizerEventHandler(StartVisualizer_VisualizationInitialized);
         }
 
 
@@ -61,8 +64,8 @@ namespace StudienarbeitsProjekt {
         /// Occurs when the window is about to close. 
         /// </summary>
         /// <param name="e"></param>
-        protected override void OnClosed( EventArgs e ) {
-            base.OnClosed( e );
+        protected override void OnClosed(EventArgs e) {
+            base.OnClosed(e);
 
             // Remove handlers for window availability events
             RemoveWindowAvailabilityHandlers();
@@ -93,7 +96,7 @@ namespace StudienarbeitsProjekt {
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void OnWindowInteractive( object sender, EventArgs e ) {
+        private void OnWindowInteractive(object sender, EventArgs e) {
             //TODO: enable audio, animations here
         }
 
@@ -102,7 +105,7 @@ namespace StudienarbeitsProjekt {
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void OnWindowNoninteractive( object sender, EventArgs e ) {
+        private void OnWindowNoninteractive(object sender, EventArgs e) {
             //TODO: Disable audio here if it is enabled
 
             //TODO: optionally enable animations here
@@ -113,96 +116,87 @@ namespace StudienarbeitsProjekt {
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void OnWindowUnavailable( object sender, EventArgs e ) {
+        private void OnWindowUnavailable(object sender, EventArgs e) {
             //TODO: disable audio, animations here
         }
 
         #endregion
 
-
         #region events
 
-        private void MainScatter_SizeChanged( object sender, SizeChangedEventArgs e ) {
+        private void MainScatter_SizeChanged(object sender, SizeChangedEventArgs e) {
 
-            double s = Math.Sqrt( Math.Pow( MainScatter.ActualWidth, 2 ) / 2 );
+            double s = Math.Sqrt(Math.Pow(MainScatter.ActualWidth, 2) / 2);
             MainContentGrid.Width = s;
             MainContentGrid.Height = s;
         }
 
 
-        void startVisualizer_VisualizationRemoved( object sender, TagVisualizerEventArgs e ) {
-             TagContent content = e.TagVisualization as TagContent;
-             if (content.Circle.Color == Colors.Red || content.Circle.Color == Colors.Blue || content.Circle.Color == Colors.Yellow || content.Circle.Color == Colors.Green) {
-                 if (pending.Count <= 0) {
+        void startVisualizer_VisualizationRemoved(object sender, TagVisualizerEventArgs e) {
+            TagContent content = (TagContent)e.TagVisualization;
 
-                     userColors.Enqueue(content.Circle.Color);
+            if (pending.Contains(content))
+                pending.Remove(content);
+            else
+                if (pending.Any()) {
+                    TagContent waiting = (TagContent)pending.ElementAt(0);
+                    pending.RemoveAt(0);
 
-                 } else {
-                     TagContent waiting = pending.Dequeue() as TagContent;
-                     Color color = content.Circle.Color;
-                     Brush brush = new SolidColorBrush(color);
+                    waiting.Circle.Color = content.Circle.Color;
+                    waiting.BorderBrush = content.BorderBrush;
 
-                     ObservableCollection<object> tagElements = waiting.ShowTagContent(this, brush);
+                    waiting.ShowTagContent(this);
+                } else
+                    userColors.Enqueue(content.Circle.Color);
 
-                     waiting.Circle.Color = color;
-                     waiting.Message.Opacity = 0;
-                 }
-                 if (content.Elements != null)
-                 foreach (ScatterViewItem svi in content.Elements) {
-                     if (svi.Name == "MainScatter") {
-                         continue;
-                     }
-                     Console.WriteLine(svi.Name);
-                     move.MoveAndOrientateScatterToClose(svi, e.TagVisualization.Center, e.TagVisualization.Orientation);
-                 }
-             } else if (pending.Count >0) {
+            if (content.Elements != null) {
+                foreach (ScatterViewItem svi in content.Elements) {
+                    if (svi.Name == "MainScatter")
+                        continue;
 
-                 pending.Dequeue();
-             }
+                    Debug.WriteLine(svi.Name);
+
+                    move.MoveAndOrientateScatterToClose(svi, e.TagVisualization.Center, e.TagVisualization.Orientation);
+                }
+            }
         }
 
 
-        void StartVisualizer_VisualizationInitialized( object sender, TagVisualizerEventArgs e ) {
-            TagContent content = e.TagVisualization as TagContent;
+        private void StartVisualizer_VisualizationInitialized(object sender, TagVisualizerEventArgs e) {
+            TagContent content = (TagContent)e.TagVisualization;
 
-            if (content != null && userColors.Count > 0) {
+            if (userColors.Count > 0) {
                 Color color = userColors.Dequeue();
-                Brush brush = new SolidColorBrush( color );
-                ObservableCollection<object> tagElements = content.ShowTagContent( this, brush );
+                content.BorderBrush = new SolidColorBrush(color);
+                content.ShowTagContent(this);
 
                 content.Circle.Color = color;
-                
-            } else if (userColors.Count.Equals( 0 )) {
+
+            } else {
                 content.Message.Content = "Bitte warten bis ein anderer Tag abgehoben wird";
                 content.Message.Foreground = Brushes.Red;
                 content.Message.Background = Brushes.White;
-                pending.Enqueue(content);
+                pending.Add(content);
             }
         }
 
-        private void ThreadVisualizer(TagContent content) {
 
+
+        private void MainScatter_ContainerManipulationCompleted(object sender, ContainerManipulationCompletedEventArgs e) {
+            Point moveTo = new Point(host.ActualWidth / 2, host.ActualHeight / 2);
+            move.MoveToPosition(MainScatter, moveTo, TimeSpan.FromSeconds(0.5));
         }
 
 
-        private void MainScatter_ContainerManipulationCompleted( object sender, ContainerManipulationCompletedEventArgs e ) {
-            Point moveTo = new Point( Host.ActualWidth / 2, Host.ActualHeight / 2 );
-            move.ScatterPositionAnimation( MainScatter, moveTo, TimeSpan.FromSeconds( 0.5 ) );
-        }
-
-
-        private void MainScatter_TouchDown( object sender, TouchEventArgs e ) {
-            e.TouchDevice.Deactivated += new EventHandler( TouchDevice_Deactivated );
-            if (++TouchesOnMainScatter >= 2) {
+        private void MainScatter_TouchDown(object sender, TouchEventArgs e) {
+            e.TouchDevice.Deactivated += new EventHandler(TouchDevice_Deactivated);
+            if (++TouchesOnMainScatter >= 2)
                 MainScatter.CanMove = true;
-            }
         }
 
-        void TouchDevice_Deactivated( object sender, EventArgs e ) {
-
-            if (--TouchesOnMainScatter < 2) {
+        private void TouchDevice_Deactivated(object sender, EventArgs e) {
+            if (--TouchesOnMainScatter < 2)
                 MainScatter.CanMove = false;
-            }
         }
         #endregion
     }

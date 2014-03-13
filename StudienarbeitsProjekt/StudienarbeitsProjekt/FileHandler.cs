@@ -97,7 +97,7 @@ namespace StudienarbeitsProjekt {
 
         // Wählt die Ordner der einzelnen Sammlungen aus
         public static String[] getCollections( String fileChooser ) {
-            String collectionPath = rootDir + fileChooser + "\\collections\\";
+            String collectionPath = rootDir + fileChooser + "\\Collections\\";
 
             if (Directory.Exists( collectionPath ))
                 return Directory.GetDirectories( collectionPath, "*", System.IO.SearchOption.TopDirectoryOnly );

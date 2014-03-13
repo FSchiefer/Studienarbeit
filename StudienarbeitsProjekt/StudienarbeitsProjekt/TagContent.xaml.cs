@@ -7,6 +7,9 @@ using System.IO;
 using System.Collections.ObjectModel;
 using StudienarbeitsProjekt.ContentControls;
 using System.Windows.Media;
+using System.Windows;
+using System.Windows.Data;
+using System.Diagnostics;
 
 namespace StudienarbeitsProjekt {
     /// <summary>
@@ -15,13 +18,16 @@ namespace StudienarbeitsProjekt {
     public partial class TagContent : TagVisualization {
         private ScatterOrientationControl orientationControl = new ScatterOrientationControl();
 
-        private ObservableCollection<object> elements = new ObservableCollection<object>();
-        public ObservableCollection<object> Elements { get { return elements; } }
-        public ScatterView mainScatt;
+        #region readonly property Elements
+        private ObservableCollection<object> _elements = new ObservableCollection<object>();
+        public ObservableCollection<object> Elements { get { return _elements; } }
+        #endregion
+
         private ScatterMovement move;
         private SurfaceWindow1 surWindow;
+        public ScatterView mainScatt;
         private bool orientation;
-        private Brush color;
+
 
         #region generated Code
         /// <summary>
@@ -35,57 +41,59 @@ namespace StudienarbeitsProjekt {
 
         #region file reader functions
 
-        public ObservableCollection<object> ShowTagContent( SurfaceWindow1 surWindow, Brush color ) {
+        public void ShowTagContent(SurfaceWindow1 surWindow) {
             this.surWindow = surWindow;
             this.mainScatt = surWindow.MainScatt;
-            this.color = color;
-            move = new ScatterMovement( this.mainScatt );
+
+            this.Message.Visibility = System.Windows.Visibility.Collapsed;
+
+            move = new ScatterMovement(surWindow.MainScatt);
 
             string tagVal = GetTagValue();
 
             /// Auslesen der Dateien und festlegen eines Controls je nach Datentyp
             try {
-                String[] ordnerPfad = Directory.GetDirectories( FileHandler.rootDir, "*", System.IO.SearchOption.TopDirectoryOnly );
-                Console.WriteLine( ordnerPfad );
+                String[] ordnerPfad = Directory.GetDirectories(FileHandler.rootDir, "*", System.IO.SearchOption.TopDirectoryOnly);
+                Console.WriteLine(ordnerPfad);
 
                 String tagChooser;
                 // Funktion zum auslesen der Tagnummer aus dem Ordnernamen
                 for (int i = 0; i < ordnerPfad.Length; i++) {
-                    int counter = ordnerPfad[i].LastIndexOf( '\\' ) + 1;
+                    int counter = ordnerPfad[i].LastIndexOf('\\') + 1;
                     // "-" ist das Trennzeichen zwischen dem in der Ordnerstruktur nummerierten TagValue und dem Namen
-                    string start1 = ordnerPfad[i].Substring( counter, ordnerPfad[i].IndexOf( '-' ) - counter );
+                    string start1 = ordnerPfad[i].Substring(counter, ordnerPfad[i].IndexOf('-') - counter);
 
                     if (start1 == tagVal) {
                         // TagChooser ist die Benennung des gewählten ordners.
-                        tagChooser = ordnerPfad[i].Substring( counter );
+                        tagChooser = ordnerPfad[i].Substring(counter);
 
-                        getTagContent( tagChooser );
-                        orientationControl.BorderBrush = color;
-                        addElement( orientationControl );
-                        orientationControl.setMainscatt( mainScatt, this );
+                        GetTagContent(tagChooser);
+                        orientationControl.SetBinding(ScatterOrientationControl.BorderBrushProperty,
+                            new Binding("BorderBrush") { Source = this });
+                        AddElement(orientationControl);
+                        orientationControl.setMainscatt(this.surWindow.MainScatt, this);
                     }
                 }
             } catch (FileNotFoundException ex) {
-                Console.WriteLine( "No Folder" + ex );
+                Console.WriteLine("No Folder" + ex);
             } catch (DirectoryNotFoundException ex) {
-                Console.WriteLine( "No Folder" + ex );
+                Console.WriteLine("No Folder" + ex);
             }
-            return Elements;
         }
 
-        private void getTagContent( String fileChooser ) {
+        private void GetTagContent(string fileChooser) {
             try {
-                documents( FileHandler.getDocFiles( fileChooser ) );
-                images( FileHandler.getImageFiles( fileChooser ) );
-                videos( FileHandler.getVideoFiles( fileChooser ) );
-                collections(FileHandler.getCollections(fileChooser));
-                String[] collectionPaths = FileHandler.getVideoFiles( fileChooser );
+                Documents(FileHandler.getDocFiles(fileChooser));
+                Images(FileHandler.getImageFiles(fileChooser));
+                Videos(FileHandler.getVideoFiles(fileChooser));
+                Collections(FileHandler.getCollections(fileChooser));
+                String[] collectionPaths = FileHandler.getVideoFiles(fileChooser);
                 if (collectionPaths != null)
-                    collections( collectionPaths );
+                    Collections(collectionPaths);
             } catch (FileNotFoundException ex) {
-                Console.WriteLine( "No Folder" + ex );
+                Console.WriteLine("No Folder" + ex);
             } catch (DirectoryNotFoundException ex) {
-                Console.WriteLine( "No Folder" + ex );
+                Console.WriteLine("No Folder" + ex);
             }
         }
 
@@ -94,10 +102,10 @@ namespace StudienarbeitsProjekt {
             string tagVal = string.Empty;
 
             if (this.VisualizedTag.Value > 0) {
-                tagVal = this.VisualizedTag.Value.ToString( "X", CultureInfo.InvariantCulture );
+                tagVal = this.VisualizedTag.Value.ToString("X", CultureInfo.InvariantCulture);
 
             } else if (this.VisualizedTag.Series > 0) {
-                tagVal = this.VisualizedTag.Series.ToString( "X", CultureInfo.InvariantCulture );
+                tagVal = this.VisualizedTag.Series.ToString("X", CultureInfo.InvariantCulture);
             }
             return tagVal;
         }
@@ -105,104 +113,97 @@ namespace StudienarbeitsProjekt {
 
         # region Array reader
 
-        private void videos( String[] pathNames ) {
-            foreach (String pfad in pathNames) {
-                createVideo( pfad, color );
+        private void Videos(string[] pathNames) {
+            foreach (string pfad in pathNames) {
+                CreateVideo(pfad, BorderBrush);
             }
         }
 
         // Funktion zum Auslesen von Ordnern für die Ordnerdarstellung
-        private void collections( string[] collectionPfad ) {
-            if( collectionPfad != null)
-            foreach (String pfad in collectionPfad) {
-                // Titel des Hauptordners auslesen
-                String name = getFolderName( pfad );
-                if (Directory.Exists( pfad )) {
-                    string[] dataPath = Directory.GetDirectories( pfad, "*", System.IO.SearchOption.TopDirectoryOnly );
-                    foreach (String path in dataPath)
-                        createCollection( path, name, color );
+        private void Collections(string[] paths) {
+            if (paths != null)
+                foreach (string path in paths) {
+                    // Titel des Hauptordners auslesen
+                    string name = new FileHandler(path).getFolderName();
+
+                    if (Directory.Exists(path)) {
+                        string[] subDirectories = Directory.GetDirectories(path, "*", System.IO.SearchOption.TopDirectoryOnly);
+                        foreach (string subDirectory in subDirectories)
+                            CreateCollection(subDirectory, name, BorderBrush);
+                    }
                 }
-
-            }
         }
 
 
-        private void documents( string[] datenPfad ) {
+        private void Documents(string[] datenPfad) {
             foreach (String pfad in datenPfad) {
-                createDocument( pfad, color );
+                CreateDocument(pfad, BorderBrush);
             }
         }
 
-        private void images( string[] datenPfad ) {
-            foreach (String pfad in datenPfad) {
-                createPromotionImage( pfad, color );
+        private void Images(string[] paths) {
+            foreach (string pfad in paths) {
+                CreatePromotionImage(pfad, BorderBrush);
             }
         }
         #endregion
 
         #region Create functions
 
-        public ScatterViewItem createDocument( String pfad, Brush color ) {
-            return addElement( new DocumentControl( pfad, color ) );
+        public ScatterViewItem CreateDocument(string path, Brush color) {
+            return AddElement(new DocumentControl(path, color));
         }
 
 
-        public ScatterViewItem createPromotionImage( String pfad, Brush color ) {
-            Image promotionBild = new Image() { Source = new BitmapImage( new Uri( pfad, UriKind.Absolute ) ) };
+        public ScatterViewItem CreatePromotionImage(string path, Brush color) {
+            Image promotionBild = new Image() { Source = new BitmapImage(new Uri(path, UriKind.Absolute)) };
             ScatterViewItem promoScatter = new ScatterViewItem();
-            promoScatter.Padding = new System.Windows.Thickness( 0 );
+            promoScatter.Padding = new System.Windows.Thickness(0);
             promoScatter.Content = promotionBild;
             promoScatter.BorderBrush = color;
 
-            return addElement( promoScatter );
+            return AddElement(promoScatter);
         }
 
 
         // Funktion für den Aufruf von neuen Collections
-        public ScatterViewItem createCollection( String path, String name, Brush color ) {
-            Console.WriteLine( "Hier wird die Collection: " + name + " geboren" );
-            return addElement( new CollectionControl( path, name, this, color ) );
+        public ScatterViewItem CreateCollection(string path, string name, Brush color) {
+            Debug.WriteLine("Hier wird die Collection: " + name + " geboren");
+            return AddElement(new CollectionControl(path, name, this, color));
         }
 
 
-        public ScatterViewItem createVideo( String pfad, Brush color ) {
-            return addElement( new VideoControl( pfad, color ) );
+        public ScatterViewItem CreateVideo(String path, Brush color) {
+            return AddElement(new VideoControl(path, color));
         }
 
         #endregion
 
         # region Remove and add functions
 
-        public void Remove( ScatterViewItem item ) {
-            move.removeScatterViewItem( item );
+        public void Remove(ScatterViewItem item) {
+            move.removeScatterViewItem(item);
         }
 
-        private ScatterViewItem addElement( ScatterViewItem item ) {
-            Elements.Add( item );
-            mainScatt.Items.Add( item );
+        private ScatterViewItem AddElement(ScatterViewItem item) {
+            Elements.Add(item);
+            surWindow.Items.Add(item);
             return item;
         }
         #endregion
 
         # region  Naming, setter and Events
 
-        private String getFolderName( String dokumentPfad ) {
-            // Ausgabe des Ordnernamens des Dokuments
-            int beginDirectoryName = dokumentPfad.LastIndexOf( '\\' ) + 1;
-            String name = dokumentPfad.Substring( beginDirectoryName, dokumentPfad.Length - beginDirectoryName );
-
-            return name;
-        }
 
 
 
-        public void setTagOrientation( bool orientation ) {
+        public void setTagOrientation(bool orientation) {
             this.orientation = orientation;
         }
 
-        private void startVisualizer_VisualizationMoved( object sender, TagVisualizerEventArgs e ) {
-            Console.WriteLine( e.TagVisualization.Orientation );
-            Console.WriteLine( orientation );
+        private void startVisualizer_VisualizationMoved(object sender, TagVisualizerEventArgs e) {
+            Console.WriteLine(e.TagVisualization.Orientation);
+            Console.WriteLine(orientation);
 
             if (orientation) {
                 TagContent content = e.TagVisualization as TagContent;
@@ -211,7 +212,7 @@ namespace StudienarbeitsProjekt {
                         continue;
                     }
 
-                    move.ScatterOrientationAnimation( svi, e.TagVisualization.Orientation, TimeSpan.FromSeconds( 0.5 ) );
+                    move.ScatterOrientationAnimation(svi, e.TagVisualization.Orientation, TimeSpan.FromSeconds(0.5));
                 }
             }
         }

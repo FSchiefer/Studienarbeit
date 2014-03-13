@@ -115,7 +115,7 @@ namespace StudienarbeitsProjekt {
             if (rotation && moving) {
                 MoveAndOrientateScatter( svi, point, orientation );
             } else if (!rotation && moving) {
-                ScatterPositionAnimation( svi, point, TimeSpan.FromSeconds( 0.5 ) );
+                MoveToPosition( svi, point, TimeSpan.FromSeconds( 0.5 ) );
             } else if (!moving && rotation) {
                 ScatterOrientationAnimation( svi, orientation, TimeSpan.FromSeconds( 0.5 ) );
             }
@@ -126,11 +126,11 @@ namespace StudienarbeitsProjekt {
         #region Move animations
 
         public void MoveAndOrientateScatter(ScatterViewItem svi, Point moveTo, double orientation) {
-            ScatterPositionAnimation(svi, moveTo, TimeSpan.FromSeconds(0.5));
+            MoveToPosition(svi, moveTo, TimeSpan.FromSeconds(0.5));
             ScatterOrientationAnimation(svi, orientation, TimeSpan.FromSeconds(0.5));
         }
 
-        public void ScatterPositionAnimation(ScatterViewItem svi, Point moveTo, TimeSpan timeSpan) {
+        public void MoveToPosition(ScatterViewItem svi, Point moveTo, TimeSpan timeSpan) {
             PointAnimation positionAnimation = new PointAnimation(svi.ActualCenter, moveTo, TimeSpan.FromSeconds(0.5));
             positionAnimation.AccelerationRatio = 0.5;
             positionAnimation.DecelerationRatio = 0.5;
@@ -169,6 +169,7 @@ namespace StudienarbeitsProjekt {
         }
 
         private void ScatterPositionAnimationToClose(ScatterViewItem svi, Point moveTo, TimeSpan timeSpan) {
+            if (moveTo!= null && svi.ActualCenter != null){
             PointAnimation positionAnimation = new PointAnimation(svi.ActualCenter, moveTo, TimeSpan.FromSeconds(0.5));
             positionAnimation.AccelerationRatio = 0.5;
             positionAnimation.DecelerationRatio = 0.5;
@@ -177,7 +178,7 @@ namespace StudienarbeitsProjekt {
                 svi.Center = moveTo;
             };
             positionAnimation.Completed += new EventHandler((sender, e) => scatterAnimationCompleted(sender, e, svi));
-            svi.BeginAnimation(ScatterViewItem.CenterProperty, positionAnimation);
+            svi.BeginAnimation(ScatterViewItem.CenterProperty, positionAnimation);}
         }
 
         private void scatterAnimationCompleted(object sender, EventArgs e, ScatterViewItem svi) {

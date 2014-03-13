@@ -118,7 +118,7 @@ namespace StudienarbeitsProjekt.ContentControls {
                             viewSources.Add(sLBI.Content.ToString());
                             foreach (String folder in folderList) {
                                 if (folder.Contains(sLBI.Content.ToString())) {
-                                    ScatterViewItem collection = tagContent.createCollection(folder, title, color);
+                                    ScatterViewItem collection = tagContent.CreateCollection(folder, title, color);
                                     collection.Center = this.PointToScreen(new Point(0d, 0d));
                                     collectionList.Add(sLBI, collection);
                                 }
@@ -127,16 +127,16 @@ namespace StudienarbeitsProjekt.ContentControls {
                                 FileHandler fh = new FileHandler(file);
                                 if (file.Contains(sLBI.Content.ToString())) {
                                     if (fh.isValidImageType()) {
-                                        ScatterViewItem promoImage = tagContent.createPromotionImage(file, color);
+                                        ScatterViewItem promoImage = tagContent.CreatePromotionImage(file, color);
                                       promoImage.Center = this.PointToScreen(new Point (0d,0d));
                                         
                                         scatterList.Add(sLBI, promoImage);
                                     } else if (fh.isValidDocType()) {
-                                        ScatterViewItem document =  tagContent.createDocument(file, color);
+                                        ScatterViewItem document =  tagContent.CreateDocument(file, color);
                                         document.Center = this.PointToScreen(new Point (0d+50,0d+50));
                                         scatterList.Add(sLBI,document);
                                     } else if (fh.isValidVideoType()) {
-                                        ScatterViewItem video = tagContent.createVideo(file, color);
+                                        ScatterViewItem video = tagContent.CreateVideo(file, color);
                                         video.Center = this.PointToScreen(new Point(0d+5, 0d+5));
                                         scatterList.Add(sLBI,video);
                                     }
