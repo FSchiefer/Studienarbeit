@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using Microsoft.Surface.Presentation.Controls;
 using System.Windows.Xps.Packaging;
 using System.IO;
+using StudienarbeitsProjekt.ContentControls.Canvas;
 using System.Windows.Media.Animation;
 
 namespace StudienarbeitsProjekt.ContentControls {
@@ -23,12 +24,11 @@ namespace StudienarbeitsProjekt.ContentControls {
     /// </summary>
     ///
     public partial class CollectionControl : ScatterViewItem {
-        private SurfaceListBoxItem child;
         private TagContent tagContent;
         private List<String> fileList = new List<String>();
         private List<String> folderList = new List<String>();
-        private Dictionary<SurfaceListBoxItem, ScatterViewItem> scatterList = new Dictionary<SurfaceListBoxItem, ScatterViewItem>();
-        private Dictionary<SurfaceListBoxItem, ScatterViewItem> collectionList = new Dictionary<SurfaceListBoxItem, ScatterViewItem>();
+        private Dictionary<CollectionControlItemVM, ScatterViewItem> scatterList = new Dictionary<CollectionControlItemVM, ScatterViewItem>();
+        private Dictionary<CollectionControlItemVM, ScatterViewItem> collectionList = new Dictionary<CollectionControlItemVM, ScatterViewItem>();
         private List<String> viewSources = new List<String>();
         private String title;
         private ScatterMovement move;
@@ -67,9 +67,34 @@ namespace StudienarbeitsProjekt.ContentControls {
 
                 if (fh != null && fh.isValidFileType()) {
                     fileList.Add(path);
-                    child = new SurfaceListBoxItem();
-                    child.Content = fh.titleViewer();
-                    child.Tag = path;
+                    //child = new SurfaceListBoxItem();
+                    //child.Content = fh.titleViewer();
+                    //child.Tag = path;
+
+                    Panel image = null;
+                   
+                    //if (fh.isValidDocType()) {
+                    //    image = this.Resources["TextIcon"] as Panel;
+                    //} else if (fh.isValidVideoType()) {
+                    //    image = this.Resources["VideoIcon"] as Panel;
+                    //} else if (fh.isValidImageType()) {
+                    //    image = this.Resources["ImageIcon"] as Panel;
+                    //    }
+
+
+                    
+                    if (fh.isValidDocType()) {
+                        image = new DocumentIcon().TextIcon;
+                    } else if (fh.isValidVideoType()) {
+                        image = new VideoIcon().Video;
+                    } else if (fh.isValidImageType()) {
+                        image = new ImageIcon().Image;
+                    }
+                    var child = new CollectionControlItemVM {
+                        Content = fh.titleViewer(),
+                        Image = image,
+                        Path = path,
+                    };
 
                     contentNames.Items.Add(child);
                 }
@@ -78,19 +103,26 @@ namespace StudienarbeitsProjekt.ContentControls {
                 FileHandler fh = new FileHandler(path);
                 folderList.Add(path);
 
-                child = new SurfaceListBoxItem();
-                child.Content = fh.getFolderName();
-                child.Tag = path;
+                //child = new SurfaceListBoxItem();
+                //child.Content = fh.getFolderName();
+                //child.Tag = path;
+                Panel image = new FolderIcon().Folder;
+               
+                var child = new CollectionControlItemVM {
+                    Content = fh.getFolderName(),
+                    Image = image,
+                    Path = path,
+                };
 
                 contentNames.Items.Add(child);
             }
-            contentNames.MaxHeight = contentNames.Items.Count * 55;
-            collectionControl.MaxHeight = contentNames.MaxHeight + 25;
+            contentNames.MaxHeight = contentNames.Items.Count * 70;
+            collectionControl.MaxHeight = contentNames.MaxHeight + 30;
         }
 
         // Funktion zum Löschen von allen Elementen welche durch eine CollectionControl aufgerufen wurden.
         private void cleanAll() {
-            foreach (SurfaceListBoxItem sLBI in contentNames.SelectedItems) {
+            foreach (CollectionControlItemVM sLBI in contentNames.SelectedItems) {
                 viewSources.Remove(sLBI.Content.ToString());
                 if (folderList.Contains(sLBI.Content.ToString())) {
                     CollectionControl item = (CollectionControl)collectionList[sLBI];
@@ -110,7 +142,24 @@ namespace StudienarbeitsProjekt.ContentControls {
         private void contentNames_SelectionChanged(object sender, SelectionChangedEventArgs e) {
             Console.WriteLine("vor dem Nullvergleich");
             if (contentNames.Items != null) {
-                foreach (SurfaceListBoxItem sLBI in contentNames.Items) {
+
+                //foreach (var item in scatterList.Except(contentNames.SelectedItems)) {
+                //    // hier sind die Items, die gelöscht werden müssen
+                //}
+
+                //foreach (var item in collectionList.Except(contentNames.SelectedItems)) {
+                //    // hier sind die collections, die gelöscht werden müssen
+                //}
+
+                //foreach (var item in contentNames.SelectedItems.
+                //    Cast<CollectionControlItemVM>().
+                //    Except(scatterList).
+                //    Except(collectionList)) {
+                //    // item sind die, die neu hinzugefügt werden müssen
+                //}
+
+
+                foreach (CollectionControlItemVM sLBI in contentNames.Items) {
                     if (contentNames.SelectedItems != null && contentNames.SelectedItems.Contains(sLBI)) {
                         Console.WriteLine("Item gewählt");
                         if (!scatterList.ContainsKey(sLBI) && !collectionList.ContainsKey(sLBI)) {

@@ -187,7 +187,7 @@ namespace StudienarbeitsProjekt {
 
         private ScatterViewItem AddElement(ScatterViewItem item) {
             Elements.Add(item);
-            surWindow.Items.Add(item);
+            mainScatt.Items.Add(item);
             return item;
         }
         #endregion

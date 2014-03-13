@@ -70,3 +70,11 @@ C:\Users\bs\Desktop\Felix Studienarbeit\Studienarbeit\StudienarbeitsProjekt\Stud
 C:\Users\bs\Desktop\Felix Studienarbeit\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\App.g.cs
 C:\Users\bs\Desktop\Felix Studienarbeit\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\StudienarbeitsProjekt_Content.g.cs
 C:\Users\bs\Desktop\Felix Studienarbeit\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\StudienarbeitsProjekt_MarkupCompile.cache
+C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\ContentControls\Canvas\VideoIcon.baml
+C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\ContentControls\Canvas\VideoIcon.g.cs
+C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\ContentControls\Canvas\DocumentIcon.baml
+C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\ContentControls\Canvas\FolderIcon.baml
+C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\ContentControls\Canvas\ImageIcon.baml
+C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\ContentControls\Canvas\DocumentIcon.g.cs
+C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\ContentControls\Canvas\FolderIcon.g.cs
+C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\ContentControls\Canvas\ImageIcon.g.cs

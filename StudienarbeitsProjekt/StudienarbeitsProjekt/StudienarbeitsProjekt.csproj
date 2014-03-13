@@ -79,6 +79,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ContentControls\Canvas\DocumentIcon.xaml.cs">
+      <DependentUpon>DocumentIcon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ContentControls\Canvas\FolderIcon.xaml.cs">
+      <DependentUpon>FolderIcon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ContentControls\Canvas\ImageIcon.xaml.cs">
+      <DependentUpon>ImageIcon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ContentControls\Canvas\VideoIcon.xaml.cs">
+      <DependentUpon>VideoIcon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ContentControls\CollectionControlItemVM.cs" />
     <Compile Include="FileHandler.cs" />
     <Compile Include="ContentControls\CollectionControl.xaml.cs">
       <DependentUpon>CollectionControl.xaml</DependentUpon>
@@ -99,6 +112,22 @@
     <Compile Include="TagContent.xaml.cs">
       <DependentUpon>TagContent.xaml</DependentUpon>
     </Compile>
+    <Page Include="ContentControls\Canvas\DocumentIcon.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ContentControls\Canvas\FolderIcon.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ContentControls\Canvas\ImageIcon.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ContentControls\Canvas\VideoIcon.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ContentControls\CollectionControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

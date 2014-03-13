@@ -6,7 +6,7 @@
     Title="StudienarbeitsProjekt" 
     x:Name="root"
     >
-    <Grid x:Name="Host" Background="Black" >
+    <Grid x:Name="host" Background="Black" >
 
 
 

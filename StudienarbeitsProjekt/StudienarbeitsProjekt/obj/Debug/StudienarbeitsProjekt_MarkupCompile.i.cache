@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\App.xaml
-8-971488700
+121886524555
 2-1037091175
-14-1117754665
+191560886391
 21-2018665404
-ContentControls\CollectionControl.xaml;ContentControls\DescriptionControl.xaml;ContentControls\DocumentControl.xaml;ContentControls\ScatterOrientationControl.xaml;ContentControls\VideoControl.xaml;Simple Styles.xaml;SurfaceWindow1.xaml;TagContent.xaml;
+ContentControls\Canvas\DocumentIcon.xaml;ContentControls\Canvas\FolderIcon.xaml;ContentControls\Canvas\ImageIcon.xaml;ContentControls\Canvas\VideoIcon.xaml;ContentControls\CollectionControl.xaml;ContentControls\DescriptionControl.xaml;ContentControls\DocumentControl.xaml;ContentControls\ScatterOrientationControl.xaml;ContentControls\VideoControl.xaml;Simple Styles.xaml;SurfaceWindow1.xaml;TagContent.xaml;
 
 True
 
