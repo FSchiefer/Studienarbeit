@@ -15,6 +15,7 @@ using Microsoft.Surface;
 using Microsoft.Surface.Presentation;
 using Microsoft.Surface.Presentation.Controls;
 using Microsoft.Surface.Presentation.Input;
+using StudienarbeitsProjekt.ContentControls;
 using System.Windows.Media.Animation;
 using System.Collections.ObjectModel;
 using System.Collections;
@@ -32,7 +33,8 @@ namespace StudienarbeitsProjekt {
         private ScatterMovement move;
         private Queue<Color> userColors = new Queue<Color>();
         private List<TagVisualization> pending = new List<TagVisualization>();
-
+        private DocumentControl standardPresentation;
+        private ImageControl standardMotivation;
         public ObservableCollection<object> Elements { get { return elements; } }
 
         #region generated Code
@@ -45,7 +47,7 @@ namespace StudienarbeitsProjekt {
 
             move = new ScatterMovement(MainScatt);
             MainScatterImage.ImageSource = new BitmapImage(new Uri(FileHandler.getMainscatterImage(), UriKind.Relative));
-
+            MainScatt.Items.Add(standardPresentation);
             // Add handlers for window availability events
             AddWindowAvailabilityHandlers();
             userColors.Enqueue(Colors.Red);
@@ -159,6 +161,11 @@ namespace StudienarbeitsProjekt {
                     move.MoveAndOrientateScatterToClose(svi, e.TagVisualization.Center, e.TagVisualization.Orientation);
                 }
             }
+
+            if (userColors.Count == 2) {
+                generateDefaultContent();
+            }
+
         }
 
 
@@ -166,6 +173,8 @@ namespace StudienarbeitsProjekt {
             TagContent content = (TagContent)e.TagVisualization;
 
             if (userColors.Count > 0) {
+                MainScatt.Items.Remove(standardPresentation);
+                MainScatt.Items.Remove(standardMotivation);
                 Color color = userColors.Dequeue();
                 content.BorderBrush = new SolidColorBrush(color);
                 content.ShowTagContent(this);
@@ -199,5 +208,14 @@ namespace StudienarbeitsProjekt {
                 MainScatter.CanMove = false;
         }
         #endregion
+
+        private void generateDefaultContent() {
+            standardPresentation = new DocumentControl(FileHandler.getDefaulViewPresentation(), Brushes.Beige);
+        standardMotivation = new ImageControl(FileHandler.getMotivation(), Brushes.Beige);
+
+        MainScatt.Items.Add(standardMotivation);
+        MainScatt.Items.Add(standardPresentation);
+
+        }
     }
 }

@@ -66,12 +66,12 @@ namespace StudienarbeitsProjekt {
                     if (start1 == tagVal) {
                         // TagChooser ist die Benennung des gewählten ordners.
                         tagChooser = ordnerPfad[i].Substring(counter);
-
-                        GetTagContent(tagChooser);
                         orientationControl.SetBinding(ScatterOrientationControl.BorderBrushProperty,
                             new Binding("BorderBrush") { Source = this });
                         AddElement(orientationControl);
                         orientationControl.setMainscatt(this.surWindow.MainScatt, this);
+                        GetTagContent(tagChooser);
+
                     }
                 }
             } catch (FileNotFoundException ex) {
@@ -156,13 +156,7 @@ namespace StudienarbeitsProjekt {
 
 
         public ScatterViewItem CreatePromotionImage(string path, Brush color) {
-            Image promotionBild = new Image() { Source = new BitmapImage(new Uri(path, UriKind.Absolute)) };
-            ScatterViewItem promoScatter = new ScatterViewItem();
-            promoScatter.Padding = new System.Windows.Thickness(0);
-            promoScatter.Content = promotionBild;
-            promoScatter.BorderBrush = color;
-
-            return AddElement(promoScatter);
+            return AddElement(new ImageControl(path, color));
         }
 
 

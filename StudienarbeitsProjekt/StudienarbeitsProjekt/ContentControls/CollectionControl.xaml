@@ -5,15 +5,8 @@
                    x:Class="StudienarbeitsProjekt.ContentControls.CollectionControl" 
                    mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-                   d:DesignHeight="162" d:DesignWidth="209" x:Name="collectionControl" 
+                  Height="262"  x:Name="collectionControl" 
                    >
-    <s:ScatterViewItem.Resources>
-       
- 
-
-      
-
-    </s:ScatterViewItem.Resources>
 
     <Grid>
         <Grid.RowDefinitions>
@@ -23,7 +16,7 @@
         </Grid.RowDefinitions>
 
         <Label x:Name="Title" Grid.Row="0"/>
-        <s:SurfaceListBox x:Name="contentNames" Grid.Row="1" SelectionMode="Multiple"  SelectionChanged="contentNames_SelectionChanged">
+        <s:SurfaceListBox x:Name="contentNames" Grid.Row="1" SelectionMode="Multiple"  SelectionChanged="contentNames_SelectionChanged" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
             <s:SurfaceListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>

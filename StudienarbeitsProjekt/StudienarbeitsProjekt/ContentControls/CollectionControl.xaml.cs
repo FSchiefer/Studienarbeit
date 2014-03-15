@@ -116,7 +116,7 @@ namespace StudienarbeitsProjekt.ContentControls {
 
                 contentNames.Items.Add(child);
             }
-            contentNames.MaxHeight = contentNames.Items.Count * 70;
+            contentNames.MaxHeight = contentNames.Items.Count * 70; 
             collectionControl.MaxHeight = contentNames.MaxHeight + 30;
         }
 
@@ -128,7 +128,7 @@ namespace StudienarbeitsProjekt.ContentControls {
                     CollectionControl item = (CollectionControl)collectionList[sLBI];
                     item.cleanAll();
                     ScatterViewItem sItem = collectionList[sLBI];
-                    collectionList.Remove(sLBI);
+                    collectionList.Remove(sLBI); 
                     move.MoveAndOrientateScatterToClose(item, this.ActualCenter, 0);
                 } else {
                     ScatterViewItem item = scatterList[sLBI];
@@ -207,5 +207,7 @@ namespace StudienarbeitsProjekt.ContentControls {
                 }
             }
         }
+
+    
     }
 }

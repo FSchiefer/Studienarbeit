@@ -92,6 +92,9 @@
       <DependentUpon>VideoIcon.xaml</DependentUpon>
     </Compile>
     <Compile Include="ContentControls\CollectionControlItemVM.cs" />
+    <Compile Include="ContentControls\ImageControl.xaml.cs">
+      <DependentUpon>ImageControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="FileHandler.cs" />
     <Compile Include="ContentControls\CollectionControl.xaml.cs">
       <DependentUpon>CollectionControl.xaml</DependentUpon>
@@ -139,6 +142,10 @@
     <Page Include="ContentControls\DocumentControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ContentControls\ImageControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="ContentControls\ScatterOrientationControl.xaml">
       <SubType>Designer</SubType>
