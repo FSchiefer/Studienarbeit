@@ -88,6 +88,7 @@
     <Compile Include="ContentControls\Canvas\ImageIcon.xaml.cs">
       <DependentUpon>ImageIcon.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ContentControls\MovableScatterViewItem.cs" />
     <Compile Include="ContentControls\Canvas\VideoIcon.xaml.cs">
       <DependentUpon>VideoIcon.xaml</DependentUpon>
     </Compile>
@@ -99,8 +100,8 @@
     <Compile Include="ContentControls\CollectionControl.xaml.cs">
       <DependentUpon>CollectionControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ContentControls\DescriptionControl.xaml.cs">
-      <DependentUpon>DescriptionControl.xaml</DependentUpon>
+    <Compile Include="ContentControls\InformationControl.xaml.cs">
+      <DependentUpon>InformationControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="ContentControls\DocumentControl.xaml.cs">
       <DependentUpon>DocumentControl.xaml</DependentUpon>
@@ -111,7 +112,6 @@
     <Compile Include="ContentControls\VideoControl.xaml.cs">
       <DependentUpon>VideoControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ScatterMovement.cs" />
     <Compile Include="TagContent.xaml.cs">
       <DependentUpon>TagContent.xaml</DependentUpon>
     </Compile>
@@ -135,7 +135,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ContentControls\DescriptionControl.xaml">
+    <Page Include="ContentControls\InformationControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -196,6 +196,7 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="app.config" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

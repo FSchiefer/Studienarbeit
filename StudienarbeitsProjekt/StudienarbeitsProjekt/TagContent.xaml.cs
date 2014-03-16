@@ -16,14 +16,13 @@ namespace StudienarbeitsProjekt {
     /// Interaction logic for TagContent.xaml
     /// </summary>
     public partial class TagContent : TagVisualization {
-        private ScatterOrientationControl orientationControl = new ScatterOrientationControl();
+        private ScatterOrientationControl orientationControl;
 
         #region readonly property Elements
         private ObservableCollection<object> _elements = new ObservableCollection<object>();
         public ObservableCollection<object> Elements { get { return _elements; } }
         #endregion
 
-        private ScatterMovement move;
         private SurfaceWindow1 surWindow;
         public ScatterView mainScatt;
         private bool orientation;
@@ -44,10 +43,9 @@ namespace StudienarbeitsProjekt {
         public void ShowTagContent(SurfaceWindow1 surWindow) {
             this.surWindow = surWindow;
             this.mainScatt = surWindow.MainScatt;
+            orientationControl = new ScatterOrientationControl(this.surWindow.MainScatt, this);
 
             this.Message.Visibility = System.Windows.Visibility.Collapsed;
-
-            move = new ScatterMovement(surWindow.MainScatt);
 
             string tagVal = GetTagValue();
 
@@ -69,10 +67,9 @@ namespace StudienarbeitsProjekt {
                         orientationControl.SetBinding(ScatterOrientationControl.BorderBrushProperty,
                             new Binding("BorderBrush") { Source = this });
                         AddElement(orientationControl);
-                        orientationControl.setMainscatt(this.surWindow.MainScatt, this);
+                      
                         GetTagContent(tagChooser);
-
-                    }
+                                            }
                 }
             } catch (FileNotFoundException ex) {
                 Console.WriteLine("No Folder" + ex);
@@ -150,38 +147,34 @@ namespace StudienarbeitsProjekt {
 
         #region Create functions
 
-        public ScatterViewItem CreateDocument(string path, Brush color) {
-            return AddElement(new DocumentControl(path, color));
+        public MovableScatterViewItem CreateDocument(string path, Brush color) {
+            return AddElement(new DocumentControl(this.mainScatt, path, color));
         }
 
 
-        public ScatterViewItem CreatePromotionImage(string path, Brush color) {
-            return AddElement(new ImageControl(path, color));
+        public MovableScatterViewItem CreatePromotionImage(string path, Brush color) {
+            return AddElement(new ImageControl(this.mainScatt, path, color));
         }
 
 
         // Funktion für den Aufruf von neuen Collections
-        public ScatterViewItem CreateCollection(string path, string name, Brush color) {
+        public MovableScatterViewItem CreateCollection(string path, string name, Brush color) {
             Debug.WriteLine("Hier wird die Collection: " + name + " geboren");
-            return AddElement(new CollectionControl(path, name, this, color));
+            return AddElement(new CollectionControl(this.mainScatt, path, name, this, color));
         }
 
 
-        public ScatterViewItem CreateVideo(String path, Brush color) {
-            return AddElement(new VideoControl(path, color));
+        public MovableScatterViewItem CreateVideo(String path, Brush color) {
+            return AddElement(new VideoControl(this.mainScatt, path, color));
         }
 
         #endregion
 
         # region Remove and add functions
 
-        public void Remove(ScatterViewItem item) {
-            move.removeScatterViewItem(item);
-        }
-
-        private ScatterViewItem AddElement(ScatterViewItem item) {
+    
+        private MovableScatterViewItem AddElement(MovableScatterViewItem item) {
             Elements.Add(item);
-            mainScatt.Items.Add(item);
             return item;
         }
         #endregion
@@ -201,12 +194,12 @@ namespace StudienarbeitsProjekt {
 
             if (orientation) {
                 TagContent content = e.TagVisualization as TagContent;
-                foreach (ScatterViewItem svi in content.Elements) {
+                foreach (MovableScatterViewItem svi in content.Elements) {
                     if (svi.Name == "MainScatter") {
                         continue;
                     }
 
-                    move.ScatterOrientationAnimation(svi, e.TagVisualization.Orientation, TimeSpan.FromSeconds(0.5));
+                    svi.ScatterOrientationAnimation(e.TagVisualization.Orientation, TimeSpan.FromSeconds(0.5));
                 }
             }
         }

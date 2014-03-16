@@ -17,25 +17,20 @@ namespace StudienarbeitsProjekt.ContentControls {
     /// <summary>
     /// Interaktionslogik für VideoControl.xaml
     /// </summary>
-    public partial class VideoControl : ScatterViewItem {
+    public partial class VideoControl : MovableScatterViewItem {
 
         private Boolean plays = false;
         private Boolean firstPlay = true;
         private FileHandler handler;
 
 
-        public VideoControl( string videoPosition, Brush color ) {
+        public VideoControl(ScatterView mainScatt, string videoPosition, Brush color) : base(mainScatt) {
 
             InitializeComponent();
             handler = new FileHandler( videoPosition );
 
-   
-    
             this.BorderBrush = color;
             Title.Content = handler.titleViewer();
-
-
-            
 
             Play.Content = this.Resources["PlayButton"];
             Stop.Content = this.Resources["StopButton"];

@@ -19,11 +19,12 @@ namespace StudienarbeitsProjekt.ContentControls {
     /// <summary>
     /// Interaktionslogik für DocumentControl.xaml
     /// </summary>
-    public partial class DocumentControl : ScatterViewItem {
+    public partial class DocumentControl : MovableScatterViewItem {
 
         private FileHandler handler;
 
-        public DocumentControl(string dokumentPfad, Brush color) {
+        public DocumentControl(ScatterView mainScatt, string dokumentPfad, Brush color)
+            : base(mainScatt) {
             InitializeComponent();
             handler = new FileHandler(dokumentPfad);
             this.BorderBrush = color;

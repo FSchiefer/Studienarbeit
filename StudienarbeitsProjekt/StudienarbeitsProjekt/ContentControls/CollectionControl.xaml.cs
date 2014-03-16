@@ -23,28 +23,22 @@ namespace StudienarbeitsProjekt.ContentControls {
     /// Interaktionslogik für CollectionControl.xaml
     /// </summary>
     ///
-    public partial class CollectionControl : ScatterViewItem {
+    public partial class CollectionControl : MovableScatterViewItem {
         private TagContent tagContent;
         private List<String> fileList = new List<String>();
         private List<String> folderList = new List<String>();
-        private Dictionary<CollectionControlItemVM, ScatterViewItem> scatterList = new Dictionary<CollectionControlItemVM, ScatterViewItem>();
-        private Dictionary<CollectionControlItemVM, ScatterViewItem> collectionList = new Dictionary<CollectionControlItemVM, ScatterViewItem>();
+        private Dictionary<CollectionControlItemVM, MovableScatterViewItem> scatterList = new Dictionary<CollectionControlItemVM, MovableScatterViewItem>();
+        private Dictionary<CollectionControlItemVM, MovableScatterViewItem> collectionList = new Dictionary<CollectionControlItemVM, MovableScatterViewItem>();
         private List<String> viewSources = new List<String>();
         private String title;
-        private ScatterMovement move;
         private Brush color;
 
-        // TODO Icons für Dateiarten einbauen
-
-        public CollectionControl() {
-            InitializeComponent();
-        }
-
+       
         // Konstruktor zum erstellen der Komponente und dem Festlegen des darzustellenden Titels
-        public CollectionControl(String dataPath, String name, TagContent tagContent, Brush color) {
+        public CollectionControl(ScatterView mainScatt, String dataPath, String name, TagContent tagContent, Brush color)
+            : base(mainScatt) {
             InitializeComponent();
             this.BorderBrush = color;
-            move = new ScatterMovement(tagContent.mainScatt);
             this.tagContent = tagContent;
             this.color = color;
 
@@ -72,7 +66,7 @@ namespace StudienarbeitsProjekt.ContentControls {
                     //child.Tag = path;
 
                     Panel image = null;
-                   
+
                     //if (fh.isValidDocType()) {
                     //    image = this.Resources["TextIcon"] as Panel;
                     //} else if (fh.isValidVideoType()) {
@@ -82,7 +76,7 @@ namespace StudienarbeitsProjekt.ContentControls {
                     //    }
 
 
-                    
+
                     if (fh.isValidDocType()) {
                         image = new DocumentIcon().TextIcon;
                     } else if (fh.isValidVideoType()) {
@@ -107,7 +101,7 @@ namespace StudienarbeitsProjekt.ContentControls {
                 //child.Content = fh.getFolderName();
                 //child.Tag = path;
                 Panel image = new FolderIcon().Folder;
-               
+
                 var child = new CollectionControlItemVM {
                     Content = fh.getFolderName(),
                     Image = image,
@@ -116,7 +110,7 @@ namespace StudienarbeitsProjekt.ContentControls {
 
                 contentNames.Items.Add(child);
             }
-            contentNames.MaxHeight = contentNames.Items.Count * 70; 
+            contentNames.MaxHeight = contentNames.Items.Count * 70;
             collectionControl.MaxHeight = contentNames.MaxHeight + 30;
         }
 
@@ -128,12 +122,12 @@ namespace StudienarbeitsProjekt.ContentControls {
                     CollectionControl item = (CollectionControl)collectionList[sLBI];
                     item.cleanAll();
                     ScatterViewItem sItem = collectionList[sLBI];
-                    collectionList.Remove(sLBI); 
-                    move.MoveAndOrientateScatterToClose(item, this.ActualCenter, 0);
+                    collectionList.Remove(sLBI);
+                    item.MoveAndOrientateScatterToClose(this.ActualCenter, 0);
                 } else {
-                    ScatterViewItem item = scatterList[sLBI];
+                    MovableScatterViewItem item = scatterList[sLBI];
                     scatterList.Remove(sLBI);
-                    move.MoveAndOrientateScatterToClose(item, this.ActualCenter, 0);
+                    item.MoveAndOrientateScatterToClose(this.ActualCenter, 0);
                 }
             }
         }
@@ -143,22 +137,6 @@ namespace StudienarbeitsProjekt.ContentControls {
             Console.WriteLine("vor dem Nullvergleich");
             if (contentNames.Items != null) {
 
-                //foreach (var item in scatterList.Except(contentNames.SelectedItems)) {
-                //    // hier sind die Items, die gelöscht werden müssen
-                //}
-
-                //foreach (var item in collectionList.Except(contentNames.SelectedItems)) {
-                //    // hier sind die collections, die gelöscht werden müssen
-                //}
-
-                //foreach (var item in contentNames.SelectedItems.
-                //    Cast<CollectionControlItemVM>().
-                //    Except(scatterList).
-                //    Except(collectionList)) {
-                //    // item sind die, die neu hinzugefügt werden müssen
-                //}
-
-
                 foreach (CollectionControlItemVM sLBI in contentNames.Items) {
                     if (contentNames.SelectedItems != null && contentNames.SelectedItems.Contains(sLBI)) {
                         Console.WriteLine("Item gewählt");
@@ -167,7 +145,7 @@ namespace StudienarbeitsProjekt.ContentControls {
                             viewSources.Add(sLBI.Content.ToString());
                             foreach (String folder in folderList) {
                                 if (folder.Contains(sLBI.Content.ToString())) {
-                                    ScatterViewItem collection = tagContent.CreateCollection(folder, title, color);
+                                    MovableScatterViewItem collection = tagContent.CreateCollection(folder, title, color);
                                     collection.Center = this.PointToScreen(new Point(0d, 0d));
                                     collectionList.Add(sLBI, collection);
                                 }
@@ -176,38 +154,39 @@ namespace StudienarbeitsProjekt.ContentControls {
                                 FileHandler fh = new FileHandler(file);
                                 if (file.Contains(sLBI.Content.ToString())) {
                                     if (fh.isValidImageType()) {
-                                        ScatterViewItem promoImage = tagContent.CreatePromotionImage(file, color);
-                                      promoImage.Center = this.PointToScreen(new Point (0d,0d));
-                                        
+                                        MovableScatterViewItem promoImage = tagContent.CreatePromotionImage(file, color);
+                                        promoImage.Center = this.PointToScreen(new Point(0d, 0d));
+
                                         scatterList.Add(sLBI, promoImage);
                                     } else if (fh.isValidDocType()) {
-                                        ScatterViewItem document =  tagContent.CreateDocument(file, color);
-                                        document.Center = this.PointToScreen(new Point (0d+50,0d+50));
-                                        scatterList.Add(sLBI,document);
+                                        MovableScatterViewItem document = tagContent.CreateDocument(file, color);
+                                        document.Center = this.PointToScreen(new Point(0d + 50, 0d + 50));
+                                        scatterList.Add(sLBI, document);
                                     } else if (fh.isValidVideoType()) {
-                                        ScatterViewItem video = tagContent.CreateVideo(file, color);
-                                        video.Center = this.PointToScreen(new Point(0d+5, 0d+5));
-                                        scatterList.Add(sLBI,video);
+                                        MovableScatterViewItem video = tagContent.CreateVideo(file, color);
+                                        video.Center = this.PointToScreen(new Point(0d + 5, 0d + 5));
+                                        scatterList.Add(sLBI, video);
                                     }
                                 }
                             }
                         }
-                    } else if (scatterList.ContainsKey(sLBI)) {
-                        viewSources.Remove(sLBI.Content.ToString());
-                        ScatterViewItem item = scatterList[sLBI];
-                        scatterList.Remove(sLBI);
-                        move.MoveAndOrientateScatterToClose(item, this.ActualCenter, this.ActualOrientation);
-                    } else if (collectionList.ContainsKey(sLBI)) {
-                        CollectionControl item = (CollectionControl)collectionList[sLBI];
-                        item.cleanAll();
-                        ScatterViewItem sItem = collectionList[sLBI];
-                        collectionList.Remove(sLBI);
-                        move.MoveAndOrientateScatterToClose(item, this.ActualCenter, this.ActualOrientation);
+                    } else {
+                        if (scatterList.ContainsKey(sLBI)) {
+                            viewSources.Remove(sLBI.Content.ToString());
+                            MovableScatterViewItem item = scatterList[sLBI];
+                            scatterList.Remove(sLBI);
+                            item.MoveAndOrientateScatterToClose(this.ActualCenter, this.ActualOrientation);
+                        } else if (collectionList.ContainsKey(sLBI)) {
+                            CollectionControl item = (CollectionControl)collectionList[sLBI];
+                            item.cleanAll();
+                            collectionList.Remove(sLBI);
+                            item.MoveAndOrientateScatterToClose(this.ActualCenter, this.ActualOrientation);
+                        }
                     }
                 }
             }
         }
 
-    
+
     }
 }

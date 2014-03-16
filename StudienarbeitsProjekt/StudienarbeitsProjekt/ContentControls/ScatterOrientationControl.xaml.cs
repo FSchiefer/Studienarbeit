@@ -18,24 +18,17 @@ namespace StudienarbeitsProjekt.ContentControls {
     /// <summary>
     /// Interaktionslogik für ScatterOrientationControl.xaml
     /// </summary>
-    public partial class ScatterOrientationControl : ScatterViewItem {
+    public partial class ScatterOrientationControl : MovableScatterViewItem {
 
         private Boolean orientierung = false;
         private Boolean positionierung = false;
         private Boolean tagOrientierung = false;
-        private ScatterMovement movement;
-        private ScatterView mainScatt;
         private TagContent content;
 
-        public ScatterOrientationControl() {
+                public ScatterOrientationControl(ScatterView mainScatt, TagContent content):base(mainScatt){
             InitializeComponent();
+          this.content = content;
 
-        }
-
-        public void setMainscatt(ScatterView mainScatt, TagContent content) {
-            this.mainScatt = mainScatt;
-            this.content = content;
-            movement = new ScatterMovement(mainScatt);
         }
 
         private void ScatterOrientierung_Checked(object sender, RoutedEventArgs e) {
@@ -80,7 +73,7 @@ namespace StudienarbeitsProjekt.ContentControls {
 
         private void Orientierung_Click(object sender, RoutedEventArgs e) {
 
-            movement.ScatterItemsOrientateAndMoveTo(this, content, true, true);
+           this.ScatterItemsOrientateAndMoveTo(content, true, true);
         }
         private void ScatterOrientation_TouchDown(object sender, TouchEventArgs e) {
             Console.WriteLine("Test");
@@ -89,16 +82,16 @@ namespace StudienarbeitsProjekt.ContentControls {
 
         void TouchDevice_Deactivated(object sender, EventArgs e) {
             Console.WriteLine(content.Orientation);
-            movement.ScatterItemsOrientateAndMoveTo(this, content, orientierung, positionierung);
+            this.ScatterItemsOrientateAndMoveTo(content, orientierung, positionierung);
 
             if (tagOrientierung) {
                 
-                foreach (ScatterViewItem svi in content.Elements) {
+                foreach (MovableScatterViewItem svi in content.Elements) {
                     if (svi.Name == "MainScatter") {
                         continue;
                     }
 
-                    movement.ScatterOrientationAnimation(svi, content.Orientation, TimeSpan.FromSeconds(0.5));
+                    svi.ScatterOrientationAnimation(content.Orientation, TimeSpan.FromSeconds(0.5));
                 }
             }
 
@@ -107,3 +100,7 @@ namespace StudienarbeitsProjekt.ContentControls {
 
     }
 }
+
+
+
+

@@ -17,24 +17,15 @@ namespace StudienarbeitsProjekt.ContentControls {
     /// <summary>
     /// Interaktionslogik für VideoControl.xaml
     /// </summary>
-    public partial class ImageControl : ScatterViewItem {
+    public partial class ImageControl : MovableScatterViewItem {
 
-        
-
-
-        public ImageControl( string imagePosition, Brush color ) {
+        public ImageControl(ScatterView mainScatt,string imagePosition, Brush color) : base(mainScatt) {
 
             InitializeComponent();
 
-   
-      Image promotionBild = new Image() { Source = new BitmapImage(new Uri(imagePosition, UriKind.Absolute)) };
+            Image promotionBild = new Image() { Source = new BitmapImage(new Uri(imagePosition, UriKind.Absolute)) };
             this.BorderBrush = color;
             this.Content = promotionBild;
-        
-            
-
-
-            }
-
+        }
     }
 }

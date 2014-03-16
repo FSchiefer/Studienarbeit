@@ -126,6 +126,13 @@ namespace StudienarbeitsProjekt {
             return rootDir + "Motivation.png";
         }
 
+        public static String getStudiengaenge() {
+            return rootDir + "AuswaehlbareStudiengaenge.txt";
+        }
+        public static String getKontakte() {
+            return rootDir + "EmailKontakte.txt";
+        }
+        
         #endregion
     }
 }
