@@ -43,7 +43,7 @@ namespace StudienarbeitsProjekt {
         public void ShowTagContent(SurfaceWindow1 surWindow) {
             this.surWindow = surWindow;
             this.mainScatt = surWindow.MainScatt;
-            orientationControl = new ScatterOrientationControl(this.surWindow.MainScatt, this);
+
 
             this.Message.Visibility = System.Windows.Visibility.Collapsed;
 
@@ -56,6 +56,7 @@ namespace StudienarbeitsProjekt {
 
                 String tagChooser;
                 // Funktion zum auslesen der Tagnummer aus dem Ordnernamen
+
                 for (int i = 0; i < ordnerPfad.Length; i++) {
                     int counter = ordnerPfad[i].LastIndexOf('\\') + 1;
                     // "-" ist das Trennzeichen zwischen dem in der Ordnerstruktur nummerierten TagValue und dem Namen
@@ -64,6 +65,7 @@ namespace StudienarbeitsProjekt {
                     if (start1 == tagVal) {
                         // TagChooser ist die Benennung des gewählten ordners.
                         tagChooser = ordnerPfad[i].Substring(counter);
+                        orientationControl = new ScatterOrientationControl(this.surWindow.MainScatt, this);
                         orientationControl.SetBinding(ScatterOrientationControl.BorderBrushProperty,
                             new Binding("BorderBrush") { Source = this });
                         AddElement(orientationControl);
