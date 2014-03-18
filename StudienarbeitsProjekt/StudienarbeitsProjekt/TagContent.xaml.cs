@@ -69,9 +69,9 @@ namespace StudienarbeitsProjekt {
                         orientationControl.SetBinding(ScatterOrientationControl.BorderBrushProperty,
                             new Binding("BorderBrush") { Source = this });
                         AddElement(orientationControl);
-                      
+
                         GetTagContent(tagChooser);
-                                            }
+                    }
                 }
             } catch (FileNotFoundException ex) {
                 Console.WriteLine("No Folder" + ex);
@@ -174,7 +174,7 @@ namespace StudienarbeitsProjekt {
 
         # region Remove and add functions
 
-    
+
         private MovableScatterViewItem AddElement(MovableScatterViewItem item) {
             Elements.Add(item);
             return item;

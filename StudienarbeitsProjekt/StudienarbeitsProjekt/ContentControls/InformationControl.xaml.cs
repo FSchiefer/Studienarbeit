@@ -1,18 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using Microsoft.Surface.Presentation.Controls;
 using System.Diagnostics;
+using System.Threading;
+using StudienarbeitsProjekt.ContentControls.Addons;
 
 namespace StudienarbeitsProjekt.ContentControls {
     /// <summary>
@@ -23,6 +16,7 @@ namespace StudienarbeitsProjekt.ContentControls {
         private Boolean nameNotEmpty = false;
         private Boolean mailNotEmpty = false;
         private Boolean courseNotEmpty = false;
+        private ScatterView mainScatt;
 
 
         private System.Text.RegularExpressions.Regex rEMail = new System.Text.RegularExpressions.Regex(@"^[a-zA-Z][\w\.-]{2,28}[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$");
@@ -31,6 +25,7 @@ namespace StudienarbeitsProjekt.ContentControls {
             : base(mainScatt) {
 
             InitializeComponent();
+            this.mainScatt = mainScatt;
             this.kontaktDatei = kontaktDatei;
             checkButton();
             this.BorderBrush = color;
@@ -65,9 +60,21 @@ namespace StudienarbeitsProjekt.ContentControls {
              }
             Email.Text = "";
             VisitorName.Text = "";
+            ConfirmationControl confirmation = new ConfirmationControl(mainScatt, "Speichern Erfolgreich", Brushes.Green, this.BorderBrush );
+            confirmation.Center = this.Center;
+            confirmation.Orientation = this.Orientation;
+
+            confirmation.fadeOut(2);
+
+            
             checkButton();
+
         }
 
+        public void Timer_Callback(object args) 
+        {
+            
+        }
 
 
         private void Email_TextChanged(object sender, TextChangedEventArgs e) {

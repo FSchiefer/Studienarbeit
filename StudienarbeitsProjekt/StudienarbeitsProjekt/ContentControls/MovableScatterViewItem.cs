@@ -218,6 +218,19 @@ namespace StudienarbeitsProjekt.ContentControls {
             };
             this.BeginAnimation(ScatterViewItem.OpacityProperty, fadeOut);
         }
+
+        public void fadeOut(int timeOut) {
+            DoubleAnimation fadeOut = new DoubleAnimation(1, 0, TimeSpan.FromSeconds(timeOut));
+            fadeOut.FillBehavior = FillBehavior.Stop;
+            fadeOut.AccelerationRatio = 0.5;
+            fadeOut.DecelerationRatio = 0.5;
+            fadeOut.Completed += delegate(object sender, EventArgs e) {
+                this.Opacity = 1;
+                mainScatt.Items.Remove(this);
+            };
+            this.BeginAnimation(ScatterViewItem.OpacityProperty, fadeOut);
+        }
+
         #endregion
 
 

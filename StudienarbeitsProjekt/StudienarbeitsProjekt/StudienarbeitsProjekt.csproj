@@ -79,17 +79,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ContentControls\Canvas\DocumentIcon.xaml.cs">
+    <Compile Include="ContentControls\Addons\ConfirmationControl.xaml.cs">
+      <DependentUpon>ConfirmationControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ContentControls\Addons\DocumentIcon.xaml.cs">
       <DependentUpon>DocumentIcon.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ContentControls\Canvas\FolderIcon.xaml.cs">
+    <Compile Include="ContentControls\Addons\FolderIcon.xaml.cs">
       <DependentUpon>FolderIcon.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ContentControls\Canvas\ImageIcon.xaml.cs">
+    <Compile Include="ContentControls\Addons\ImageIcon.xaml.cs">
       <DependentUpon>ImageIcon.xaml</DependentUpon>
     </Compile>
     <Compile Include="ContentControls\MovableScatterViewItem.cs" />
-    <Compile Include="ContentControls\Canvas\VideoIcon.xaml.cs">
+    <Compile Include="ContentControls\Addons\VideoIcon.xaml.cs">
       <DependentUpon>VideoIcon.xaml</DependentUpon>
     </Compile>
     <Compile Include="ContentControls\CollectionControlItemVM.cs" />
@@ -115,19 +118,23 @@
     <Compile Include="TagContent.xaml.cs">
       <DependentUpon>TagContent.xaml</DependentUpon>
     </Compile>
-    <Page Include="ContentControls\Canvas\DocumentIcon.xaml">
+    <Page Include="ContentControls\Addons\ConfirmationControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ContentControls\Canvas\FolderIcon.xaml">
+    <Page Include="ContentControls\Addons\DocumentIcon.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ContentControls\Canvas\ImageIcon.xaml">
+    <Page Include="ContentControls\Addons\FolderIcon.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ContentControls\Canvas\VideoIcon.xaml">
+    <Page Include="ContentControls\Addons\ImageIcon.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ContentControls\Addons\VideoIcon.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

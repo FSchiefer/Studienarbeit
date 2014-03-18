@@ -39,20 +39,12 @@ C:\Users\bs\Desktop\Felix Studienarbeit\Studienarbeit\StudienarbeitsProjekt\Stud
 C:\Users\bs\Desktop\Felix Studienarbeit\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\StudienarbeitsProjekt_Content.g.cs
 C:\Users\bs\Desktop\Felix Studienarbeit\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\StudienarbeitsProjekt_MarkupCompile.cache
 C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\ContentControls\Canvas\DocumentIcon.baml
-C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\ContentControls\Canvas\FolderIcon.baml
-C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\ContentControls\Canvas\ImageIcon.baml
-C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\ContentControls\Canvas\VideoIcon.baml
 C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\ContentControls\CollectionControl.baml
 C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\ContentControls\DocumentControl.baml
 C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\ContentControls\ImageControl.baml
 C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\ContentControls\ScatterOrientationControl.baml
 C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\Simple Styles.baml
 C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\App.baml
-C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\ContentControls\Canvas\DocumentIcon.g.cs
-C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\ContentControls\Canvas\FolderIcon.g.cs
-C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\ContentControls\Canvas\ImageIcon.g.cs
-C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\ContentControls\Canvas\VideoIcon.g.cs
 C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\ContentControls\CollectionControl.g.cs
 C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\ContentControls\DocumentControl.g.cs
 C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\ContentControls\ImageControl.g.cs
@@ -81,3 +73,13 @@ C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\ob
 C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\GenerateResource.write.1.tlog
 C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\ContentControls\InformationControl.g.cs
 C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\ContentControls\InformationControl.baml
+C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\ContentControls\Addons\DocumentIcon.baml
+C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\ContentControls\Addons\FolderIcon.baml
+C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\ContentControls\Addons\ImageIcon.baml
+C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\ContentControls\Addons\VideoIcon.baml
+C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\ContentControls\Addons\ConfirmationControl.g.cs
+C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\ContentControls\Addons\DocumentIcon.g.cs
+C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\ContentControls\Addons\FolderIcon.g.cs
+C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\ContentControls\Addons\ImageIcon.g.cs
+C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\ContentControls\Addons\VideoIcon.g.cs
+C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\ContentControls\Addons\ConfirmationControl.baml
