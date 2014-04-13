@@ -83,3 +83,5 @@ C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\ob
 C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\ContentControls\Addons\ImageIcon.g.cs
 C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\ContentControls\Addons\VideoIcon.g.cs
 C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\ContentControls\Addons\ConfirmationControl.baml
+C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\ContentControls\Addons\MailIcon.baml
+C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Debug\ContentControls\Addons\MailIcon.g.cs

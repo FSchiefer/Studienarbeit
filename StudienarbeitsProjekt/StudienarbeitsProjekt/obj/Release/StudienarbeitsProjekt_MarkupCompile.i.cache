@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\ander_000\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Release\
+C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\obj\Release\
 StudienarbeitsProjekt
 none
 false
 TRACE
-C:\Users\ander_000\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\App.xaml
-71976854840
+C:\Users\bs\Desktop\Studienarbeit\StudienarbeitsProjekt\StudienarbeitsProjekt\App.xaml
+141932803362
 2-1037091175
-12-489772654
-211368878123
-ContentControls\CollectionControl.xaml;ContentControls\DocumentControl.xaml;ContentControls\ScatterOrientationControl.xaml;ContentControls\SeitenControl.xaml;ContentControls\VideoControl.xaml;SurfaceWindow1.xaml;TagContent.xaml;
+221358559911
+21-2018665404
+ContentControls\Addons\ConfirmationControl.xaml;ContentControls\Addons\DocumentIcon.xaml;ContentControls\Addons\FolderIcon.xaml;ContentControls\Addons\ImageIcon.xaml;ContentControls\Addons\VideoIcon.xaml;ContentControls\CollectionControl.xaml;ContentControls\InformationControl.xaml;ContentControls\DocumentControl.xaml;ContentControls\ImageControl.xaml;ContentControls\ScatterOrientationControl.xaml;ContentControls\VideoControl.xaml;Simple Styles.xaml;SurfaceWindow1.xaml;TagContent.xaml;
 
 True
 

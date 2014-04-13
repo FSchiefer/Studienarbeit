@@ -21,20 +21,21 @@ using System.Collections.ObjectModel;
 using System.Collections;
 using System.Threading;
 using System.Diagnostics;
+using System.IO;
 
 namespace StudienarbeitsProjekt {
     /// <summary>
     /// Interaction logic for SurfaceWindow1.xaml
     /// </summary>
-    public partial class SurfaceWindow1 : SurfaceWindow {
+    public partial class SurfaceWindow1 : SurfaceWindow, ContentList {
 
         private int TouchesOnMainScatter = 0;
         private ObservableCollection<object> elements = new ObservableCollection<object>();
         private Queue<Color> userColors = new Queue<Color>();
         private List<TagVisualization> pending = new List<TagVisualization>();
-        private DocumentControl standardPresentation;
-        private ImageControl standardMotivation;
-        private InformationControl standardInformation;
+        private List<MovableScatterViewItem> defaultContent = new List<MovableScatterViewItem>();
+
+
         public ObservableCollection<object> Elements { get { return elements; } }
 
         #region generated Code
@@ -44,7 +45,13 @@ namespace StudienarbeitsProjekt {
         /// </summary>
         public SurfaceWindow1() {
             InitializeComponent();
-            MainScatterImage.ImageSource = new BitmapImage(new Uri(FileHandler.getMainscatterImage(), UriKind.Relative));
+            try {
+                MainScatterImage.ImageSource = new BitmapImage(new Uri(FileHandler.getMainscatterImage(), UriKind.Relative));
+            } catch (FileNotFoundException ex) {
+                Debug.WriteLine("No File" + ex);
+               
+            } 
+  
             // Add handlers for window availability events
             AddWindowAvailabilityHandlers();
             userColors.Enqueue(Colors.Red);
@@ -176,7 +183,6 @@ namespace StudienarbeitsProjekt {
                 Color color = userColors.Dequeue();
                 content.BorderBrush = new SolidColorBrush(color);
                 content.ShowTagContent(this);
-
                 content.Circle.Color = color;
 
             } else {
@@ -208,15 +214,119 @@ namespace StudienarbeitsProjekt {
         #endregion
 
         private void generateDefaultContent() {
-            standardPresentation = new DocumentControl(this.MainScatt, FileHandler.getDefaulViewPresentation(), Brushes.Beige);
-            standardMotivation = new ImageControl(this.MainScatt, FileHandler.getMotivation(), Brushes.Beige);
-            standardInformation = new InformationControl(this.MainScatt, FileHandler.getStudiengaenge(), FileHandler.getKontakte(), Brushes.Beige);
-           }
+            generateContent(FileHandler.getDefaultConent(), this);
+        }
+
+       public void generateContent(String pfad, ContentList content) {
+            try {
+
+                Documents(FileHandler.getDocFiles(pfad), content);
+                Images(FileHandler.getImageFiles(pfad), content);
+                Videos(FileHandler.getVideoFiles(pfad), content);
+                Collections(FileHandler.getCollections(pfad),content);
+                Debug.WriteLine(FileHandler.getMailFile(pfad) + "  " + File.Exists(FileHandler.getMailFile(pfad)));
+                if (FileHandler.existsMailFile(pfad)) {
+                    CreateInformationControl(FileHandler.getMailFile(pfad),content);
+                }
+            } catch (FileNotFoundException ex) {
+                Console.WriteLine("No Folder" + ex);
+            } catch (DirectoryNotFoundException ex) {
+                Console.WriteLine("No Folder" + ex);
+            }
+            }
 
         private void removeDefaultContent() {
-            standardMotivation.MoveAndOrientateScatterToClose(MainScatter.ActualCenter,MainScatter.ActualOrientation);
-            standardPresentation.MoveAndOrientateScatterToClose(MainScatter.ActualCenter, MainScatter.ActualOrientation);
-            standardInformation.MoveAndOrientateScatterToClose(MainScatter.ActualCenter, MainScatter.ActualOrientation);
+    
+
+            if (defaultContent != null) {
+                foreach (MovableScatterViewItem svi in defaultContent) {
+                    if (svi.Name == "MainScatter")
+                        continue;
+
+                    Debug.WriteLine(svi.Name);
+
+                    svi.MoveAndOrientateScatterToClose(MainScatter.ActualCenter, MainScatter.ActualOrientation);
+                }
+            }
+            
+            }
+
+        # region Array reader
+
+        private void Videos(string[] pathNames, ContentList content) {
+            foreach (string pfad in pathNames) {
+                CreateVideo(pfad, content);
+            }
         }
+
+        // Funktion zum Auslesen von Ordnern für die Ordnerdarstellung
+        private void Collections(string[] paths, ContentList content) {
+            if (paths != null)
+                foreach (string path in paths) {
+                    // Titel des Hauptordners auslesen
+                    string name = new FileHandler(path).getFolderName();
+
+                    if (Directory.Exists(path)) {
+                        string[] subDirectories = Directory.GetDirectories(path, "*", System.IO.SearchOption.TopDirectoryOnly);
+                        foreach (string subDirectory in subDirectories)
+                            CreateCollection(subDirectory, name, content);
+                    }
+                }
+        }
+
+
+        private void Documents(string[] datenPfad, ContentList content) {
+            foreach (String pfad in datenPfad) {
+                CreateDocument(pfad, content);
+            }
+        }
+
+        private void Images(string[] paths, ContentList content) {
+            foreach (string pfad in paths) {
+                CreatePromotionImage(pfad, content);
+            }
+        }
+        #endregion
+
+        #region Create functions
+
+        public MovableScatterViewItem CreateDocument(string path, ContentList content) {
+            return content.AddElement(new DocumentControl(this.MainScatt, path, content.getBrush()));
+        }
+        public MovableScatterViewItem CreateInformationControl(string path, ContentList content) {
+            return content.AddElement(new InformationControl(this.MainScatt, path, content.getBrush()));
+        }
+
+
+        public MovableScatterViewItem CreatePromotionImage(string path, ContentList content) {
+            return content.AddElement(new ImageControl(this.MainScatt, path, content.getBrush()));
+        }
+
+
+        // Funktion für den Aufruf von neuen Collections
+        public MovableScatterViewItem CreateCollection(string path, string name,ContentList content) {
+            Debug.WriteLine("Hier wird die Collection: " + name + " geboren");
+            return content.AddElement(new CollectionControl(this, path, name, content, content.getBrush()));
+        }
+
+
+        public MovableScatterViewItem CreateVideo(String path, ContentList content) {
+            return content.AddElement(new VideoControl(this.MainScatt, path, content.getBrush()));
+        }
+
+        #endregion
+
+        # region Remove and add functions
+
+
+        public MovableScatterViewItem AddElement(MovableScatterViewItem item) {
+            defaultContent.Add(item);
+            return item;
+        }
+
+        public Brush getBrush() {
+            return Brushes.Beige;
+        }
+        #endregion
     }
 }

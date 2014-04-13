@@ -5,7 +5,10 @@ using System.Windows.Media;
 using Microsoft.Surface.Presentation.Controls;
 using System.Diagnostics;
 using System.Threading;
+using System.Xml;
 using StudienarbeitsProjekt.ContentControls.Addons;
+using System.IO;
+using System.Collections.Generic;
 
 namespace StudienarbeitsProjekt.ContentControls {
     /// <summary>
@@ -17,20 +20,51 @@ namespace StudienarbeitsProjekt.ContentControls {
         private Boolean mailNotEmpty = false;
         private Boolean courseNotEmpty = false;
         private ScatterView mainScatt;
+        private XmlTextReader reader;
 
 
         private System.Text.RegularExpressions.Regex rEMail = new System.Text.RegularExpressions.Regex(@"^[a-zA-Z][\w\.-]{2,28}[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$");
         string kontaktDatei;
-        public InformationControl(ScatterView mainScatt, string textPosition, string kontaktDatei, Brush color)
+        public InformationControl(ScatterView mainScatt, string textPosition, Brush color)
             : base(mainScatt) {
 
             InitializeComponent();
             this.mainScatt = mainScatt;
-            this.kontaktDatei = kontaktDatei;
+            this.kontaktDatei = FileHandler.getKontakte();
+            if (!File.Exists(kontaktDatei)) {
+                using (System.IO.StreamWriter file = new System.IO.StreamWriter(kontaktDatei, true)) {
+                    file.WriteLine("Name;E-Mail;Studiengang");
+
+                }
+            } 
             checkButton();
             this.BorderBrush = color;
             ConfirmationButton.IsEnabled = false;
-            string[] lines = System.IO.File.ReadAllLines(textPosition);
+            reader = new XmlTextReader(textPosition);
+            List<string> lines = new List<string>();
+
+            while (reader.Read()) {
+                switch (reader.NodeType) {
+                    case XmlNodeType.Element: // The node is an element.
+                        Console.Write("<" + reader.Name);
+
+                        while (reader.MoveToNextAttribute()) // Read the attributes.
+                          Console.WriteLine(">");
+                        break;
+                    case XmlNodeType.Text: //Display the text in each element.
+                        Console.WriteLine(reader.Value);
+                        lines.Add(reader.Value);
+                        Console.Write(" " + reader.Name + "='" + reader.Value + "");
+                        break;
+                    case XmlNodeType.EndElement: //Display the end of the element.
+                        Console.Write("</" + reader.Name);
+                        Console.WriteLine(">");
+                        break;
+                }
+
+            }
+       
+            if (lines.Count > 0 )
             foreach (string line in lines) {
                 SurfaceCheckBox studiengangCheckBox = new SurfaceCheckBox();
                 studiengangCheckBox.Content = line;
@@ -133,7 +167,7 @@ namespace StudienarbeitsProjekt.ContentControls {
                 Confirmation.Content = "Bitte Namen und Mail-Addresse Eingeben.";
             } else if (!nameNotEmpty && !mailNotEmpty && !courseNotEmpty) {
                 ConfirmationButton.IsEnabled = false;
-                Confirmation.Content = "Bitte Namen, Mail-Addresse und Kursintresse Eingeben.";
+                Confirmation.Content = "Bitte Namen, Mail-Addresse und Interesse Eingeben.";
             } else if (nameNotEmpty && !mailNotEmpty && courseNotEmpty) {
                 ConfirmationButton.IsEnabled = false;
                 Confirmation.Content = "Bitte Mail-Addresse Eingeben.";
@@ -142,13 +176,13 @@ namespace StudienarbeitsProjekt.ContentControls {
                 Confirmation.Content = "Bitte Kursintresse Eingeben.";
             } else if (nameNotEmpty && !mailNotEmpty && !courseNotEmpty) {
                 ConfirmationButton.IsEnabled = false;
-                Confirmation.Content = "Bitte Mail-Addresse und Kursintresse Eingeben.";
+                Confirmation.Content = "Bitte Mail-Addresse und Interesse Eingeben.";
             } else if (!nameNotEmpty && !mailNotEmpty && courseNotEmpty) {
                 ConfirmationButton.IsEnabled = false;
                 Confirmation.Content = "Bitte Namen und Mail-Addresse Eingeben.";
             } else if (!nameNotEmpty && mailNotEmpty && !courseNotEmpty) {
                 ConfirmationButton.IsEnabled = false;
-                Confirmation.Content = "Bitte Namen und Kursintresse Eingeben.";
+                Confirmation.Content = "Bitte Namen und Interesse Eingeben.";
             }
                
 

@@ -26,8 +26,9 @@ namespace StudienarbeitsProjekt.ContentControls {
         private TagContent content;
 
                 public ScatterOrientationControl(ScatterView mainScatt, TagContent content):base(mainScatt){
+                    this.content = content;
             InitializeComponent();
-          this.content = content;
+
 
         }
 

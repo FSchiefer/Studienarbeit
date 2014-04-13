@@ -24,7 +24,9 @@ namespace StudienarbeitsProjekt.ContentControls {
     /// </summary>
     ///
     public partial class CollectionControl : MovableScatterViewItem {
-        private TagContent tagContent;
+        
+        private SurfaceWindow1 surWindow;
+        private ContentList content; 
         private List<String> fileList = new List<String>();
         private List<String> folderList = new List<String>();
         private Dictionary<CollectionControlItemVM, MovableScatterViewItem> scatterList = new Dictionary<CollectionControlItemVM, MovableScatterViewItem>();
@@ -35,11 +37,12 @@ namespace StudienarbeitsProjekt.ContentControls {
 
        
         // Konstruktor zum erstellen der Komponente und dem Festlegen des darzustellenden Titels
-        public CollectionControl(ScatterView mainScatt, String dataPath, String name, TagContent tagContent, Brush color)
-            : base(mainScatt) {
+        public CollectionControl(SurfaceWindow1 surWindow, String dataPath, String name,ContentList content, Brush color)
+            : base(surWindow.MainScatt) {
             InitializeComponent();
             this.BorderBrush = color;
-            this.tagContent = tagContent;
+            this.content = content;
+            this.surWindow = surWindow;
             this.color = color;
 
             FileHandler fh = new FileHandler(dataPath);
@@ -61,21 +64,8 @@ namespace StudienarbeitsProjekt.ContentControls {
 
                 if (fh != null && fh.isValidFileType()) {
                     fileList.Add(path);
-                    //child = new SurfaceListBoxItem();
-                    //child.Content = fh.titleViewer();
-                    //child.Tag = path;
 
                     Panel image = null;
-
-                    //if (fh.isValidDocType()) {
-                    //    image = this.Resources["TextIcon"] as Panel;
-                    //} else if (fh.isValidVideoType()) {
-                    //    image = this.Resources["VideoIcon"] as Panel;
-                    //} else if (fh.isValidImageType()) {
-                    //    image = this.Resources["ImageIcon"] as Panel;
-                    //    }
-
-
 
                     if (fh.isValidDocType()) {
                         image = new DocumentIcon().TextIcon;
@@ -83,6 +73,8 @@ namespace StudienarbeitsProjekt.ContentControls {
                         image = new VideoIcon().Video;
                     } else if (fh.isValidImageType()) {
                         image = new ImageIcon().Image;
+                    } else if (fh.isValidMailType()) {
+                        image = new MailIcon().Mail;
                     }
                     var child = new CollectionControlItemVM {
                         Content = fh.titleViewer(),
@@ -121,13 +113,12 @@ namespace StudienarbeitsProjekt.ContentControls {
                 if (folderList.Contains(sLBI.Content.ToString())) {
                     CollectionControl item = (CollectionControl)collectionList[sLBI];
                     item.cleanAll();
-                    ScatterViewItem sItem = collectionList[sLBI];
                     collectionList.Remove(sLBI);
-                    item.MoveAndOrientateScatterToClose(this.ActualCenter, 0);
+                    item.MoveAndOrientateScatterToClose(this.ActualCenter, this.ActualOrientation);
                 } else {
                     MovableScatterViewItem item = scatterList[sLBI];
                     scatterList.Remove(sLBI);
-                    item.MoveAndOrientateScatterToClose(this.ActualCenter, 0);
+                    item.MoveAndOrientateScatterToClose(this.ActualCenter, this.ActualOrientation);
                 }
             }
         }
@@ -145,7 +136,7 @@ namespace StudienarbeitsProjekt.ContentControls {
                             viewSources.Add(sLBI.Content.ToString());
                             foreach (String folder in folderList) {
                                 if (folder.Contains(sLBI.Content.ToString())) {
-                                    MovableScatterViewItem collection = tagContent.CreateCollection(folder, title, color);
+                                    MovableScatterViewItem collection = surWindow.CreateCollection(folder, title, content);
                                     collection.Center = this.PointToScreen(new Point(0d, 0d));
                                     collectionList.Add(sLBI, collection);
                                 }
@@ -154,18 +145,22 @@ namespace StudienarbeitsProjekt.ContentControls {
                                 FileHandler fh = new FileHandler(file);
                                 if (file.Contains(sLBI.Content.ToString())) {
                                     if (fh.isValidImageType()) {
-                                        MovableScatterViewItem promoImage = tagContent.CreatePromotionImage(file, color);
+                                        MovableScatterViewItem promoImage = surWindow.CreatePromotionImage(file,  content);
                                         promoImage.Center = this.PointToScreen(new Point(0d, 0d));
 
                                         scatterList.Add(sLBI, promoImage);
                                     } else if (fh.isValidDocType()) {
-                                        MovableScatterViewItem document = tagContent.CreateDocument(file, color);
+                                        MovableScatterViewItem document = surWindow.CreateDocument(file,  content);
                                         document.Center = this.PointToScreen(new Point(0d + 50, 0d + 50));
                                         scatterList.Add(sLBI, document);
                                     } else if (fh.isValidVideoType()) {
-                                        MovableScatterViewItem video = tagContent.CreateVideo(file, color);
+                                        MovableScatterViewItem video = surWindow.CreateVideo(file,  content);
                                         video.Center = this.PointToScreen(new Point(0d + 5, 0d + 5));
                                         scatterList.Add(sLBI, video);
+                                    } else if (fh.isValidMailType()) {
+                                        MovableScatterViewItem information = surWindow.CreateInformationControl(file, content);
+                                        information.Center = this.PointToScreen(new Point(0d + 5, 0d + 5));
+                                        scatterList.Add(sLBI, information);
                                     }
                                 }
                             }

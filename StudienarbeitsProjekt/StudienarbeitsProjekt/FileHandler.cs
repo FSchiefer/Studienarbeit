@@ -49,11 +49,14 @@ namespace StudienarbeitsProjekt {
 
         # region checkFileType
         public Boolean isValidFileType() {
-            return isValidVideoType() || isValidImageType() || isValidDocType();
+            return isValidVideoType() || isValidImageType() || isValidDocType()|| isValidMailType();
         }
 
         public Boolean isValidVideoType() {
             return type.Equals("wmv") || type.Equals("mp4") || type.Equals("avi") || type.Equals("mpg") || type.Equals("mts");
+        }
+        public Boolean isValidMailType() {
+            return type.Equals("xml");
         }
 
         public Boolean isValidImageType() {
@@ -74,7 +77,7 @@ namespace StudienarbeitsProjekt {
         }
 
         public static String[] getVideoFiles(String fileChooser) {
-            String baseDir = rootDir + fileChooser;
+            String baseDir = fileChooser;
 
             // da leider keine regulären Ausdrücke unterstützt werden, muss es etwas umständlich gemacht werden:
             String[] dataPath = Directory.GetFiles(baseDir, "*.wmv").Concat(
@@ -86,19 +89,31 @@ namespace StudienarbeitsProjekt {
         }
 
         public static String[] getImageFiles(String fileChooser) {
-            String baseDir = rootDir + fileChooser;
+            String baseDir = fileChooser;
             return Directory.GetFiles(baseDir, "*.jpg").Concat(
                                  Directory.GetFiles(baseDir, "*.png")).ToArray();
         }
 
+        public static bool existsMailFile(String fileChooser) {
+
+            return File.Exists(getMailFile(fileChooser));
+        }
+
+
+        public static String getMailFile(String fileChooser) {
+            return fileChooser + "\\MailFenster.xml";
+        }
+
         public static String[] getDocFiles(String fileChooser) {
 
-            return Directory.GetFiles(rootDir + fileChooser, "*.xps");
+            return Directory.GetFiles(fileChooser, "*.xps");
         }
+
+
 
         // Wählt die Ordner der einzelnen Sammlungen aus
         public static String[] getCollections(String fileChooser) {
-            String collectionPath = rootDir + fileChooser + "\\Collections\\";
+            String collectionPath = fileChooser + "\\Collections\\";
 
             if (Directory.Exists(collectionPath))
                 return Directory.GetDirectories(collectionPath, "*", System.IO.SearchOption.TopDirectoryOnly);
@@ -115,24 +130,25 @@ namespace StudienarbeitsProjekt {
         }
 
         public static String getMainscatterImage() {
-            return rootDir + "DHBW.jpg";
+            return rootDir + "Logo.jpg";
         }
 
-        public static String getDefaulViewPresentation() {
-            return rootDir + "Allgemeines DHBW_KA.xps";
-        }
 
-        public static String getMotivation() {
-            return rootDir + "Motivation.png";
-        }
 
-        public static String getStudiengaenge() {
-            return rootDir + "AuswaehlbareStudiengaenge.txt";
-        }
-        public static String getKontakte() {
-            return rootDir + "EmailKontakte.txt";
-        }
-        
+
+    
+
+           public static String getDefaultConent() {
+               return rootDir + "\\defaultContent";
+           }
+
+    
+
+
+           public static String getKontakte() {
+               return rootDir + "EmailKontakte.csv";
+           }
+
         #endregion
     }
 }
