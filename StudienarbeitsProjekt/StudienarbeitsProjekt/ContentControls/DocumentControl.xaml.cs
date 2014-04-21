@@ -28,6 +28,8 @@ namespace StudienarbeitsProjekt.ContentControls {
             InitializeComponent();
             handler = new FileHandler(dokumentPfad);
             this.BorderBrush = color;
+            myDocViewer.BorderBrush = color;
+        
             // nur mit "Speichern unter" erzeugte XPS Dokumente können verwendet werden.
             XpsDocument xpsDoc = new XpsDocument(dokumentPfad,
                                        FileAccess.Read);

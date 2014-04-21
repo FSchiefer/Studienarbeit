@@ -53,7 +53,7 @@
         </Grid.RowDefinitions>
 
         <Label x:Name="Title" Grid.Row="0"/>
-        <DocumentViewer x:Name="myDocViewer" MinHeight="200"  Height="Auto"  Width="Auto" SizeChanged="docViewer_SizeChanged" Style="{DynamicResource DocumentViewerStyle1}" Grid.Row="1"/>
+        <DocumentViewer x:Name="myDocViewer" BorderThickness="3"  Height="Auto"  Width="Auto" SizeChanged="docViewer_SizeChanged" Style="{DynamicResource DocumentViewerStyle1}" Grid.Row="1"/>
 
     </Grid>
 </u:MovableScatterViewItem>

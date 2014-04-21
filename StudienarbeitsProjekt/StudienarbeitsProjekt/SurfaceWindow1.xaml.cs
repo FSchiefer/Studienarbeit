@@ -232,8 +232,7 @@ namespace StudienarbeitsProjekt {
                 Console.WriteLine("No Folder" + ex);
             } catch (DirectoryNotFoundException ex) {
                 Console.WriteLine("No Folder" + ex);
-            }
-            }
+            }         }
 
         private void removeDefaultContent() {
     

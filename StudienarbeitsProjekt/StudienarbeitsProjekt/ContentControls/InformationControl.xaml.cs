@@ -20,7 +20,7 @@ namespace StudienarbeitsProjekt.ContentControls {
         private Boolean mailNotEmpty = false;
         private Boolean courseNotEmpty = false;
         private ScatterView mainScatt;
-        private XmlTextReader reader;
+        private XmlDocument reader;
 
 
         private System.Text.RegularExpressions.Regex rEMail = new System.Text.RegularExpressions.Regex(@"^[a-zA-Z][\w\.-]{2,28}[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$");
@@ -31,6 +31,8 @@ namespace StudienarbeitsProjekt.ContentControls {
             InitializeComponent();
             this.mainScatt = mainScatt;
             this.kontaktDatei = FileHandler.getKontakte();
+    
+               
             if (!File.Exists(kontaktDatei)) {
                 using (System.IO.StreamWriter file = new System.IO.StreamWriter(kontaktDatei, true)) {
                     file.WriteLine("Name;E-Mail;Studiengang");
@@ -39,29 +41,47 @@ namespace StudienarbeitsProjekt.ContentControls {
             } 
             checkButton();
             this.BorderBrush = color;
+            Scroller.BorderBrush = this.BorderBrush;
             ConfirmationButton.IsEnabled = false;
-            reader = new XmlTextReader(textPosition);
+            reader = new XmlDocument();
+            reader.Load(textPosition);
             List<string> lines = new List<string>();
 
-            while (reader.Read()) {
-                switch (reader.NodeType) {
-                    case XmlNodeType.Element: // The node is an element.
-                        Console.Write("<" + reader.Name);
+            //while (reader.Read()) {
+            //    switch (reader.NodeType) {
+            //        case XmlNodeType.Element: // The node is an element.
+            //            Console.Write("<" + reader.Name);
 
-                        while (reader.MoveToNextAttribute()) // Read the attributes.
-                          Console.WriteLine(">");
-                        break;
-                    case XmlNodeType.Text: //Display the text in each element.
-                        Console.WriteLine(reader.Value);
-                        lines.Add(reader.Value);
-                        Console.Write(" " + reader.Name + "='" + reader.Value + "");
-                        break;
-                    case XmlNodeType.EndElement: //Display the end of the element.
-                        Console.Write("</" + reader.Name);
-                        Console.WriteLine(">");
-                        break;
+            //            while (reader.MoveToNextAttribute()) // Read the attributes.
+            //              Console.WriteLine(">");
+            //            break;
+            //        case XmlNodeType.Text: //Display the text in each element.
+            //            Console.WriteLine(reader.Value);
+            //            lines.Add(reader.Value);
+            //            Console.Write(" " + reader.Name + "='" + reader.Value + "");
+            //            break;
+            //        case XmlNodeType.EndElement: //Display the end of the element.
+            //            Console.Write("</" + reader.Name);
+            //            Console.WriteLine(">");
+            //            break;
+            //    }
+
+            //}
+
+
+            XmlNode nodes = reader.SelectSingleNode("Text");
+
+            foreach (XmlNode nodeWalk in nodes.ChildNodes) {
+                if (nodeWalk.Name == "Titel") {
+                    Titel.Content= nodeWalk.InnerText;
                 }
-
+                if (nodeWalk.Name == "Interessengebiet") {
+                    lines.Add(nodeWalk.InnerText);
+                }
+                if (nodeWalk.Name == "Definition") {
+                    Definition.Content = nodeWalk.InnerText;
+                }
+              
             }
        
             if (lines.Count > 0 )
