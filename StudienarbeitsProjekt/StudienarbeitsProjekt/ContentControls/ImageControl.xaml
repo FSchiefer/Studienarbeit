@@ -4,6 +4,16 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:s="http://schemas.microsoft.com/surface/2008"
                   Background="Black" Padding="0" >
-    
- 
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label x:Name="Title" Foreground="White" Grid.Row="0"></Label>
+        <s:SurfaceButton  x:Name="Close" Grid.Row="0" Visibility="Hidden" HorizontalAlignment="Right" VerticalAlignment="Top"  >Close</s:SurfaceButton>
+        <Image x:Name="Picture" Grid.Row="1">
+            
+        </Image>
+
+    </Grid>
 </u:MovableScatterViewItem>

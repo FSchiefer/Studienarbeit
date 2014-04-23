@@ -129,6 +129,7 @@ namespace StudienarbeitsProjekt.ContentControls {
         }
 
 
+        // Funktion zum entscheiden welche Bewegung ausgeführt werden soll
         private void entscheider(Point point, int orientation, bool rotation, bool moving) {
             if (rotation && moving) {
                 MoveAndOrientateScatter(point, orientation);
@@ -141,13 +142,16 @@ namespace StudienarbeitsProjekt.ContentControls {
 
         #endregion
 
+        // Die möglichen Animationen eines Objektes
         #region Move animations
 
+        // Funktion zum Bewegen und Orientieren eines Objektes
         public void MoveAndOrientateScatter(Point moveTo, double orientation) {
             MoveToPosition(moveTo, TimeSpan.FromSeconds(0.5));
             ScatterOrientationAnimation(orientation, TimeSpan.FromSeconds(0.5));
         }
 
+        // Funktion zum Bewegen eines Objektes
         public void MoveToPosition(Point moveTo, TimeSpan timeSpan) {
             PointAnimation positionAnimation = new PointAnimation(this.ActualCenter, moveTo, TimeSpan.FromSeconds(0.5));
             positionAnimation.AccelerationRatio = 0.5;
@@ -159,6 +163,7 @@ namespace StudienarbeitsProjekt.ContentControls {
             this.BeginAnimation(ScatterViewItem.CenterProperty, positionAnimation);
         }
 
+        // Funktion zum drehen eines Objektes
         public void ScatterOrientationAnimation(double orientation, TimeSpan timeSpan) {
 
             orientation = ((360 + orientation) % 360);
@@ -179,12 +184,15 @@ namespace StudienarbeitsProjekt.ContentControls {
         }
         #endregion
 
+        // Animationen zum schließen eines Objektes
         #region Close functions
+
         public void MoveAndOrientateScatterToClose(Point moveTo, double orientation) {
             ScatterPositionAnimationToClose(moveTo, TimeSpan.FromSeconds(0.5));
             ScatterOrientationAnimation(orientation, TimeSpan.FromSeconds(0.5));
         }
 
+        // Bewegungsanimation zum schließen
         private void ScatterPositionAnimationToClose(Point moveTo, TimeSpan timeSpan) {
             if (moveTo != null && this.ActualCenter != null) {
                 PointAnimation positionAnimation = new PointAnimation(this.ActualCenter, moveTo, TimeSpan.FromSeconds(0.5));
@@ -219,6 +227,7 @@ namespace StudienarbeitsProjekt.ContentControls {
             this.BeginAnimation(ScatterViewItem.OpacityProperty, fadeOut);
         }
 
+        // Animation zum ausblassen eines Objektes
         public void fadeOut(int timeOut) {
             DoubleAnimation fadeOut = new DoubleAnimation(1, 0, TimeSpan.FromSeconds(timeOut));
             fadeOut.FillBehavior = FillBehavior.Stop;

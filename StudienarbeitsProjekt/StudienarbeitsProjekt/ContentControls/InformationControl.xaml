@@ -15,6 +15,8 @@
 
 
             <Label Grid.Row="0" Foreground="White" x:Name="Titel"></Label>
+        <s:SurfaceButton  x:Name="Close" HorizontalAlignment="Right" Visibility="Collapsed"  >Close</s:SurfaceButton>
+
 
         <s:SurfaceScrollViewer x:Name="Scroller" BorderThickness="3" PanningMode="Both" Grid.Row="1" Background="SlateGray">
             <Grid  >

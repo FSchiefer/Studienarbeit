@@ -292,13 +292,25 @@ namespace StudienarbeitsProjekt {
         public MovableScatterViewItem CreateDocument(string path, ContentList content) {
             return content.AddElement(new DocumentControl(this.MainScatt, path, content.getBrush()));
         }
+
+        public MovableScatterViewItem CreateDocument(string path, ContentList content, CollectionControl collectionControl, CollectionControlItemVM sLBI) {
+            return content.AddElement(new DocumentControl(this.MainScatt, path, content.getBrush(), collectionControl, sLBI));
+        }
+
         public MovableScatterViewItem CreateInformationControl(string path, ContentList content) {
             return content.AddElement(new InformationControl(this.MainScatt, path, content.getBrush()));
         }
 
+        public MovableScatterViewItem CreateInformationControl(string path, ContentList content, CollectionControl collectionControl, CollectionControlItemVM sLBI) {
+            return content.AddElement(new InformationControl(this.MainScatt, path, content.getBrush(), collectionControl, sLBI));
+        }
 
         public MovableScatterViewItem CreatePromotionImage(string path, ContentList content) {
             return content.AddElement(new ImageControl(this.MainScatt, path, content.getBrush()));
+        }
+
+        public MovableScatterViewItem CreatePromotionImage(string path, ContentList content, CollectionControl collectionControl, CollectionControlItemVM sLBI) {
+            return content.AddElement(new ImageControl(this.MainScatt, path, content.getBrush(), collectionControl, sLBI));
         }
 
 
@@ -307,10 +319,16 @@ namespace StudienarbeitsProjekt {
             Debug.WriteLine("Hier wird die Collection: " + name + " geboren");
             return content.AddElement(new CollectionControl(this, path, name, content, content.getBrush()));
         }
+        public MovableScatterViewItem CreateCollection(string path, string name, ContentList content, CollectionControl collectionControl, CollectionControlItemVM sLBI) {
+            return content.AddElement(new CollectionControl(this, path, name, content, content.getBrush(), collectionControl, sLBI));
+        }
 
 
         public MovableScatterViewItem CreateVideo(String path, ContentList content) {
             return content.AddElement(new VideoControl(this.MainScatt, path, content.getBrush()));
+        }
+        public MovableScatterViewItem CreateVideo(string path, ContentList content, CollectionControl collectionControl, CollectionControlItemVM sLBI) {
+            return content.AddElement(new VideoControl(this.MainScatt, path, content.getBrush(), collectionControl, sLBI));
         }
 
         #endregion

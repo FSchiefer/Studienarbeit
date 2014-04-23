@@ -24,74 +24,107 @@ namespace StudienarbeitsProjekt.ContentControls {
 
 
         private System.Text.RegularExpressions.Regex rEMail = new System.Text.RegularExpressions.Regex(@"^[a-zA-Z][\w\.-]{2,28}[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$");
-        string kontaktDatei;
+        private string kontaktDatei;
+               private CollectionControl closeControl;
+        private CollectionControlItemVM sLBI;
+
+        public InformationControl(ScatterView mainScatt, string textPosition, Brush color, CollectionControl closeControl, CollectionControlItemVM sLBI)
+            : base(mainScatt) {
+            DefaultAction(mainScatt, textPosition, color);
+            this.sLBI = sLBI;
+            this.closeControl = closeControl;
+            Close.Visibility = Visibility.Visible;
+            Close.Click += Close_Click;
+        }
+
+
+        public void Close_Click(object sender, RoutedEventArgs e) {
+            closeControl.contentNames.SelectedItems.Remove(sLBI);
+
+        }
+
+
+
         public InformationControl(ScatterView mainScatt, string textPosition, Brush color)
             : base(mainScatt) {
+                DefaultAction(mainScatt, textPosition, color);
+         
+        }
+
+
+        private void DefaultAction(ScatterView mainScatt, string textPosition, Brush color) {
 
             InitializeComponent();
             this.mainScatt = mainScatt;
             this.kontaktDatei = FileHandler.getKontakte();
-    
-               
-            if (!File.Exists(kontaktDatei)) {
-                using (System.IO.StreamWriter file = new System.IO.StreamWriter(kontaktDatei, true)) {
-                    file.WriteLine("Name;E-Mail;Studiengang");
 
+            try {
+                if (!File.Exists(kontaktDatei)) {
+                    using (System.IO.StreamWriter file = new System.IO.StreamWriter(kontaktDatei, true)) {
+                        file.WriteLine("Name;E-Mail;Studiengang");
+
+                    }
                 }
-            } 
-            checkButton();
-            this.BorderBrush = color;
-            Scroller.BorderBrush = this.BorderBrush;
-            ConfirmationButton.IsEnabled = false;
-            reader = new XmlDocument();
-            reader.Load(textPosition);
-            List<string> lines = new List<string>();
+                checkButton();
+                this.BorderBrush = color;
+                Scroller.BorderBrush = this.BorderBrush;
+                ConfirmationButton.IsEnabled = false;
+                reader = new XmlDocument();
+                reader.Load(textPosition);
+                List<string> lines = new List<string>();
 
-            //while (reader.Read()) {
-            //    switch (reader.NodeType) {
-            //        case XmlNodeType.Element: // The node is an element.
-            //            Console.Write("<" + reader.Name);
+                //while (reader.Read()) {
+                //    switch (reader.NodeType) {
+                //        case XmlNodeType.Element: // The node is an element.
+                //            Console.Write("<" + reader.Name);
 
-            //            while (reader.MoveToNextAttribute()) // Read the attributes.
-            //              Console.WriteLine(">");
-            //            break;
-            //        case XmlNodeType.Text: //Display the text in each element.
-            //            Console.WriteLine(reader.Value);
-            //            lines.Add(reader.Value);
-            //            Console.Write(" " + reader.Name + "='" + reader.Value + "");
-            //            break;
-            //        case XmlNodeType.EndElement: //Display the end of the element.
-            //            Console.Write("</" + reader.Name);
-            //            Console.WriteLine(">");
-            //            break;
-            //    }
+                //            while (reader.MoveToNextAttribute()) // Read the attributes.
+                //              Console.WriteLine(">");
+                //            break;
+                //        case XmlNodeType.Text: //Display the text in each element.
+                //            Console.WriteLine(reader.Value);
+                //            lines.Add(reader.Value);
+                //            Console.Write(" " + reader.Name + "='" + reader.Value + "");
+                //            break;
+                //        case XmlNodeType.EndElement: //Display the end of the element.
+                //            Console.Write("</" + reader.Name);
+                //            Console.WriteLine(">");
+                //            break;
+                //    }
 
-            //}
+                //}
 
 
-            XmlNode nodes = reader.SelectSingleNode("Text");
+                XmlNode nodes = reader.SelectSingleNode("Text");
 
-            foreach (XmlNode nodeWalk in nodes.ChildNodes) {
-                if (nodeWalk.Name == "Titel") {
-                    Titel.Content= nodeWalk.InnerText;
+                if (nodes.ChildNodes != null) {
+                    foreach (XmlNode nodeWalk in nodes.ChildNodes) {
+                        if (nodeWalk.Name == "Titel") {
+                            Titel.Content = nodeWalk.InnerText;
+                        }
+                        if (nodeWalk.Name == "Interessengebiet") {
+                            lines.Add(nodeWalk.InnerText);
+                        }
+                        if (nodeWalk.Name == "Definition") {
+                            Definition.Content = nodeWalk.InnerText;
+                        }
+
+                    }
                 }
-                if (nodeWalk.Name == "Interessengebiet") {
-                    lines.Add(nodeWalk.InnerText);
-                }
-                if (nodeWalk.Name == "Definition") {
-                    Definition.Content = nodeWalk.InnerText;
-                }
-              
+
+                if (lines.Count > 0)
+                    foreach (string line in lines) {
+                        SurfaceCheckBox studiengangCheckBox = new SurfaceCheckBox();
+                        studiengangCheckBox.Content = line;
+                        studiengangCheckBox.Checked += new RoutedEventHandler(studiengangCheckBox_Checked);
+                        studiengangCheckBox.Unchecked += new RoutedEventHandler(studiengangCheckBox_Checked);
+                        AuswahlStudiengaenge.Children.Add(studiengangCheckBox);
+                    }
+            } catch (NullReferenceException e) {
+                Debug.WriteLine(e);
             }
-       
-            if (lines.Count > 0 )
-            foreach (string line in lines) {
-                SurfaceCheckBox studiengangCheckBox = new SurfaceCheckBox();
-                studiengangCheckBox.Content = line;
-                studiengangCheckBox.Checked += new RoutedEventHandler(studiengangCheckBox_Checked);
-                studiengangCheckBox.Unchecked += new RoutedEventHandler(studiengangCheckBox_Checked);
-                AuswahlStudiengaenge.Children.Add(studiengangCheckBox);
-            }
+        
+        
         }
 
         private void studiengangCheckBox_Checked(object sender, RoutedEventArgs e) {

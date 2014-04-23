@@ -35,10 +35,32 @@ namespace StudienarbeitsProjekt.ContentControls {
         private String title;
         private Brush color;
 
+
+         private CollectionControl closeControl;
+        private CollectionControlItemVM sLBI;
+
+        public CollectionControl(SurfaceWindow1 surWindow, String dataPath, String name,ContentList content, Brush color, CollectionControl closeControl, CollectionControlItemVM sLBI)
+            : base(surWindow.MainScatt) {
+            DefaultAction(surWindow, dataPath,name,content, color);
+            this.sLBI = sLBI;
+            this.closeControl = closeControl;
+            Close.Visibility = Visibility.Visible;
+            Close.Click += Close_Click;
+        }
+
+
+        public void Close_Click(object sender, RoutedEventArgs e) {
+            closeControl.contentNames.SelectedItems.Remove(sLBI);
+
+        }
        
         // Konstruktor zum erstellen der Komponente und dem Festlegen des darzustellenden Titels
         public CollectionControl(SurfaceWindow1 surWindow, String dataPath, String name,ContentList content, Brush color)
             : base(surWindow.MainScatt) {
+                DefaultAction(surWindow, dataPath, name, content, color);
+        }
+
+        private void DefaultAction(SurfaceWindow1 surWindow, String dataPath, String name, ContentList content, Brush color) {
             InitializeComponent();
             this.BorderBrush = color;
             this.content = content;
@@ -136,7 +158,7 @@ namespace StudienarbeitsProjekt.ContentControls {
                             viewSources.Add(sLBI.Content.ToString());
                             foreach (String folder in folderList) {
                                 if (folder.Contains(sLBI.Content.ToString())) {
-                                    MovableScatterViewItem collection = surWindow.CreateCollection(folder, title, content);
+                                    MovableScatterViewItem collection = surWindow.CreateCollection(folder, title, content, this, sLBI);
                                     collection.Center = this.PointToScreen(new Point(0d, 0d));
                                     collectionList.Add(sLBI, collection);
                                 }
@@ -145,20 +167,20 @@ namespace StudienarbeitsProjekt.ContentControls {
                                 FileHandler fh = new FileHandler(file);
                                 if (file.Contains(sLBI.Content.ToString())) {
                                     if (fh.isValidImageType()) {
-                                        MovableScatterViewItem promoImage = surWindow.CreatePromotionImage(file,  content);
+                                        MovableScatterViewItem promoImage = surWindow.CreatePromotionImage(file, content, this, sLBI);
                                         promoImage.Center = this.PointToScreen(new Point(0d, 0d));
 
                                         scatterList.Add(sLBI, promoImage);
                                     } else if (fh.isValidDocType()) {
-                                        MovableScatterViewItem document = surWindow.CreateDocument(file,  content);
+                                        MovableScatterViewItem document = surWindow.CreateDocument(file,  content, this,sLBI);
                                         document.Center = this.PointToScreen(new Point(0d + 50, 0d + 50));
                                         scatterList.Add(sLBI, document);
                                     } else if (fh.isValidVideoType()) {
-                                        MovableScatterViewItem video = surWindow.CreateVideo(file,  content);
+                                        MovableScatterViewItem video = surWindow.CreateVideo(file, content, this, sLBI);
                                         video.Center = this.PointToScreen(new Point(0d + 5, 0d + 5));
                                         scatterList.Add(sLBI, video);
                                     } else if (fh.isValidMailType()) {
-                                        MovableScatterViewItem information = surWindow.CreateInformationControl(file, content);
+                                        MovableScatterViewItem information = surWindow.CreateInformationControl(file, content, this, sLBI);
                                         information.Center = this.PointToScreen(new Point(0d + 5, 0d + 5));
                                         scatterList.Add(sLBI, information);
                                     }

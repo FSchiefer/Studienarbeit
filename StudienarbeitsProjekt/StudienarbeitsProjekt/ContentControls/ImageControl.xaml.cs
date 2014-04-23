@@ -17,15 +17,43 @@ namespace StudienarbeitsProjekt.ContentControls {
     /// <summary>
     /// Interaktionslogik für VideoControl.xaml
     /// </summary>
+    /// 
+
     public partial class ImageControl : MovableScatterViewItem {
 
-        public ImageControl(ScatterView mainScatt,string imagePosition, Brush color) : base(mainScatt) {
+        private CollectionControl closeControl;
+        private CollectionControlItemVM sLBI;
+        private FileHandler handler;
+
+        public ImageControl(ScatterView mainScatt, string imagePosition, Brush color, CollectionControl closeControl, CollectionControlItemVM sLBI)
+            : base(mainScatt) {
+            DefaultAction(mainScatt, imagePosition, color);
+            this.sLBI = sLBI;
+            this.closeControl = closeControl;
+            Close.Visibility = Visibility.Visible;
+            Close.Click += Close_Click;
+        }
+
+
+        public void Close_Click(object sender, RoutedEventArgs e) {
+            closeControl.contentNames.SelectedItems.Remove(sLBI);
+
+        }
+
+        public ImageControl(ScatterView mainScatt, string imagePosition, Brush color)
+            : base(mainScatt) {
+            DefaultAction(mainScatt, imagePosition, color);
+        }
+
+        private void DefaultAction(ScatterView mainScatt, string imagePosition, Brush color) {
+
 
             InitializeComponent();
-
-            Image promotionBild = new Image() { Source = new BitmapImage(new Uri(imagePosition, UriKind.Absolute)) };
+            handler = new FileHandler(imagePosition);
+            Title.Content = handler.titleViewer();
             this.BorderBrush = color;
-            this.Content = promotionBild;
+            Picture.Source = new BitmapImage(new Uri(imagePosition, UriKind.Absolute));
+           
         }
     }
 }

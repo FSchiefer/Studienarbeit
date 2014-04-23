@@ -23,19 +23,40 @@ namespace StudienarbeitsProjekt.ContentControls {
         private Boolean firstPlay = true;
         private FileHandler handler;
 
+        private CollectionControl closeControl;
+        private CollectionControlItemVM sLBI;
+
+        public VideoControl(ScatterView mainScatt, string videoPosition, Brush color, CollectionControl closeControl, CollectionControlItemVM sLBI)
+            : base(mainScatt) {
+                DefaultAction(mainScatt, videoPosition, color);
+            this.sLBI = sLBI;
+            this.closeControl = closeControl;
+            Close.Visibility = Visibility.Visible;
+            Close.Click += Close_Click;
+        }
+        public void Close_Click(object sender, RoutedEventArgs e) {
+            closeControl.contentNames.SelectedItems.Remove(sLBI);
+
+        }
+
 
         public VideoControl(ScatterView mainScatt, string videoPosition, Brush color) : base(mainScatt) {
 
+            DefaultAction(mainScatt, videoPosition, color);
+
+            }
+
+
+           private void DefaultAction(ScatterView mainScatt, string videoPosition, Brush color) {
             InitializeComponent();
-            handler = new FileHandler( videoPosition );
+            handler = new FileHandler(videoPosition);
 
             this.BorderBrush = color;
             Title.Content = handler.titleViewer();
 
             Play.Content = this.Resources["PlayButton"];
             Stop.Content = this.Resources["StopButton"];
-
-            }
+               }
 
 
         // Change the volume of the media.

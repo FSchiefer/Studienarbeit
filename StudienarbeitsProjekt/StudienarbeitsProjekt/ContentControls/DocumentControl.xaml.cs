@@ -22,10 +22,36 @@ namespace StudienarbeitsProjekt.ContentControls {
     public partial class DocumentControl : MovableScatterViewItem {
 
         private FileHandler handler;
+        private ScatterView mainScatt;
+        private CollectionControl closeControl;
+        private CollectionControlItemVM sLBI;
+
+
 
         public DocumentControl(ScatterView mainScatt, string dokumentPfad, Brush color)
             : base(mainScatt) {
-            InitializeComponent();
+                DefaultAction(mainScatt, dokumentPfad,color);
+        }
+
+        public DocumentControl(ScatterView mainScatt, string dokumentPfad, Brush color, CollectionControl closeControl,CollectionControlItemVM sLBI)
+            : base(mainScatt) {
+            DefaultAction(mainScatt, dokumentPfad, color);
+            this.sLBI = sLBI;
+            this.closeControl = closeControl;
+            Close.Visibility= Visibility.Visible;
+            Close.Click += Close_Click;
+        }
+
+
+        public void Close_Click(object sender, RoutedEventArgs e) {
+            closeControl.contentNames.SelectedItems.Remove(sLBI);
+       
+        }
+
+
+        private void DefaultAction (ScatterView mainScatt, string dokumentPfad, Brush color){
+             InitializeComponent();
+            this.mainScatt = mainScatt;
             handler = new FileHandler(dokumentPfad);
             this.BorderBrush = color;
             myDocViewer.BorderBrush = color;
@@ -39,9 +65,12 @@ namespace StudienarbeitsProjekt.ContentControls {
             xpsDoc.Close();
         }
 
-
         private void docViewer_SizeChanged(object sender, SizeChangedEventArgs e) {
             myDocViewer.FitToWidth();
         }
+
+ 
+
+  
     }
 }
