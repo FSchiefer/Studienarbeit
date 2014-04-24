@@ -122,6 +122,8 @@ namespace StudienarbeitsProjekt.ContentControls {
                     }
             } catch (NullReferenceException e) {
                 Debug.WriteLine(e);
+             
+                this.Visibility = Visibility.Collapsed;
             }
         
         
