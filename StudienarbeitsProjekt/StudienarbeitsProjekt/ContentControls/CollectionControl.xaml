@@ -11,15 +11,16 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="25" />
+            <RowDefinition Height="30" />
             <RowDefinition />
 
         </Grid.RowDefinitions>
 
         <Label x:Name="Title" Grid.Row="0"/>
-        <s:SurfaceButton Grid.Row="0" x:Name="Close" HorizontalAlignment="Right" Visibility="Collapsed">Close</s:SurfaceButton>
+        <s:SurfaceButton xml:space="preserve" x:Name="Close" Visibility="Hidden" Foreground="White"  Height="38" Background="Red" HorizontalAlignment="Right" >   X  </s:SurfaceButton>
 
-        <s:SurfaceListBox x:Name="contentNames" Grid.Row="1" SelectionMode="Multiple"  SelectionChanged="contentNames_SelectionChanged" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+
+        <s:SurfaceListBox x:Name="contentNames" BorderThickness="3" Grid.Row="1" SelectionMode="Multiple"  SelectionChanged="contentNames_SelectionChanged" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
             <s:SurfaceListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>

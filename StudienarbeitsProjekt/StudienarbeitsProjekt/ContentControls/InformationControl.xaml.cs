@@ -73,28 +73,6 @@ namespace StudienarbeitsProjekt.ContentControls {
                 reader.Load(textPosition);
                 List<string> lines = new List<string>();
 
-                //while (reader.Read()) {
-                //    switch (reader.NodeType) {
-                //        case XmlNodeType.Element: // The node is an element.
-                //            Console.Write("<" + reader.Name);
-
-                //            while (reader.MoveToNextAttribute()) // Read the attributes.
-                //              Console.WriteLine(">");
-                //            break;
-                //        case XmlNodeType.Text: //Display the text in each element.
-                //            Console.WriteLine(reader.Value);
-                //            lines.Add(reader.Value);
-                //            Console.Write(" " + reader.Name + "='" + reader.Value + "");
-                //            break;
-                //        case XmlNodeType.EndElement: //Display the end of the element.
-                //            Console.Write("</" + reader.Name);
-                //            Console.WriteLine(">");
-                //            break;
-                //    }
-
-                //}
-
-
                 XmlNode nodes = reader.SelectSingleNode("Text");
 
                 if (nodes.ChildNodes != null) {
@@ -213,31 +191,31 @@ namespace StudienarbeitsProjekt.ContentControls {
 
             if (nameNotEmpty && mailNotEmpty && courseNotEmpty) {
                 ConfirmationButton.IsEnabled = true;
-                Confirmation.Content = "Weitere Informationen Bestellen.";
+                Confirmation.Content = "Weitere Informationen bestellen.";
             } else if (!nameNotEmpty && mailNotEmpty && courseNotEmpty) {
                 ConfirmationButton.IsEnabled = false;
-                Confirmation.Content = "Bitte Namen Eingeben.";
+                Confirmation.Content = "Bitte Namen eingeben.";
             } else if (!nameNotEmpty && !mailNotEmpty && courseNotEmpty) {
                 ConfirmationButton.IsEnabled = false;
-                Confirmation.Content = "Bitte Namen und Mail-Addresse Eingeben.";
+                Confirmation.Content = "Bitte Namen und E-Mail-Addresse eingeben.";
             } else if (!nameNotEmpty && !mailNotEmpty && !courseNotEmpty) {
                 ConfirmationButton.IsEnabled = false;
-                Confirmation.Content = "Bitte Namen, Mail-Addresse und Interesse Eingeben.";
+                Confirmation.Content = "Bitte Namen, E-Mail-Addresse und Interesse eingeben.";
             } else if (nameNotEmpty && !mailNotEmpty && courseNotEmpty) {
                 ConfirmationButton.IsEnabled = false;
-                Confirmation.Content = "Bitte Mail-Addresse Eingeben.";
+                Confirmation.Content = "Bitte E-Mail-Addresse eingeben.";
             } else if (nameNotEmpty && mailNotEmpty && !courseNotEmpty) {
                 ConfirmationButton.IsEnabled = false;
-                Confirmation.Content = "Bitte Kursintresse Eingeben.";
+                Confirmation.Content = "Bitte Interesse eingeben.";
             } else if (nameNotEmpty && !mailNotEmpty && !courseNotEmpty) {
                 ConfirmationButton.IsEnabled = false;
-                Confirmation.Content = "Bitte Mail-Addresse und Interesse Eingeben.";
+                Confirmation.Content = "Bitte E-Mail-Addresse und Interesse eingeben.";
             } else if (!nameNotEmpty && !mailNotEmpty && courseNotEmpty) {
                 ConfirmationButton.IsEnabled = false;
-                Confirmation.Content = "Bitte Namen und Mail-Addresse Eingeben.";
+                Confirmation.Content = "Bitte Namen und E-Mail-Addresse eingeben.";
             } else if (!nameNotEmpty && mailNotEmpty && !courseNotEmpty) {
                 ConfirmationButton.IsEnabled = false;
-                Confirmation.Content = "Bitte Namen und Interesse Eingeben.";
+                Confirmation.Content = "Bitte Namen und Interesse eingeben.";
             }
                
 

@@ -81,7 +81,7 @@
                         <Setter Property="BorderThickness" Value="3"/>
                         <Setter Property="Background" Value="Black"/>
                         <Setter Property="Foreground" Value="White"/>
-                        <Setter Property="Padding" Value="25"/>
+                        <Setter Property="Padding" Value="25,0,25,25"/>
                        
                     </Style>
                 </s:ScatterView.ItemContainerStyle>

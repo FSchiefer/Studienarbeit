@@ -224,10 +224,8 @@ namespace StudienarbeitsProjekt {
                 Images(FileHandler.getImageFiles(pfad), content);
                 Videos(FileHandler.getVideoFiles(pfad), content);
                 Collections(FileHandler.getCollections(pfad),content);
-                Debug.WriteLine(FileHandler.getMailFile(pfad) + "  " + File.Exists(FileHandler.getMailFile(pfad)));
-                if (FileHandler.existsMailFile(pfad)) {
-                    CreateInformationControl(FileHandler.getMailFile(pfad),content);
-                }
+                Mails(FileHandler.getMailFiles(pfad), content);
+      
             } catch (FileNotFoundException ex) {
                 Console.WriteLine("No Folder" + ex);
             } catch (DirectoryNotFoundException ex) {
@@ -255,6 +253,13 @@ namespace StudienarbeitsProjekt {
         private void Videos(string[] pathNames, ContentList content) {
             foreach (string pfad in pathNames) {
                 CreateVideo(pfad, content);
+            }
+        }
+
+
+        private void Mails(string[] pathNames, ContentList content) {
+            foreach (string pfad in pathNames) {
+                CreateInformationControl(pfad, content);
             }
         }
 

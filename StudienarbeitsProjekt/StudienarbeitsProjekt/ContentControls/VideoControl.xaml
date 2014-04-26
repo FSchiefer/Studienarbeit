@@ -39,15 +39,12 @@
     </s:ScatterViewItem.Resources>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="25"/>
+            <RowDefinition Height="30"/>
             <RowDefinition/>
             <RowDefinition Height="90" />
         </Grid.RowDefinitions>
         <Label x:Name="Title" Foreground="White" Grid.Row="0"></Label>
-        <s:SurfaceButton Grid.Row="0" x:Name="Close" HorizontalAlignment="Right" Visibility="Collapsed">
-            Close
-        </s:SurfaceButton>
-
+        <s:SurfaceButton xml:space="preserve" x:Name="Close" Grid.Row="0" Visibility="Hidden" Foreground="White"  Background="Red" HorizontalAlignment="Right">   X  </s:SurfaceButton>
 
         <!-- To interactively stop, pause, and play the media, the LoadedBehavior 
            property of the MediaElement must be set to "Manual". -->

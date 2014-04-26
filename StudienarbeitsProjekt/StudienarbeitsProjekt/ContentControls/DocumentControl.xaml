@@ -1,7 +1,7 @@
 ﻿<u:MovableScatterViewItem xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
                        xmlns:u="clr-namespace:StudienarbeitsProjekt.ContentControls"
                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="http://schemas.microsoft.com/surface/2008" xmlns:System_Windows_Documents="clr-namespace:System.Windows.Documents;assembly=PresentationUI" x:Class="StudienarbeitsProjekt.ContentControls.DocumentControl"
-                 
+                 MinHeight="200"
  >
 
     <s:ScatterViewItem.Resources>
@@ -48,13 +48,12 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="25" />
+            <RowDefinition Height="30" />
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Label x:Name="Title" Grid.Row="0"/>
-        <s:SurfaceButton Grid.Row="0" x:Name="Close" HorizontalAlignment="Right" Visibility="Collapsed">Close</s:SurfaceButton>
-
+        <Label x:Name="Title"  Grid.Row="0"/>
+        <s:SurfaceButton xml:space="preserve" x:Name="Close" Grid.Row="0" Visibility="Hidden" Foreground="White"  Background="Red" HorizontalAlignment="Right">   X  </s:SurfaceButton>
         <DocumentViewer x:Name="myDocViewer" BorderThickness="3"  Height="Auto"  Width="Auto" SizeChanged="docViewer_SizeChanged" Style="{DynamicResource DocumentViewerStyle1}" Grid.Row="1"/>
 
     </Grid>

@@ -6,11 +6,11 @@
                   Background="Black" Padding="0" >
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="25"/>
+            <RowDefinition Height="30"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Label x:Name="Title" Foreground="White" Grid.Row="0"></Label>
-        <s:SurfaceButton  x:Name="Close" Grid.Row="0" Visibility="Hidden" HorizontalAlignment="Right" VerticalAlignment="Top"  >Close</s:SurfaceButton>
+        <s:SurfaceButton xml:space="preserve" x:Name="Close" Grid.Row="0" Visibility="Hidden" Foreground="White"  Background="Red" HorizontalAlignment="Right">   X  </s:SurfaceButton>
         <Image x:Name="Picture" Grid.Row="1">
             
         </Image>

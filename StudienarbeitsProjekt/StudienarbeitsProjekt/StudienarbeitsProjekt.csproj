@@ -91,9 +91,6 @@
     <Compile Include="ContentControls\Addons\ImageIcon.xaml.cs">
       <DependentUpon>ImageIcon.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ContentControls\Addons\CloseIcon.xaml.cs">
-      <DependentUpon>CloseIcon.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ContentControls\Addons\MailIcon.xaml.cs">
       <DependentUpon>MailIcon.xaml</DependentUpon>
     </Compile>
@@ -141,10 +138,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ContentControls\Addons\CloseIcon.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="ContentControls\Addons\MailIcon.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -176,10 +169,6 @@
     <Page Include="ContentControls\VideoControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Simple Styles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
     <Page Include="SurfaceWindow1.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -218,7 +207,6 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="app.config" />
-    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

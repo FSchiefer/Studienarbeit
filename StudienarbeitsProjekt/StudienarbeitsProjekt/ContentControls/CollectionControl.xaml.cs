@@ -64,6 +64,7 @@ namespace StudienarbeitsProjekt.ContentControls {
             InitializeComponent();
             this.BorderBrush = color;
             this.content = content;
+            contentNames.BorderBrush = color;
             this.surWindow = surWindow;
             this.color = color;
 

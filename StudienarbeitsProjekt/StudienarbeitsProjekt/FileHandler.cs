@@ -90,18 +90,13 @@ namespace StudienarbeitsProjekt {
 
         public static String[] getImageFiles(String fileChooser) {
             String baseDir = fileChooser;
-            return Directory.GetFiles(baseDir, "*.jpg").Concat(
-                                 Directory.GetFiles(baseDir, "*.png")).ToArray();
+            return Directory.GetFiles(fileChooser, "*.jpg").Concat(
+                                 Directory.GetFiles(fileChooser, "*.png")).ToArray();
         }
 
-        public static bool existsMailFile(String fileChooser) {
-
-            return File.Exists(getMailFile(fileChooser));
-        }
-
-
-        public static String getMailFile(String fileChooser) {
-            return fileChooser + "\\MailFenster.xml";
+     
+        public static String[] getMailFiles(String fileChooser) {
+            return Directory.GetFiles(fileChooser, "*.xml").ToArray();
         }
 
         public static String[] getDocFiles(String fileChooser) {
