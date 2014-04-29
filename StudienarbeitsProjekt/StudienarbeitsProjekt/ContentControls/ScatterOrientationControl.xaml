@@ -20,7 +20,7 @@
                    ScrollViewer.PanningMode="Both" Grid.Row="1">
 
                 <StackPanel
-            HorizontalAlignment="Center" VerticalAlignment="Center" >
+            HorizontalAlignment="Center" VerticalAlignment="Center"  >
                     <s:SurfaceRadioButton Foreground="White"  x:Name="FreieOrientierung" Checked="FreieOrientierung_Checked" IsChecked="True">
                         <TextBlock TextWrapping="Wrap" FontStretch="Expanded" >
               Freie Orientierung

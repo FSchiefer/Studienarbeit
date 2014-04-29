@@ -124,18 +124,20 @@ namespace StudienarbeitsProjekt.ContentControls {
                         break;
                 }
 
-                svi.move(new Point(sX, sY), (moving|| framing ? winkel : (int)this.ActualOrientation), rotation, moving);
+                svi.move(new Point(sX, sY), (moving|| framing ? winkel : (int)this.ActualOrientation), rotation, moving, framing);
             }
         }
 
 
         // Funktion zum entscheiden welche Bewegung ausgeführt werden soll
-        private void move(Point point, int orientation, bool rotation, bool moving) {
+        private void move(Point point, int orientation, bool rotation, bool moving, bool framing) {
             if (rotation && moving) {
                 MoveAndOrientateScatter(point, orientation);
             } else if (!rotation && moving) {
                 MoveToPosition(point, TimeSpan.FromSeconds(0.5));
             } else if (!moving && rotation) {
+                ScatterOrientationAnimation(orientation, TimeSpan.FromSeconds(0.5));
+            } else if (!moving && framing) {
                 ScatterOrientationAnimation(orientation, TimeSpan.FromSeconds(0.5));
             }
         }
