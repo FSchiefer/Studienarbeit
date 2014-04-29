@@ -11,8 +11,7 @@
             <RowDefinition Height="25" />
             <RowDefinition Height="*"/>
             <RowDefinition Height="30" />
-            <RowDefinition Height="40" />
-        </Grid.RowDefinitions>
+           </Grid.RowDefinitions>
 
 
 
@@ -27,7 +26,13 @@
               Freie Orientierung
                         </TextBlock>
                     </s:SurfaceRadioButton>
-                    <s:SurfaceRadioButton Foreground="White"  x:Name="ScatterOrientierung" Checked="ScatterOrientierung_Checked">
+                <s:SurfaceRadioButton Foreground="White"  x:Name="RandOrientierung" Checked="RandOrientierung_Checked" >
+                    <TextBlock TextWrapping="Wrap" FontStretch="Expanded" >
+               Orientierung anhand  des Randes
+                    </TextBlock>
+                </s:SurfaceRadioButton>
+         
+        <s:SurfaceRadioButton Foreground="White"  x:Name="ScatterOrientierung" Checked="ScatterOrientierung_Checked">
                         <TextBlock TextWrapping="Wrap" FontStretch="Expanded" >
                Orientierung anhand  dieses Fensters
                         </TextBlock>
@@ -37,19 +42,21 @@
                Orientierung anhand  des Tags
                         </TextBlock>
                     </s:SurfaceRadioButton>
-                </StackPanel>
-            </s:SurfaceScrollViewer>
-            <s:SurfaceCheckBox Grid.Row="2" Foreground="White" x:Name="Positionierung" Checked="Positionierung_Checked" Unchecked="Positionierung_Unchecked">
+            </StackPanel>
+        </s:SurfaceScrollViewer>
+        <s:SurfaceCheckBox Grid.Row="2" Foreground="White" x:Name="Positionierung" Checked="Positionierung_Checked" Unchecked="Positionierung_Unchecked">
                         <TextBlock TextWrapping="Wrap" FontStretch="Expanded" >
                 Positionierung an Rand
                         </TextBlock>
                     </s:SurfaceCheckBox>
+                    
+                    
        
-            <s:SurfaceButton Grid.Row="3" Foreground="White" x:Name="Orientierung" Click="Orientierung_Click">
+            <!--<s:SurfaceButton Grid.Row="3" Foreground="White" x:Name="Orientierung" Click="Orientierung_Click">
                 <TextBlock TextWrapping="Wrap" FontStretch="Expanded" >
                 Positionierung und Orientierung an Rand
                 </TextBlock>
-            </s:SurfaceButton>
+            </s:SurfaceButton>-->
 
       
 

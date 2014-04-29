@@ -23,6 +23,7 @@ namespace StudienarbeitsProjekt.ContentControls {
         private Boolean orientierung = false;
         private Boolean positionierung = false;
         private Boolean tagOrientierung = false;
+        private Boolean framing = false;
         private TagContent content;
 
                 public ScatterOrientationControl(ScatterView mainScatt, TagContent content):base(mainScatt){
@@ -34,6 +35,7 @@ namespace StudienarbeitsProjekt.ContentControls {
 
         private void ScatterOrientierung_Checked(object sender, RoutedEventArgs e) {
             tagOrientierung = false;
+            framing = false;
             content.setTagOrientation(tagOrientierung);
             orientierung = true;
 
@@ -44,6 +46,7 @@ namespace StudienarbeitsProjekt.ContentControls {
 
             try {
                 tagOrientierung = false;
+                framing = false;
                 content.setTagOrientation(tagOrientierung);
                 orientierung = false;
             } catch (NullReferenceException ex){
@@ -56,12 +59,23 @@ namespace StudienarbeitsProjekt.ContentControls {
         private void TagOrientierung_Checked(object sender, RoutedEventArgs e) {
 
             orientierung = false;
+            framing = false;
             tagOrientierung = true;
             content.setTagOrientation(tagOrientierung);
             
 
 
         }
+
+        private void RandOrientierung_Checked(object sender, RoutedEventArgs e)
+        {
+            orientierung = false;
+            framing = true;
+            tagOrientierung = false;
+            content.setTagOrientation(tagOrientierung);
+
+        }
+
 
         private void Positionierung_Unchecked(object sender, RoutedEventArgs e) {
             positionierung = false;
@@ -72,10 +86,11 @@ namespace StudienarbeitsProjekt.ContentControls {
             positionierung = true;
         }
 
-        private void Orientierung_Click(object sender, RoutedEventArgs e) {
+        //private void Orientierung_Click(object sender, RoutedEventArgs e) {
 
-           this.ScatterItemsOrientateAndMoveTo(content, true, true);
-        }
+        //   this.ScatterItemsOrientateAndMoveTo(content, true, true, true);
+        //}
+
         private void ScatterOrientation_TouchDown(object sender, TouchEventArgs e) {
             Console.WriteLine("Test");
             e.TouchDevice.Deactivated += new EventHandler(TouchDevice_Deactivated);
@@ -83,7 +98,7 @@ namespace StudienarbeitsProjekt.ContentControls {
 
         void TouchDevice_Deactivated(object sender, EventArgs e) {
             Console.WriteLine(content.Orientation);
-            this.ScatterItemsOrientateAndMoveTo(content, orientierung, positionierung);
+            this.ScatterItemsOrientateAndMoveTo(content, orientierung, positionierung, framing);
 
             if (tagOrientierung) {
                 
@@ -97,6 +112,7 @@ namespace StudienarbeitsProjekt.ContentControls {
             }
 
         }
+
 
 
     }
