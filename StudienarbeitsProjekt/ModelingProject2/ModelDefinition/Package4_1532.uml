@@ -1,0 +1,2218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="ca6d3d02-b6fa-492b-947c-d2de18adf4db"
+  name="Canvas"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="982a72e8-3ffb-47aa-bb15-c86f5f6226fa"
+      handle="viewcode://./CodeSchema_Namespace?Namespace=StudienarbeitsProjekt.ContentControls.Canvas"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="31de42f6-7466-42e9-a699-40920104f9b1"
+        name="DocumentIcon"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="a499481c-451c-4fb2-b937-3853baa870d7"
+            handle="viewcode://./CodeSchema_Class?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.ContentControls.Canvas Type=DocumentIcon"
+            tag="ViewCode" />
+        </referencesInternal>
+        <suppliersInternal>
+          <interfaceRealization
+            Id="97b3e1e1-5e59-449b-91c4-0275be7b77ca">
+            <interfaceMoniker
+              Id="71d7d069-160b-4afe-a38e-e78c40fb83f4"
+              LastKnownName="IComponentConnector"
+              LastKnownLocation="Package10_1531.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization
+            Id="bbd4e1fd-7ee0-4210-a2df-aec8edcafdb1"
+            isSubstitutable="false">
+            <classMoniker
+              Id="0c385a2b-08ae-490d-94cd-114639b2448c"
+              LastKnownName="UserControl"
+              LastKnownLocation="Package9_1531.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="a60aab02-4af6-4146-8ce4-bb928eb3e985"
+            name="_contentLoaded"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="3529c602-a079-4ec0-a7c0-f494ed976bfd"
+                handle="viewcode://./CodeSchema_Field?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.ContentControls.Canvas Type=DocumentIcon Member=_contentLoaded"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="7b85c90b-315b-471c-8d23-ad6abc1e3beb"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="54088291-5b18-482f-b6c0-df3ee9d7563a">
+                    <propertyInstance
+                      Id="998b255a-84f5-4743-a7bd-e4310b90edd6"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="efb748ce-b153-4cf7-b375-85f5768c4792">
+                    <propertyInstance
+                      Id="4a250fb2-33bf-414a-9f00-aee5e10f61c5"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c1c4085f-9c1f-4a1e-b25b-17bfb9d05a22">
+                    <propertyInstance
+                      Id="2996c60e-0a0a-41a2-bae2-f47c942c4ebc"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0125e0f8-123a-44c8-bf6e-f03c095bc368">
+                    <propertyInstance
+                      Id="c3181b3a-8018-47bb-aadd-d647c7ff815a"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c9f54563-e3dc-4c37-a94a-39f97fb7a11c">
+                    <propertyInstance
+                      Id="6dd3df35-8238-484b-9d0f-6918b6e429ce"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                LastKnownName="Boolean"
+                LastKnownLocation="ModelingProject2.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="82993267-7300-46f8-801d-a778104997cc"
+            name="TextIcon"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="17322849-3d53-4d5f-8a7c-ebfe412356f2"
+                handle="viewcode://./CodeSchema_Field?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.ContentControls.Canvas Type=DocumentIcon Member=TextIcon"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="dfa74c12-ce4c-4256-9e15-c6d6d1d45985"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9ee48131-eb7c-46f0-b8a5-d834c95453e3">
+                    <propertyInstance
+                      Id="70b20b36-9110-468f-8b27-3163cdfbe8db"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3a334f18-900f-485b-bc54-b032260fe7d6">
+                    <propertyInstance
+                      Id="ba180388-ec52-40cf-9f23-f39db9257cb8"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2b1cb71f-5531-4a41-932b-b6d9c6139107">
+                    <propertyInstance
+                      Id="3044b62e-15a7-4929-9b64-46edd78b86ae"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5b7875c4-fc77-4620-89c2-f2366286ce9e">
+                    <propertyInstance
+                      Id="921d269e-6da0-46d2-a4ba-69b07c657be5"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="be0197c3-d7b9-4ec8-a697-71e7524e4d17">
+                    <propertyInstance
+                      Id="8ad27da0-08f5-4433-9e38-2e207befeabd"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="d7033c01-95cd-4af6-af8f-7d6fa1769111"
+                LastKnownName="Grid"
+                LastKnownLocation="Package9_1531.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="0c28df74-727c-403c-97c3-aec2fdc07e79"
+            name="appbar_page_text"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="6633daa5-df0a-4236-9532-b8b41bb9f028"
+                handle="viewcode://./CodeSchema_Field?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.ContentControls.Canvas Type=DocumentIcon Member=appbar_page_text"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="31fd7a64-1533-40cd-aa03-b0e578078906"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ed609761-54c9-4530-a74c-ff1c0d46a412">
+                    <propertyInstance
+                      Id="dafccf5d-4815-4fb7-9506-6200ef0c185a"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ce01cfb3-3426-4fa3-87e8-4086aef6199f">
+                    <propertyInstance
+                      Id="f842e981-f005-44a4-9742-58f27a46fe56"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cd7cc036-4f24-455e-a4a5-46cb5468730c">
+                    <propertyInstance
+                      Id="2a9024ce-2da7-4be7-a71c-904a2a1fc165"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="46f8fad2-9dba-4255-b2ae-579cb19242ed">
+                    <propertyInstance
+                      Id="6ce4bbb7-689e-405f-8866-dc0ea400ec41"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8ab1865f-9c0d-4aec-ad18-f898928a3f1a">
+                    <propertyInstance
+                      Id="deaafd80-b621-43ce-a1a3-081666b14539"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="a2233572-dd87-4dd4-aee0-5a8e35b260ce"
+                LastKnownName="Canvas"
+                LastKnownLocation="Package9_1531.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="21df8051-b593-4b23-a49a-6f201621e71c"
+            name="IComponentConnector.Connect"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="cb398951-ba82-4dcf-af29-05acb09b0e6e"
+                handle="viewcode://./CodeSchema_Method?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.ContentControls.Canvas Type=DocumentIcon Member=(Name=Connect ExplicitInterface=(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/System.Xaml.dll&quot; Namespace=System.Windows.Markup Type=IComponentConnector) OverloadingParameters=[(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Int32),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Object)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="18165b9a-1ac9-4ba1-85ed-63f4612566ca"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="95cf99bb-778e-4cc5-9818-b31eb6a040a1">
+                    <propertyInstance
+                      Id="457c1957-274d-4df7-9bd1-39add201348e"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f15b7a2c-0097-4fca-a5c6-6f74550c83d2">
+                    <propertyInstance
+                      Id="d1341dc9-b329-4853-904d-621e84131c4e"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e899f1fc-edf4-4fcb-8775-916d26eb04d8">
+                    <propertyInstance
+                      Id="862fac75-82db-4bcc-bf84-ebad6a1e043a"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="539df29e-defe-4e31-8f11-94d904b92042">
+                    <propertyInstance
+                      Id="0e4cfe0e-9b87-4d05-96ef-3fc3660675bb"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ea48a98c-af5e-462e-a249-c49d97935f1c">
+                    <propertyInstance
+                      Id="599109b3-fd77-432e-9e17-0393c165fc31"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4ffee14b-6499-4395-b177-61f60d60738c"
+                  name="connectionId"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="8324ef97-95ed-4f84-8daf-4d127d771e92"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.ContentControls.Canvas Type=DocumentIcon Member=(Name=Connect ExplicitInterface=(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/System.Xaml.dll&quot; Namespace=System.Windows.Markup Type=IComponentConnector) OverloadingParameters=[(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Int32),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Object)]) ParameterIdentifier=connectionId"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="ModelingProject2.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="6c68c807-3093-407e-b4d9-ac31a09e2167"
+                  name="target"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="35769ac5-9713-43f5-8fb3-7cfc5fb16ef7"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.ContentControls.Canvas Type=DocumentIcon Member=(Name=Connect ExplicitInterface=(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/System.Xaml.dll&quot; Namespace=System.Windows.Markup Type=IComponentConnector) OverloadingParameters=[(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Int32),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Object)]) ParameterIdentifier=target"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="55b44bc7-3a21-4743-9ca4-1729c6ec75a6"
+                      LastKnownName="Object"
+                      LastKnownLocation="Package6_1531.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="21ab26bd-671a-4080-a549-c9932455bd0a"
+            name="DocumentIcon"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="79d76e24-a816-4945-a241-288958754282"
+                handle="viewcode://./CodeSchema_Method?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.ContentControls.Canvas Type=DocumentIcon Member=.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="34e4a1a7-816a-43eb-87cb-5ebe17653f20"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c18f4fb9-c6bc-4996-885b-185d29dbe483">
+                    <propertyInstance
+                      Id="8691b2bf-68e1-4596-9482-c77ba701c014"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="35624783-0bc1-49e7-8975-6f52913ab24b">
+                    <propertyInstance
+                      Id="7e1918e0-0421-42f9-a2a6-61c2c6584c12"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="24bdd8b3-36cc-4bf5-b526-706af4f170ec">
+                    <propertyInstance
+                      Id="0a9b4105-09c3-4feb-9ea9-713a337c95ce"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="39e2d246-0773-4ae4-af72-9fb2b227ea2e">
+                    <propertyInstance
+                      Id="e61eb204-ecc9-43f7-bdbc-40f212efceaa"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2340c382-a411-4e2c-8015-8f2487c5bfdf">
+                    <propertyInstance
+                      Id="812dcf0f-0a04-41ea-a9c9-131300f5b610"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="ad26e582-03ca-4a58-9202-274664e1faa2"
+            name="InitializeComponent"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="1b57fba5-0491-4a00-abe8-ae27549be94c"
+                handle="viewcode://./CodeSchema_Method?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.ContentControls.Canvas Type=DocumentIcon Member=InitializeComponent"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="0803702a-d9e9-4d7a-a8ae-cde92e78dbf0"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="84559aea-10c0-417a-b4ca-32e205787c5a">
+                    <propertyInstance
+                      Id="0a30c829-aeab-4461-8eaf-3e762a458dbe"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7c437fda-38de-4db2-996b-8d627a255ec3">
+                    <propertyInstance
+                      Id="c6583e46-cf98-438d-a1d8-9a985b1632e1"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c54c8ce8-29c2-462f-83b7-0a723d22c9e5">
+                    <propertyInstance
+                      Id="5e56f4b0-3cac-4ef8-9591-4f5ddb9cc35f"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e5d4d10e-c402-4499-868d-8ee45ee601d5">
+                    <propertyInstance
+                      Id="2ad3eb4a-db6b-4b17-ac3c-ed84cc5ce951"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="adee61bb-56ae-4cd8-9761-6eab502083aa">
+                    <propertyInstance
+                      Id="8bb24951-e069-4530-9df2-41c3a2bddba5"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="8c9ff3e6-70c1-418a-969b-5aed51364364"
+        name="FolderIcon"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="a15af7eb-8c5e-4f89-a2d7-ab8b9ac97638"
+            handle="viewcode://./CodeSchema_Class?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.ContentControls.Canvas Type=FolderIcon"
+            tag="ViewCode" />
+        </referencesInternal>
+        <suppliersInternal>
+          <interfaceRealization
+            Id="cd7e3426-f816-4715-8bed-ccb0d7225296">
+            <interfaceMoniker
+              Id="71d7d069-160b-4afe-a38e-e78c40fb83f4"
+              LastKnownName="IComponentConnector"
+              LastKnownLocation="Package10_1531.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization
+            Id="e6f1f070-9be9-450b-9a22-f6274cb61819"
+            isSubstitutable="false">
+            <classMoniker
+              Id="0c385a2b-08ae-490d-94cd-114639b2448c"
+              LastKnownName="UserControl"
+              LastKnownLocation="Package9_1531.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="d5795547-c5ea-4dd3-a492-fdcacee91c40"
+            name="_contentLoaded"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="aef86931-dcad-4606-9127-4cd350f88971"
+                handle="viewcode://./CodeSchema_Field?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.ContentControls.Canvas Type=FolderIcon Member=_contentLoaded"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="796da86d-4332-4330-8745-3ff9bb216a89"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a7e5b473-2571-4ec9-832a-a0fe91330816">
+                    <propertyInstance
+                      Id="1c54f4a1-5f34-4234-a63f-b6c4ff6286dc"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6011076d-fab9-4dce-99bf-71055747cae5">
+                    <propertyInstance
+                      Id="015e275f-a5f4-4fbf-b583-8186492149d1"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5f661ea5-2a3b-48d9-a7b9-6b35da01e3cc">
+                    <propertyInstance
+                      Id="83330fd0-01df-4faa-a07a-2e85c00f7e40"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8024e120-d4a6-4b23-a4d0-c9018db358d8">
+                    <propertyInstance
+                      Id="f4fd6a7e-4e4a-4428-a5c4-407be1171472"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="91725d8e-138c-4cd6-a2bc-3354163da787">
+                    <propertyInstance
+                      Id="5dcf931b-2bf6-48ad-844a-30d3263b9044"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                LastKnownName="Boolean"
+                LastKnownLocation="ModelingProject2.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="53359772-d7e0-4970-9f54-5cf14659ce85"
+            name="Folder"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="700908f3-4794-45a0-a64a-06080b56f51a"
+                handle="viewcode://./CodeSchema_Field?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.ContentControls.Canvas Type=FolderIcon Member=Folder"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="ec7d95b8-ecca-4e40-9f74-d7e16381d9a4"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6495c0f5-a3a9-4d05-a424-dbff8efa14fb">
+                    <propertyInstance
+                      Id="b2204fad-c390-487e-b605-841b6fd541ca"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="853d84d3-939a-4a89-b5fa-50f5765d3ee2">
+                    <propertyInstance
+                      Id="99119827-0965-441f-b56c-ea53b6645337"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0b00fa15-9e28-4b07-b476-03ccf45e4cb1">
+                    <propertyInstance
+                      Id="62e60dcd-5c66-4f64-a492-57005ef60c18"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="501d58cf-de63-4764-812e-2b8234f0b2fb">
+                    <propertyInstance
+                      Id="183c6e2f-e27d-43d2-a554-0cfafdf70de4"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a48230e2-eaeb-40ca-870e-6e0c2e81357b">
+                    <propertyInstance
+                      Id="fc066134-173a-4120-813c-fb61c95c5d1b"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="d7033c01-95cd-4af6-af8f-7d6fa1769111"
+                LastKnownName="Grid"
+                LastKnownLocation="Package9_1531.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="d0f28488-81c8-4a5c-965a-816b2a54f643"
+            name="appbar_folder_ellipsis"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="5a2afb4f-ca45-462c-addf-366c81a769a0"
+                handle="viewcode://./CodeSchema_Field?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.ContentControls.Canvas Type=FolderIcon Member=appbar_folder_ellipsis"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="7bab532a-f9bb-48dc-ae4f-69f4847088c1"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="07ade5dc-cad8-4097-9a50-924760cc198c">
+                    <propertyInstance
+                      Id="f3538273-d81e-4f47-85ea-dd69c9671519"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="350b2c74-7a7d-4114-babe-9be96b7b7b41">
+                    <propertyInstance
+                      Id="96e69f16-7e78-4e4a-881f-ad18fe994ac9"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fe388c3b-1463-4f16-ae1c-2dff4a85bf7d">
+                    <propertyInstance
+                      Id="7f5e088b-491f-448d-90f3-bee9e232a34d"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="724e707f-8900-463f-92cc-1fa5995e0633">
+                    <propertyInstance
+                      Id="b5d139cf-c4da-4b84-b478-c2f2394a4979"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9f73b4c8-863a-48c9-85e2-9b5c658955ab">
+                    <propertyInstance
+                      Id="f587237c-b69f-433b-8a85-2affd93cecbe"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="a2233572-dd87-4dd4-aee0-5a8e35b260ce"
+                LastKnownName="Canvas"
+                LastKnownLocation="Package9_1531.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="5c39318c-7d70-4eee-8bba-c066b05f124d"
+            name="IComponentConnector.Connect"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="60e72aa3-b140-437a-b7aa-95b0c48bb9b2"
+                handle="viewcode://./CodeSchema_Method?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.ContentControls.Canvas Type=FolderIcon Member=(Name=Connect ExplicitInterface=(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/System.Xaml.dll&quot; Namespace=System.Windows.Markup Type=IComponentConnector) OverloadingParameters=[(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Int32),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Object)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="4c713085-563b-4e9a-adf4-02f0104b4b46"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8a57f0e2-9c5c-4fe0-bfa3-cca6bf4ce984">
+                    <propertyInstance
+                      Id="d58802d9-767a-4777-8d43-7e37c9c41c07"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2f327b88-5057-4f92-be8b-620a9e09d305">
+                    <propertyInstance
+                      Id="ab983a6b-26ea-4912-9a09-768377299b95"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3d9a6d16-bd43-4e1d-802c-d7f3aaee5d36">
+                    <propertyInstance
+                      Id="e2d220ae-f31a-44d0-869e-fcc129728893"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="75d51af8-642b-4635-9b4a-36ab937f87e6">
+                    <propertyInstance
+                      Id="4be8729f-0b0c-4caa-bada-96ba1906dd43"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="61f39f54-ed33-4396-8eb5-b1c9c768f422">
+                    <propertyInstance
+                      Id="239ec34d-a17f-4433-9e19-d0b3812fe821"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4155173a-c2b6-42d3-9e0b-ecdd8862582d"
+                  name="connectionId"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="e7bc68b5-7396-4d4a-b799-76e1149f90e8"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.ContentControls.Canvas Type=FolderIcon Member=(Name=Connect ExplicitInterface=(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/System.Xaml.dll&quot; Namespace=System.Windows.Markup Type=IComponentConnector) OverloadingParameters=[(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Int32),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Object)]) ParameterIdentifier=connectionId"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="ModelingProject2.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="3013f9c6-032c-4ceb-8cb4-00b877b0a388"
+                  name="target"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="e37008b7-5164-44e9-9a62-426b9af4d5ea"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.ContentControls.Canvas Type=FolderIcon Member=(Name=Connect ExplicitInterface=(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/System.Xaml.dll&quot; Namespace=System.Windows.Markup Type=IComponentConnector) OverloadingParameters=[(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Int32),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Object)]) ParameterIdentifier=target"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="55b44bc7-3a21-4743-9ca4-1729c6ec75a6"
+                      LastKnownName="Object"
+                      LastKnownLocation="Package6_1531.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="08f060ad-4adc-4242-8295-29bee849491e"
+            name="FolderIcon"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="0c77c48e-47dc-4b33-92f6-94914e33b2fb"
+                handle="viewcode://./CodeSchema_Method?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.ContentControls.Canvas Type=FolderIcon Member=.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="367a18a7-d54c-408d-a1f6-8566d29f98c4"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d20b51f9-968a-4fd4-b9a6-37278f9f7ec9">
+                    <propertyInstance
+                      Id="b8dc3b83-af28-499e-a631-49866cb3f549"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="72d9d11f-e504-4bb5-979e-8a07101825ce">
+                    <propertyInstance
+                      Id="7fc7f1b9-3f00-4ab3-b7a8-f1c48317f6b5"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1515fce2-a761-4df8-b7c5-db86255da7b5">
+                    <propertyInstance
+                      Id="d0070e48-b03e-49b9-a746-3f8ee44ee735"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3de77484-72ec-4aa7-a364-a1867e6cd51f">
+                    <propertyInstance
+                      Id="7e505071-2613-4488-bb0a-1b14a08815fe"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f8875bef-6eba-4e8e-a762-15ad3f7d27c9">
+                    <propertyInstance
+                      Id="16d4fa50-ac3a-45d4-8459-98b38c552611"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="c1fd54fb-849c-40af-b20b-dcc68c7e5ebd"
+            name="InitializeComponent"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="0c11228f-d384-4326-a248-61c5c20b4b74"
+                handle="viewcode://./CodeSchema_Method?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.ContentControls.Canvas Type=FolderIcon Member=InitializeComponent"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="1db6ecbe-1fa0-49bf-b002-01a5c0a4f9ab"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="22f756ae-7822-4aa3-b96c-1c9b9520f083">
+                    <propertyInstance
+                      Id="8aa05ea0-d651-4a0d-b9e8-1f26aca106ff"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="16b48701-496f-43d7-96c1-e257ef1ee6f4">
+                    <propertyInstance
+                      Id="b2cced75-6b5c-4161-85af-09c8f37b2c0e"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f5e71c56-b7ef-4a64-b7f5-e9805e257232">
+                    <propertyInstance
+                      Id="178a2bcb-59a5-454d-b217-63211d1189bb"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a2d1b43d-1fd2-467a-aa8e-b05d2cfd24ec">
+                    <propertyInstance
+                      Id="7487a8eb-933a-4e5a-ad1a-87287313c6fc"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="09e228c1-795d-404f-a829-8483e1e7a140">
+                    <propertyInstance
+                      Id="34ffd0f4-6c4a-4dab-a987-38e487653e5c"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="0a2fea78-daba-47e5-805c-81f58a548928"
+        name="ImageIcon"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="299cb79d-8cce-46fb-95a3-ee7f0db654db"
+            handle="viewcode://./CodeSchema_Class?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.ContentControls.Canvas Type=ImageIcon"
+            tag="ViewCode" />
+        </referencesInternal>
+        <suppliersInternal>
+          <interfaceRealization
+            Id="5c5c1cd0-b7fe-4adb-8eff-01db253697e3">
+            <interfaceMoniker
+              Id="71d7d069-160b-4afe-a38e-e78c40fb83f4"
+              LastKnownName="IComponentConnector"
+              LastKnownLocation="Package10_1531.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization
+            Id="8f23d5a1-e8f3-4749-a8c0-531bb8b42483"
+            isSubstitutable="false">
+            <classMoniker
+              Id="0c385a2b-08ae-490d-94cd-114639b2448c"
+              LastKnownName="UserControl"
+              LastKnownLocation="Package9_1531.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="7d4f3a13-93e7-4656-8d66-052546c5245f"
+            name="_contentLoaded"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="0a76098a-95b9-405a-a54f-c461fd00174c"
+                handle="viewcode://./CodeSchema_Field?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.ContentControls.Canvas Type=ImageIcon Member=_contentLoaded"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="3c1cfbb7-debb-4bed-863c-5c34f929abc3"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3a638ec9-f977-407a-8037-371281c57c40">
+                    <propertyInstance
+                      Id="f6494cdb-8ff9-4dac-b660-b6c0336b444a"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="40c1b80b-14eb-433c-b66d-e659a7c253f9">
+                    <propertyInstance
+                      Id="2370fca9-f3ad-44be-9a8e-d14b9cd52793"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d4a9fe8c-f5cc-4b44-9a28-0099be37fc7a">
+                    <propertyInstance
+                      Id="4fabc87c-acd9-431a-a19e-4f7988c28bb7"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9df039c0-3a1e-40a9-b5c8-28b8959d5170">
+                    <propertyInstance
+                      Id="034e1bcf-4b70-48a6-8999-3e539aedfa4d"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3fb3cc99-4e2f-4cb5-97c0-fd35ad090b15">
+                    <propertyInstance
+                      Id="44a0d102-7823-4b2d-8d84-d513b9be8bdf"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                LastKnownName="Boolean"
+                LastKnownLocation="ModelingProject2.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="546dccc7-696a-4cb1-9f81-d6d86e82d784"
+            name="Image"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="b5d0b6f3-726a-49cb-b6b9-9afa8517c052"
+                handle="viewcode://./CodeSchema_Field?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.ContentControls.Canvas Type=ImageIcon Member=Image"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="78d8020a-9f6e-4c2e-919f-1738fc249251"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7a5fd74c-0e39-48d9-a9fe-003c09d88e56">
+                    <propertyInstance
+                      Id="394f3077-ba62-42fd-9c4f-8f780972b146"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8ac5c851-f84a-4ed2-b079-1b22a94a1ed6">
+                    <propertyInstance
+                      Id="199e74ff-2f6c-467a-947c-df015de34737"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1884743c-06c6-4521-94b3-7f8f55903d45">
+                    <propertyInstance
+                      Id="79f3cc63-2980-4114-84ef-f2124bc55598"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4e256f1f-784c-4db0-ad9a-bf6cc01a97a7">
+                    <propertyInstance
+                      Id="00fb00b3-f9e3-48d2-bcf8-1b5c0d5b0539"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bc133c44-e376-4a27-afb6-edd31ce99ff3">
+                    <propertyInstance
+                      Id="f7039285-d210-4266-a12b-92ef69b55f3e"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="d7033c01-95cd-4af6-af8f-7d6fa1769111"
+                LastKnownName="Grid"
+                LastKnownLocation="Package9_1531.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="9442159b-9504-4984-9f6d-270ba90585e5"
+            name="appbar_image_backlight"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="dbfd1d4c-4f3e-49cc-9c8b-38edb9b25dbc"
+                handle="viewcode://./CodeSchema_Field?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.ContentControls.Canvas Type=ImageIcon Member=appbar_image_backlight"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="f491d89d-8969-498a-a3c5-9585d17a2b2f"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8dfd4d74-0bc3-4a1f-9a6c-3242123c5218">
+                    <propertyInstance
+                      Id="f41c7582-8f40-4512-afbd-ea6206e70767"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="186e6aff-9fd0-4a85-8e05-cd2fd04cb4d4">
+                    <propertyInstance
+                      Id="fcbc3464-1e1e-4445-8cc7-d992938fb0aa"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3233126c-e95f-477b-96c5-a445f9a0170c">
+                    <propertyInstance
+                      Id="c10044b4-baee-40b1-a301-323bc64c6d1c"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1efdff5d-d09a-4a16-879b-7fb4aa1264e9">
+                    <propertyInstance
+                      Id="2df20b69-3185-4466-b691-d1347061a86b"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="86738cbb-3d94-44f3-b014-430f8c5e08e8">
+                    <propertyInstance
+                      Id="eb448c0a-8ae2-42ea-9a71-8bd22b010829"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="a2233572-dd87-4dd4-aee0-5a8e35b260ce"
+                LastKnownName="Canvas"
+                LastKnownLocation="Package9_1531.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="4cdfe38e-068a-45c8-9c76-085b328a9dbe"
+            name="IComponentConnector.Connect"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="98677187-aa39-4938-8e23-561184e4860d"
+                handle="viewcode://./CodeSchema_Method?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.ContentControls.Canvas Type=ImageIcon Member=(Name=Connect ExplicitInterface=(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/System.Xaml.dll&quot; Namespace=System.Windows.Markup Type=IComponentConnector) OverloadingParameters=[(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Int32),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Object)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="346ab34e-5d0c-41af-96d6-eaf8b135156e"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5cfb52d4-35cc-40f3-bd36-b061a64ba31e">
+                    <propertyInstance
+                      Id="e7455d92-09c4-4f74-9c4f-d138c2db7fea"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="817db814-6e06-48b7-8821-b00578253da5">
+                    <propertyInstance
+                      Id="f19b70bb-7a3c-443b-bdfc-9eec70f31588"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8d0416a1-3427-4678-a084-872938e04a4f">
+                    <propertyInstance
+                      Id="20a6ef61-1a30-4389-9ba8-f4d0e5a77b43"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="71944753-210f-495a-81fb-e83dba9eff95">
+                    <propertyInstance
+                      Id="105f427a-13ab-4d54-bc91-84a042800b41"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="539a7cda-1bd9-4ebd-961f-a9e3fda26d17">
+                    <propertyInstance
+                      Id="482c3eb0-128e-404c-aaf4-c4f7779b76f5"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ca2f1959-b9ca-4e58-b3ac-eb3ed0e50809"
+                  name="connectionId"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="e8e0d16e-44bf-4a6f-b4f9-dcfa4bba6ff2"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.ContentControls.Canvas Type=ImageIcon Member=(Name=Connect ExplicitInterface=(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/System.Xaml.dll&quot; Namespace=System.Windows.Markup Type=IComponentConnector) OverloadingParameters=[(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Int32),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Object)]) ParameterIdentifier=connectionId"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="ModelingProject2.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="c42884df-77de-471a-a565-255a8ef98c79"
+                  name="target"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="a31e7783-f0f4-42bc-bc22-d9cb4985c3c4"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.ContentControls.Canvas Type=ImageIcon Member=(Name=Connect ExplicitInterface=(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/System.Xaml.dll&quot; Namespace=System.Windows.Markup Type=IComponentConnector) OverloadingParameters=[(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Int32),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Object)]) ParameterIdentifier=target"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="55b44bc7-3a21-4743-9ca4-1729c6ec75a6"
+                      LastKnownName="Object"
+                      LastKnownLocation="Package6_1531.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="732504c4-e03e-4f4a-9ece-6ede2693a8aa"
+            name="ImageIcon"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="fcd38d4b-5ff1-4234-a121-873d77b5fbb0"
+                handle="viewcode://./CodeSchema_Method?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.ContentControls.Canvas Type=ImageIcon Member=.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="143f2a6a-3615-4dc0-85c0-628a01df9268"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e6c99255-f517-4fdf-bedb-1a82b01c3191">
+                    <propertyInstance
+                      Id="849543fe-b30e-4745-b1fb-2858fe6076b4"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="719f6564-d367-4b3e-ba92-8a329874cafe">
+                    <propertyInstance
+                      Id="1662c154-707c-4c2e-8947-adb3808d20e4"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1b2eb641-98ec-451b-a7b1-7b5ebf2c7074">
+                    <propertyInstance
+                      Id="7d31c428-2d6a-4bf2-9f1a-1648585e0a86"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7255af92-eea9-4580-8eba-240b8c46fbf1">
+                    <propertyInstance
+                      Id="a6278edf-34bd-4f85-a6cc-26e9474f43be"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9243b3fe-1a5f-4a84-bb20-e93bbbe05aa5">
+                    <propertyInstance
+                      Id="7863523b-7063-4bda-80e7-51d9d0388d9c"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="30157fbb-5d98-4db3-a079-81812840550f"
+            name="InitializeComponent"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="857d7d53-afda-41e1-b8e8-314ebec4dcd4"
+                handle="viewcode://./CodeSchema_Method?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.ContentControls.Canvas Type=ImageIcon Member=InitializeComponent"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="6a6e9fe8-6858-49e4-9ecc-7bf0b7a07432"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bd1bd257-1738-4cdf-8b70-19f4f5cb14d3">
+                    <propertyInstance
+                      Id="13379276-0654-4610-ae53-fab01125eb9f"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a1a1f558-30f0-4d02-b88f-ff6f21ea8bdb">
+                    <propertyInstance
+                      Id="0ba1eb24-e3cd-4787-94f2-3dd5cbbca97a"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d53f7956-8814-444d-b902-4c541df4fe78">
+                    <propertyInstance
+                      Id="b2930e25-09a5-4cbb-9ffb-6426e7859627"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="24f84a0c-5f0b-4819-9da1-7263bdccbc71">
+                    <propertyInstance
+                      Id="c9f78c6f-7cd1-48ff-bc48-ca33dbb42a75"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e2ba65d6-73ef-4c40-9243-da27be9a5f53">
+                    <propertyInstance
+                      Id="b0e9eef3-cf84-4777-b4ff-aad11c2d4f24"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="5fd89040-023d-4a9e-9400-85507ae04579"
+        name="MailIcon"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="c16a8d38-ab67-4528-b971-cf1ab5e85c28"
+            handle="viewcode://./CodeSchema_Class?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.ContentControls.Canvas Type=MailIcon"
+            tag="ViewCode" />
+        </referencesInternal>
+        <suppliersInternal>
+          <interfaceRealization
+            Id="14ed1309-bc6e-4b19-a236-12710025bba2">
+            <interfaceMoniker
+              Id="71d7d069-160b-4afe-a38e-e78c40fb83f4"
+              LastKnownName="IComponentConnector"
+              LastKnownLocation="Package10_1531.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization
+            Id="4a52aa0f-1a79-4a6d-9b90-5ab379f17e4c"
+            isSubstitutable="false">
+            <classMoniker
+              Id="0c385a2b-08ae-490d-94cd-114639b2448c"
+              LastKnownName="UserControl"
+              LastKnownLocation="Package9_1531.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="7f92000f-25f5-49b9-8e00-b8c2781ff8e5"
+            name="_contentLoaded"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="be6599fd-92e9-45e3-87c5-6436598a4373"
+                handle="viewcode://./CodeSchema_Field?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.ContentControls.Canvas Type=MailIcon Member=_contentLoaded"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="6ebd6a03-0b54-4a33-82a6-b8da4d192896"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="456bb099-c198-4a86-af39-a12c57bb281c">
+                    <propertyInstance
+                      Id="4a0e9cae-aaad-4719-94b5-a606f4cd6ec0"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b9459562-99c8-49e3-8c35-219ad8aace7c">
+                    <propertyInstance
+                      Id="1ea1b0fa-02d1-4b1a-a52c-8f101b49f949"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6db72195-4099-4982-b3d5-417993b12532">
+                    <propertyInstance
+                      Id="12638c38-8c79-44fb-9282-ff44fe9f7b29"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9416d6aa-244d-4233-acf9-08cfe4952821">
+                    <propertyInstance
+                      Id="5bc959a6-2c8e-4138-a8ad-deaa640ce8fc"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f7629a41-2ea3-4365-b662-136ffe536af1">
+                    <propertyInstance
+                      Id="39c72b70-238d-4d89-9da3-709e927b7036"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                LastKnownName="Boolean"
+                LastKnownLocation="ModelingProject2.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="6a84026a-72e8-42d6-82d4-811324a82697"
+            name="Mail"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="a61a24f0-cee4-424e-a933-a04aa56a3618"
+                handle="viewcode://./CodeSchema_Field?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.ContentControls.Canvas Type=MailIcon Member=Mail"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="e0ba1c94-d796-42e5-b075-e75c0fba7fe2"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="132a68a7-8afa-410d-934e-da05248405d4">
+                    <propertyInstance
+                      Id="5b91a58d-38fc-4adc-a8e4-4e48cbab823c"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2e2bc9fc-b291-4576-9dcb-6c5ff72de69d">
+                    <propertyInstance
+                      Id="949c12c3-ffc6-45e9-8784-7bcbef95ba93"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a513fbcf-876a-4c4b-8734-8f0c7807f605">
+                    <propertyInstance
+                      Id="cc69c765-ec85-4215-825d-87e134b88002"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e49ad1a8-d81f-4e78-86b5-fc83477ef40d">
+                    <propertyInstance
+                      Id="f91dfcad-631a-441d-9ba6-de68f075bef4"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="66ed1efa-1f5f-4a26-af8b-b9309bf45feb">
+                    <propertyInstance
+                      Id="87903582-44c1-4390-84dd-79fb13b612b3"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="d7033c01-95cd-4af6-af8f-7d6fa1769111"
+                LastKnownName="Grid"
+                LastKnownLocation="Package9_1531.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="b5fca807-a5cb-4bbe-a361-7f6feb7ac415"
+            name="appbar_email_hardedge"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="96231ac0-1e83-4018-bc4b-351bb0a90a97"
+                handle="viewcode://./CodeSchema_Field?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.ContentControls.Canvas Type=MailIcon Member=appbar_email_hardedge"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="a395a277-bfa0-4751-a02f-c661d3f71063"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="54334127-ded4-4daf-a096-b5530f9f6a22">
+                    <propertyInstance
+                      Id="70c472ba-8c3c-41e7-97db-2647be39785f"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="745963d6-f08d-4ed6-b776-b15241498609">
+                    <propertyInstance
+                      Id="6a377485-0ab3-4a57-85d9-11028b647149"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9eb5d3a0-7dea-4d02-bf01-08896d86fc04">
+                    <propertyInstance
+                      Id="de0458c2-0674-4ca3-9d51-564cb40ecbf5"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c380a40c-d856-4e70-a303-47ee13b852bc">
+                    <propertyInstance
+                      Id="ea236f9b-6e10-4c56-baca-d6d418a92bad"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d189dc9b-d1aa-45f9-9bc5-67c1c1243879">
+                    <propertyInstance
+                      Id="7b061f30-9424-4844-b482-1ba393d82f44"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="a2233572-dd87-4dd4-aee0-5a8e35b260ce"
+                LastKnownName="Canvas"
+                LastKnownLocation="Package9_1531.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="563a15d2-ac37-4555-bcd2-a29c87161dc4"
+            name="IComponentConnector.Connect"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="ef012989-1190-493f-8316-4d03dd9e1ca0"
+                handle="viewcode://./CodeSchema_Method?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.ContentControls.Canvas Type=MailIcon Member=(Name=Connect ExplicitInterface=(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/System.Xaml.dll&quot; Namespace=System.Windows.Markup Type=IComponentConnector) OverloadingParameters=[(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Int32),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Object)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="43c04782-1806-463d-9917-cc95c1b6e4c9"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="09d0595f-7e21-4494-b75f-685b607bfae7">
+                    <propertyInstance
+                      Id="5415b2bc-026b-41db-884e-221e582dbe1e"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="dcfeafef-f4d1-4bae-b69e-fd40e2d320c3">
+                    <propertyInstance
+                      Id="45f8ae1c-1e6f-4642-94b2-1b55881934fd"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d86cfb73-12dd-46b3-9e42-b0646e495bac">
+                    <propertyInstance
+                      Id="11f87442-a431-4dab-b0dc-509b0697694c"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b83f011f-5587-4931-aa1a-4b9e15716356">
+                    <propertyInstance
+                      Id="a338a760-1450-490a-a9a5-d4ed8ed71115"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ed0471f4-a9c9-430e-9aa3-03ff8ae1b8b5">
+                    <propertyInstance
+                      Id="88409baf-955f-4f83-a3a5-af6304c9a2fc"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ae92d4ba-88fb-4c96-9a3a-a56ab0056274"
+                  name="connectionId"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="e6dfe448-5477-445e-bf14-3388dba787d2"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.ContentControls.Canvas Type=MailIcon Member=(Name=Connect ExplicitInterface=(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/System.Xaml.dll&quot; Namespace=System.Windows.Markup Type=IComponentConnector) OverloadingParameters=[(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Int32),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Object)]) ParameterIdentifier=connectionId"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="ModelingProject2.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="a6ed5065-f48e-4a60-802d-ea166d7e5597"
+                  name="target"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="1a2ea534-43da-48d4-a793-4aeee008859c"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.ContentControls.Canvas Type=MailIcon Member=(Name=Connect ExplicitInterface=(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/System.Xaml.dll&quot; Namespace=System.Windows.Markup Type=IComponentConnector) OverloadingParameters=[(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Int32),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Object)]) ParameterIdentifier=target"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="55b44bc7-3a21-4743-9ca4-1729c6ec75a6"
+                      LastKnownName="Object"
+                      LastKnownLocation="Package6_1531.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="95050ed5-8f25-441f-b2a7-d922c5ab07a0"
+            name="MailIcon"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="a33a01e3-945b-4bde-b81b-277d8ead4fde"
+                handle="viewcode://./CodeSchema_Method?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.ContentControls.Canvas Type=MailIcon Member=.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="c879b9d3-9994-4f42-8acb-9781ff43b11d"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4344b22a-52d2-4b8b-9e25-0942ba0d7436">
+                    <propertyInstance
+                      Id="00a8ba33-1692-4a7c-92aa-597fb85d2db0"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="801d15ab-e22e-4fe8-8191-8efab49d1327">
+                    <propertyInstance
+                      Id="b0fff77a-8159-4993-9df9-80d78d1fd60c"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ae80018e-77b8-4f52-8d94-532b80582e9f">
+                    <propertyInstance
+                      Id="4cdfd728-81f5-4a06-b9ae-9f0f25804c87"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d52cae9a-44af-450f-83cf-3b298fc87da2">
+                    <propertyInstance
+                      Id="724743b2-1209-4d46-9204-5a24a5ba3fb9"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="02b6cef0-cda7-4b5b-af33-1958a0b18556">
+                    <propertyInstance
+                      Id="e6ef443a-570f-4197-98c8-4be2f4c9fb7b"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="6231b8cb-e589-4bd6-be98-c08879308912"
+            name="InitializeComponent"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="6f3253f2-560b-4921-9acd-402498949e70"
+                handle="viewcode://./CodeSchema_Method?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.ContentControls.Canvas Type=MailIcon Member=InitializeComponent"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="277cda5e-f332-4faf-8460-4d5ea2eebade"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ac4a5381-8f34-49f9-aaa3-a0b01fe66c96">
+                    <propertyInstance
+                      Id="0e4d8b4e-bb9d-4db4-a714-f5c932439be3"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fb89a8b1-10ae-4dfb-b5b0-074c658999d8">
+                    <propertyInstance
+                      Id="d3bf2925-8175-4d3c-b5b9-87299d707503"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="080b1752-66f1-4a9f-98a9-ea0afe6098de">
+                    <propertyInstance
+                      Id="36836da9-547e-4812-bddd-bf1cb010c938"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cacbb714-5bd1-4018-9e82-9bf65e5d133a">
+                    <propertyInstance
+                      Id="c36f93b0-7a1d-451c-9b1b-c8ce43cee20c"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8865951f-a8f7-4bfc-bce0-29b48d5ff468">
+                    <propertyInstance
+                      Id="8d025ab8-edc2-47e8-9cc2-90bb877284c1"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="fea467cb-d93d-4aee-b71e-0b42c743e032"
+        name="VideoIcon"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="f2da1d6f-fc07-40d6-b32e-2c58c7776938"
+            handle="viewcode://./CodeSchema_Class?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.ContentControls.Canvas Type=VideoIcon"
+            tag="ViewCode" />
+        </referencesInternal>
+        <suppliersInternal>
+          <interfaceRealization
+            Id="262799ab-2cb7-4adb-be36-d770261b8b4b">
+            <interfaceMoniker
+              Id="71d7d069-160b-4afe-a38e-e78c40fb83f4"
+              LastKnownName="IComponentConnector"
+              LastKnownLocation="Package10_1531.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization
+            Id="675fe783-c37e-4603-95ab-0a80f05c6d10"
+            isSubstitutable="false">
+            <classMoniker
+              Id="0c385a2b-08ae-490d-94cd-114639b2448c"
+              LastKnownName="UserControl"
+              LastKnownLocation="Package9_1531.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="46123bca-b68b-4794-ada2-f2355c131099"
+            name="_contentLoaded"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="b6d49277-d143-40d5-aea5-205b1f051f31"
+                handle="viewcode://./CodeSchema_Field?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.ContentControls.Canvas Type=VideoIcon Member=_contentLoaded"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="f6fe16bb-f8af-42dc-b8d8-d588ed2913aa"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e5381c6b-b366-4584-b72f-174c4458c6d1">
+                    <propertyInstance
+                      Id="b02c50d2-3c6c-43fa-95d1-a53bcc9a7dc8"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="396ca16d-0e72-4fb5-b7f0-311f03e3dc8c">
+                    <propertyInstance
+                      Id="c2eea84c-475a-4d4f-9a00-888c83681c38"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c61484b1-5e41-4721-8b55-df66babdd0c5">
+                    <propertyInstance
+                      Id="7e30a8fb-66a3-4a26-bd5a-3a1fa1339ac7"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0a3c1b51-ddda-4ecb-bdab-af14a0b97101">
+                    <propertyInstance
+                      Id="84e7b0ec-9b16-4ee8-9b9b-964c9e89987c"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ab6e1c14-652b-4cd1-890f-95f324b582ca">
+                    <propertyInstance
+                      Id="f0724f7a-a842-435e-8765-d1eeacb91072"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                LastKnownName="Boolean"
+                LastKnownLocation="ModelingProject2.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="210c28ee-61c8-4ded-b437-1348dcc404a4"
+            name="Video"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="102682c1-892f-4b3d-821c-dc5bbf2885a4"
+                handle="viewcode://./CodeSchema_Field?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.ContentControls.Canvas Type=VideoIcon Member=Video"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="4511c0f2-b055-4514-b58f-df23313ce6e7"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bcb05bde-8303-4c81-a230-e2cc3454d176">
+                    <propertyInstance
+                      Id="dc3dc3b9-eaa5-4559-9ea1-7a0866d5e1d6"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3c010a56-884c-483f-9406-81bcd1f564c3">
+                    <propertyInstance
+                      Id="6982580c-a432-469a-8450-d00f773bbb05"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="98eefa8c-ba46-4f3e-992f-2b341d6a5740">
+                    <propertyInstance
+                      Id="1faa26cf-3178-4026-8e05-9bdf8e8f7b1a"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7d0ce6ba-d8da-4dd3-9de3-f893eed4889d">
+                    <propertyInstance
+                      Id="6065f7b5-65f2-450f-9466-eafad66e7b94"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7f32713e-d0d2-4a33-a9ff-c749cf30f4f5">
+                    <propertyInstance
+                      Id="18b42190-6baa-4b6a-8b5e-337894a84946"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="d7033c01-95cd-4af6-af8f-7d6fa1769111"
+                LastKnownName="Grid"
+                LastKnownLocation="Package9_1531.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="a730ae83-1d16-45d3-838a-08986b18687f"
+            name="IComponentConnector.Connect"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="54857f14-42a0-4a59-b312-e159ed0bed9a"
+                handle="viewcode://./CodeSchema_Method?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.ContentControls.Canvas Type=VideoIcon Member=(Name=Connect ExplicitInterface=(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/System.Xaml.dll&quot; Namespace=System.Windows.Markup Type=IComponentConnector) OverloadingParameters=[(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Int32),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Object)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="d5213a02-71a2-49fa-898a-00026bc5bb50"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="be567716-f8d4-4da5-95d1-e9a52bd6bb8f">
+                    <propertyInstance
+                      Id="98b1a160-b698-4658-99c9-b8647008e17e"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="22d06156-e222-414b-a1b4-c346c713a0cb">
+                    <propertyInstance
+                      Id="39fe9ff4-f5af-44e3-9845-7156a69c3532"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7c194f0c-5832-4bf4-b2a2-d4c84c18b52b">
+                    <propertyInstance
+                      Id="9c3f6547-ef82-451e-986a-f72570aed4bb"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b7307d43-39bf-4bc0-8cce-4bb96dd694c6">
+                    <propertyInstance
+                      Id="1ebdfe5b-641c-4318-b7d8-16fc69064b02"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bb6e9456-e598-42b5-b206-eb4d6f4f9ca7">
+                    <propertyInstance
+                      Id="cd5fad16-f930-45fd-85a9-a18372409646"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f1d59be4-47f4-4712-adad-aace4699115b"
+                  name="connectionId"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="68cf70c8-33a8-4dbf-8eee-e5a758017368"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.ContentControls.Canvas Type=VideoIcon Member=(Name=Connect ExplicitInterface=(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/System.Xaml.dll&quot; Namespace=System.Windows.Markup Type=IComponentConnector) OverloadingParameters=[(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Int32),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Object)]) ParameterIdentifier=connectionId"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="ModelingProject2.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="514dc3f0-6554-4a58-bcde-96bb46680807"
+                  name="target"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="21684e0c-19f6-4508-a420-ba8c58b3b8d4"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.ContentControls.Canvas Type=VideoIcon Member=(Name=Connect ExplicitInterface=(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/System.Xaml.dll&quot; Namespace=System.Windows.Markup Type=IComponentConnector) OverloadingParameters=[(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Int32),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Object)]) ParameterIdentifier=target"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="55b44bc7-3a21-4743-9ca4-1729c6ec75a6"
+                      LastKnownName="Object"
+                      LastKnownLocation="Package6_1531.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="cf6eb9d0-ef34-438d-ac76-fad5aa8a56ae"
+            name="VideoIcon"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="39417c39-93db-4527-80c1-11c59bc9e81a"
+                handle="viewcode://./CodeSchema_Method?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.ContentControls.Canvas Type=VideoIcon Member=.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="1d655108-3a7d-4a0e-86e2-c3cf0a2f214e"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7d0fb5c7-873e-4610-8c53-3a3d59081d3f">
+                    <propertyInstance
+                      Id="63bd22d1-b309-48c6-8fb2-4a0d8690e134"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1ef4f93e-f0cf-4e11-b1dd-420d015138cc">
+                    <propertyInstance
+                      Id="1f20115c-474c-4c47-a003-4a3754e6d5c1"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a4a77a26-43cb-47fc-88d0-77ae765a20cf">
+                    <propertyInstance
+                      Id="b767b376-91fe-4de4-bd3b-cf0cc4fac24b"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="90d21706-075a-4a2f-b55b-b32025249d56">
+                    <propertyInstance
+                      Id="57d810b6-7021-4f14-b2c4-0c694d656b8b"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="310b0bf6-58d7-454d-9a09-bc72c9195c42">
+                    <propertyInstance
+                      Id="9a0c46a8-9ec0-4f56-9013-a1aa123999a8"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="46a4b6a0-b2e1-4517-8885-c7053a7d9911"
+            name="InitializeComponent"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="4ac606ad-56e5-4191-bc51-9e3955379711"
+                handle="viewcode://./CodeSchema_Method?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.ContentControls.Canvas Type=VideoIcon Member=InitializeComponent"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="3fc51680-cefc-489f-a6a9-48b6101ca480"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5f0201f5-ec6e-4a05-9beb-03d81568c245">
+                    <propertyInstance
+                      Id="2a079150-a84e-485d-bd46-a5c5b898f95e"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e3b8001f-ca12-47df-b58e-c6ca938901df">
+                    <propertyInstance
+                      Id="77408198-c67a-4142-9466-d1c0e05d6fb8"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b75d4a97-39b9-4fc0-9e61-78893dc74290">
+                    <propertyInstance
+                      Id="0a10c842-9174-447d-8f84-07a6f439c68f"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ba9503db-177c-430f-a9d3-b99c6b501cb8">
+                    <propertyInstance
+                      Id="e850d168-ab60-4ac2-822f-2ec81871ecaf"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1ee18074-fbd8-4364-84ba-79bf3c4f0588">
+                    <propertyInstance
+                      Id="517c4d36-8b1b-46cf-83c1-f3dddfed4c8e"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

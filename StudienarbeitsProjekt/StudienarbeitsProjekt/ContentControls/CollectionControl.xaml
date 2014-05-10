@@ -10,17 +10,21 @@
                    >
 
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="59*"/>
+            <ColumnDefinition Width="21*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="30" />
             <RowDefinition />
 
         </Grid.RowDefinitions>
 
-        <Label x:Name="Title" Grid.Row="0"/>
-        <s:SurfaceButton xml:space="preserve" x:Name="Close" Visibility="Hidden" Foreground="White"  Height="38" Background="Red" HorizontalAlignment="Right" >   X  </s:SurfaceButton>
+        <Label x:Name="Title" Grid.Row="0" Grid.ColumnSpan="2"/>
+        <s:SurfaceButton xml:space="preserve" x:Name="Close" Visibility="Hidden" Foreground="White"  Height="38" Background="Red" HorizontalAlignment="Right" Grid.ColumnSpan="2" Margin="0,1,1,223" Grid.RowSpan="2" >   X  </s:SurfaceButton>
 
 
-        <s:SurfaceListBox x:Name="contentNames" BorderThickness="3" Grid.Row="1" SelectionMode="Multiple"  SelectionChanged="contentNames_SelectionChanged" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+        <s:SurfaceListBox x:Name="contentNames" BorderThickness="3" Grid.Row="1" SelectionMode="Multiple"  SelectionChanged="contentNames_SelectionChanged" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Grid.ColumnSpan="2">
             <s:SurfaceListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>

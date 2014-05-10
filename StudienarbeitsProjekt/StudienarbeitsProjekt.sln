@@ -8,6 +8,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Performance1.psess = Performance1.psess
 	EndProjectSection
 EndProject
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "ModelingProject2", "ModelingProject2\ModelingProject2.modelproj", "{6AC796DA-3503-420C-9263-30BA3571995C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,6 +20,10 @@ Global
 		{F0189E8E-B70F-45DE-9415-1C34E9D6F571}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F0189E8E-B70F-45DE-9415-1C34E9D6F571}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F0189E8E-B70F-45DE-9415-1C34E9D6F571}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AC796DA-3503-420C-9263-30BA3571995C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AC796DA-3503-420C-9263-30BA3571995C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AC796DA-3503-420C-9263-30BA3571995C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AC796DA-3503-420C-9263-30BA3571995C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

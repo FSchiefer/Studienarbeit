@@ -1,0 +1,726 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="2afd15ba-295a-4513-9bb7-bdd599ac62c2"
+  name="XamlGeneratedNamespace"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="1e36d5f0-4cfd-48e7-a86b-40339bf17e96"
+      handle="viewcode://./CodeSchema_Namespace?Namespace=XamlGeneratedNamespace"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="f6be3a82-d7c2-4e61-8a49-5d61147b6493"
+        name="GeneratedInternalTypeHelper"
+        isAbstract="false"
+        isLeaf="true"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="a9d78d48-c58f-4803-b857-2a3c6fef9f2c"
+            handle="viewcode://./CodeSchema_Class?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=XamlGeneratedNamespace Type=GeneratedInternalTypeHelper"
+            tag="ViewCode" />
+        </referencesInternal>
+        <generalsInternal>
+          <generalization
+            Id="3b84304c-23c6-412d-8127-cbdb44c8115a"
+            isSubstitutable="false">
+            <classMoniker
+              Id="d671c445-5f00-4666-ba55-cba3ef503c79"
+              LastKnownName="InternalTypeHelper"
+              LastKnownLocation="Package10_1531.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="0c6f1ed8-5e8f-4d9b-9141-4ac1bd02080e"
+            name="GeneratedInternalTypeHelper"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="30ad1ea2-a4ba-4f5f-a956-421a08e27303"
+                handle="viewcode://./CodeSchema_Method?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=XamlGeneratedNamespace Type=GeneratedInternalTypeHelper Member=.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="c865ab62-91a3-42cc-8a63-afa0fa14d39a"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="eb86fd4c-c825-4c27-8120-fba8fc990993">
+                    <propertyInstance
+                      Id="e4fc1e3a-32b9-45d7-bdd1-fa748118cad1"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fa7317a2-0adc-49ed-9ee8-b32309517974">
+                    <propertyInstance
+                      Id="606755f7-13a0-4c5c-9381-e537e3a020e6"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="165600e0-0cfe-4834-bbe0-1d3fcac881b3">
+                    <propertyInstance
+                      Id="a48c42f3-7fda-4ff6-a467-4d59d383f9c6"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3267d60d-be31-4912-9016-7aef18ab076e">
+                    <propertyInstance
+                      Id="71acb81b-a7bb-418f-9878-7237a29c1051"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cc661fb7-b7c0-42cd-a9d8-9f1c06b5db64">
+                    <propertyInstance
+                      Id="09d3f3a3-5cfa-44a0-9a49-73b8021b2cdb"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="1145b06e-07ad-4df8-87de-55b8f14e3816"
+            name="AddEventHandler"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="ef64b41e-e08f-4c2d-8071-cb7874de58fb"
+                handle="viewcode://./CodeSchema_Method?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=XamlGeneratedNamespace Type=GeneratedInternalTypeHelper Member=(Name=AddEventHandler OverloadingParameters=[(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System.Reflection Type=EventInfo),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Object),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Delegate)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="e2bbdb6b-c0b3-4f14-b68d-dce25e86b780"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7fd795fc-2466-4015-a9de-8d59c5a56b1f">
+                    <propertyInstance
+                      Id="c152d5e3-377f-4f17-ad53-aa9a79aaab69"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a55d6ca7-2f14-4225-ae4c-d0240ee30c0d">
+                    <propertyInstance
+                      Id="5686cf04-0db4-48b1-8b28-def063e9882e"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d3fbb75f-f1c2-48f0-94b0-fa260e36d2d3">
+                    <propertyInstance
+                      Id="94d176f4-526b-4926-805c-d87a7a640887"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2c6daabc-c888-4811-95aa-0d10055b6c4b">
+                    <propertyInstance
+                      Id="a35d6e7f-f61e-4e31-a908-bc401f58d292"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9d702fba-98ad-46b2-9784-5718c5ec839c">
+                    <propertyInstance
+                      Id="c9217a33-3d28-4590-96a1-15010ba37909"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d9a82511-8b51-4af0-9f2c-1a2693b4414a"
+                  name="eventInfo"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="83b2fc8e-81b0-4d18-ad50-06cdbe6eb60e"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=XamlGeneratedNamespace Type=GeneratedInternalTypeHelper Member=(Name=AddEventHandler OverloadingParameters=[(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System.Reflection Type=EventInfo),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Object),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Delegate)]) ParameterIdentifier=eventInfo"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="d61c1666-a013-4bc7-ba82-9343dd8f3bfa"
+                      LastKnownName="EventInfo"
+                      LastKnownLocation="Package6_1532.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5e0806e3-f554-4494-b78d-3d20a6f1dc7e"
+                  name="target"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="37be3667-2872-4236-9bf0-b62bf9e3370a"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=XamlGeneratedNamespace Type=GeneratedInternalTypeHelper Member=(Name=AddEventHandler OverloadingParameters=[(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System.Reflection Type=EventInfo),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Object),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Delegate)]) ParameterIdentifier=target"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="55b44bc7-3a21-4743-9ca4-1729c6ec75a6"
+                      LastKnownName="Object"
+                      LastKnownLocation="Package6_1531.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="6062dd6c-29b4-4d8e-bf78-dd17c5e9a1e5"
+                  name="handler"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="f73fb2aa-7844-4735-beaf-e91560674571"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=XamlGeneratedNamespace Type=GeneratedInternalTypeHelper Member=(Name=AddEventHandler OverloadingParameters=[(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System.Reflection Type=EventInfo),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Object),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Delegate)]) ParameterIdentifier=handler"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="860d3c9a-c83d-4f60-88a5-bf7b580c40cd"
+                      LastKnownName="Delegate"
+                      LastKnownLocation="Package6_1531.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="46641e27-ff47-4ac5-9cab-7462e091f915"
+            name="CreateDelegate"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="a0e7b2f1-fcfa-4b9f-9ea1-1adf65325773"
+                handle="viewcode://./CodeSchema_Method?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=XamlGeneratedNamespace Type=GeneratedInternalTypeHelper Member=(Name=CreateDelegate OverloadingParameters=[(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Type),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Object),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=String)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="0ae8b24b-97ee-4560-8107-a93dd1a353bb"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="38ba8457-5b61-42ed-879a-2a9346d921e2">
+                    <propertyInstance
+                      Id="4c7e2b61-3ba8-403d-a8b0-6c10bd8e118f"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="87cfcb36-3779-4ce1-9e96-bcd960672aa3">
+                    <propertyInstance
+                      Id="9829ec52-890e-4d1d-a4d8-3c2683b827b5"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="993c5721-0dd1-4b26-ba1e-bd50fa24b9f2">
+                    <propertyInstance
+                      Id="6f0e8cbb-816f-4d9a-9572-8b2caa55870c"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d849bbdb-27e1-443e-9054-a872abbfa62e">
+                    <propertyInstance
+                      Id="319a7e33-25d8-44a6-88a1-a1eb10395f2c"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f1dee411-65aa-490c-8cb4-4bfc54b5b79b">
+                    <propertyInstance
+                      Id="3198a719-80b3-48c3-8a08-8856d1185f23"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="e1b89e29-2735-4f62-8a8f-10b977016ea3"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="860d3c9a-c83d-4f60-88a5-bf7b580c40cd"
+                      LastKnownName="Delegate"
+                      LastKnownLocation="Package6_1531.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="305f6ec0-bfa9-4c2f-bacc-acfa59b7e6c2"
+                  name="delegateType"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="5d1b4d48-2700-49f0-ba0d-a61ce0126f95"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=XamlGeneratedNamespace Type=GeneratedInternalTypeHelper Member=(Name=CreateDelegate OverloadingParameters=[(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Type),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Object),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=String)]) ParameterIdentifier=delegateType"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="6a25802f-6380-43f2-bbce-cf8fd848786e"
+                      LastKnownName="Type"
+                      LastKnownLocation="Package6_1531.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="3672eeaf-66a2-4411-8360-47bc59998c54"
+                  name="target"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="fbfeeb42-df62-4491-879e-9ce80647041e"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=XamlGeneratedNamespace Type=GeneratedInternalTypeHelper Member=(Name=CreateDelegate OverloadingParameters=[(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Type),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Object),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=String)]) ParameterIdentifier=target"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="55b44bc7-3a21-4743-9ca4-1729c6ec75a6"
+                      LastKnownName="Object"
+                      LastKnownLocation="Package6_1531.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4b440cb4-4bca-4c79-8371-dcd41df41159"
+                  name="handler"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="8fc35986-19e9-41fd-9ac5-0c2f8085707a"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=XamlGeneratedNamespace Type=GeneratedInternalTypeHelper Member=(Name=CreateDelegate OverloadingParameters=[(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Type),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Object),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=String)]) ParameterIdentifier=handler"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="ModelingProject2.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="d1a14724-374b-4380-95b6-ac73cc2d904c"
+            name="CreateInstance"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="00636799-743a-494e-b95c-0c5027e08f8f"
+                handle="viewcode://./CodeSchema_Method?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=XamlGeneratedNamespace Type=GeneratedInternalTypeHelper Member=(Name=CreateInstance OverloadingParameters=[(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Type),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System.Globalization Type=CultureInfo)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="6e26db0c-b4cd-4251-a21f-255f0c57ffd7"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b8fd979f-b03a-4d0a-a05c-c7fedd3d81af">
+                    <propertyInstance
+                      Id="eaea2f58-0de3-47e1-8f94-07244cd3558f"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f2da716f-a2d6-45af-9553-15e4106e941d">
+                    <propertyInstance
+                      Id="4ece9824-7d45-458f-89ff-cf052cdc839c"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c7182c43-1001-4c02-82cf-d756eaf3bbbd">
+                    <propertyInstance
+                      Id="6eb38fb4-4547-41b2-94e7-cfe91f5d4073"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8b773e85-d1f8-4019-b3df-63af6269937b">
+                    <propertyInstance
+                      Id="3f6beae7-14d6-4ccf-9edf-64725341b3b9"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cd5a1028-b33a-4065-87d6-c2baa732405b">
+                    <propertyInstance
+                      Id="87bdb4c9-f67c-40e5-b779-38abf37ceb81"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="0e150f4b-328d-431c-9227-0a1d1a92e0c2"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="55b44bc7-3a21-4743-9ca4-1729c6ec75a6"
+                      LastKnownName="Object"
+                      LastKnownLocation="Package6_1531.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="e0cacd76-ff6a-4780-8c03-f0d639f48f00"
+                  name="type"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="97c148a1-6666-4029-a351-ab7031fa9b92"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=XamlGeneratedNamespace Type=GeneratedInternalTypeHelper Member=(Name=CreateInstance OverloadingParameters=[(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Type),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System.Globalization Type=CultureInfo)]) ParameterIdentifier=type"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="6a25802f-6380-43f2-bbce-cf8fd848786e"
+                      LastKnownName="Type"
+                      LastKnownLocation="Package6_1531.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="1c99fa51-4656-4a1f-9d45-d49930877313"
+                  name="culture"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="824bad0a-241e-400a-904a-fa7cd21ab2c6"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=XamlGeneratedNamespace Type=GeneratedInternalTypeHelper Member=(Name=CreateInstance OverloadingParameters=[(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Type),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System.Globalization Type=CultureInfo)]) ParameterIdentifier=culture"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="ea2d93d4-d034-459f-a7c2-9b88b3d356a0"
+                      LastKnownName="CultureInfo"
+                      LastKnownLocation="Package7_1532.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="53e261ea-d9cc-4215-81b6-4e75caf40396"
+            name="GetPropertyValue"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="d8ce979e-5660-48c1-8d7a-ac21534af593"
+                handle="viewcode://./CodeSchema_Method?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=XamlGeneratedNamespace Type=GeneratedInternalTypeHelper Member=(Name=GetPropertyValue OverloadingParameters=[(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System.Reflection Type=PropertyInfo),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Object),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System.Globalization Type=CultureInfo)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="8236588b-b15f-4513-b30f-56f8db08ced5"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5db9412e-1225-4654-9715-a04742bd81c2">
+                    <propertyInstance
+                      Id="bd490e28-b50c-4f53-9d1f-c1c209c2eb84"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9e88554f-a9aa-42a7-bf6e-01bdd253ee3f">
+                    <propertyInstance
+                      Id="0b971f5f-0094-40d7-86a5-f658bcff9b28"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9a8461cb-7025-4a90-b272-580f9c150fcb">
+                    <propertyInstance
+                      Id="19934f52-e1ff-483b-bee8-6b04063863db"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0b8a29ae-5f43-4aa4-9cab-d77135c05ff0">
+                    <propertyInstance
+                      Id="27598917-deb9-4aa3-8e32-deb6802e87fd"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a175c958-d5df-4bf6-a9f3-2a98aae65bb9">
+                    <propertyInstance
+                      Id="a2f7f870-5c98-406e-b3ac-e0e27c9c8a73"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="14a2a03e-f616-47aa-8e60-fd66d760f707"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="55b44bc7-3a21-4743-9ca4-1729c6ec75a6"
+                      LastKnownName="Object"
+                      LastKnownLocation="Package6_1531.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="c7d52d09-2604-4747-ab31-56ad93afd96e"
+                  name="propertyInfo"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="692ff773-f8e4-47bc-b4a5-2baee6df4c49"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=XamlGeneratedNamespace Type=GeneratedInternalTypeHelper Member=(Name=GetPropertyValue OverloadingParameters=[(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System.Reflection Type=PropertyInfo),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Object),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System.Globalization Type=CultureInfo)]) ParameterIdentifier=propertyInfo"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="f4903a98-7397-46d3-ba21-eeadeff2c883"
+                      LastKnownName="PropertyInfo"
+                      LastKnownLocation="Package6_1532.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="3cc09967-83ee-453a-8672-55e16fc43fc8"
+                  name="target"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="02f532b9-080d-4884-9c27-1aa3504380f3"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=XamlGeneratedNamespace Type=GeneratedInternalTypeHelper Member=(Name=GetPropertyValue OverloadingParameters=[(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System.Reflection Type=PropertyInfo),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Object),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System.Globalization Type=CultureInfo)]) ParameterIdentifier=target"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="55b44bc7-3a21-4743-9ca4-1729c6ec75a6"
+                      LastKnownName="Object"
+                      LastKnownLocation="Package6_1531.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="3dc8bed2-e847-45a2-abcf-a25d5f778126"
+                  name="culture"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="97d03129-f600-428a-8468-0a44a8964570"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=XamlGeneratedNamespace Type=GeneratedInternalTypeHelper Member=(Name=GetPropertyValue OverloadingParameters=[(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System.Reflection Type=PropertyInfo),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Object),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System.Globalization Type=CultureInfo)]) ParameterIdentifier=culture"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="ea2d93d4-d034-459f-a7c2-9b88b3d356a0"
+                      LastKnownName="CultureInfo"
+                      LastKnownLocation="Package7_1532.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="5545d332-9284-44a9-9470-e429e0794c9f"
+            name="SetPropertyValue"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="51edf7ef-47af-46cc-8bbc-a5c31fb641fe"
+                handle="viewcode://./CodeSchema_Method?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=XamlGeneratedNamespace Type=GeneratedInternalTypeHelper Member=(Name=SetPropertyValue OverloadingParameters=[(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System.Reflection Type=PropertyInfo),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Object),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Object),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System.Globalization Type=CultureInfo)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="aac0a9f5-8b41-43c0-88e1-8608f6ec40c5"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="624e829a-7006-4dad-9a18-5746cd4c6e92">
+                    <propertyInstance
+                      Id="7b51b79d-017b-4ffa-9c22-3cf7e4b448b5"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fb2fd28f-6760-43c3-9515-3a1782781636">
+                    <propertyInstance
+                      Id="c5c0400e-7b3c-4d00-98d7-31c2a2b1fda6"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="82fd7cf4-cb04-4ce0-af51-52212ef13740">
+                    <propertyInstance
+                      Id="f8c97a5b-657f-482f-8e28-959a601130cc"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c77306b8-7134-4f90-a8e8-0561bfd717c5">
+                    <propertyInstance
+                      Id="92de0703-18e6-4cde-b730-abd397ac0298"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c7155ed4-1fa0-4f9f-8b0b-bb40c85c9e63">
+                    <propertyInstance
+                      Id="30b69908-3fd2-42ec-b829-92557755fce1"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="c2a8028a-0227-4118-aab9-ad7da9981a9c"
+                  name="propertyInfo"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="3bf4f50f-d927-4632-ae6e-dd980d727dca"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=XamlGeneratedNamespace Type=GeneratedInternalTypeHelper Member=(Name=SetPropertyValue OverloadingParameters=[(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System.Reflection Type=PropertyInfo),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Object),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Object),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System.Globalization Type=CultureInfo)]) ParameterIdentifier=propertyInfo"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="f4903a98-7397-46d3-ba21-eeadeff2c883"
+                      LastKnownName="PropertyInfo"
+                      LastKnownLocation="Package6_1532.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="bcf446a9-3017-4930-8779-e1426b79c35c"
+                  name="target"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="426e5ac2-406c-42dc-b635-9420d729892c"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=XamlGeneratedNamespace Type=GeneratedInternalTypeHelper Member=(Name=SetPropertyValue OverloadingParameters=[(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System.Reflection Type=PropertyInfo),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Object),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Object),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System.Globalization Type=CultureInfo)]) ParameterIdentifier=target"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="55b44bc7-3a21-4743-9ca4-1729c6ec75a6"
+                      LastKnownName="Object"
+                      LastKnownLocation="Package6_1531.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b2905445-1be5-4362-8978-f195b7686174"
+                  name="value"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="1dca0218-ec5b-4927-a780-a8ff0f1b44d5"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=XamlGeneratedNamespace Type=GeneratedInternalTypeHelper Member=(Name=SetPropertyValue OverloadingParameters=[(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System.Reflection Type=PropertyInfo),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Object),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Object),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System.Globalization Type=CultureInfo)]) ParameterIdentifier=value"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="55b44bc7-3a21-4743-9ca4-1729c6ec75a6"
+                      LastKnownName="Object"
+                      LastKnownLocation="Package6_1531.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ac15b74b-e320-4c3c-a19f-0ca0db4d0bd7"
+                  name="culture"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="1125eb5b-677a-4e23-89ff-4d750e470f28"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=XamlGeneratedNamespace Type=GeneratedInternalTypeHelper Member=(Name=SetPropertyValue OverloadingParameters=[(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System.Reflection Type=PropertyInfo),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Object),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Object),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System.Globalization Type=CultureInfo)]) ParameterIdentifier=culture"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="ea2d93d4-d034-459f-a7c2-9b88b3d356a0"
+                      LastKnownName="CultureInfo"
+                      LastKnownLocation="Package7_1532.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

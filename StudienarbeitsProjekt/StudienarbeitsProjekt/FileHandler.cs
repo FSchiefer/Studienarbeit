@@ -7,7 +7,7 @@ using System.Text;
 namespace StudienarbeitsProjekt {
     class FileHandler {
 
-        public const String rootDir = @"C:\Studiengaenge\";
+        public const String rootDir = @"C:\StudienInformationsDateien\";
 
         private String dokumentPfad = null;
         private String type; // Typ in Kleinbuchstaben

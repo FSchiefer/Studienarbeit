@@ -1,0 +1,912 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="98dbcdff-ae49-449b-a539-124a42b4d694"
+  name="Controls"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="d78951f8-d00d-4e47-9a16-9d80396f39e8"
+      handle="viewcode://./CodeSchema_Namespace?Namespace=Microsoft.Surface.Presentation.Controls"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="62f6c727-ac32-4f28-8515-aa52c3a9d7a8"
+        name="ScatterView"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="d54ac2bf-b89e-474b-8e7c-3af48857ab19"
+            handle="viewcode://./CodeSchema_Class?Assembly=&quot;file:///C:/Program Files (x86)/Microsoft SDKs/Surface/v2.0/Reference Assemblies/Microsoft.Surface.Presentation.dll&quot; Namespace=Microsoft.Surface.Presentation.Controls Type=ScatterView"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="839a41d5-d6d3-45ee-ae6d-09beea1fc07c"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="9906e727-dee3-45fc-b23f-c9270c6e7543">
+                <propertyInstance
+                  Id="e6d82c98-6777-4b96-b79c-1164f3e18a20"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0a6db7c8-cc34-4b31-bb3e-6968aa01e3a5">
+                <propertyInstance
+                  Id="3794ca1a-07f3-4f0f-bf2a-d37edb06922e"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b35a0ca1-495d-4ca0-ac58-c83bc74ffa4a">
+                <propertyInstance
+                  Id="69fb46dd-c95a-4531-9a2f-6493dbe602b3"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="12e0a855-237c-4d46-a4d0-7b84caba5cd0">
+                <propertyInstance
+                  Id="7bca0d05-72c7-46ee-a4b2-ec55fa6ebfc4"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="fc1a7069-ee05-4e3f-b17c-517f39c89c21">
+                <propertyInstance
+                  Id="cbc4e67e-b291-4ace-b2b7-0c7a4810af6a"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="52373712-b575-4f3f-a733-f1464bf087fb"
+        name="SurfaceButton"
+        visibility="Private"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="ad083adb-36ab-42d9-9014-a8d267daba58"
+            handle="viewcode://./CodeSchema_Class?Assembly=&quot;file:///C:/Program Files (x86)/Microsoft SDKs/Surface/v2.0/Reference Assemblies/Microsoft.Surface.Presentation.dll&quot; Namespace=Microsoft.Surface.Presentation.Controls Type=SurfaceButton"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="1a005249-744a-4e9f-b540-b4addcd297e9"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="cb4c3c91-d78b-45fe-8f5d-a2bbbb813b59">
+                <propertyInstance
+                  Id="7ab4fcf8-b265-4076-b023-101b88e5fff4"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a19a9caa-d705-477c-939b-eb4b933cfae7">
+                <propertyInstance
+                  Id="e2f8b6a9-f153-4474-9fe3-916704a7af87"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="aca84b44-6050-433b-bb59-b80b129e7665">
+                <propertyInstance
+                  Id="7d8c1bbf-6c94-434e-b48c-361cc3499a4f"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="63aece83-3ada-41b4-adfd-ded467818e3c">
+                <propertyInstance
+                  Id="db1af4d1-c983-482b-9695-35aa8a65e2b1"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="92f2803f-a364-4aac-9d30-476db13ebeca">
+                <propertyInstance
+                  Id="0f4c5b15-68eb-4490-9e8d-d1436b76977d"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="7d66649b-cce6-4789-895c-c43050e99ecb"
+        name="SurfaceSlider"
+        visibility="Private"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="e18b6349-6052-4e5d-a9e7-65a6b7a2ef3c"
+            handle="viewcode://./CodeSchema_Class?Assembly=&quot;file:///C:/Program Files (x86)/Microsoft SDKs/Surface/v2.0/Reference Assemblies/Microsoft.Surface.Presentation.dll&quot; Namespace=Microsoft.Surface.Presentation.Controls Type=SurfaceSlider"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="05dde7e8-9aa7-4012-bf87-368445cc4385"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c49d01dd-6971-4979-b207-55e3b8ebf852">
+                <propertyInstance
+                  Id="11f251a3-80b4-4f53-abcd-6743f6211354"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="4a916524-1447-43d7-8422-7beea6b16352">
+                <propertyInstance
+                  Id="b0622230-be90-4244-b18f-d23e14c28e43"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="105d28f0-2460-4b60-8566-35ecbb7bdefc">
+                <propertyInstance
+                  Id="4d1ca186-4734-4b35-9fd2-6fb8076ca7fb"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="5772d048-cddd-4ff9-b5f0-cdfe21181c4f">
+                <propertyInstance
+                  Id="2d7a9aab-5227-4ab1-98e1-8a2dbe61c04e"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6316d14d-86d7-4283-8def-3bbe9fbb18c5">
+                <propertyInstance
+                  Id="3f642011-ec45-4fb1-b7f6-cb5471aca5cd"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="474adbd1-1508-43be-b742-df35a79d27a9"
+        name="SurfaceListBox"
+        visibility="Private"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="399f196f-4be4-49e7-a280-0046dd55f894"
+            handle="viewcode://./CodeSchema_Class?Assembly=&quot;file:///C:/Program Files (x86)/Microsoft SDKs/Surface/v2.0/Reference Assemblies/Microsoft.Surface.Presentation.dll&quot; Namespace=Microsoft.Surface.Presentation.Controls Type=SurfaceListBox"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="c96ece24-e82d-4dfa-b143-d33ce41c217e"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6dea3f8d-8872-47ba-b5df-1af4d943afe7">
+                <propertyInstance
+                  Id="9d20318b-785a-473b-8acf-7652ac1b21ef"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a8be2aac-b10a-4966-85df-bdfdca74314e">
+                <propertyInstance
+                  Id="f6c80e6f-ba33-488f-8360-a1d0bada1b0a"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="df82ad29-e3ac-4fc9-a554-54411f64af10">
+                <propertyInstance
+                  Id="99abcc54-1cbf-4bc3-b73b-10bf26e90fb7"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="9765e2d0-aace-4b2f-ab34-f0a060d1b8bd">
+                <propertyInstance
+                  Id="752592dc-5829-4d75-901e-1f0c157f6c87"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="4edfceb7-1927-4777-93e6-fe06b6de090a">
+                <propertyInstance
+                  Id="7903f710-d0f8-4861-a2eb-f1568b88094b"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="d0003958-61ae-4186-8643-9b329da45fec"
+        name="SurfaceTextBox"
+        visibility="Private"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="6f7fb1bf-3f88-46ed-8686-4142dcf111b7"
+            handle="viewcode://./CodeSchema_Class?Assembly=&quot;file:///C:/Program Files (x86)/Microsoft SDKs/Surface/v2.0/Reference Assemblies/Microsoft.Surface.Presentation.dll&quot; Namespace=Microsoft.Surface.Presentation.Controls Type=SurfaceTextBox"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="b10e9288-4137-4592-9067-c10b725744c1"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="7fb051b7-2f29-444b-9354-0b408746ab5b">
+                <propertyInstance
+                  Id="13891039-6828-4cfa-b680-1683dd377f99"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6c20c38f-4af0-4b62-a34f-628f50c404be">
+                <propertyInstance
+                  Id="1dcdcc58-bd6f-4988-97fb-1d05d6112084"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b2d05c1b-92d2-48e4-b23f-ac6c74cf4906">
+                <propertyInstance
+                  Id="d1e29b66-9eea-4702-9247-2e0ccaad47e2"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="602dddbe-0e96-4ae7-b0a8-d38a4d0d43f0">
+                <propertyInstance
+                  Id="624fb070-e776-42ff-ad57-be68cb867a19"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="cb618541-31db-41f7-be64-3c6a2bd758b6">
+                <propertyInstance
+                  Id="680f4376-c103-4976-814e-92d3380eedfa"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="27ce5639-8213-4b65-a1be-78b87c959ef8"
+        name="SurfaceScrollViewer"
+        visibility="Private"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="3e30d9bb-a61b-4b31-ab45-324ade878b23"
+            handle="viewcode://./CodeSchema_Class?Assembly=&quot;file:///C:/Program Files (x86)/Microsoft SDKs/Surface/v2.0/Reference Assemblies/Microsoft.Surface.Presentation.dll&quot; Namespace=Microsoft.Surface.Presentation.Controls Type=SurfaceScrollViewer"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="c1ebc013-ec3e-41ae-b97a-b30cb249971d"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="87d21f97-a284-4aea-b2e9-1208841f300c">
+                <propertyInstance
+                  Id="5520cd5f-f663-4d38-8657-f8337c277520"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="9cc3f551-e306-409d-b650-17ffc2c4132f">
+                <propertyInstance
+                  Id="e28f5113-4190-49cd-9d8b-3ae6be900a46"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="29c0c7b7-b03f-47ca-baea-25f3b2e51f53">
+                <propertyInstance
+                  Id="2acf5940-fbdb-4c2f-9666-1fae14dcde3c"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="e943d769-bd41-4144-9836-cf10edf774f0">
+                <propertyInstance
+                  Id="2c7a56d6-9bf4-438c-868f-7a52f0b45dda"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="1099d3f8-517d-4a4f-be53-15c2ddac93f4">
+                <propertyInstance
+                  Id="8b1773b5-4c90-49d0-9ca7-0f92bb40077f"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="be677663-8deb-4acb-9ad8-2b58bb0102ef"
+        name="ScatterViewItem"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="154cea2f-6597-4133-b7ab-d534ca35f03b"
+            handle="viewcode://./CodeSchema_Class?Assembly=&quot;file:///C:/Program Files (x86)/Microsoft SDKs/Surface/v2.0/Reference Assemblies/Microsoft.Surface.Presentation.dll&quot; Namespace=Microsoft.Surface.Presentation.Controls Type=ScatterViewItem"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="952d916e-b060-438b-965d-6bfccad9aa1e"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="80bc013a-2a1e-4571-a50d-6af9374ab920">
+                <propertyInstance
+                  Id="7a8ad697-c013-47c8-9494-d2a456b7adf9"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="1565a7b5-db12-428f-be2b-846e92d0d763">
+                <propertyInstance
+                  Id="9a62108a-fc03-4c33-8bc0-01dea7a70b96"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0cb902a7-6700-4fc7-be08-f4ea4ff8a296">
+                <propertyInstance
+                  Id="94fe98f2-6275-4e6b-9046-c430349d41a2"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="1dc3ebbe-2691-44f4-8bef-0fd11b1ceb9a">
+                <propertyInstance
+                  Id="6bfc1fcc-e7b0-4cee-8576-aa8d47446b5e"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="67d7e66e-bcb7-4fe6-ac10-2052a64bd41b">
+                <propertyInstance
+                  Id="83980dc4-1f1b-43b4-b0d0-b029e4d6fa0c"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="eaa95c8f-b096-4747-a71a-bc87b96888cb"
+        name="SurfaceRadioButton"
+        visibility="Private"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="498ca4fc-634a-44d4-9fb8-9429a39134e4"
+            handle="viewcode://./CodeSchema_Class?Assembly=&quot;file:///C:/Program Files (x86)/Microsoft SDKs/Surface/v2.0/Reference Assemblies/Microsoft.Surface.Presentation.dll&quot; Namespace=Microsoft.Surface.Presentation.Controls Type=SurfaceRadioButton"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="e6b41341-c0b4-4a68-93a4-1f8cd16a04d5"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="79de86b4-3f30-4f8b-8e69-0e32578e8530">
+                <propertyInstance
+                  Id="880cadc9-83f7-4dc1-9b0d-9b9428ca4412"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0f38be7b-0f74-4976-9012-0b146008969c">
+                <propertyInstance
+                  Id="66a9f264-e11b-433d-ab02-8de73317bba3"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="4ba5837b-5126-4e72-a280-363f8ed2437d">
+                <propertyInstance
+                  Id="2f68e282-0d84-4fa8-89f5-6bfa0cabdfc7"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d7a370a9-4979-44e2-be67-f6676a763005">
+                <propertyInstance
+                  Id="ac9dbffe-8701-4f1a-8c6f-ae8dd170adbf"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="029acfdb-f977-4208-9628-7795dac8c296">
+                <propertyInstance
+                  Id="84d64b54-51e3-4872-a8db-f06866ec48ae"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="96531803-a508-403e-a4c0-ba6ea55ccee7"
+        name="SurfaceCheckBox"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="4f2061ac-c732-400d-bf52-a7c91ad151a7"
+            handle="viewcode://./CodeSchema_Class?Assembly=&quot;file:///C:/Program Files (x86)/Microsoft SDKs/Surface/v2.0/Reference Assemblies/Microsoft.Surface.Presentation.dll&quot; Namespace=Microsoft.Surface.Presentation.Controls Type=SurfaceCheckBox"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="d9d8a332-0eab-48c5-be9c-23adfb504d37"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d7ccd319-e6d0-4623-aeb2-71211bfc69ac">
+                <propertyInstance
+                  Id="c8a58b36-dc7b-4760-8fb1-c2b912b1fd7b"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="e2ef01b8-3469-47eb-994f-433da3bb5b00">
+                <propertyInstance
+                  Id="4c6be49d-df52-4727-a8f0-f94b0d9d9bb3"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="83bdf82d-3e9b-43e7-a568-ee88f6fb92c7">
+                <propertyInstance
+                  Id="ea28675e-2434-4ec9-9286-57cf8918e2b5"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f2d9fd66-d064-47d5-8dad-7581287494fb">
+                <propertyInstance
+                  Id="20b8f956-72ef-4fa5-b09a-1b93a06a097d"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6e01c619-4854-434b-b313-c18b1e08626d">
+                <propertyInstance
+                  Id="a31a294b-8fcf-4a59-86c3-3113f18a3cfe"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="ec72d1c8-80c0-4772-8ff1-0b0be090e997"
+        name="ContainerManipulationCompletedEventArgs"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="193c01ad-3be7-43dc-9a76-2be9aa35d8bc"
+            handle="viewcode://./CodeSchema_Class?Assembly=&quot;file:///C:/Program Files (x86)/Microsoft SDKs/Surface/v2.0/Reference Assemblies/Microsoft.Surface.Presentation.dll&quot; Namespace=Microsoft.Surface.Presentation.Controls Type=ContainerManipulationCompletedEventArgs"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="324ba978-231c-4ee1-828e-91027b8a7485"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6038282c-8bee-4ebb-8efb-8d8aece0ee59">
+                <propertyInstance
+                  Id="f129c23d-1d91-40bf-8279-2be280221e65"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="62fd9875-ffe3-42ac-bfa2-1a8b8e0322a5">
+                <propertyInstance
+                  Id="3939aea6-11d0-474e-96d3-0d784b86c663"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="98c6ca6d-7cd2-479f-82ae-a372aee11226">
+                <propertyInstance
+                  Id="d2c1c884-5c15-4430-b1aa-62075ef070a1"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="847464e6-05a6-436b-bbb9-ce2ca6af1835">
+                <propertyInstance
+                  Id="83bffb38-4c9a-40c6-8cae-996808ee61ab"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="55bd26bc-b668-44f8-86ba-8fdffb3757bd">
+                <propertyInstance
+                  Id="48fed282-08d7-4641-b716-05085236cda5"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <generalsInternal>
+          <generalization
+            Id="7f8db7a9-d7af-4895-ba8c-3086110842f6"
+            isSubstitutable="false">
+            <classMoniker
+              Id="c83e847d-0b66-4ae3-84d8-daaeb576560c"
+              LastKnownName="RoutedEventArgs"
+              LastKnownLocation="Package7_1531.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="5cefc156-d1ae-4751-94f5-26d0cf5c3589"
+        name="TagVisualizerEventArgs"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="16165c66-d785-4c5d-ae9b-1a3a99b573e3"
+            handle="viewcode://./CodeSchema_Class?Assembly=&quot;file:///C:/Program Files (x86)/Microsoft SDKs/Surface/v2.0/Reference Assemblies/Microsoft.Surface.Presentation.dll&quot; Namespace=Microsoft.Surface.Presentation.Controls Type=TagVisualizerEventArgs"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="0a6e05a4-cd4e-46af-9b04-e6312aa224ae"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="bf21e106-2288-45bf-b2ae-cbff62a165c5">
+                <propertyInstance
+                  Id="d2d23dd4-f1ff-4b6e-adea-3a0da2c0e7a0"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="7ef2ad20-fb4c-4d84-b88a-b238310ccfd7">
+                <propertyInstance
+                  Id="ccb282aa-da4d-40e7-b0ce-ec505fb804e9"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="8be8ed1a-c81f-48e9-ba38-258a7b24ede6">
+                <propertyInstance
+                  Id="6a1ede76-b20c-4fb7-b6fd-93774279eda3"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="217ed00d-9d48-469e-b1a2-3f62d5683ec4">
+                <propertyInstance
+                  Id="2abab6ca-6145-45d9-845a-2e4183543ac2"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="9465f5d0-f237-4bf2-bf6f-72e37ac835cc">
+                <propertyInstance
+                  Id="209af5cc-5dfe-452f-858c-3de9ee7718f1"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <generalsInternal>
+          <generalization
+            Id="fb6517f7-10bf-4aa8-816b-8574d5e06468"
+            isSubstitutable="false">
+            <classMoniker
+              Id="c83e847d-0b66-4ae3-84d8-daaeb576560c"
+              LastKnownName="RoutedEventArgs"
+              LastKnownLocation="Package7_1531.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="8c498d99-be02-434a-ab10-ee524b75b42e"
+        name="TagVisualization"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="739dac24-6ff4-44da-b8ab-6af89595d263"
+            handle="viewcode://./CodeSchema_Class?Assembly=&quot;file:///C:/Program Files (x86)/Microsoft SDKs/Surface/v2.0/Reference Assemblies/Microsoft.Surface.Presentation.dll&quot; Namespace=Microsoft.Surface.Presentation.Controls Type=TagVisualization"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="bed22cc5-0607-4d00-ba00-fb1b9bd97438"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="1d179d7f-f8ca-42b8-9f34-9961889c7998">
+                <propertyInstance
+                  Id="45690cc7-d09f-4555-a3cc-5ed497c60c3b"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="de14cf2b-b6dc-49c4-80cb-4e357ab21f9d">
+                <propertyInstance
+                  Id="9c7a5806-3e32-400f-975b-16acf79be633"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="25fc0ba0-f950-4ad4-a6d9-1d6b2c6925c7">
+                <propertyInstance
+                  Id="03938f4d-d374-412d-8617-579eccdb0f8b"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0b911338-5aaf-460d-959f-951e24d633a7">
+                <propertyInstance
+                  Id="847a361c-2196-4281-8abb-86456baa60cd"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="80894e26-b565-463f-ab20-7729e929a984">
+                <propertyInstance
+                  Id="48e484c8-e9e3-4c2b-a639-a5980f24612d"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="6aa78b8e-b970-4d24-856a-511cb320fcd0"
+        name="TagVisualizer"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="eb7a2644-495d-4438-bbb7-80b403130488"
+            handle="viewcode://./CodeSchema_Class?Assembly=&quot;file:///C:/Program Files (x86)/Microsoft SDKs/Surface/v2.0/Reference Assemblies/Microsoft.Surface.Presentation.dll&quot; Namespace=Microsoft.Surface.Presentation.Controls Type=TagVisualizer"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="c135c05f-6443-4c65-a173-12fb26a4459f"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="63b3c47d-0712-4688-a0b4-36ccaefc0e0d">
+                <propertyInstance
+                  Id="395f1063-ca81-434d-843b-ebed5fe66219"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a711a1d2-905a-49a5-8e1d-b041ad07c04a">
+                <propertyInstance
+                  Id="740fc78b-d13a-45ce-892a-d445d70e2e8c"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b6720c7b-1fc3-4c9a-8e59-465d00f84f24">
+                <propertyInstance
+                  Id="68ded98a-9892-4b7d-92cf-1f5f4f71b77e"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="55235c60-920b-4bb3-ae10-7897b5e645f5">
+                <propertyInstance
+                  Id="a5c1d515-af27-40f9-8e26-e892aed285e8"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6915d3c6-dc59-48d7-a4fe-c22fd30d9824">
+                <propertyInstance
+                  Id="9e5f5a6f-98ab-4568-8536-1aef5a2a936f"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="e19b9e1b-c09c-4aec-94fd-2da08812a027"
+        name="TagVisualizationDefinition"
+        visibility="Private"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="d95600f7-c714-483a-88b0-d917f43f13ba"
+            handle="viewcode://./CodeSchema_Class?Assembly=&quot;file:///C:/Program Files (x86)/Microsoft SDKs/Surface/v2.0/Reference Assemblies/Microsoft.Surface.Presentation.dll&quot; Namespace=Microsoft.Surface.Presentation.Controls Type=TagVisualizationDefinition"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="e65c5a17-61a0-451b-a5e9-b4332df41a70"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b6bb7e9b-df05-4d09-a196-8c5def34980e">
+                <propertyInstance
+                  Id="3bc9f89e-bc23-450f-9851-cd30e0bad5fc"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d5469f68-914c-41d2-9f3b-eed30418ea61">
+                <propertyInstance
+                  Id="28561e41-34af-4f5a-9ef3-5a00da7d3bb6"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="4dfe86f2-297a-4bf1-aec8-a543d032632c">
+                <propertyInstance
+                  Id="07177c4e-696d-4b93-be5d-2a51caf1819c"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="7523465e-95ec-4508-85ac-494749132ae4">
+                <propertyInstance
+                  Id="dd3f8c8e-137b-4d3b-a867-64c77b84dbe8"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="54c26f59-6d0d-4fd1-980c-4019a033b89c">
+                <propertyInstance
+                  Id="9f9aa133-6762-4dc0-9d1d-102b3d6dbd37"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="bc9d3cc1-fe5a-4578-af88-612559cfa18f"
+        name="SurfaceWindow"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="9bb286ae-ac74-4a7a-803d-9609b5da16c2"
+            handle="viewcode://./CodeSchema_Class?Assembly=&quot;file:///C:/Program Files (x86)/Microsoft SDKs/Surface/v2.0/Reference Assemblies/Microsoft.Surface.Presentation.dll&quot; Namespace=Microsoft.Surface.Presentation.Controls Type=SurfaceWindow"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="3db95805-2665-4433-b5f3-96a540683d20"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="397145ea-153d-4626-98d8-0b61cad4b182">
+                <propertyInstance
+                  Id="3a82ffe2-6e3b-45e5-85a8-0cec4f2479da"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f2ab32de-ca3c-4ffe-9609-d84e16c49911">
+                <propertyInstance
+                  Id="4662a825-f652-4708-9703-7933d9ee7efe"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="484035f0-5ee7-4ae8-ba64-9c292b4adf17">
+                <propertyInstance
+                  Id="172bd6cf-782d-41fc-86d8-f563e51a2bb1"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="07d893ad-0c27-4f9d-9e59-f06a220906f7">
+                <propertyInstance
+                  Id="4f6e4870-b57b-4510-855b-8ee866bb7dc8"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="bf6b3e6a-89d2-4c4a-901c-6c2a966db93f">
+                <propertyInstance
+                  Id="3bc0bc01-e4f6-41b4-b33b-d5b2783ed5ac"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

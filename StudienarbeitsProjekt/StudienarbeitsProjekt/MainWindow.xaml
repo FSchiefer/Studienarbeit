@@ -3,7 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:s="http://schemas.microsoft.com/surface/2008"
     xmlns:u="clr-namespace:StudienarbeitsProjekt.ContentControls"
-    x:Class="StudienarbeitsProjekt.SurfaceWindow1"
+    x:Class="StudienarbeitsProjekt.MainWindow"
     Title="StudienarbeitsProjekt" 
     x:Name="root"
     WindowStyle="None"

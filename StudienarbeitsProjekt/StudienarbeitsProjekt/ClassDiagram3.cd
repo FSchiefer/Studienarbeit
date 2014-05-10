@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="StudienarbeitsProjekt.App" Collapsed="true">
+    <Position X="16.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StudienarbeitsProjekt.FileHandler" Collapsed="true">
+    <Position X="21.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEDAAAAAAAAAAgAAhBABBAAGEQCBBAAqAAAEAAEAAAA=</HashCode>
+      <FileName>FileHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StudienarbeitsProjekt.MainWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="18.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AkAIAAAACAIhQBCEDQAQAIoAEAAEQBAGCgIAIIAAMCg=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="StudienarbeitsProjekt.TagContent" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="20" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEBAAAABAQFEABAAACQAAAAAAAAIEAAAAAAAAAAIAA=</HashCode>
+      <FileName>TagContent.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="StudienarbeitsProjekt.ContentControls.Addons.ConfirmationControl" Collapsed="true">
+    <Position X="0.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ContentControls\Addons\ConfirmationControl.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StudienarbeitsProjekt.ContentControls.Canvas.DocumentIcon" Collapsed="true">
+    <Position X="20" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ContentControls\Addons\DocumentIcon.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StudienarbeitsProjekt.ContentControls.Canvas.FolderIcon" Collapsed="true">
+    <Position X="16.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ContentControls\Addons\FolderIcon.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StudienarbeitsProjekt.ContentControls.Canvas.ImageIcon" Collapsed="true">
+    <Position X="18.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ContentControls\Addons\ImageIcon.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StudienarbeitsProjekt.ContentControls.Canvas.MailIcon" Collapsed="true">
+    <Position X="20" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ContentControls\Addons\MailIcon.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StudienarbeitsProjekt.ContentControls.Canvas.VideoIcon" Collapsed="true">
+    <Position X="21.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ContentControls\Addons\VideoIcon.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StudienarbeitsProjekt.ContentControls.CollectionControl" Collapsed="true">
+    <Position X="5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAEAUAAAAAACAAAAAAAAAAACKACggACAAQAQAEA=</HashCode>
+      <FileName>ContentControls\CollectionControl.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StudienarbeitsProjekt.ContentControls.CollectionControlItemVM" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="18.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgACAIIBAAAAAAAAgAAAQBAAAAAAAAAAAAA=</HashCode>
+      <FileName>ContentControls\CollectionControlItemVM.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="StudienarbeitsProjekt.ContentControls.DocumentControl" Collapsed="true">
+    <Position X="9.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAEAAAAAAAAAAAAAAAAAACAEQAAACAAAAQAAA=</HashCode>
+      <FileName>ContentControls\DocumentControl.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StudienarbeitsProjekt.ContentControls.ImageControl" Collapsed="true">
+    <Position X="14" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAEAAAAAAAAAAAAAAAAAACAAAAAACAAAAQAAA=</HashCode>
+      <FileName>ContentControls\ImageControl.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StudienarbeitsProjekt.ContentControls.InformationControl" Collapsed="true">
+    <Position X="2.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAIAAAUAAAAAAABBgAAAAIAABCAEACAACgEAAQAAA=</HashCode>
+      <FileName>ContentControls\InformationControl.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StudienarbeitsProjekt.ContentControls.MovableScatterViewItem" Collapsed="true">
+    <Position X="7.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAgAAAQACAAAAAAAQAAAAAQEQAAogAAAAAAAA=</HashCode>
+      <FileName>ContentControls\MovableScatterViewItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StudienarbeitsProjekt.ContentControls.ScatterOrientationControl" Collapsed="true">
+    <Position X="7.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAACAAAAIAJAAAAABAAIAAAAQgAAAAAAAAQACAAAAIA=</HashCode>
+      <FileName>ContentControls\ScatterOrientationControl.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StudienarbeitsProjekt.ContentControls.VideoControl">
+    <Position X="11.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAFAAAAEAGAIAAAAAAAAACABAAAACAAAAQABA=</HashCode>
+      <FileName>ContentControls\VideoControl.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StudienarbeitsProjekt.Properties.Resources" Collapsed="true">
+    <Position X="21.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StudienarbeitsProjekt.Properties.Settings" Collapsed="true">
+    <Position X="16.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAJAAAAAAAIAAAAAABAAAAAAAAAAAAAAg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="StudienarbeitsProjekt.ContentList" Collapsed="true">
+    <Position X="16.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>ContentList.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

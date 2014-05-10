@@ -19,11 +19,11 @@ namespace StudienarbeitsProjekt {
         private ScatterOrientationControl orientationControl;
 
         #region readonly property Elements
-        private ObservableCollection<object> _elements = new ObservableCollection<object>();
-        public ObservableCollection<object> Elements { get { return _elements; } }
+        private ObservableCollection<MovableScatterViewItem> _elements = new ObservableCollection<MovableScatterViewItem>();
+        public ObservableCollection<MovableScatterViewItem> Elements { get { return _elements; } }
         #endregion
 
-        private SurfaceWindow1 surWindow;
+        private MainWindow surWindow;
         public ScatterView mainScatt;
         private bool orientation;
         private bool movement;
@@ -41,7 +41,7 @@ namespace StudienarbeitsProjekt {
 
         #region file reader functions
 
-        public void ShowTagContent(SurfaceWindow1 surWindow) {
+        public void ShowTagContent(MainWindow surWindow) {
             this.surWindow = surWindow;
             this.mainScatt = surWindow.MainScatt;
 

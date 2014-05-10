@@ -25,7 +25,7 @@ namespace StudienarbeitsProjekt.ContentControls {
     ///
     public partial class CollectionControl : MovableScatterViewItem {
         
-        private SurfaceWindow1 surWindow;
+        private MainWindow surWindow;
         private ContentList content; 
         private List<String> fileList = new List<String>();
         private List<String> folderList = new List<String>();
@@ -39,7 +39,7 @@ namespace StudienarbeitsProjekt.ContentControls {
          private CollectionControl closeControl;
         private CollectionControlItemVM sLBI;
 
-        public CollectionControl(SurfaceWindow1 surWindow, String dataPath, String name,ContentList content, Brush color, CollectionControl closeControl, CollectionControlItemVM sLBI)
+        public CollectionControl(MainWindow surWindow, String dataPath, String name,ContentList content, Brush color, CollectionControl closeControl, CollectionControlItemVM sLBI)
             : base(surWindow.MainScatt) {
             DefaultAction(surWindow, dataPath,name,content, color);
             this.sLBI = sLBI;
@@ -55,12 +55,12 @@ namespace StudienarbeitsProjekt.ContentControls {
         }
        
         // Konstruktor zum erstellen der Komponente und dem Festlegen des darzustellenden Titels
-        public CollectionControl(SurfaceWindow1 surWindow, String dataPath, String name,ContentList content, Brush color)
+        public CollectionControl(MainWindow surWindow, String dataPath, String name,ContentList content, Brush color)
             : base(surWindow.MainScatt) {
                 DefaultAction(surWindow, dataPath, name, content, color);
         }
 
-        private void DefaultAction(SurfaceWindow1 surWindow, String dataPath, String name, ContentList content, Brush color) {
+        private void DefaultAction(MainWindow surWindow, String dataPath, String name, ContentList content, Brush color) {
             InitializeComponent();
             this.BorderBrush = color;
             this.content = content;

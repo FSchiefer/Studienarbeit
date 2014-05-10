@@ -1,0 +1,538 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="b88d6f10-accc-4ced-b6ef-83f35bd56f37"
+  name="Addons"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="536e497a-d953-4801-a7ee-0d80bfa05061"
+      handle="viewcode://./CodeSchema_Namespace?Namespace=StudienarbeitsProjekt.ContentControls.Addons"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="07706605-7a98-4fe2-8ebc-31051ec6587c"
+        name="ConfirmationControl"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="3dca3fcb-847a-49bf-a0b0-d30c87733b18"
+            handle="viewcode://./CodeSchema_Class?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.ContentControls.Addons Type=ConfirmationControl"
+            tag="ViewCode" />
+        </referencesInternal>
+        <suppliersInternal>
+          <interfaceRealization
+            Id="d6823db5-e6e3-45ac-ad5a-3efe03897f4d">
+            <interfaceMoniker
+              Id="71d7d069-160b-4afe-a38e-e78c40fb83f4"
+              LastKnownName="IComponentConnector"
+              LastKnownLocation="Package10_1531.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization
+            Id="45d6f78e-1f0b-4593-9561-44c0ba027c67"
+            isSubstitutable="false">
+            <classMoniker
+              Id="aa3762e1-b7a7-4865-b738-f6cd3e62c4b7"
+              LastKnownName="MovableScatterViewItem"
+              LastKnownLocation="Package1_1531.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="9f1d084f-1ff0-47d7-8e27-f16f8cf099f7"
+            name="_contentLoaded"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="3363f3ea-4f5f-4503-9fe4-3cf83a4d3766"
+                handle="viewcode://./CodeSchema_Field?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.ContentControls.Addons Type=ConfirmationControl Member=_contentLoaded"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="4535f649-a5d0-4c8e-bf07-4725570dd5a3"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3f15bb69-fe05-47c2-83e3-9e4b73456ac1">
+                    <propertyInstance
+                      Id="7367cb10-4802-4767-9c60-4b3cce8eed50"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="829fcda1-2edd-40e0-877b-a580027597e5">
+                    <propertyInstance
+                      Id="51886df6-fd6b-4a12-9c43-d9ec3d950857"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="78808682-b42a-45e0-8e82-2ec569076d51">
+                    <propertyInstance
+                      Id="a52acb57-5d0f-4e1f-b6f4-7bd3f3197ce0"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="61c2df94-248e-4eac-acac-76665f2eed21">
+                    <propertyInstance
+                      Id="696b29de-23ac-40e8-a590-773fb97a82cf"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c39641ad-0e37-4953-abd5-8946a9bb4651">
+                    <propertyInstance
+                      Id="948f9a65-bbc5-426c-8fde-c59f43920020"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                LastKnownName="Boolean"
+                LastKnownLocation="ModelingProject2.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="08d0f253-ff48-49d8-bfbe-d8c5a4f1357e"
+            name="Message"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="4e38c5f3-6870-4c6a-98f7-dd6c53ade1b2"
+                handle="viewcode://./CodeSchema_Field?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.ContentControls.Addons Type=ConfirmationControl Member=Message"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="9496d81b-4d01-4fb1-b896-61c8ec043854"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5b7ea353-a1f0-46ca-afc3-5471df2ad044">
+                    <propertyInstance
+                      Id="2d020179-c7b1-43b5-819d-e5a59dc530fa"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8e36b8fe-8ab6-47c7-8fcc-4b1fb0866a37">
+                    <propertyInstance
+                      Id="fed9738c-f5b8-4a22-a865-61dc997fa04c"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="77649875-9b6d-40b9-8bbc-486892cd8b72">
+                    <propertyInstance
+                      Id="de789e2b-3708-44c4-beda-62fbc3b8c328"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="af597939-0118-46e1-8766-c3108d0cd131">
+                    <propertyInstance
+                      Id="22be93bd-2873-4388-bf17-eb1611ebadf4"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1e45a51f-8323-435a-942a-2f14a91e16d5">
+                    <propertyInstance
+                      Id="95329b56-d796-4a0e-b2bd-135f8adcd417"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="49aeba1d-7f86-451b-9448-c7952d1fed7f"
+                LastKnownName="Label"
+                LastKnownLocation="Package9_1531.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="f44b09ff-348b-4a19-9de4-afffd5b5ea18"
+            name="IComponentConnector.Connect"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="15503729-9397-47dc-afd2-5bcc4049db4b"
+                handle="viewcode://./CodeSchema_Method?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.ContentControls.Addons Type=ConfirmationControl Member=(Name=Connect ExplicitInterface=(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/System.Xaml.dll&quot; Namespace=System.Windows.Markup Type=IComponentConnector) OverloadingParameters=[(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Int32),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Object)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="a717fa40-56d9-47e3-92ba-78913380e91d"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="189d7d52-c718-404f-a042-558bffe7b9fd">
+                    <propertyInstance
+                      Id="0e299c94-6fa9-4be7-827f-07b2f19eabb2"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="300c45e7-ab06-4cba-be90-51259564fbad">
+                    <propertyInstance
+                      Id="e9ee8282-fb0e-41a3-a49a-2fdd86965621"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="070cf350-bbd4-4ed9-92e2-28b64b555227">
+                    <propertyInstance
+                      Id="670e81f0-1fa6-43c2-b15c-83dfc1be5d1b"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b092059b-da8e-4075-8658-52c7831cf1f5">
+                    <propertyInstance
+                      Id="1c426876-a7cd-42e6-9621-fb03e12ab69b"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="55773649-31c9-4c32-8141-8b11c269287c">
+                    <propertyInstance
+                      Id="f58d2fc0-1e94-44e1-bd01-dfd26737699e"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="361f76c1-c288-4a50-b85e-b79e2ab84312"
+                  name="connectionId"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="0cdcf54f-b1c8-4e2b-8a03-45f6dcfa65de"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.ContentControls.Addons Type=ConfirmationControl Member=(Name=Connect ExplicitInterface=(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/System.Xaml.dll&quot; Namespace=System.Windows.Markup Type=IComponentConnector) OverloadingParameters=[(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Int32),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Object)]) ParameterIdentifier=connectionId"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="ModelingProject2.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="c36e06e4-548c-4b19-a25f-dc8472c2dd29"
+                  name="target"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="6db6f9d8-f6d0-4719-86c6-ad5991b6a0d7"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.ContentControls.Addons Type=ConfirmationControl Member=(Name=Connect ExplicitInterface=(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/System.Xaml.dll&quot; Namespace=System.Windows.Markup Type=IComponentConnector) OverloadingParameters=[(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Int32),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=Object)]) ParameterIdentifier=target"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="55b44bc7-3a21-4743-9ca4-1729c6ec75a6"
+                      LastKnownName="Object"
+                      LastKnownLocation="Package6_1531.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="c779c341-25b4-4d78-a59b-5d7979e40272"
+            name="ConfirmationControl"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="e7e6aa6e-d8fa-4855-882b-f5a8653da4a6"
+                handle="viewcode://./CodeSchema_Method?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.ContentControls.Addons Type=ConfirmationControl Member=.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="bb4295f5-1e4f-4937-8a29-50cd65827d9f"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="aa1562a0-8f04-44dc-b59a-30835cabc18f">
+                    <propertyInstance
+                      Id="42f4e51c-014e-45f5-b72b-a9e774a8a55d"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c5ce6d6d-a8bb-4825-a299-9bb32f725bea">
+                    <propertyInstance
+                      Id="37fe118f-2f4f-4882-805a-fa4368060b63"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2cc02737-3ecb-4092-88dc-25043c3c93b9">
+                    <propertyInstance
+                      Id="174504ef-a9cf-4136-89bb-e3a3ce9f4a87"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9854c482-574b-4922-b09f-513e4d6df1e1">
+                    <propertyInstance
+                      Id="2da7b46e-7a5b-4339-9155-56393bf033fe"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7a6ffd2c-7fb2-4aad-a247-b1cbf687a5de">
+                    <propertyInstance
+                      Id="cda7eea0-e1de-43d4-886c-225c0c6c0477"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="bbedb766-8304-4672-a414-80cfe4219b57"
+            name="InitializeComponent"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="fc429618-1886-4828-be37-cf27ccc7c7b1"
+                handle="viewcode://./CodeSchema_Method?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.ContentControls.Addons Type=ConfirmationControl Member=InitializeComponent"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="ed503488-a8d0-4fde-92b6-31cdc0930a41"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0d4c0442-f707-4d32-951c-98c306a7dc56">
+                    <propertyInstance
+                      Id="bf2a9e04-4cee-41d2-9b59-89c2048088cf"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5326ad51-73a9-4eb8-86e2-7dc5463f47d7">
+                    <propertyInstance
+                      Id="f3888f2a-93fa-4760-8ac2-be5a4645467b"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e7f352a2-7cda-45d6-aecf-a43c5fcdd69a">
+                    <propertyInstance
+                      Id="e55fb122-2e54-4336-b067-141bfe9fb108"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="92098125-6cff-4db2-9941-25bfb6f61745">
+                    <propertyInstance
+                      Id="f2e6b8f8-e6ef-4c8c-a88a-3ed5d9488024"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6a4959cb-d5b9-460c-985b-7ebf6e8169d3">
+                    <propertyInstance
+                      Id="812daaa1-168b-4125-b791-da8c88f3cca8"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="da0b4bc8-af58-4145-9525-0745a39904dd"
+            name="ConfirmationControl"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="26935556-ade5-47cc-9d2e-0f86bf7a03b7"
+                handle="viewcode://./CodeSchema_Method?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.ContentControls.Addons Type=ConfirmationControl Member=(Name=.ctor OverloadingParameters=[(Assembly=&quot;file:///C:/Program Files (x86)/Microsoft SDKs/Surface/v2.0/Reference Assemblies/Microsoft.Surface.Presentation.dll&quot; Namespace=Microsoft.Surface.Presentation.Controls Type=ScatterView),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=String),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/PresentationCore.dll&quot; Namespace=System.Windows.Media Type=Brush),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/PresentationCore.dll&quot; Namespace=System.Windows.Media Type=Brush)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="241809b1-60f9-4ba8-9a1f-69a7a8255679"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d164222f-b55d-4fcb-8601-a627cbfa2efd">
+                    <propertyInstance
+                      Id="415c84b1-c6f9-42d0-b486-bae071f7ef50"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0b7aee85-9e04-42cc-9a5f-099ff8dea3d9">
+                    <propertyInstance
+                      Id="9c6716bd-48ed-4c14-a481-0d0252b1c2d3"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a316ce64-ae9f-44b1-bf3f-032a204c371c">
+                    <propertyInstance
+                      Id="601c0e4b-5c34-4b23-a671-7f5500caed9f"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b933cd0c-3449-4436-8ece-956114dbdbff">
+                    <propertyInstance
+                      Id="1e382a03-ed5b-4be8-a35f-1618b5b3f2e1"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="88d8bd45-7071-401f-a625-9514b78b36b0">
+                    <propertyInstance
+                      Id="995a5e1d-5208-4c19-afd4-2a013b76294b"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="fb97023c-0508-4800-b213-699a31541543"
+                  name="mainScatt"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="6f3a757c-6565-4a24-a210-c185b79a391b"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.ContentControls.Addons Type=ConfirmationControl Member=(Name=.ctor OverloadingParameters=[(Assembly=&quot;file:///C:/Program Files (x86)/Microsoft SDKs/Surface/v2.0/Reference Assemblies/Microsoft.Surface.Presentation.dll&quot; Namespace=Microsoft.Surface.Presentation.Controls Type=ScatterView),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=String),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/PresentationCore.dll&quot; Namespace=System.Windows.Media Type=Brush),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/PresentationCore.dll&quot; Namespace=System.Windows.Media Type=Brush)]) ParameterIdentifier=mainScatt"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="62f6c727-ac32-4f28-8515-aa52c3a9d7a8"
+                      LastKnownName="ScatterView"
+                      LastKnownLocation="Package5_1531.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d2b50b44-7504-4098-b30e-55f97ad9dc3e"
+                  name="Meldung"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="7551fa75-3f0a-47fb-b7d4-e1c0a16db02b"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.ContentControls.Addons Type=ConfirmationControl Member=(Name=.ctor OverloadingParameters=[(Assembly=&quot;file:///C:/Program Files (x86)/Microsoft SDKs/Surface/v2.0/Reference Assemblies/Microsoft.Surface.Presentation.dll&quot; Namespace=Microsoft.Surface.Presentation.Controls Type=ScatterView),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=String),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/PresentationCore.dll&quot; Namespace=System.Windows.Media Type=Brush),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/PresentationCore.dll&quot; Namespace=System.Windows.Media Type=Brush)]) ParameterIdentifier=Meldung"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="ModelingProject2.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="7a03d4fd-2b82-4f62-85a9-5f39e1f46583"
+                  name="Background"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="b4220783-a288-4f05-8b2d-d75b990cfedc"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.ContentControls.Addons Type=ConfirmationControl Member=(Name=.ctor OverloadingParameters=[(Assembly=&quot;file:///C:/Program Files (x86)/Microsoft SDKs/Surface/v2.0/Reference Assemblies/Microsoft.Surface.Presentation.dll&quot; Namespace=Microsoft.Surface.Presentation.Controls Type=ScatterView),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=String),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/PresentationCore.dll&quot; Namespace=System.Windows.Media Type=Brush),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/PresentationCore.dll&quot; Namespace=System.Windows.Media Type=Brush)]) ParameterIdentifier=Background"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="8e6fa282-b258-4e22-8109-ddd5004dfd64"
+                      LastKnownName="Brush"
+                      LastKnownLocation="Package8_1531.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="784d2eea-e489-4db8-90c0-88f47b259a96"
+                  name="color"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="b9d47ddf-bac6-4bc5-a979-cf7355d01f90"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.ContentControls.Addons Type=ConfirmationControl Member=(Name=.ctor OverloadingParameters=[(Assembly=&quot;file:///C:/Program Files (x86)/Microsoft SDKs/Surface/v2.0/Reference Assemblies/Microsoft.Surface.Presentation.dll&quot; Namespace=Microsoft.Surface.Presentation.Controls Type=ScatterView),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/mscorlib.dll&quot; Namespace=System Type=String),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/PresentationCore.dll&quot; Namespace=System.Windows.Media Type=Brush),(Assembly=&quot;file:///C:/Program Files (x86)/Reference Assemblies/Microsoft/Framework/.NETFramework/v4.0/Profile/Client/PresentationCore.dll&quot; Namespace=System.Windows.Media Type=Brush)]) ParameterIdentifier=color"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="8e6fa282-b258-4e22-8109-ddd5004dfd64"
+                      LastKnownName="Brush"
+                      LastKnownLocation="Package8_1531.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

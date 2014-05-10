@@ -1,0 +1,891 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="7b001bd0-ae7c-4cc6-968a-581a1f2a6be5"
+  name="Properties"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="bcae5008-d746-4034-9a71-b9e274abc0af"
+      handle="viewcode://./CodeSchema_Namespace?Namespace=StudienarbeitsProjekt.Properties"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="7b35452d-7633-4efd-8203-a796397130d8"
+        name="Resources"
+        visibility="Private"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="973242b3-2f0a-433a-b4d4-29f76022a4c1"
+            handle="viewcode://./CodeSchema_Class?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.Properties Type=Resources"
+            tag="ViewCode" />
+        </referencesInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="42768e77-077a-4e2d-a1d6-4433562890e4"
+            name="Culture"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="true"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="b83b9bbc-cb5d-4c67-b59e-e799a68c938b"
+                handle="viewcode://./CodeSchema_Property?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.Properties Type=Resources Member=Culture"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="1edfb1f0-8360-4c75-aba2-5c9a01639563"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d4835937-d6f2-4582-9962-f691e77d39e4">
+                    <propertyInstance
+                      Id="59920ef4-e753-4518-a434-1b706bd36be7"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cce55ac6-3fc0-456b-9742-5f32054b32e2">
+                    <propertyInstance
+                      Id="1a20fc39-1dfc-4cfb-b7b1-fa675eb96830"
+                      name="Get"
+                      value="package" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="954365db-9219-412e-b4c8-085deb027fdf">
+                    <propertyInstance
+                      Id="704d551d-caee-4858-8473-d4160ecf8743"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6866d7e8-f0c7-4962-a038-50149ebc30b6">
+                    <propertyInstance
+                      Id="c1f2f655-a443-4c5a-83db-1d98d6b5ca55"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="548c096a-a86b-44ce-a2be-d24a3a12d241">
+                    <propertyInstance
+                      Id="846459de-331b-4fe2-b253-8a1bf2b95bf4"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="25493c30-9574-433f-9abd-b9f3c1c26ce8">
+                    <propertyInstance
+                      Id="61fb67c8-6954-4da7-b62a-750cd6b68be5"
+                      name="Set"
+                      value="package" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="ea2d93d4-d034-459f-a7c2-9b88b3d356a0"
+                LastKnownName="CultureInfo"
+                LastKnownLocation="Package7_1532.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="312c25dd-a6f5-4e2c-b786-1ada6bad6fa6"
+            name="ResourceManager"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="true"
+            isReadOnly="true"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="d6479992-29b7-4f43-968e-2de450e92400"
+                handle="viewcode://./CodeSchema_Property?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.Properties Type=Resources Member=ResourceManager"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="6fb8c9b0-91b8-413e-87a6-742667210fa3"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4eb48be9-766d-42bf-931c-03894b0d0a0e">
+                    <propertyInstance
+                      Id="b98201d9-130f-4e56-a4a3-8fa47960e319"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a153de2c-413b-473f-81e9-6b2a48f33328">
+                    <propertyInstance
+                      Id="7a605e9b-f9ce-4a14-9577-e10b1f62bd42"
+                      name="Get"
+                      value="package" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cf5e6fa4-1293-49e2-9c0c-f6ea31303862">
+                    <propertyInstance
+                      Id="0797780c-312b-4fa9-bfb2-6bc6e2014994"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7c94bd78-b571-4d5d-b31d-a38329fe2b7a">
+                    <propertyInstance
+                      Id="f2606f9f-4698-4c11-97bf-ea692d83fd8c"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2f2c6fca-3910-4acc-bf47-4d16b8d968bd">
+                    <propertyInstance
+                      Id="ac454d95-7d41-46d1-bc15-b0256631ad8c"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5530a67b-f6b0-4468-890b-012445b2eda4">
+                    <propertyInstance
+                      Id="4123961d-73bd-45b4-89f8-88f6daeb19f2"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="1b840599-49cb-4985-92bc-7d3f541f6863"
+                LastKnownName="ResourceManager"
+                LastKnownLocation="Package12_1532.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="8e9b3924-ee68-4147-93c8-bb6f3036ed64"
+            name="resourceCulture"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="true"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="02a20738-41de-428a-88be-20ecb338bb06"
+                handle="viewcode://./CodeSchema_Field?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.Properties Type=Resources Member=resourceCulture"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="540f7688-1267-4a5e-b079-c1d14b8bb9cd"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7001175d-7cc1-40cd-9ca4-9c89b3386c77">
+                    <propertyInstance
+                      Id="9da6a83c-d4fe-479e-891f-a51a9ca46287"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b9f35022-bea1-405e-b6ab-f928665fab84">
+                    <propertyInstance
+                      Id="851d1b5b-d54d-4c96-9453-58041ae7511c"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b5526880-3065-4504-b52c-8e6f68fce741">
+                    <propertyInstance
+                      Id="21d5745e-d18f-4225-8297-58b005705037"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e7da07b4-bb64-453d-aa14-68adb50c7b3f">
+                    <propertyInstance
+                      Id="77374754-aaaa-4dc0-87b9-57991400f752"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3e610431-b58c-4524-b4d7-ef18b69640f5">
+                    <propertyInstance
+                      Id="fdc87f03-fddd-40b3-93cd-b7e411213a87"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="ea2d93d4-d034-459f-a7c2-9b88b3d356a0"
+                LastKnownName="CultureInfo"
+                LastKnownLocation="Package7_1532.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="1be8ae2f-d961-49a6-8e3d-2c0f52e7fb20"
+            name="resourceMan"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="true"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="b0df3f8a-7491-4631-9a6d-cb8ed1e41530"
+                handle="viewcode://./CodeSchema_Field?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.Properties Type=Resources Member=resourceMan"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="89623ccc-81ec-4e24-b78a-976e864e89eb"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8c30a149-5c14-400f-8447-3edffbfed74d">
+                    <propertyInstance
+                      Id="fe71cb33-661e-42c3-9b84-86a3920d0ccc"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ca414c1f-c255-401b-a3cb-f9bf5c66eb9a">
+                    <propertyInstance
+                      Id="7901950d-9d2a-4682-97bb-7e31ebd2fd3c"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6c6c4918-089c-42d3-a4c2-a1283ae27942">
+                    <propertyInstance
+                      Id="bb012fc0-5b59-4785-a27d-374c5eb1726f"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="447514c8-3dcd-4d4f-9561-bdc50aa938d9">
+                    <propertyInstance
+                      Id="ef8d9eae-9e57-4092-823a-cf68c54037b6"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="77fdce89-0e7d-46ab-bfdd-e4b087a40e36">
+                    <propertyInstance
+                      Id="565a1f33-9b52-4a77-bee5-b0948a485277"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="1b840599-49cb-4985-92bc-7d3f541f6863"
+                LastKnownName="ResourceManager"
+                LastKnownLocation="Package12_1532.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="ac68cccd-eb8f-40c1-909d-623f4163e3dd"
+            name="Resources"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="7c9c2636-3ae1-4f72-b79f-41abd98a9573"
+                handle="viewcode://./CodeSchema_Method?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.Properties Type=Resources Member=.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="e4e03c12-0b55-4641-a69f-e69fb56e9f11"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6a998f91-fec0-4621-90a3-f216e540d3c3">
+                    <propertyInstance
+                      Id="55078e54-2305-4a03-b04d-ed7c93d38fb0"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="40accb43-d122-4c18-adc3-5df68b12142e">
+                    <propertyInstance
+                      Id="39026e79-098e-4917-a6f9-e5dcd85400e5"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4d76fd75-6426-4c5e-aaa8-0a06d50dac06">
+                    <propertyInstance
+                      Id="26835818-6ac0-4c97-8c84-3f2e584e90b5"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="88cc2480-8f9b-42f6-a4d6-93c30a1e03b5">
+                    <propertyInstance
+                      Id="993f589d-9cde-48a0-9dbb-f2cd057be98d"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0e84e066-5d2f-4380-a2ab-c8ce4ffc5a63">
+                    <propertyInstance
+                      Id="b5bbdc28-4c45-4bb6-ac98-b3849074dd64"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="6e1915b3-09ea-4595-9b74-1658171b7f20"
+        name="Settings"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="true"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="3556c8c2-5a7d-4b3f-aa7f-a227256140f8"
+            handle="viewcode://./CodeSchema_Class?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.Properties Type=Settings"
+            tag="ViewCode" />
+        </referencesInternal>
+        <generalsInternal>
+          <generalization
+            Id="5fc744b5-029c-4fb4-aab5-8af4bb06045f"
+            isSubstitutable="false">
+            <classMoniker
+              Id="1d4a5bad-1558-4fbf-b1c7-6f0796620be1"
+              LastKnownName="ApplicationSettingsBase"
+              LastKnownLocation="Package14_1532.uml" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association
+            Id="9fa5fbee-843d-4176-bfc0-15b6cd2d9b59"
+            isDerived="false"
+            sourceEndRoleName="Settings"
+            targetEndRoleName="Default"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="6e1915b3-09ea-4595-9b74-1658171b7f20"
+              LastKnownName="Settings"
+              LastKnownLocation="Package11_1532.uml" />
+            <description>Property Default references type Settings.</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="81ef0b59-b99d-4fb1-9fb9-08683d081ac4"
+                  name="Settings"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="1c793838-3ab5-414a-90e2-1d170ce5ff9d"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="8f2d20d0-52d2-441f-b439-9b2b1614d814"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="cc298892-b9ec-4ed7-80e1-73574725c258"
+                  name="Default"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="561931e4-0f25-41c6-8621-78473368fd45"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="d9835663-eb00-4d8a-8cc3-68bbdb2878d6"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="015d81d2-48f5-4c6f-b16d-ad654577f2a0"
+            name="Database1ConnectionString"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="true"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="5d7d7e81-97bd-48a1-bfc7-02e05365566d"
+                handle="viewcode://./CodeSchema_Property?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.Properties Type=Settings Member=Database1ConnectionString"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="53f8c4d4-9394-460e-aac3-6264efeda8f5"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fa9d1bdb-b8c2-4424-be89-22f1c0961a08">
+                    <propertyInstance
+                      Id="a155f6a0-8dd2-4931-9fc5-d9b9fafab991"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8433a654-35db-4545-8d9c-9f3e41e3887e">
+                    <propertyInstance
+                      Id="c6b14872-d176-4fba-b9fe-4b132a198537"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c9318bf9-4c4f-4298-bf42-339878832ab2">
+                    <propertyInstance
+                      Id="5756f7ef-80e7-4f82-a69b-72d7fc3a2e09"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5ad48337-26ff-4331-90f2-e2040a925c82">
+                    <propertyInstance
+                      Id="74ac0715-a990-4ae9-9a41-1ad9021281e2"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3d1732c3-ab2a-4486-bb12-8cbfe44569ff">
+                    <propertyInstance
+                      Id="25ed34ee-d3c1-4de0-99d4-f8ff31b5032c"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c08c92e5-e786-4723-ab30-b0a4499cedb1">
+                    <propertyInstance
+                      Id="a1db3df0-342d-45b4-8664-6c35f39852cf"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="ModelingProject2.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="9c75d409-7e89-49b1-b8c6-b5f9b9d84abb"
+            name="Default"
+            isLeaf="false"
+            isStatic="true"
+            isReadOnly="true"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="b5d45669-6438-4d27-abd7-87b21532b3bc"
+                handle="viewcode://./CodeSchema_Property?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.Properties Type=Settings Member=Default"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="5d82b2e7-789f-4065-88b0-2869e274add9"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7eb7529b-22d9-4aaf-b8d6-5b7d12208a1a">
+                    <propertyInstance
+                      Id="4a88e4e6-8a91-483e-81bd-facd7191711e"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="934d1e44-2754-4d57-b03f-44c196faf527">
+                    <propertyInstance
+                      Id="339505fc-6608-4509-a8ac-af93482f6934"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cfa9ac17-9943-4dc6-ba6f-fc789b6e849b">
+                    <propertyInstance
+                      Id="244ebc64-6e2b-4c5c-9968-c437e1e8e731"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9377341c-10c1-4524-959e-9f9ae4910547">
+                    <propertyInstance
+                      Id="8a64562c-a89a-4285-82db-8b27c65478ac"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="52eac11d-d05b-4759-af87-6c5864506e5c">
+                    <propertyInstance
+                      Id="5fc0273e-dd01-447b-bfae-0828eef7bb9a"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4e64f43d-d265-4d35-be5c-dd61dd62d918">
+                    <propertyInstance
+                      Id="cdd30936-ef1a-463b-989e-37d6b39c40b9"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="6e1915b3-09ea-4595-9b74-1658171b7f20"
+                LastKnownName="Settings"
+                LastKnownLocation="Package11_1532.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="89136658-fc68-4abc-85ba-4388a8f2ad2b"
+            name="ScatterContentConnectionString"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="true"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="4136393e-272e-4e0c-9b25-ff23eee0474d"
+                handle="viewcode://./CodeSchema_Property?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.Properties Type=Settings Member=ScatterContentConnectionString"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="c164b218-34df-4caa-8d55-55c30af2f7d0"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="71e43c15-a935-46e9-b538-1328b7564b8a">
+                    <propertyInstance
+                      Id="1dc8356d-bd59-48ab-bc00-864b59baa447"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="15add763-3b72-4f4e-a794-ab20155ea69e">
+                    <propertyInstance
+                      Id="93bc0252-9624-4d7e-a12e-7cd5a72a8c9d"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3cbd2a3f-daad-4739-ac79-3b6be34a508c">
+                    <propertyInstance
+                      Id="2f4f67b5-8bbc-4db5-9cf9-b0447b3b3a18"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e5906c0a-738d-4723-a269-d25530b755d7">
+                    <propertyInstance
+                      Id="1a2a7060-e9ac-4cd9-a75c-b8df3cd7fdcd"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f3cc1627-05e0-4f9c-a382-363584541976">
+                    <propertyInstance
+                      Id="209bea8b-a23c-408d-8fdb-a74c86f7e5bf"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c56bb86b-4b2f-428c-91a8-3ce6b532d1f6">
+                    <propertyInstance
+                      Id="b1ec8f23-8772-426f-981f-c1002b926d05"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="ModelingProject2.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="4a684d9b-a1a5-4ff5-afcb-de45b762d753"
+            name="ScatterContentConnectionString1"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="true"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="3f68bbdc-abdc-4e61-b2f9-a09621de7578"
+                handle="viewcode://./CodeSchema_Property?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.Properties Type=Settings Member=ScatterContentConnectionString1"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="cc61819d-5e07-4d0f-9b60-6acd60b03879"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3e94bfb9-3752-407d-b510-a96839448929">
+                    <propertyInstance
+                      Id="686634fc-3fb6-4d21-a5f8-cdff4deec57b"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e611cedd-3e92-40ec-85dd-090d3817f799">
+                    <propertyInstance
+                      Id="f4ae9c53-7fa4-4af0-8173-1c66412a1510"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="615fad1b-73d4-4748-ac7b-74b9fa8f969e">
+                    <propertyInstance
+                      Id="2eb0b445-348a-4778-81f0-ebe0594b4de0"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="dc230bde-b831-44fb-941e-7b9045b1bb1b">
+                    <propertyInstance
+                      Id="7a0a1600-8dd4-4b35-b953-26903e6a44af"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e91959ed-3602-4278-888f-c6e9248da2f2">
+                    <propertyInstance
+                      Id="0eaa1e2f-36e0-4007-be02-59bdc837a1c1"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7ca341e0-9f44-4e5b-af1c-f4592a57b1ed">
+                    <propertyInstance
+                      Id="faf21f11-a02e-47c9-a1c4-b8cb47493d3c"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="ModelingProject2.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="bb83ef32-5fcf-4152-a0ec-1dc06ff076e9"
+            name="defaultInstance"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="true"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="c56967c8-4a43-4d85-9079-df6c6b167a9b"
+                handle="viewcode://./CodeSchema_Field?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.Properties Type=Settings Member=defaultInstance"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="0addbceb-b390-4c30-b9fa-3b491517928c"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ee67cee1-83da-4581-8472-9e85aabe1423">
+                    <propertyInstance
+                      Id="bd5a9675-a6f0-4869-bcf3-1e75faa4f0aa"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8f2876a0-beec-41c4-b6c7-7705f8c65061">
+                    <propertyInstance
+                      Id="b6354a89-5874-4b14-aee9-ef94e5ba12d1"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="35524ee8-198e-44ca-9749-e139a84b9dd1">
+                    <propertyInstance
+                      Id="9607bc55-579d-4ad9-b689-d5995ee6755f"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e4c50ebc-a8a9-4017-b3bb-20414d2a9c98">
+                    <propertyInstance
+                      Id="27d3df91-f6b9-4153-9920-c9b4d139116c"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4ba9b9ce-d7d2-4533-99a6-3692b51e866a">
+                    <propertyInstance
+                      Id="980f44c8-d2bf-4215-81b5-2ba3036ce887"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="6e1915b3-09ea-4595-9b74-1658171b7f20"
+                LastKnownName="Settings"
+                LastKnownLocation="Package11_1532.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="e31c90dd-1621-4391-95dd-2db4d3b04b22"
+            name="Settings"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="a9909c8e-aebf-488a-8e69-47930d9be0d0"
+                handle="viewcode://./CodeSchema_Method?Assembly=file:///C:/Users/bs/Desktop/Studienarbeit/StudienarbeitsProjekt/StudienarbeitsProjekt/bin/Debug/StudienarbeitsProjekt.exe Namespace=StudienarbeitsProjekt.Properties Type=Settings Member=.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="cbcd0c62-4cd1-4d35-983e-36e3a737cc91"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="614ac96c-c1de-4186-8617-4a3e28b140e9">
+                    <propertyInstance
+                      Id="3383de6a-5106-45e2-99f7-c208353b2f73"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="58601512-717b-4c99-b9a0-82d43bdc14b1">
+                    <propertyInstance
+                      Id="d46050bb-52a6-4d47-bbd6-32d5bd39c298"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b4f26981-798a-46c8-a8c8-860f5bc5b980">
+                    <propertyInstance
+                      Id="99234394-2464-4019-bba3-1558036474f3"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e9d339be-a51f-44e4-9cae-477e17304639">
+                    <propertyInstance
+                      Id="42cc3aff-d142-46e3-922a-979e67d79876"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="adffed70-1c6a-4e71-9834-26fc5d3332d8">
+                    <propertyInstance
+                      Id="f17268b4-91f0-412d-8e6a-057b57d01e49"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

@@ -25,9 +25,9 @@ using System.IO;
 
 namespace StudienarbeitsProjekt {
     /// <summary>
-    /// Interaction logic for SurfaceWindow1.xaml
+    /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class SurfaceWindow1 : SurfaceWindow, ContentList {
+    public partial class MainWindow : SurfaceWindow, ContentList {
 
         private int TouchesOnMainScatter = 0;
         private ObservableCollection<object> elements = new ObservableCollection<object>();
@@ -43,14 +43,22 @@ namespace StudienarbeitsProjekt {
         /// <summary>
         /// Default constructor.
         /// </summary>
-        public SurfaceWindow1() {
+        public MainWindow() {
             InitializeComponent();
-            try {
+            try {if ( File.Exists(FileHandler.getMainscatterImage()))
                 MainScatterImage.ImageSource = new BitmapImage(new Uri(FileHandler.getMainscatterImage(), UriKind.Relative));
             } catch (FileNotFoundException ex) {
                 Debug.WriteLine("No File" + ex);
-               
+                MainScatterImage.ImageSource = null;
+
+            }
+            catch (DirectoryNotFoundException ex)
+            {
+                Debug.WriteLine("No Directory" + ex);
+                MainScatterImage.ImageSource = null;
+
             } 
+
   
             // Add handlers for window availability events
             AddWindowAvailabilityHandlers();
